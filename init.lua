@@ -1,0 +1,5 @@
+require 'options'
+require 'setup'
+require 'highlight'
+require 'mappings'
+require 'autocommands'
