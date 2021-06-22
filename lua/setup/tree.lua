@@ -1,8 +1,6 @@
 local g = vim.g
 local augroup = vim.api.nvim_command
 
--- augroup([[autocmd BufWinEnter NvimTree let &1:stl='NvimTree']])
-
 vim.o.termguicolors = true
 
 g.nvim_tree_side = 'right'
@@ -22,7 +20,8 @@ g.nvim_tree_window_picker_exclude = {
 g.nvim_tree_show_icons = {
 	git = 1,
 	folders = 1,
-	files = 1
+	files = 1,
+	folder_arrows = 1
 }
 g.nvim_tree_icons = {
 	default = " ",

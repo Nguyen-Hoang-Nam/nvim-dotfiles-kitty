@@ -30,13 +30,16 @@ highlight {group = 'Pmenusel', guibg = '#85DC85'}
 highlight {group = 'Pmenu', guibg = '#353B45'}
 
 -- GitSign
-highlight {group = 'GitSignsAdd', guifg = colors.background, guibg = '#81A1C1'}
-highlight {group = 'GitSignsChange', guifg = colors.background, guibg = '#3A3E44'}
-highlight {group = 'GitSignsDelete', guifg = colors.background, guibg = '#81A1C1'}
+highlight {group = 'GitSignsAdd', guifg = '#85DC85', guibg = colors.background}
+highlight {group = 'GitSignsChange', guifg = '#61AFEF', guibg = colors.background}
+highlight {group = 'GitSignsDelete', guifg = '#D47D85', guibg = colors.background}
 
 -- Tree
 highlight {group = 'NvimTreeFolderIcon', guifg = '#61AFEF'}
 highlight {group = 'NvimTreeFolderName', guifg = '#FFFFFF'}
+highlight {group = 'NvimTreeOpenedFolderName', guifg = '#FFFFFF'}
+highlight {group = 'NvimTreeEmptyFolderName', guifg = '#FFFFFF'}
+highlight {group = 'NvimTreeOpenedFile', guifg = '#FFFFFF'}
 highlight {group = 'NvimTreeIndentMarker', guifg = '#383C44'}
 highlight {group = 'NvimTreeVertSplit', guifg = colors.dark_background, guibg = colors.dark_background}
 highlight {
@@ -60,3 +63,6 @@ highlight {group = 'DashboardShortcut', guifg = '#565C64'}
 
 -- ScrollView
 highlight {group = 'ScrollView', guibg = '#4E5666'}
+
+highlight {group = 'NormalFloat', guibg = colors.dark_background}
+-- highlight {group = 'FloatBorder', guibg = '#525865'}

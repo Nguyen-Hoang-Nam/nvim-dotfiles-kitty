@@ -97,7 +97,7 @@ lspconfig.rust_analyzer.setup {
 	}
 }
 
-local sumneko_root_path = '$HOME/.local/share/dev/lua-language-server'
+local sumneko_root_path = '/home/nguyenhoangnam/.local/share/dev/lua-language-server'
 local sumneko_binary = sumneko_root_path .. '/bin/Linux/lua-language-server'
 
 local runtime_path = vim.split(package.path, ';')
@@ -120,6 +120,8 @@ lspconfig.sumneko_lua.setup {
 				globals = {'vim'},
 			},
 			workspace = {
+				maxPreload = 2000,
+				preloadFileSize = 150,
 				library = vim.api.nvim_get_runtime_file("", true),
 			},
 			telemetry = {

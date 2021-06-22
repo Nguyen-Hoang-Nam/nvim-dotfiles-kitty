@@ -7,7 +7,7 @@ telescope.setup {
             'rg', '--hidden', '--color=never', '--no-heading',
             '--with-filename', '--line-number', '--column', '--smart-case'
         },
-        mappings = {n = {[":q<CR>"] = actions.close}},
+        mappings = {n = {["q"] = actions.close}},
         prompt_position = "bottom",
         prompt_prefix = "> ",
         selection_caret = "> ",

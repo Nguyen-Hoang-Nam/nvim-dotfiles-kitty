@@ -5,10 +5,6 @@ local colors = require 'theme/onedark'.colors
 
 bufferline.setup {
 	options = {
-		numbers = "buffer_id",
-		left_trunc_marker = '|',
-		right_trunc_marker = '|',
-		number_style = "",
 		modified_icon = "●",
 		close_icon = "",
 		max_name_length = 14,
@@ -42,19 +38,19 @@ bufferline.setup {
 		},
 		separator_visible = {
 			guifg = '#565C64',
-			guibg = colors.dark_background,
+			guibg = colors.background,
 		},
 		separator_selected = {
-			guifg = '#1F212A',
-			guibg = colors.dark_background,
+			guifg = colors.background,
+			guibg = colors.background,
 		},
 		separator = {
 			guifg = '#000000',
 			guibg = colors.dark_background,
 		},
 		indicator_selected = {
-			guifg = '#1F212A',
-			guibg = '#1F212A'
+			guifg = '#61AFEF',
+			guibg = colors.background
 		},
 		modified_selected = {
 			guifg = '#85DC85',

@@ -1,5 +1,6 @@
 local galaxyline = require('galaxyline')
 local gls = galaxyline.section
+local vcs = require 'galaxyline.provider_vcs'
 galaxyline.short_line_list = {"LuaTree", "vista", "dbui"}
 
 local colors = {
@@ -30,12 +31,27 @@ local checkwidth = function()
 	return false
 end
 
+local function get_nvim_lsp_diagnostic(diag_type)
+	if next(vim.lsp.buf_get_clients(0)) == nil then return '' end
+	local active_clients = vim.lsp.get_active_clients()
+
+	if active_clients then
+		local count = 0
+
+		for _, client in ipairs(active_clients) do
+			count = count + vim.lsp.diagnostic.get_count(vim.api.nvim_get_current_buf(),diag_type,client.id)
+		end
+
+		if count ~= 0 then return count .. ' ' end
+	end
+end
+
 gls.left[1] = {
 	Git_Branch = {
 		provider = 'GitBranch',
 		condition = checkwidth,
 		highlight = {'#FFFFFF', colors.dark_bg},
-		separator = '*  ',
+		separator = '  ',
 		separator_highlight = {'#FFFFFF', colors.dark_bg},
 		icon = '    ',
 	}
@@ -44,9 +60,7 @@ gls.left[1] = {
 gls.left[2] = {
 	Diagnostic_Error = {
 		provider = function()
-			if vim.fn.exists('*coc#rpc#start_server') == 1 then
-				return get_coc_diagnostic('error')
-			elseif not vim.tbl_isempty(vim.lsp.buf_get_clients(0)) then
+			if not vim.tbl_isempty(vim.lsp.buf_get_clients(0)) then
 				return get_nvim_lsp_diagnostic('Error')
 			end
 
@@ -71,9 +85,7 @@ gls.left[3] = {
 gls.left[4] = {
 	Diagnostic_Warn = {
 		provider = function()
-			if vim.fn.exists('*coc#rpc#start_server') == 1 then
-				return get_coc_diagnostic('warning')
-			elseif not vim.tbl_isempty(vim.lsp.buf_get_clients(0)) then
+			if not vim.tbl_isempty(vim.lsp.buf_get_clients(0)) then
 				return get_nvim_lsp_diagnostic('Warning')
 			end
 
@@ -88,7 +100,7 @@ gls.left[4] = {
 gls.left[5] = {
 	Separator_5 = {
 		provider = function()
-			return '  '
+			return '   '
 		end,
 		condition = checkwidth,
 		separator_highlight = {colors.line_bg, 'NONE'},
@@ -193,7 +205,6 @@ gls.right[6] = {
 		provider = function()
 			return '    🥑  '
 		end,
-		-- condition = checkwidth,
 		highlight = function()
 			if checkwidth() then
 				return {'#FFFFFF', colors.dark_bg, 'NONE'}

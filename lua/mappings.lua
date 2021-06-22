@@ -6,7 +6,6 @@ local cmd_options = {noremap = true, silent = true}
 vim.g.mapleader = " "
 
 map('n', '<Enter>', 'o<Esc>', options)
-map('n', '<Leader>c', '<C-w>w', options)
 map('n', '<Leader>h', '<C-w>h', options)
 map('n', '<Leader>l', '<C-w>l', options)
 map('n', 'p', 'p=`]', options)
@@ -19,16 +18,11 @@ map('t', '<Esc>', '<C-\\><C-n>', options)
 -- Commands
 --
 ----------------------------------------
-map('n', '<M-d>', [[:lua require('nvim-dictionary').get_dictionary()<CR>]],
-    options)
-map('v', '<M-d>', [[<Cmd>lua require('nvim-dictionary').get_dictionary()<CR>]],
-    options)
 
 map('n', '<Leader>q', [[<Cmd>xa<CR>]], cmd_options)
 map('n', '<Leader>s', [[<Cmd>let @/=""<CR>]], cmd_options)
 map('n', '<Leader>w', [[<Cmd>w<CR>]], cmd_options)
 map('n', '<Leader>a', [[<Cmd>wa<CR>]], cmd_options)
-map('n', '<Leader>d', [[<Cmd>b# | bd#<CR>]], cmd_options)
 map('n', '<Leader>d', [[<Cmd>lua require('bufdelete').bufdelete(0, true)<CR>]],
     cmd_options)
 map('n', '<Leader>n', [[<Cmd>edit \[No Name\]<CR>]], cmd_options)
@@ -44,14 +38,14 @@ map('n', '<Leader>p',
     cmd_options)
 map('n', '<Leader>o', [[:lua require('telescope.builtin').oldfiles()<CR>]],
     cmd_options)
-map('n', '<Leader>g',
+map('n', '<Leader>c',
     [[<Cmd>lua require('telescope.builtin').git_commits()<CR>]], cmd_options)
 map('n', '<Leader>e',
     [[<Cmd>lua require('telescope.builtin').symbols{ sources = {'gitmoji'} }<CR>]],
     cmd_options)
-map('n', '<Leader>m',
-    [[<Cmd>lua require('telescope').extensions.media_files.media_files()<CR>]],
-    cmd_options)
+map('n', '<Leader>r',
+		[[<Cmd>lua require('telescope.builtin').buffers()<CR>]],
+		cmd_options)
 
 map('n', '<Leader>/', [[<Cmd>CommentToggle<CR>]], cmd_options)
 map('v', '<Leader>/', [[:CommentToggle<CR>]], cmd_options)
@@ -59,6 +53,6 @@ map('v', '<Leader>/', [[:CommentToggle<CR>]], cmd_options)
 map('n', '<Leader>b', [[<Cmd>NvimTreeToggle<CR>]], cmd_options)
 map('v', '<Leader>b', [[<Cmd>NvimTreeToggle<CR>]], cmd_options)
 
-map('n', '<Leader>r', [[<Cmd>Glow<CR>]], cmd_options)
+map('n', '<Leader>g', [[<Cmd>Glow<CR>]], cmd_options)
 
 map('n', '<Leader>t', [[<Cmd>LspTroubleToggle<CR>]], cmd_options)
