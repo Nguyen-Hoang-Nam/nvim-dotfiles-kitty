@@ -40,6 +40,9 @@ Base on [siduck76/NvChad](https://github.com/siduck76/NvChad), with few addition
 
 ![Terminal](https://raw.githubusercontent.com/Nguyen-Hoang-Nam/readme-image/main/nvim-dotfiles/terminal.png)
 
+### Help
+
+![Help](https://raw.githubusercontent.com/Nguyen-Hoang-Nam/readme-image/main/nvim-dotfiles/help.png)
 
 ### Lua
 
@@ -132,20 +135,20 @@ Base on [siduck76/NvChad](https://github.com/siduck76/NvChad), with few addition
 
 | Key | Description |
 | --- | ----------- |
-| <Leader>d | Delete current buffer |
-| <Leader>b | Toggle Nvim-Tree |
-| <Leader>c | Show git commit search |
-| <Leader>e | Show gitmoji search |
-| <Leader>f | Show text search |
-| <Leader>g | Preview Markdown file |
-| <Leader>l | Go to right window |
-| <Leader>h | Go to left window |
-| <Leader>n | Create new file |
-| <Leader>p | Show file search |
-| <Leader>r | Show buffer search |
-| <Leader>/ | Toggle comment |
-| <Leader>s | Turn off highligh search |
-| <M-t> | Toggle Terminal |
+| &lt;Leader&gt;d | Delete current buffer |
+| &lt;Leader&gt;b | Toggle Nvim-Tree |
+| &lt;Leader&gt;c | Show git commit search |
+| &lt;Leader&gt;e | Show gitmoji search |
+| &lt;Leader&gt;f | Show text search |
+| &lt;Leader&gt;g | Preview Markdown file |
+| &lt;Leader&gt;l | Go to right window |
+| &lt;Leader&gt;h | Go to left window |
+| &lt;Leader&gt;n | Create new file |
+| &lt;Leader&gt;p | Show file search |
+| &lt;Leader&gt;r | Show buffer search |
+| &lt;Leader&gt;/ | Toggle comment |
+| &lt;Leader&gt;s | Turn off highligh search |
+| &lt;M-t&gt; | Toggle Terminal |
 | jk | Insert mode to normal mode |
 
 ## Contributing
