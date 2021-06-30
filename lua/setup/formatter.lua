@@ -1,64 +1,60 @@
-require 'formatter'.setup({
+require('formatter').setup({
 	logging = false,
 	filetype = {
 		javascript = {
 			function()
 				return {
-					exe = "prettier",
-					args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0), '--single-quote'},
-					stdin = true
+					exe = 'prettier',
+					args = { '--stdin-filepath', vim.api.nvim_buf_get_name(0), '--single-quote' },
+					stdin = true,
 				}
-			end
+			end,
 		},
 		rust = {
 			function()
-				return {
-					exe = "rustfmt",
-					args = {"--emit=stdout"},
-					stdin = true
-				}
-			end
+				return { exe = 'rustfmt', args = { '--emit=stdout' }, stdin = true }
+			end,
 		},
 		lua = {
 			function()
 				return {
-					exe = "lua-format",
-					args = {"-i"},
-					stdin = true
+					exe = 'stylua',
+					args = {
+						'--stdin-filepath',
+						vim.api.nvim_buf_get_name(0),
+						'--config-path',
+						'~/.config/stylua/stylua.toml',
+					},
+					stdin = false,
 				}
-			end
+			end,
 		},
 		go = {
 			function()
-				return {
-					exe = "goimports",
-					stdin = true
-				}
+				return { exe = 'goimports', stdin = true }
 			end,
 			function()
-				return {
-					exe = "gofumpt",
-					stdin = true
-				}
-			end
+				return { exe = 'gofumpt', stdin = true }
+			end,
 		},
 		python = {
 			function()
-				return {
-					exe = "black",
-					args = {"-q", "-"},
-					stdin = true
-				}
-			end
+				return { exe = 'black', args = { '-q', '-' }, stdin = true }
+			end,
 		},
 		svelte = {
 			function()
 				return {
-					exe = "prettier",
-					args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0), "--parser=svelte", "--plugin-search-dir.", '"%:p"'},
-					stdin = true
+					exe = 'prettier',
+					args = {
+						'--stdin-filepath',
+						vim.api.nvim_buf_get_name(0),
+						'--plugin-search-dir',
+						'.',
+					},
+					stdin = true,
 				}
-			end
-		}
-	}
+			end,
+		},
+	},
 })

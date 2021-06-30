@@ -1,14 +1,18 @@
 local augroup = vim.api.nvim_exec
 
-augroup([[
+augroup(
+	[[
 augroup Terminal
 	autocmd!
 	autocmd TermOpen * setlocal nonumber
 	autocmd TermOpen * setlocal norelativenumber
 augroup END
-]], true)
+]],
+	true
+)
 
-augroup([[
+augroup(
+	[[
 augroup Config
 	autocmd!
 	autocmd InsertEnter * set nocursorline
@@ -16,11 +20,16 @@ augroup Config
 	autocmd VimEnter * set formatoptions-=cro
 	autocmd! BufEnter * if &ft ==# 'help' | wincmd L | endif
 augroup END
-]], true)
+]],
+	true
+)
 
-augroup([[
+augroup(
+	[[
 augroup FormatAutogroup
 	autocmd!
-	autocmd BufWritePost *.js,*.rs,*.go,*py FormatWrite
+	autocmd BufWritePost *.svelte,*.lua,*.js,*.rs,*.go,*py FormatWrite
 augroup END
-]], true)
+]],
+	true
+)

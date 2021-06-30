@@ -19,10 +19,9 @@ map('t', '<Esc>', '<C-\\><C-n>', options)
 --
 ----------------------------------------
 
-map('n', '<Leader>q', [[<Cmd>xa<CR>]], cmd_options)
+map('n', '<Leader>q', [[:xa<CR>]], cmd_options)
 map('n', '<Leader>s', [[<Cmd>let @/=""<CR>]], cmd_options)
-map('n', '<Leader>w', [[<Cmd>w<CR>]], cmd_options)
-map('n', '<Leader>a', [[<Cmd>wa<CR>]], cmd_options)
+map('n', '<Leader>w', [[:w<CR>]], cmd_options)
 map('n', '<Leader>d', [[<Cmd>lua require('bufdelete').bufdelete(0, true)<CR>]],
     cmd_options)
 map('n', '<Leader>n', [[<Cmd>edit \[No Name\]<CR>]], cmd_options)
