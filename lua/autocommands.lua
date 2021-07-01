@@ -28,7 +28,7 @@ augroup(
 	[[
 augroup FormatAutogroup
 	autocmd!
-	autocmd BufWritePost *.svelte,*.lua,*.js,*.rs,*.go,*py FormatWrite
+	autocmd BufWritePost *.jsx,*.svelte,*.lua,*.js,*.rs,*.go,*py FormatWrite
 augroup END
 ]],
 	true
