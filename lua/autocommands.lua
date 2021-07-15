@@ -28,7 +28,19 @@ augroup(
 	[[
 augroup FormatAutogroup
 	autocmd!
-	autocmd BufWritePost *.jsx,*.svelte,*.lua,*.js,*.rs,*.go,*py FormatWrite
+	autocmd BufWritePre *.py,*.js,*.jsx,*.ts,*.svelte,*.go,*.lua,*.rs,*.tex,*.css,*.html,*.yaml,*.yml,*.json lua vim.lsp.buf.formatting_seq_sync()
+augroup END
+]],
+	true
+)
+
+augroup(
+	[[
+augroup UpdateGlobal
+	autocmd!
+	autocmd BufEnter * lua require('global').update()
+	autocmd FileType markdown setlocal spell
+	autocmd BufRead,BufNewFile *.md setlocal spell
 augroup END
 ]],
 	true

@@ -1,6 +1,4 @@
-local colors = require 'theme/onedark'.colors
-
-require"toggleterm".setup{
+require('toggleterm').setup({
 	size = 10,
 	open_mapping = [[<M-t>]],
 	shade_filetypes = {},
@@ -11,27 +9,5 @@ require"toggleterm".setup{
 	float_opts = {
 		border = 'curved',
 		width = 100,
-	}
-}
-
--- local Terminal = require('toggleterm.terminal').Terminal
-
--- local floatTerminal = Terminal:new({
--- 	direction = 'float',
--- })
-
--- function float_terminal_toggle()
--- 	floatTerminal:toggle()
--- end
-
--- vim.api.nvim_set_keymap('n', '<M-f>', '<Cmd>lua float_terminal_toggle()<CR>', {noremap = true, silent = true})
-
--- local bottomTerminal = Terminal:new({
--- 	direction = 'horizontal',
--- })
-
--- function bottom_terminal_toggle()
--- 	bottomTerminal:toggle()
--- end
-
--- vim.api.nvim_set_keymap('n', '<M-t>', '<Cmd>lua bottom_terminal_toggle()<CR>', {noremap = true, silent = true})
+	},
+})

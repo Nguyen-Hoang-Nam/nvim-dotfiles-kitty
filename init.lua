@@ -1,5 +1,6 @@
-require 'options'
-require 'setup'
-require 'highlight'
-require 'mappings'
-require 'autocommands'
+require('options')
+require('setup')
+require('langs')
+require('highlight')
+require('mappings')
+require('autocommands')

@@ -1,27 +1,9 @@
 local galaxyline = require('galaxyline')
 local gls = galaxyline.section
-local vcs = require 'galaxyline.provider_vcs'
-galaxyline.short_line_list = {"LuaTree", "vista", "dbui"}
+galaxyline.short_line_list = { 'LuaTree', 'vista', 'dbui' }
 
-local colors = {
-	bg = "#212835",
-	dark_bg = "#1B212C",
-	line_bg = "#282c34",
-	fg = "#D8DEE9",
-	fg_green = "#36C692",
-	yellow = "#E3C78A",
-	cyan = "#79DAC8",
-	darkblue = "#61afef",
-	green = "#8CC85F",
-	orange = "#FF8800",
-	purple = "#D183E8",
-	magenta = "#c678dd",
-	blue = "#80A0FF",
-	red = "#FF5454",
-	lightbg = "#3C4048",
-	nord = "#81A1C1",
-	greenYel = "#EBCB8B"
-}
+local colors = require('theme').colors
+local global = require('global')
 
 local checkwidth = function()
 	local squeeze_width = vim.fn.winwidth(0) / 2
@@ -32,29 +14,53 @@ local checkwidth = function()
 end
 
 local function get_nvim_lsp_diagnostic(diag_type)
-	if next(vim.lsp.buf_get_clients(0)) == nil then return '' end
+	if next(vim.lsp.buf_get_clients(0)) == nil then
+		return '0 '
+	end
 	local active_clients = vim.lsp.get_active_clients()
 
 	if active_clients then
 		local count = 0
 
 		for _, client in ipairs(active_clients) do
-			count = count + vim.lsp.diagnostic.get_count(vim.api.nvim_get_current_buf(),diag_type,client.id)
+			count = count + vim.lsp.diagnostic.get_count(vim.api.nvim_get_current_buf(), diag_type, client.id)
 		end
 
-		if count ~= 0 then return count .. ' ' end
+		return count .. ' '
 	end
+end
+
+local function get_hunks_data()
+	-- diff data 1:add 2:modified 3:remove
+	local diff_data = { 0, 0, 0 }
+	if vim.fn.exists('*GitGutterGetHunkSummary') == 1 then
+		for idx, v in pairs(vim.fn.GitGutterGetHunkSummary()) do
+			diff_data[idx] = v
+		end
+		return diff_data
+	elseif vim.fn.exists('*sy#repo#get_stats') == 1 then
+		diff_data[1] = vim.fn['sy#repo#get_stats']()[1]
+		diff_data[2] = vim.fn['sy#repo#get_stats']()[2]
+		diff_data[3] = vim.fn['sy#repo#get_stats']()[3]
+		return diff_data
+	elseif vim.fn.exists('b:gitsigns_status') == 1 then
+		local gitsigns_dict = vim.api.nvim_buf_get_var(0, 'gitsigns_status')
+		diff_data[1] = tonumber(gitsigns_dict:match('+(%d+)')) or 0
+		diff_data[2] = tonumber(gitsigns_dict:match('~(%d+)')) or 0
+		diff_data[3] = tonumber(gitsigns_dict:match('-(%d+)')) or 0
+	end
+	return diff_data
 end
 
 gls.left[1] = {
 	Git_Branch = {
 		provider = 'GitBranch',
 		condition = checkwidth,
-		highlight = {'#FFFFFF', colors.dark_bg},
+		highlight = { '#FFFFFF', colors.dark_background },
 		separator = '  ',
-		separator_highlight = {'#FFFFFF', colors.dark_bg},
+		separator_highlight = { 'NONE', colors.dark_background },
 		icon = '    ',
-	}
+	},
 }
 
 gls.left[2] = {
@@ -64,87 +70,75 @@ gls.left[2] = {
 				return get_nvim_lsp_diagnostic('Error')
 			end
 
-			return '0'
+			return '0 '
 		end,
 		condition = checkwidth,
-		icon = "  ",
-		highlight = {colors.red, colors.dark_bg}
-	}
+		icon = '  ',
+		highlight = { colors.red, colors.dark_background },
+	},
 }
 
 gls.left[3] = {
-	Separator_7 = {
-		provider = function()
-			return " "
-		end,
-		condition = checkwidth,
-		highlight = {'NONE', colors.dark_bg}
-	}
-}
-
-gls.left[4] = {
 	Diagnostic_Warn = {
 		provider = function()
 			if not vim.tbl_isempty(vim.lsp.buf_get_clients(0)) then
 				return get_nvim_lsp_diagnostic('Warning')
 			end
 
-			return '0'
+			return '0 '
 		end,
 		condition = checkwidth,
-		icon = "  ",
-		highlight = {colors.blue, colors.dark_bg}
-	}
+		icon = '  ',
+		highlight = { colors.yellow, colors.dark_background },
+	},
+}
+
+gls.left[4] = {
+	Diff_Add = {
+		provider = function()
+			local add = get_hunks_data()[1]
+			return add .. ' '
+		end,
+		condition = checkwidth,
+		icon = '    ',
+		highlight = { colors.green, colors.dark_background },
+	},
 }
 
 gls.left[5] = {
-	Separator_5 = {
+	Diff_Modified = {
 		provider = function()
-			return '   '
+			local modified = get_hunks_data()[2]
+			return modified .. ' '
 		end,
 		condition = checkwidth,
-		separator_highlight = {colors.line_bg, 'NONE'},
-		highlight = {colors.line_bg, colors.dark_bg}
-	}
+		icon = ' ',
+		highlight = { colors.blue, colors.dark_background },
+	},
 }
 
 gls.left[6] = {
-	Diff_Add = {
-		provider = "DiffAdd",
+	Diff_Remove = {
+		provider = function()
+			local removed = get_hunks_data()[3]
+			return removed .. ' '
+		end,
 		condition = checkwidth,
-		icon = "   ",
-		highlight = {colors.greenYel, colors.dark_bg}
-	}
+		icon = ' ',
+		highlight = { colors.red, colors.dark_background },
+	},
 }
 
 gls.left[7] = {
-	Diff_Modified = {
-		provider = "DiffModified",
-		condition = checkwidth,
-		icon = " ",
-		highlight = {colors.orange, colors.dark_bg}
-	}
-}
-
-gls.left[8] = {
-	Diff_Remove = {
-		provider = "DiffRemove",
-		condition = checkwidth,
-		icon = " ",
-		highlight = {colors.red, colors.dark_bg}
-	}
-}
-
-gls.left[9] = {
 	Separator_9 = {
 		provider = function()
 			return ' '
 		end,
-		highlight = {'#3E4451', colors.dark_bg , 'underline'},
+		highlight = { '#3E4451', colors.dark_background, 'underline' },
 		condition = function()
 			return not checkwidth()
-		end
-	}
+		end,
+	},
 }
 
 gls.right[1] = {
@@ -152,65 +146,65 @@ gls.right[1] = {
 		provider = function()
 			local line = vim.fn.line('.')
 			local column = vim.fn.col('.')
-			return string.format("Ln %d, Col %d", line, column)
+			return string.format('Ln %d, Col %d   ', line, column)
 		end,
 		condition = checkwidth,
-		highlight = {'#FFFFFF', colors.dark_bg}
-	}
+		highlight = { '#FFFFFF', colors.dark_background },
+	},
 }
 
 gls.right[2] = {
-	Separator_Right_2 = {
+	Tab_Size = {
 		provider = function()
-			return '    '
+			-- local tabstop = vim.api.nvim_eval('&tabstop')
+			return string.format('Tabsize %d   ', global.tab)
 		end,
 		condition = checkwidth,
-		highlight = {'#FFFFFF', colors.dark_bg}
-	}
+		highlight = { '#FFFFFF', colors.dark_background },
+	},
 }
 
 gls.right[3] = {
-	Tab_Size = {
+	Line_Break = {
 		provider = function()
-			local tabstop = vim.api.nvim_eval('&tabstop')
-			return string.format("Tabsize %d", tabstop)
+			return global.lineBreak
 		end,
 		condition = checkwidth,
-		highlight = {'#FFFFFF', colors.dark_bg}
-	}
+		highlight = { '#FFFFFF', colors.dark_background },
+	},
 }
 
 gls.right[4] = {
-	Separator_Right_4 = {
+	Language = {
 		provider = function()
-			return '    '
+			return global.fileType
 		end,
 		condition = checkwidth,
-		highlight = {'#FFFFFF', colors.dark_bg}
-	}
+		highlight = { '#FFFFFF', colors.dark_background },
+	},
 }
 
 gls.right[5] = {
-	Language = {
+	Formatter = {
 		provider = function()
-			return vim.bo.filetype:gsub('^%l', string.upper)
+			return global.format
 		end,
 		condition = checkwidth,
-		highlight = {'#FFFFFF', colors.dark_bg}
-	}
+		highlight = { '#FFFFFF', colors.dark_background },
+	},
 }
 
 gls.right[6] = {
 	Icon = {
 		provider = function()
-			return '    🥑  '
+			return ' 🥑  '
 		end,
 		highlight = function()
 			if checkwidth() then
-				return {'#FFFFFF', colors.dark_bg, 'NONE'}
+				return { '#FFFFFF', colors.dark_background, 'NONE' }
 			end
 
-			return {'#3E4451', colors.dark_bg, 'underline'}
-		end
-	}
+			return { '#3E4451', colors.dark_background, 'underline' }
+		end,
+	},
 }

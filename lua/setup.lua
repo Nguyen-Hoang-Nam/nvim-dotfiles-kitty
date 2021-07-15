@@ -5,7 +5,6 @@ require('setup.colorizer')
 require('setup.dashboard')
 require('setup.galaxyline')
 require('setup.gitsigns')
-require('setup.lsp')
 require('lspkind').init({ File = ' ' })
 require('lsp-colors').setup({
 	Error = '#db4b4b',
@@ -14,7 +13,6 @@ require('lsp-colors').setup({
 	Hint = '#10B981',
 })
 require('setup.autopairs')
-require('setup.formatter')
 require('setup.toggleterm')
 require('setup.tree')
 require('setup.treesitter')
@@ -22,4 +20,6 @@ require('setup.trouble')
 require('setup.telescope')
 require('setup.signature')
 require('setup.base16')
-require('setup.preview')
+require('setup.blankline')
+-- require('setup.snips')
+require('luasnip/loaders/from_vscode').lazy_load()
