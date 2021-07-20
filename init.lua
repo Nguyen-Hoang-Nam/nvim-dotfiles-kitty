@@ -1,6 +1,7 @@
 require('options')
 require('setup')
 require('langs')
+require('statusline')
 require('highlight')
 require('mappings')
 require('autocommands')

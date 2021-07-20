@@ -26,7 +26,8 @@ vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 vim.opt.colorcolumn = '99999'
 
 -- Local to buffer
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.swapfile = false

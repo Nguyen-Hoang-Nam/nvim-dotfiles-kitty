@@ -6,15 +6,16 @@ Base on [siduck76/NvChad](https://github.com/siduck76/NvChad), I add and change 
 
 *I use Kitty with Fira code nerd font for main font and Cascadia for italic font*
 
-## What I done so far
+## What I have done so far
 
 - Use vivid one dark instead of one dark. (Better contrast colors)
 - Move all raw colors to primitive colors. (Get this idea from [siduck76/NvChad](https://github.com/siduck76/NvChad))
-- Cache for galaxyline.
+- Cache for galaxyline. (It renders a lot so cache it if you can)
 - Work well with ligature fonts and italic fonts.
-- Use both EFM and other LSPs to format files.
+- Use both EFM and other LSPs to format files. (Check for more information [choose formatter](https://www.reddit.com/r/neovim/comments/nlhnio/noevim_is_asking_to_select_a_languageserver_when/))
 - Support several language's snippet. (I get snippets from [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets))
-- Highlight current indent's scope. (Still really mess [indent-blankline#61](https://github.com/lukas-reineke/indent-blankline.nvim/issues/61))
+- Support Emmet. (It's still a mess)
+- Highlight current indent's scope. (Check for more information [indent-blankline#61](https://github.com/lukas-reineke/indent-blankline.nvim/issues/61))
 - Check spell in git's commit and markdown.
 - Highlight matching words.
 - Show scrollbar. (Useful when u get lost in a large file 😁)
@@ -256,6 +257,14 @@ Make sure you have Go
 
 ```
 go get github.com/mattn/efm-langserver
+```
+
+#### Emmet-ls
+
+Make sure you have NodeJS
+
+```
+npm install -g emmet-ls
 ```
 
 ### Format

@@ -28,12 +28,14 @@ map('n', '<Leader>n', [[<Cmd>edit \[No Name\]<CR>]], cmd_options)
 map('i', '<M-j>', [[<Esc>:m .+1<CR>==gi]], cmd_options)
 map('i', '<M-k>', [[<Esc>:m .-2<CR>==gi]], cmd_options)
 
+map('i', '<M-e>', [[compe#complete()]], { noremap = true, silent = true, expr = true })
+
 map('n', '<Leader>f', [[<Cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>]], cmd_options)
 map(
-	'n',
-	'<Leader>p',
-	[[:lua require('telescope.builtin').find_files({find_command = {'rg', '--files', '--hidden', '-g', '!.git'}})<CR>]],
-	cmd_options
+    'n',
+    '<Leader>p',
+    [[:lua require('telescope.builtin').find_files({find_command = {'rg', '--files', '--hidden', '-g', '!.git'}})<CR>]],
+    cmd_options
 )
 map('n', '<Leader>o', [[:lua require('telescope.builtin').oldfiles()<CR>]], cmd_options)
 map('n', '<Leader>c', [[<Cmd>lua require('telescope.builtin').git_commits()<CR>]], cmd_options)
