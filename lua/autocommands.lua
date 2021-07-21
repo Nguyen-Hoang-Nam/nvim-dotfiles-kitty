@@ -38,9 +38,9 @@ augroup(
     [[
 augroup UpdateGlobal
     autocmd!
-    autocmd FileType markdown setlocal spell
+    autocmd FileType markdown,gitcommit setlocal spell
     autocmd Filetype go set tabstop=2 | set shiftwidth=2
-    autocmd BufRead,BufNewFile *.md setlocal spell
+    autocmd BufRead,BufNewFile *.md,*.gitcommit setlocal spell
 augroup END
 ]],
     true

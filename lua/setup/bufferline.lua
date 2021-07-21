@@ -69,5 +69,8 @@ require('bufferline').setup({
             guifg = colors.blue,
             guibg = colors.background,
         },
+        separator = {
+            guifg = colors.white,
+        },
     },
 })

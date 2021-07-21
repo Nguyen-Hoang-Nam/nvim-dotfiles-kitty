@@ -14,6 +14,8 @@ highlight({ group = 'Normal', guibg = colors.background })
 highlight({ group = 'NormalNC', guibg = colors.background })
 highlight({ group = 'NonText', guifg = colors.comment })
 
+highlight({ group = 'SpellBad', guifg = colors.red, gui = 'underline' })
+
 highlight({ group = 'CursorLine', guibg = colors.cursorLine })
 highlight({ group = 'CursorLineNr', guifg = colors.yellow, guibg = colors.cursorLine })
 
@@ -29,7 +31,7 @@ highlight({ group = 'LineNr', guifg = colors.lineNumber, guibg = colors.backgrou
 highlight({ group = 'SignColumn', guibg = colors.background })
 
 -- Popup
-highlight({ group = 'Pmenusel', guibg = colors.green })
+highlight({ group = 'Pmenusel', guibg = colors.green, guifg = colors.dark_background })
 highlight({ group = 'Pmenu', guibg = colors.dark_background })
 
 highlight({ group = 'IndentBlanklineContextChar', guifg = colors.yellow })
