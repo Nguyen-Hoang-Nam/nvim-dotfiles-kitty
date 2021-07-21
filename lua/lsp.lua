@@ -1,4 +1,5 @@
 local M = {}
+
 -- local global = require('global')
 local all_format = {
     javascript = {
@@ -12,8 +13,8 @@ local all_format = {
     svelte = { efm = 'Pretter-Plugin-Svelte' },
     go = { efm = 'Goimports   Gofumpt' },
     rust = {
-        'Rustfmt',
-        'Rust-Analyzer',
+        efm = 'Rustfmt',
+        rust_analyzer = 'Rust-Analyzer',
     },
     lua = { efm = 'Stylua' },
     java = { efm = 'Prettier' },

@@ -1,21 +1,24 @@
-# Nvim-Dotfiles
+# Nvim-Dotfiles-Kity
+
+This dotfiles no longer works without `Kitty` or `Iterm2`. If you are using other terminals check [2921e24](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles/tree/2921e241cd2db4ee94b8c4cf75e4c034d7f71d82)
 
 Base on [siduck76/NvChad](https://github.com/siduck76/NvChad), I add and change several things to make me feel like my old home (visual studio code).
 
 ![Main](https://raw.githubusercontent.com/Nguyen-Hoang-Nam/readme-image/main/nvim-dotfiles/main.png)
 
-*I use Kitty with Fira code nerd font for main font and Cascadia for italic font*
+*Kitty with Fira code nerd and Cascadia*
 
 ## What I have done so far
 
 - Use vivid one dark instead of one dark. (Better contrast colors)
 - Move all raw colors to primitive colors. (Get this idea from [siduck76/NvChad](https://github.com/siduck76/NvChad))
-- Cache for galaxyline. (It renders a lot so cache it if you can)
+- Use `galaxyline` source code to make simple status line
 - Work well with ligature fonts and italic fonts.
 - Use both EFM and other LSPs to format files. (Check for more information [choose formatter](https://www.reddit.com/r/neovim/comments/nlhnio/noevim_is_asking_to_select_a_languageserver_when/))
 - Support several language's snippet. (I get snippets from [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets))
 - Support Emmet. (It's still a mess)
 - Highlight current indent's scope. (Check for more information [indent-blankline#61](https://github.com/lukas-reineke/indent-blankline.nvim/issues/61))
+- Use `nonicons`
 - Check spell in git's commit and markdown.
 - Highlight matching words.
 - Show scrollbar. (Useful when u get lost in a large file 😁)
@@ -65,7 +68,7 @@ Base on [siduck76/NvChad](https://github.com/siduck76/NvChad), I add and change 
 You can change colors in ```lua/theme.lua```
 
 ```lua
-M.colors = {
+M = {
 	red = '#F9867B',
 	orange = '#CD9731',
 	yellow = '#FDCE68',
@@ -94,14 +97,15 @@ This config will work well with Kitty (ligature support, multiple fonts)
 
 ### Kitty
 
-You can use operator mono if you can afford it. Cascadia seems to be a great alternative and it's open source.
+You can use operator mono if you can afford it. Cascadia seems to be a great alternative and it's open source. You need to install [nonicons](https://github.com/yamatsum/nonicons)
 
 ```
 font_family FiraCode Nerd Font Mono
 bold_font Cascadia Code
 italic_font Cascadia Mono
 bold_italic_font Cascadia Code
-font_size 15
+symbol_map U+f101-U+f208 nonicons
+font_size 16
 ```
 
 ### Plugin list
@@ -112,14 +116,10 @@ First step is creating ```~/.local/share/nvim/site/pack/what_ever_nam_but_not_th
 | ------ |
 | [bufdelete.nvim](https://github.com/famiu/bufdelete.nvim) |
 | [dashboard-nvim](https://github.com/glepnir/dashboard-nvim) |
-| [formatter.nvim](https://github.com/mhartington/formatter.nvim) |
 | [friendly-snippets](https://github.com/rafamadriz/friendly-snippets) |
-| [galaxyline.nvim](https://github.com/glepnir/galaxyline.nvim) |
 | [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) |
 | [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) |
-| [lsp-color.nvim](https://github.com/folke/lsp-colors.nvim) |
 | [lsp_signature.nvim](https://github.com/ray-x/lsp_signature.nvim) |
-| [lspkind-nvim](https://github.com/onsails/lspkind-nvim) |
 | [LuaSnip](https://github.com/L3MON4D3/LuaSnip) |
 | [nvim-autopair](https://github.com/windwp/nvim-autopairs) |
 | [nvim-base16](https://github.com/Nguyen-Hoang-Nam/nvim-base16) |
@@ -140,200 +140,6 @@ First step is creating ```~/.local/share/nvim/site/pack/what_ever_nam_but_not_th
 | [popup.nvim](https://github.com/nvim-lua/popup.nvim) |
 | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) |
 | [trouble.nvim](https://github.com/folke/trouble.nvim) |
-
-### Treesitter
-
-I affair it still work really bad now. Next step, command ```:TSInstall``` which language you use in below.
-
-- python
-- lua
-- go
-- jsdoc
-- php
-- latex
-- css
-- regex
-- svelte
-- c
-- bash
-- yaml
-- html
-- tsx
-- dockerfile
-- rust
-- toml
-- javascript
-
-### Language server
-
-I sorry but we are not in the hardest part yet. Still with me, next one is LSP, the trading point in every code editors now.
-
-#### Pyright
-
-Make sure you have NodeJS
-
-```
-npm install -g pyright
-```
-
-#### Sumneko_lua (This fun)
-
-Check [this](https://github.com/sumneko/lua-language-server/wiki/Build-and-Run-(Standalone)) to install and change ```symneko_root_path``` in ```lua/langs/lua.lua``` to your directory.
-
-#### Gopls
-
-Make sure you have Go
-
-```
-GO111MODULE=on go get golang.org/x/tools/gopls@latest
-```
-
-#### Texlab
-
-Make sure you have Rust
-
-```
-cargo install --git https://github.com/latex-lsp/texlab.git --locked
-```
-
-#### Cssls
-
-Make sure you have Nodejs
-
-```
-npm i -g vscode-langservers-extracted
-```
-
-#### Svelte
-
-Make sure you have NodeJS
-
-```
-npm install -g svelte-language-server
-```
-
-#### Yamlls
-
-Make sure you have NodeJS
-
-```
-npm install -g yaml-language-server
-```
-
-#### Html
-
-Make sure you have NodeJS
-
-```
-npm i -g vscode-langservers-extracted
-```
-
-#### Tsserver
-
-Make sure you have NodeJS
-
-```
-npm install -g typescript typescript-language-server
-```
-
-#### Dockerls
-
-Make sure you have NodeJS
-
-```
-npm install -g dockerfile-language-server-nodejs
-```
-
-#### Rust_analyzer
-
-```
-$ curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > ~/.local/bin/rust-analyzer
-$ chmod +x ~/.local/bin/rust-analyzer
-```
-
-#### EFM
-
-Make sure you have Go
-
-```
-go get github.com/mattn/efm-langserver
-```
-
-#### Emmet-ls
-
-Make sure you have NodeJS
-
-```
-npm install -g emmet-ls
-```
-
-### Format
-
-Hope you are not tired now. Next one is code formatter, some LSPs already support formatter but slow and tidy.
-
-#### Black
-
-Make sure you have Python
-
-```
-pip install black
-```
-
-#### Stylua
-
-Make sure you have Rust
-
-```
-cargo install stylua
-```
-
-#### Goimport
-
-Make sure you have Go
-
-```
-go get golang.org/x/tools/cmd/goimports
-```
-
-#### Gofumpt
-
-Make sure you have Go
-
-```
-GO111MODULE=on go get mvdan.cc/gofumpt
-```
-
-#### Latexindent.pl
-
-Make sure you have Perl, cmake
-
-```
-$ git clone https://github.com/cmhughes/latexindent.pl
-$ cd latexindent.pl
-$ mkdir build && cd build
-$ cmake ../path-helper-files
-$ sudo make install
-```
-
-Then install wherever perl's package missing 😅
-
-#### Prettier
-
-Make sure you have NodeJS
-
-```
-npm install -g prettier
-```
-
-#### Rustfmt
-
-Make sure you have Rust
-
-```
-$ git clone https://github.com/rust-lang/rustfmt
-$ cd rustfmt
-$ cargo install --path .
-```
 
 ## Mappings
 
