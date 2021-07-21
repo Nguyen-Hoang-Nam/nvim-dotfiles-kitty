@@ -52,6 +52,7 @@ augroup(
 augroup StatusLine
     autocmd!
     autocmd BufEnter * lua require('statusline').load()
+    autocmd BufWritePost * lua require('statusline').load()
 augroup END
 ]],
     true
