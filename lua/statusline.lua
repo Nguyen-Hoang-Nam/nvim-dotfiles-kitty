@@ -1,4 +1,4 @@
-local global = require('global')
+-- local global = require('global')
 
 local M = {}
 
@@ -86,9 +86,31 @@ end
 local async_load = vim.loop.new_async(vim.schedule_wrap(function()
     local line
     if vim.fn.winwidth(0) > 30 then
+        local fileType = vim.bo.filetype
+        local lineBreak = vim.go.fileformat
+        local is_update = false
+        local tab = vim.api.nvim_eval('&tabstop')
+
+        if fileType ~= '' and fileType ~= 'toggleterm' then
+            is_update = true
+            -- tab = vim.api.nvim_eval('&tabstop')
+
+            fileType = fileType:gsub('^%l', string.upper)
+
+            if lineBreak == 'unix' then
+                lineBreak = 'LF'
+            elseif lineBreak == 'mac' then
+                lineBreak = 'CR'
+            else
+                lineBreak = 'CRLF'
+            end
+        else
+            is_update = false
+        end
+
         line = ''
 
-        if global.fileType ~= 'Help' then
+        if fileType ~= 'Help' then
             line = line
                 .. '%#StatuslineBackground#   '
                 .. M.get_git_detached_head()
@@ -106,16 +128,17 @@ local async_load = vim.loop.new_async(vim.schedule_wrap(function()
 
         line = line .. '%#StatuslineBackground#%=ln %l, col %c   '
 
-        if global.is_update then
+        if is_update and vim.fn.winwidth(0) > 80 then
             line = line
                 .. 'Tabsizes '
-                .. global.tab
+                .. tab
                 .. '   '
-                .. global.lineBreak
+                .. lineBreak
                 .. '   '
-                .. global.fileType
-                .. '   '
-                .. global.format
+                .. fileType
+                -- .. '   '
+                -- .. global.format
+                .. [[   %{luaeval('require("lsp").formatter()')}]]
         end
 
         line = line .. '%#StatuslineSmiley#  '

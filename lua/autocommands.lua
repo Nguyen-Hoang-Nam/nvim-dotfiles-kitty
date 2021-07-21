@@ -28,7 +28,7 @@ augroup(
     [[
 augroup FormatAutogroup
     autocmd!
-    autocmd BufWritePre *.java,*.py,*.js,*.jsx,*.ts,*.svelte,*.go,*.lua,*.rs,*.tex,*.css,*.html,*.yaml,*.yml,*.json lua vim.lsp.buf.formatting_seq_sync()
+    autocmd BufWritePre *.java,*.py,*.js,*.jsx,*.ts,*.svelte,*.go,*.lua,*.rs,*.tex,*.css,*.html,*.yaml,*.yml,*.json lua require('lsp').choose_format()
 augroup END
 ]],
     true
@@ -38,7 +38,6 @@ augroup(
     [[
 augroup UpdateGlobal
     autocmd!
-    autocmd BufEnter * lua require('global').update()
     autocmd FileType markdown setlocal spell
     autocmd Filetype go set tabstop=2 | set shiftwidth=2
     autocmd BufRead,BufNewFile *.md setlocal spell

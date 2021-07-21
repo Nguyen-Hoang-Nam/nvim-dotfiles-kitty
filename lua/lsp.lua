@@ -1,5 +1,35 @@
 local M = {}
+-- local global = require('global')
+local all_format = {
+    javascript = {
+        efm = 'Prettier',
+        tsserver = 'Tssever',
+    },
+    typescript = {
+        efm = 'Prettier',
+        tsserver = 'Tssever',
+    },
+    svelte = { efm = 'Pretter-Plugin-Svelte' },
+    go = { efm = 'Goimports   Gofumpt' },
+    rust = {
+        'Rustfmt',
+        'Rust-Analyzer',
+    },
+    lua = { efm = 'Stylua' },
+    java = { efm = 'Prettier' },
+}
 
+M.format_lsp = {
+    javascript = 'efm',
+    typescript = 'efm',
+    svelte = 'efm',
+    go = 'efm',
+    rust = 'efm',
+    lua = 'efm',
+    java = 'efm',
+}
+
+-- Credit https://github.com/neovim/nvim-lspconfig#keybindings-and-completion
 function M.on_attach(_, bufnr)
     local function buf_set_keymap(...)
         vim.api.nvim_buf_set_keymap(bufnr, ...)
@@ -51,5 +81,41 @@ require('lsp_signature').on_attach({
         border = 'none',
     },
 })
+
+M.formatter = function()
+    local fileType = vim.bo.filetype
+    if M.format_lsp[fileType] then
+        return all_format[fileType][M.format_lsp[fileType]] .. '   '
+    else
+        return ''
+    end
+end
+
+-- Credit https://github.com/terrortylor/neovim-environment/blob/main/lua/config/lsp/funcs.lua#L11
+M.choose_format = function()
+    local clients = vim.lsp.buf_get_clients(0)
+    local fileType = vim.bo.filetype
+    local code_formatter = M.format_lsp[fileType]
+
+    if #clients > 1 then
+        -- check if multiple clients, and if efm is setup
+        for _, c1 in pairs(clients) do
+            if c1.name == code_formatter then
+                c1.resolved_capabilities.document_formatting = true
+                -- if efm then disable others
+                for _, c2 in pairs(clients) do
+                    -- print(c2.name, c2.resolved_capabilities.document_formatting)
+                    if c2.name ~= code_formatter then
+                        c2.resolved_capabilities.document_formatting = false
+                    end
+                end
+                -- no need to contunue first loop
+                break
+            end
+        end
+    end
+
+    vim.lsp.buf.formatting_sync(nil, 1000)
+end
 
 return M
