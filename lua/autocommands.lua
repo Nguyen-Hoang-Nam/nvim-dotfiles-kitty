@@ -28,7 +28,7 @@ augroup(
     [[
 augroup FormatAutogroup
     autocmd!
-    autocmd BufWritePre *.java,*.py,*.js,*.jsx,*.ts,*.svelte,*.go,*.lua,*.rs,*.tex,*.css,*.html,*.yaml,*.yml,*.json lua require('lsp').choose_format()
+    autocmd BufWritePre *.php,*.java,*.py,*.js,*.jsx,*.ts,*.svelte,*.go,*.lua,*.rs,*.tex,*.css,*.html,*.yaml,*.yml,*.json lua require('lsp').choose_format()
 augroup END
 ]],
     true

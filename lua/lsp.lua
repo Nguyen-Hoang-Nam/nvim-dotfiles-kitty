@@ -18,6 +18,8 @@ local all_format = {
     },
     lua = { efm = 'Stylua' },
     java = { efm = 'Prettier' },
+    php = { efm = 'Prettier' },
+    python = { efm = 'Black' },
 }
 
 M.format_lsp = {
@@ -28,6 +30,8 @@ M.format_lsp = {
     rust = 'efm',
     lua = 'efm',
     java = 'efm',
+    php = 'efm',
+    python = 'efm',
 }
 
 -- Credit https://github.com/neovim/nvim-lspconfig#keybindings-and-completion

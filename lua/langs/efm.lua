@@ -58,6 +58,7 @@ require('lspconfig').efm.setup({
         'html',
         'css',
         'java',
+        'php',
     },
 
     init_options = { documentFormatting = true, codeAction = true },
@@ -79,6 +80,7 @@ require('lspconfig').efm.setup({
             html = { prettier },
             css = { prettier },
             java = { prettier },
+            php = { prettier },
         },
     },
     on_attach = lsp.on_attach,
