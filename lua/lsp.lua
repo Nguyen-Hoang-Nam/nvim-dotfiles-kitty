@@ -1,3 +1,4 @@
+local utils = require('utils')
 local M = {}
 
 -- local global = require('global')
@@ -20,6 +21,7 @@ local all_format = {
     java = { efm = 'Prettier' },
     php = { efm = 'Prettier' },
     python = { efm = 'Black' },
+    tex = { efm = 'LatexIndent', texlab = 'TexLab' },
 }
 
 M.format_lsp = {
@@ -32,6 +34,7 @@ M.format_lsp = {
     java = 'efm',
     php = 'efm',
     python = 'efm',
+    tex = 'efm',
 }
 
 -- Credit https://github.com/neovim/nvim-lspconfig#keybindings-and-completion
@@ -102,7 +105,7 @@ M.choose_format = function()
     local fileType = vim.bo.filetype
     local code_formatter = M.format_lsp[fileType]
 
-    if #clients > 1 then
+    if utils.tablelength(clients) > 1 then
         -- check if multiple clients, and if efm is setup
         for _, c1 in pairs(clients) do
             if c1.name == code_formatter then

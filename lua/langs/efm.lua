@@ -36,7 +36,7 @@ local stylua = {
 }
 
 local latexindent = {
-    formatCommand = 'latexindent.pl',
+    formatCommand = 'latexindent.pl -y="defaultIndent:\'  \'"',
     formatStdin = true,
 }
 
