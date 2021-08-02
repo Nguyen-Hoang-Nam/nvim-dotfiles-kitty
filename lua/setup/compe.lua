@@ -11,12 +11,12 @@ require('compe').setup({
     -- max_abbr_width = 100,
     -- max_kind_width = 100,
     -- max_menu_width = 100,
-    documentation = {
-        max_width = 120,
-        min_width = 60,
-        max_height = math.floor(vim.o.lines * 0.3),
-        min_height = 1,
-    },
+    -- documentation = {
+    --     max_width = 120,
+    --     min_width = 60,
+    --     max_height = math.floor(vim.o.lines * 0.3),
+    --     min_height = 1,
+    -- },
     source = {
         path = { priority = 6 },
         spell = { priority = 5, filetypes = { 'gitcommit', 'markdown' } },
@@ -25,12 +25,6 @@ require('compe').setup({
         nvim_lsp = { priority = 2 },
         buffer = { priority = 1 },
         emoji = { priority = 1 },
-        calc = false,
-        vsnip = false,
-        tags = false,
-        snippets_nvim = false,
-        treesitter = false,
-        ultisnips = false,
     },
 })
 
@@ -81,11 +75,3 @@ _G.s_tab_complete = function()
         return t('<S-Tab>')
     end
 end
-
-local map = vim.api.nvim_set_keymap
-local expression = { expr = true, silent = true }
-
-map('i', '<Tab>', 'v:lua.tab_complete()', expression)
-map('s', '<Tab>', 'v:lua.tab_complete()', expression)
-map('i', '<S-Tab>', 'v:lua.s_tab_complete()', expression)
-map('s', '<S-Tab>', 'v:lua.s_tab_complete()', expression)
