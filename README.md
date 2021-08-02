@@ -10,15 +10,14 @@ Base on [siduck76/NvChad](https://github.com/siduck76/NvChad) with several devel
 ## What I have done so far
 
 - Use vivid one dark instead of one dark. (Better contrast colors)
-- Move all raw colors to primitive colors. (Get this idea from [siduck76/NvChad](https://github.com/siduck76/NvChad))
-- Use `galaxyline` source code to make simple status line.
-- Work well with ligature fonts and italic fonts.
-- Use ```auto-session``` to load session base on path.
+- Support code action. (Base on [nvim-lightbulb](https://github.com/kosayoda/nvim-lightbulb))
+- Work well with ligature fonts and italic fonts. (Thanks to [Kitty](https://github.com/kovidgoyal/kitty))
+- Load previous session. (Thanks to [auto-session](https://github.com/rmagatti/auto-session))
 - Able to choose code formatter.
 - Support several language's snippet. (I get snippets from [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets))
-- Support Emmet.
+- Support Emmet. (Thanks to [emmet-ls](https://github.com/aca/emmet-ls))
 - Highlight current indent's scope. (Check for more information [indent-blankline#61](https://github.com/lukas-reineke/indent-blankline.nvim/issues/61))
-- Use `nonicons`
+- Bigger icons. (Thanks to [noicons](https://github.com/yamatsum/nonicons))
 - Check spell in git's commit and markdown.
 - Highlight matching words.
 - Show scrollbar. (Useful when u get lost in a large file 😁)
