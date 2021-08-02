@@ -11,7 +11,7 @@ end
 
 -- Credit https://github.com/kosayoda/nvim-lightbulb/blob/master/lua/nvim-lightbulb.lua
 if vim.tbl_isempty(vim.fn.sign_getdefined('CodeActionSign')) then
-    vim.fn.sign_define('CodeActionSign', { text = '', texthl = 'LspDiagnosticsSignInformation' })
+    vim.fn.sign_define('CodeActionSign', { text = '', texthl = 'LspDiagnosticsDefaultInformation' })
 end
 
 -- Credit https://github.com/kosayoda/nvim-lightbulb/blob/master/lua/nvim-lightbulb.lua

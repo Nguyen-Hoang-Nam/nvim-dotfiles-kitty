@@ -52,15 +52,10 @@ highlight({ group = 'GitSignsDelete', guifg = colors.red, guibg = colors.backgro
 highlight({ group = 'TroubleNormal', guibg = colors.dark_background })
 
 -- Lsp
-highlight({ group = 'LspDiagnosticsSignError', guifg = colors.red })
-highlight({ group = 'LspDiagnosticsSignWarning', guifg = colors.yellow })
-highlight({ group = 'LspDiagnosticsSignHint', guifg = colors.blue })
-highlight({ group = 'LspDiagnosticsSignInformation', guifg = colors.green })
-
-highlight({ group = 'LspDiagnosticsVirtualTextError', guifg = colors.red })
-highlight({ group = 'LspDiagnosticsVirtualTextWarning', guifg = colors.yellow })
-highlight({ group = 'LspDiagnosticsVirtualTextHint', guifg = colors.blue })
-highlight({ group = 'LspDiagnosticsVirtualTextInformation', guifg = colors.green })
+highlight({ group = 'LspDiagnosticsDefaultError', guifg = colors.red })
+highlight({ group = 'LspDiagnosticsDefaultWarning', guifg = colors.yellow })
+highlight({ group = 'LspDiagnosticsDefaultHint', guifg = colors.blue })
+highlight({ group = 'LspDiagnosticsDefaultInformation', guifg = colors.green })
 
 highlight({ group = 'LspDiagnosticsUnderlineError', gui = 'undercurl', guisp = colors.red })
 highlight({ group = 'LspDiagnosticsUnderlineWarning', gui = 'undercurl', guisp = colors.yellow })

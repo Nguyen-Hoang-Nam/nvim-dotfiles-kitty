@@ -41,7 +41,7 @@ telescope.setup({
 
         mappings = { n = { ['q'] = actions.close } },
         prompt_prefix = ' ',
-        selection_caret = ' ',
+        -- selection_caret = ' ',
         -- initial_mode = 'insert',
         -- selection_strategy = 'reset',
         -- sorting_strategy = 'descending',
