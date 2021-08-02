@@ -1,16 +1,16 @@
--- https://github.com/neovim/nvim-lspconfig/wiki/Autocompletion
+-- Default option
 require('compe').setup({
-    enabled = true,
-    autocomplete = true,
-    debug = false,
-    min_length = 1,
-    preselect = 'enable',
-    throttle_time = 80,
-    source_timeout = 200,
-    incomplete_delay = 400,
-    max_abbr_width = 100,
-    max_kind_width = 100,
-    max_menu_width = 100,
+    -- enabled = true,
+    -- autocomplete = true,
+    -- debug = false,
+    -- min_length = 1,
+    -- preselect = 'enable',
+    -- throttle_time = 80,
+    -- source_timeout = 200,
+    -- incomplete_delay = 400,
+    -- max_abbr_width = 100,
+    -- max_kind_width = 100,
+    -- max_menu_width = 100,
     documentation = {
         max_width = 120,
         min_width = 60,
@@ -18,14 +18,15 @@ require('compe').setup({
         min_height = 1,
     },
     source = {
-        path = true,
-        buffer = true,
-        nvim_lsp = true,
-        nvim_lua = true,
-        luasnip = true,
+        path = { priority = 6 },
+        spell = { priority = 5, filetypes = { 'gitcommit', 'markdown' } },
+        nvim_lua = { priority = 4, filetypes = { 'lua' } },
+        luasnip = { priority = 3 },
+        nvim_lsp = { priority = 2 },
+        buffer = { priority = 1 },
+        emoji = { priority = 1 },
         calc = false,
         vsnip = false,
-        spell = { filetypes = { 'gitcommit', 'markdown' } },
         tags = false,
         snippets_nvim = false,
         treesitter = false,
@@ -33,6 +34,14 @@ require('compe').setup({
     },
 })
 
+----------------------------------------
+--
+--
+-- Credit https://github.com/neovim/nvim-lspconfig/wiki/Autocompletion
+--
+--
+----------------------------------------
+--
 local t = function(str)
     return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
@@ -72,16 +81,6 @@ _G.s_tab_complete = function()
         return t('<S-Tab>')
     end
 end
-
--- function _G.completions()
---     local npairs = require('nvim-autopairs')
---     if vim.fn.pumvisible() == 1 then
---         if vim.fn.complete_info()['selected'] ~= -1 then
---             return vim.fn['compe#confirm']('<CR>')
---         end
---     end
---     return npairs.check_break_line_char()
--- end
 
 local map = vim.api.nvim_set_keymap
 local expression = { expr = true, silent = true }
