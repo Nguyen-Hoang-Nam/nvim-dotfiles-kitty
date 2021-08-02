@@ -1,5 +1,4 @@
-local utils = require('utils')
-local map = utils.map
+local map = vim.api.nvim_set_keymap
 
 local options = { noremap = true }
 local cmd_options = { noremap = true, silent = true }

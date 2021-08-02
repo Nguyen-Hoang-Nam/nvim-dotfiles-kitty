@@ -2,21 +2,21 @@
 
 This dotfiles no longer works without `Kitty` or `Iterm2`. If you are using other terminals check [2921e24](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles/tree/2921e241cd2db4ee94b8c4cf75e4c034d7f71d82)
 
-Base on [siduck76/NvChad](https://github.com/siduck76/NvChad), I add and change several things to make me feel like my old home (visual studio code).
-
+Base on [siduck76/NvChad](https://github.com/siduck76/NvChad) with several developer-friendly improvement.
 ![Main](https://raw.githubusercontent.com/Nguyen-Hoang-Nam/readme-image/main/nvim-dotfiles/main.png)
 
-*Kitty with Fira code nerd and Cascadia*
+*Kitty with Fira code nerd, Cascadia, and nonicons*
 
 ## What I have done so far
 
 - Use vivid one dark instead of one dark. (Better contrast colors)
 - Move all raw colors to primitive colors. (Get this idea from [siduck76/NvChad](https://github.com/siduck76/NvChad))
-- Use `galaxyline` source code to make simple status line
+- Use `galaxyline` source code to make simple status line.
 - Work well with ligature fonts and italic fonts.
-- Use both EFM and other LSPs to format files. (Check for more information [choose formatter](https://www.reddit.com/r/neovim/comments/nlhnio/noevim_is_asking_to_select_a_languageserver_when/))
+- Use ```auto-session``` to load session base on path.
+- Able to choose code formatter.
 - Support several language's snippet. (I get snippets from [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets))
-- Support Emmet. (It's still a mess)
+- Support Emmet.
 - Highlight current indent's scope. (Check for more information [indent-blankline#61](https://github.com/lukas-reineke/indent-blankline.nvim/issues/61))
 - Use `nonicons`
 - Check spell in git's commit and markdown.
@@ -69,25 +69,25 @@ You can change colors in ```lua/theme.lua```
 
 ```lua
 M = {
-	red = '#F9867B',
-	orange = '#CD9731',
-	yellow = '#FDCE68',
-	green = '#A3EEA0',
-	cyan = '#6796E6',
-	blue = '#7BE2F9',
-	purple = '#E19EF5',
-	tomato = '#F44747',
-	white = '#FFFFFF',
+    red = '#F9867B',
+    orange = '#CD9731',
+    yellow = '#FDCE68',
+    green = '#A3EEA0',
+    cyan = '#6796E6',
+    blue = '#7BE2F9',
+    purple = '#E19EF5',
+    tomato = '#F44747',
+    white = '#FFFFFF',
 
-	background = '#212835',
-	dark_background = '#1B212C',
+    background = '#212835',
+    dark_background = '#1B212C',
 
-	border = '#3E4451',
-	comment = '#5C6370',
-	lineNumber = '#495162',
-	scrollbar = '#4E5666',
-	cursorLine = '#2C313A',
-	indent = '#383C44',
+    border = '#3E4451',
+    comment = '#5C6370',
+    lineNumber = '#495162',
+    scrollbar = '#4E5666',
+    cursorLine = '#2C313A',
+    indent = '#383C44',
 }
 ```
 
@@ -97,7 +97,7 @@ This config will work well with Kitty (ligature support, multiple fonts)
 
 ### Kitty
 
-You can use operator mono if you can afford it. Cascadia seems to be a great alternative and it's open source. You need to install [nonicons](https://github.com/yamatsum/nonicons)
+You can use Operator Mono if you can afford it. Cascadia seems to be a great alternative and it's open source. You need to install [nonicons](https://github.com/yamatsum/nonicons)
 
 ```
 font_family FiraCode Nerd Font Mono

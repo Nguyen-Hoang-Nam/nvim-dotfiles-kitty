@@ -9,6 +9,4 @@ function M.tablelength(T)
     return count
 end
 
-M.map = vim.api.nvim_set_keymap
-
 return M
