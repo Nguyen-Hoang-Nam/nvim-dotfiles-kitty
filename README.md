@@ -114,6 +114,7 @@ First step is creating ```~/.local/share/nvim/site/pack/what_ever_nam_but_not_th
 
 | Plugin |
 | ------ |
+| [auto-session](https://github.com/rmagatti/auto-session) |
 | [bufdelete.nvim](https://github.com/famiu/bufdelete.nvim) |
 | [dashboard-nvim](https://github.com/glepnir/dashboard-nvim) |
 | [friendly-snippets](https://github.com/rafamadriz/friendly-snippets) |
@@ -145,19 +146,19 @@ First step is creating ```~/.local/share/nvim/site/pack/what_ever_nam_but_not_th
 
 | Key | Description |
 | --- | ----------- |
-| &lt;Leader&gt;d | Delete current buffer |
+| &lt;Leader&gt;w | Delete current buffer |
 | &lt;Leader&gt;b | Toggle Nvim-Tree |
 | &lt;Leader&gt;c | Show git commit search |
-| &lt;Leader&gt;e | Show gitmoji search |
+| &lt;Leader&gt;g | Show gitmoji search |
 | &lt;Leader&gt;f | Show text search |
-| &lt;Leader&gt;g | Preview Markdown file |
 | &lt;Leader&gt;l | Go to right window |
 | &lt;Leader&gt;h | Go to left window |
 | &lt;Leader&gt;n | Create new file |
 | &lt;Leader&gt;p | Show file search |
 | &lt;Leader&gt;r | Show buffer search |
 | &lt;Leader&gt;/ | Toggle comment |
-| &lt;Leader&gt;s | Turn off highligh search |
+| &lt;Leader&gt;q | Turn off highligh search |
+| &lt;Leader&gt;s | Save file |
 | &lt;M-t&gt; | Toggle Terminal |
 | jk | Insert mode to normal mode |
 
