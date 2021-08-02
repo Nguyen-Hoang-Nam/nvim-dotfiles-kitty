@@ -17,6 +17,7 @@ require('bufferline').setup({
         separator_style = 'thin',
         enforce_reqular_tabs = true,
     },
+
     highlights = {
         background = {
             guibg = colors.dark_background,

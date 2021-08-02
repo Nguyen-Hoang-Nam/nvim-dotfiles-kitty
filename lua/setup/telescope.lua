@@ -36,9 +36,10 @@ telescope.setup({
             '--column',
             '--smart-case',
         },
+
         mappings = { n = { ['q'] = actions.close } },
-        prompt_prefix = '> ',
-        selection_caret = '> ',
+        prompt_prefix = ' ',
+        selection_caret = ' ',
         entry_prefix = '  ',
         initial_mode = 'insert',
         selection_strategy = 'reset',
@@ -48,6 +49,7 @@ telescope.setup({
             horizontal = { mirror = false, preview_width = 0.5 },
             vertical = { mirror = false },
         },
+
         file_sorter = require('telescope.sorters').get_fuzzy_file,
         file_ignore_patterns = { 'node_modules', '.git' },
         generic_sorter = require('telescope.sorters').get_generic_fuzzy_sorter,
