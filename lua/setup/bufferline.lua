@@ -3,7 +3,7 @@ local colors = require('../theme')
 require('bufferline').setup({
     options = {
         indicator_icon = '▌',
-        modified_icon = '●',
+        -- modified_icon = '●',
         max_name_length = 14,
         max_prefix_length = 13,
         tab_size = 16,
@@ -14,9 +14,10 @@ require('bufferline').setup({
         offsets = { { filetype = 'NvimTree', text = 'Explorer', text_align = 'left' } },
         show_buffer_close_icons = false,
         show_close_icon = false,
-        separator_style = 'thin',
+        -- separator_style = 'thin',
         enforce_reqular_tabs = true,
     },
+
     highlights = {
         background = {
             guibg = colors.dark_background,

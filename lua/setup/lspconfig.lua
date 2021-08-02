@@ -1,3 +1,4 @@
+-- Credit https://github.com/neovim/nvim-lspconfig/wiki/UI-customization
 local signs = {
     Error = ' ',
     Warning = ' ',
@@ -5,6 +6,7 @@ local signs = {
     Information = ' ',
 }
 
+-- Credit https://github.com/neovim/nvim-lspconfig/wiki/UI-customization
 for type, icon in pairs(signs) do
     local hl = 'LspDiagnosticsSign' .. type
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
@@ -39,6 +41,7 @@ local lspKindIcons = {
     Variable = ' (variable)',
 }
 
+-- Credit https://github.com/neovim/nvim-lspconfig/wiki/UI-customization
 local kinds = vim.lsp.protocol.CompletionItemKind
 for i, kind in ipairs(kinds) do
     kinds[i] = lspKindIcons[kind] or kind
