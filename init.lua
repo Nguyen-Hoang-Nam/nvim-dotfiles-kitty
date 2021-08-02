@@ -20,6 +20,7 @@ require('setup.nonicons')
 -- require('setup.snips')
 require('luasnip/loaders/from_vscode').lazy_load()
 require('setup.lspconfig')
+-- require('setup.spell')
 
 -- Language
 require('langs.go')

@@ -18,8 +18,7 @@ Base on [siduck76/NvChad](https://github.com/siduck76/NvChad) with several devel
 - Support Emmet. (Thanks to [emmet-ls](https://github.com/aca/emmet-ls))
 - Highlight current indent's scope. (Check for more information [indent-blankline#61](https://github.com/lukas-reineke/indent-blankline.nvim/issues/61))
 - Bigger icons. (Thanks to [noicons](https://github.com/yamatsum/nonicons))
-- Check spell in git's commit and markdown.
-- Highlight matching words.
+- Check spell in git's commit, and markdown.
 - Show scrollbar. (Useful when u get lost in a large file 😁)
 - Show the EOF icon. (Useful when detect trailing spaces)
 - Show help's buffer in right.
@@ -146,6 +145,7 @@ First step is creating ```~/.local/share/nvim/site/pack/what_ever_nam_but_not_th
 | Key | Description |
 | --- | ----------- |
 | &lt;Leader&gt;w | Delete current buffer |
+| &lt;Leader&gt;a | Code action |
 | &lt;Leader&gt;b | Toggle Nvim-Tree |
 | &lt;Leader&gt;c | Show git commit search |
 | &lt;Leader&gt;g | Show gitmoji search |
@@ -153,6 +153,7 @@ First step is creating ```~/.local/share/nvim/site/pack/what_ever_nam_but_not_th
 | &lt;Leader&gt;l | Go to right window |
 | &lt;Leader&gt;h | Go to left window |
 | &lt;Leader&gt;n | Create new file |
+| &lt;neader&gt;m | Change code formatter |
 | &lt;Leader&gt;p | Show file search |
 | &lt;Leader&gt;r | Show buffer search |
 | &lt;Leader&gt;/ | Toggle comment |

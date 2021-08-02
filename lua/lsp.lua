@@ -37,6 +37,26 @@ M.format_lsp = {
     tex = 'efm',
 }
 
+M.change_formatter = function()
+    local fileType = vim.bo.filetype
+    local all_formatters = all_format[fileType]
+    local store_formatters = {}
+
+    local count = 0
+    for key, _ in pairs(all_formatters) do
+        count = count + 1
+        -- table.insert(store_formatters, key)
+        store_formatters[#store_formatters + 1] = key
+        print('[' .. count .. '] ' .. key)
+    end
+
+    if count > 1 then
+        local option = vim.fn.input('Choose your formmatter: ')
+
+        M.format_lsp[fileType] = store_formatters[tonumber(option)]
+    end
+end
+
 -- Credit https://github.com/neovim/nvim-lspconfig#keybindings-and-completion
 function M.on_attach(_, bufnr)
     local function buf_set_keymap(...)

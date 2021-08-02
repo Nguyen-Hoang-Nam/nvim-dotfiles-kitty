@@ -50,6 +50,7 @@ map('i', '<M-j>', [[<Esc>:m .+1<CR>==gi]], cmd_options)
 map('i', '<M-k>', [[<Esc>:m .-2<CR>==gi]], cmd_options)
 map('n', '<M-j>', [[<Esc>:m .+1<CR>==gi]], cmd_options)
 map('n', '<M-k>', [[<Esc>:m .-2<CR>==gi]], cmd_options)
+map('n', '<Leader>m', [[<Cmd>lua require('lsp').change_formatter()<CR>]], cmd_options)
 
 ----------------------------------------
 --
