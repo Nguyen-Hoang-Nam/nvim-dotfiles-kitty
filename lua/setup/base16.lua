@@ -24,22 +24,25 @@ local function highlight(all_highlights)
         local guifg = ui.guifg or 'NONE'
         local guibg = ui.guibg or 'NONE'
         local gui = ui.gui or 'NONE'
-        local guisp = ui.guisp or 'NONE'
+        if gui == 'underline' or gui == 'undercurl' then
+            local guisp = ui.guisp or 'NONE'
 
-        cmd(string.format('hi %s guifg=%s guibg=%s gui=%s guisp=%s', group, guifg, guibg, gui, guisp))
+            cmd(string.format('hi %s guifg=%s guibg=%s gui=%s guisp=%s', group, guifg, guibg, gui, guisp))
+        else
+            cmd(string.format('hi %s guifg=%s guibg=%s gui=%s', group, guifg, guibg, gui))
+        end
     end
 end
 
 -- Credit https://github.com/RRethy/nvim-base16/blob/master/lua/base16-colorscheme.lua
 highlight({
-    Bold = { gui = 'bold' },
-    ColorColumn = { guibg = base01 },
-    Conceal = { guifg = base0D, guibg = base00 },
-    Cursor = { guifg = base00, guibg = base05 },
-    CursorColumn = { guibg = base01 },
+    -- General
+    -- Conceal = { guifg = base0D, guibg = base00 },
+    Cursor = { guifg = base00 },
     CursorLine = { guibg = colors.cursorLine },
     CursorLineNr = { guifg = base0A, guibg = colors.cursorLine },
     Directory = { guifg = base0D },
+    -- EndOfBuffer = { guifg = colors.background },
     ErrorMsg = { guifg = base08, guibg = base00 },
     FoldColumn = { guifg = base0C, guibg = base01 },
     Folded = { guifg = base03, guibg = base01 },
@@ -79,7 +82,6 @@ highlight({
     VisualNOS = { guifg = base08 },
     WarningMsg = { guifg = base08 },
     WildMenu = { guifg = base00, guibg = base05 },
-    EndOfBuffer = { guifg = colors.background },
 
     -- Spell
     SpellBad = { gui = 'undercurl', guisp = base08 },

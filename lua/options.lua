@@ -13,6 +13,7 @@ option.termguicolors = true
 option.completeopt = 'menuone,noselect'
 vim.go.shortmess = vim.go.shortmess .. 'c'
 vim.go.clipboard = vim.go.clipboard .. 'unnamedplus'
+vim.go.fillchars = 'eob: '
 
 -- Local to window
 option.number = true
