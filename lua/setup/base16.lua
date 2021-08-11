@@ -201,6 +201,48 @@ highlight({
     DiffNewFile = { guifg = base0B, guibg = base00 },
     DiffLine = { guifg = base0D, guibg = base00 },
     DiffRemoved = { guifg = base08, guibg = base00 },
+
+    IndentBlanklineContextChar = { guifg = base0A },
+
+    -- Status line
+    StatuslineBackground = { guibg = colors.dark_background },
+    StatuslineDiagnosticsError = { guifg = base08, guibg = colors.dark_background },
+    StatuslineDiagnosticsWarning = { guifg = base0A, guibg = colors.dark_background },
+    StatuslineDiffAdded = { guifg = base0B, guibg = colors.dark_background },
+    StatuslineDiffModified = { guifg = base0D, guibg = colors.dark_background },
+    StatuslineDiffRemoved = { guifg = base08, guibg = colors.dark_background },
+    StatuslineSmiley = { guifg = base0A, guibg = colors.dark_background },
+
+    -- GitSign
+    GitSignsAdd = { guifg = base0B, guibg = colors.background },
+    GitSignsChange = { guifg = base0D, guibg = colors.background },
+    GitSignsDelete = { guifg = base08, guibg = colors.background },
+
+    TroubleNormal = { guibg = colors.dark_background },
+
+    -- Nvim-tree
+    NvimTreeFolderIcon = { guifg = base0D },
+    NvimTreeFolderName = { guifg = colors.white },
+    NvimTreeOpenedFolderName = { guifg = colors.white },
+    NvimTreeEmptyFolderName = { guifg = colors.white },
+    NvimTreeOpenedFile = { guifg = colors.white },
+    NvimTreeIndentMarker = { guifg = colors.indent },
+    NvimTreeVertSplit = { guifg = colors.dark_background, guibg = colors.dark_background },
+    NvimTreeStatuslineNc = { guifg = colors.dark_background, guibg = colors.dark_background, gui = 'underline' },
+    NvimTreeNormal = { guibg = colors.dark_background },
+    NvimTreeRootFolder = { guifg = colors.white, gui = 'bold' },
+
+    -- Telescope
+    TelescopeBorder = { guifg = colors.border },
+    TelescopePromptBorder = { guifg = colors.border },
+    TelescopeResultsBorder = { guifg = colors.border },
+    TelescopePreviewBorder = { guifg = colors.border },
+
+    DashboardHeader = { guifg = colors.comment },
+    DashboardCenter = { guifg = colors.comment },
+    DashboardShortcut = { guifg = colors.comment },
+
+    ScrollView = { guibg = colors.scrollbar },
 })
 
 vim.g.terminal_color_0 = base00

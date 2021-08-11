@@ -40,6 +40,6 @@ require('langs.java')
 require('langs.php')
 
 require('statusline')
-require('highlight')
+-- require('highlight')
 require('mappings')
 require('autocommands')
