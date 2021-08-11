@@ -9,31 +9,6 @@ local function highlight(group)
     cmd(string.format('hi %s guifg=%s guibg=%s gui=%s', group.group, guifg, guibg, gui))
 end
 
--- Misc
-highlight({ group = 'Normal', guibg = colors.background })
-highlight({ group = 'NormalNC', guibg = colors.background })
-highlight({ group = 'NonText', guifg = colors.comment })
-
-highlight({ group = 'SpellBad', guifg = colors.red, gui = 'underline' })
-
-highlight({ group = 'CursorLine', guibg = colors.cursorLine })
-highlight({ group = 'CursorLineNr', guifg = colors.yellow, guibg = colors.cursorLine })
-
-highlight({ group = 'EndOfBuffer', guifg = colors.background })
-highlight({ group = 'VertSplit', guifg = colors.border })
-highlight({
-    group = 'StatusLineNC',
-    guifg = colors.border,
-    guibg = colors.dark_background,
-    gui = 'underline',
-})
-highlight({ group = 'LineNr', guifg = colors.lineNumber, guibg = colors.background })
-highlight({ group = 'SignColumn', guibg = colors.background })
-
--- Popup
-highlight({ group = 'Pmenusel', guibg = colors.green, guifg = colors.dark_background })
-highlight({ group = 'Pmenu', guibg = colors.dark_background })
-
 highlight({ group = 'IndentBlanklineContextChar', guifg = colors.yellow })
 
 highlight({ group = 'StatuslineBackground', guibg = colors.dark_background })
@@ -50,17 +25,6 @@ highlight({ group = 'GitSignsChange', guifg = colors.blue, guibg = colors.backgr
 highlight({ group = 'GitSignsDelete', guifg = colors.red, guibg = colors.background })
 
 highlight({ group = 'TroubleNormal', guibg = colors.dark_background })
-
--- Lsp
-highlight({ group = 'LspDiagnosticsDefaultError', guifg = colors.red })
-highlight({ group = 'LspDiagnosticsDefaultWarning', guifg = colors.yellow })
-highlight({ group = 'LspDiagnosticsDefaultHint', guifg = colors.blue })
-highlight({ group = 'LspDiagnosticsDefaultInformation', guifg = colors.green })
-
-highlight({ group = 'LspDiagnosticsUnderlineError', gui = 'undercurl', guisp = colors.red })
-highlight({ group = 'LspDiagnosticsUnderlineWarning', gui = 'undercurl', guisp = colors.yellow })
-highlight({ group = 'LspDiagnosticsUnderlineHint', gui = 'undercurl', guisp = colors.blue })
-highlight({ group = 'LspDiagnosticsUnderlineInformation', gui = 'undercurl', guisp = colors.green })
 
 -- Tree
 highlight({ group = 'NvimTreeFolderIcon', guifg = colors.blue })

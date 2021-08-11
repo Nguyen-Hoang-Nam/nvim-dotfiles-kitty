@@ -1,5 +1,3 @@
--- local global = require('global')
-
 local M = {}
 
 -- Credit https://github.com/glepnir/galaxyline.nvim/blob/main/lua/galaxyline/provider_vcs.lua

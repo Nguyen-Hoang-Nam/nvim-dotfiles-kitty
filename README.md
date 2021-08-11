@@ -2,7 +2,7 @@
 
 This dotfiles no longer works without `Kitty` or `Iterm2`. If you are using other terminals check [2921e24](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles/tree/2921e241cd2db4ee94b8c4cf75e4c034d7f71d82)
 
-Base on [siduck76/NvChad](https://github.com/siduck76/NvChad) with several developer-friendly improvement.
+Base on [siduck76/NvChad](https://github.com/siduck76/NvChad) with several developer-friendly improvements. Supporting Javascript, Typescript, Python, Go, Rust, Lua, Java and PHP.
 ![Main](https://raw.githubusercontent.com/Nguyen-Hoang-Nam/readme-image/main/nvim-dotfiles/main.png)
 
 *Kitty with Fira code nerd, Cascadia, and nonicons*
@@ -121,7 +121,6 @@ First step is creating ```~/.local/share/nvim/site/pack/what_ever_nam_but_not_th
 | [lsp_signature.nvim](https://github.com/ray-x/lsp_signature.nvim) |
 | [LuaSnip](https://github.com/L3MON4D3/LuaSnip) |
 | [nvim-autopair](https://github.com/windwp/nvim-autopairs) |
-| [nvim-base16](https://github.com/Nguyen-Hoang-Nam/nvim-base16) |
 | [nvim-bufferline.lua](https://github.com/akinsho/nvim-bufferline.lua) |
 | [nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua) |
 | [nvim-comment](https://github.com/terrortylor/nvim-comment) |
@@ -161,6 +160,26 @@ First step is creating ```~/.local/share/nvim/site/pack/what_ever_nam_but_not_th
 | &lt;Leader&gt;s | Save file |
 | &lt;M-t&gt; | Toggle Terminal |
 | jk | Insert mode to normal mode |
+
+## Treesitter
+
+Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Treesitter)
+
+## Lanuage Server
+
+Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Language-server)
+
+## Code Formatter
+
+Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Code-formatter)
+
+## TODO
+
+- [ ] Show theme in wiki
+- [ ] Add more treesitter highlight group
+- [ ] Support Flutter
+- [ ] Add PHP to wiki
+- [ ] Show images of all supporting languages
 
 ## Contributing
 
