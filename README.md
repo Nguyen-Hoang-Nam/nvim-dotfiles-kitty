@@ -155,9 +155,11 @@ First step is creating ```~/.local/share/nvim/site/pack/what_ever_nam_but_not_th
 | &lt;neader&gt;m | Change code formatter |
 | &lt;Leader&gt;p | Show file search |
 | &lt;Leader&gt;r | Show buffer search |
-| &lt;Leader&gt;/ | Toggle comment |
 | &lt;Leader&gt;q | Turn off highligh search |
 | &lt;Leader&gt;s | Save file |
+| &lt;Leader&gt;/ | Toggle comment |
+| &lt;Leader&gt;i | Increamental selection |
+| &lt;Leader&gt;; | Jump to pairs |
 | &lt;M-t&gt; | Toggle Terminal |
 | jk | Insert mode to normal mode |
 

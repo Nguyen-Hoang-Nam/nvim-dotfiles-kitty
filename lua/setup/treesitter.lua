@@ -16,4 +16,13 @@ treesitter_config.setup({
             node_decremental = '<Leader>j',
         },
     },
+    pairs = {
+        enable = true,
+        highlight_self = false,
+        goto_right_end = false,
+        fallback_cmd_normal = 'normal! %',
+        keymaps = {
+            goto_partner = '<Leader>;',
+        },
+    },
 })
