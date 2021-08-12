@@ -3,6 +3,7 @@
 This dotfiles no longer works without `Kitty` or `Iterm2`. If you are using other terminals check [2921e24](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles/tree/2921e241cd2db4ee94b8c4cf75e4c034d7f71d82)
 
 Base on [siduck76/NvChad](https://github.com/siduck76/NvChad) with several developer-friendly improvements. Supporting Javascript, Typescript, Python, Go, Rust, Lua, Java and PHP.
+
 ![Main](https://raw.githubusercontent.com/Nguyen-Hoang-Nam/readme-image/main/nvim-dotfiles/main.png)
 
 *Kitty with Fira code nerd, Cascadia, and nonicons*
@@ -12,7 +13,7 @@ Base on [siduck76/NvChad](https://github.com/siduck76/NvChad) with several devel
 - Use vivid one dark instead of one dark. (Better contrast colors)
 - Support code action. (Base on [nvim-lightbulb](https://github.com/kosayoda/nvim-lightbulb))
 - Work well with ligature fonts and italic fonts. (Thanks to [Kitty](https://github.com/kovidgoyal/kitty))
-- Load previous session. (Thanks to [auto-session](https://github.com/rmagatti/auto-session))
+- Load the previous session. (Thanks to [auto-session](https://github.com/rmagatti/auto-session))
 - Able to choose code formatter.
 - Support several language's snippet. (I get snippets from [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets))
 - Support Emmet. (Thanks to [emmet-ls](https://github.com/aca/emmet-ls))
@@ -113,7 +114,6 @@ First step is creating ```~/.local/share/nvim/site/pack/what_ever_nam_but_not_th
 | Plugin |
 | ------ |
 | [auto-session](https://github.com/rmagatti/auto-session) |
-| [bufdelete.nvim](https://github.com/famiu/bufdelete.nvim) |
 | [dashboard-nvim](https://github.com/glepnir/dashboard-nvim) |
 | [friendly-snippets](https://github.com/rafamadriz/friendly-snippets) |
 | [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) |
@@ -125,17 +125,17 @@ First step is creating ```~/.local/share/nvim/site/pack/what_ever_nam_but_not_th
 | [nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua) |
 | [nvim-comment](https://github.com/terrortylor/nvim-comment) |
 | [nvim-compe](https://github.com/hrsh7th/nvim-compe) |
-| [nvim-cursorword](https://github.com/xiyaowong/nvim-cursorword) |
 | [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) |
 | [nvim-scrollview](https://github.com/dstein64/nvim-scrollview) |
 | [nvim-toggleterm.lua](https://github.com/akinsho/nvim-toggleterm.lua) |
 | [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua) |
 | [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) |
+| [nvim-treesitter-pairs](https://github.com/theHamsta/nvim-treesitter-pairs) |
 | [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag) |
+| [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) |
 | [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow) |
 | [nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons) |
 | [plenary.nvim](https://github.com/nvim-lua/plenary.nvim) |
-| [popup.nvim](https://github.com/nvim-lua/popup.nvim) |
 | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) |
 | [trouble.nvim](https://github.com/folke/trouble.nvim) |
 
