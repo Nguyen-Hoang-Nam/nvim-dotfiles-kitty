@@ -25,7 +25,7 @@ map('n', '<Leader>h', '<C-w>h', options)
 map('n', '<Leader>l', '<C-w>l', options)
 map('n', 'p', 'p=`]', options)
 map('i', 'jk', '<Esc>', options)
-map('v', 'e', '<Esc>', options)
+-- map('v', 'e', '<Esc>', options)
 map('t', '<Esc>', '<C-\\><C-n>', options)
 
 ----------------------------------------
@@ -45,7 +45,6 @@ map('t', '<Esc>', '<C-\\><C-n>', options)
 map('n', '<Leader>q', [[<Cmd>let @/=""<CR>]], cmd_options)
 map('n', '<Leader>s', [[:w<CR>]], cmd_options)
 map('n', '<Leader>w', [[<Cmd>lua require('utils').bufdelete()<CR>]], cmd_options)
-map('n', '<Leader>n', [[<Cmd>edit \[No Name\]<CR>]], cmd_options)
 map('i', '<M-j>', [[<Esc>:m .+1<CR>==gi]], cmd_options)
 map('i', '<M-k>', [[<Esc>:m .-2<CR>==gi]], cmd_options)
 map('n', '<M-j>', [[<Esc>:m .+1<CR>==gi]], cmd_options)
@@ -88,9 +87,9 @@ map('i', '<M-e>', [[compe#complete()]], { noremap = true, silent = true, expr = 
 ----------------------------------------
 
 map('n', '<Leader>f', [[<Cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>]], cmd_options)
-map('n', '<Leader>r', [[:lua require('telescope.builtin').buffers()<CR>]], cmd_options)
+map('n', '<Leader>o', [[:lua require('telescope.builtin').buffers()<CR>]], cmd_options)
 map('n', '<Leader>p', [[:lua require('telescope.builtin').find_files()<CR>]], cmd_options)
-map('n', '<Leader>o', [[:lua require('telescope.builtin').oldfiles()<CR>]], cmd_options)
+-- map('n', '<Leader>o', [[:lua require('telescope.builtin').oldfiles()<CR>]], cmd_options)
 map('n', '<Leader>c', [[<Cmd>lua require('telescope.builtin').git_commits()<CR>]], cmd_options)
 map('n', '<Leader>a', [[<Cmd>lua require('telescope.builtin').lsp_code_actions()<CR>]], cmd_options)
 map('n', '<Leader>g', [[:lua require('telescope.builtin').symbols{ sources = {'gitmoji'} }<CR>]], cmd_options)

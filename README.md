@@ -143,22 +143,23 @@ First step is creating ```~/.local/share/nvim/site/pack/what_ever_nam_but_not_th
 
 | Key | Description |
 | --- | ----------- |
-| &lt;Leader&gt;w | Delete current buffer |
 | &lt;Leader&gt;a | Code action |
 | &lt;Leader&gt;b | Toggle Nvim-Tree |
 | &lt;Leader&gt;c | Show git commit search |
-| &lt;Leader&gt;g | Show gitmoji search |
+| &lt;Leader&gt;d | Go to definition |
 | &lt;Leader&gt;f | Show text search |
-| &lt;Leader&gt;l | Go to right window |
+| &lt;Leader&gt;g | Show gitmoji search |
 | &lt;Leader&gt;h | Go to left window |
-| &lt;Leader&gt;n | Create new file |
+| &lt;Leader&gt;l | Go to right window |
 | &lt;neader&gt;m | Change code formatter |
+| &lt;Leader&gt;n | Rename variable |
+| &lt;Leader&gt;o | Show buffer search |
 | &lt;Leader&gt;p | Show file search |
-| &lt;Leader&gt;r | Show buffer search |
 | &lt;Leader&gt;q | Turn off highligh search |
+| &lt;Leader&gt;r | Show all references |
 | &lt;Leader&gt;s | Save file |
+| &lt;Leader&gt;w | Delete current buffer |
 | &lt;Leader&gt;/ | Toggle comment |
-| &lt;Leader&gt;i | Increamental selection |
 | &lt;Leader&gt;; | Jump to pairs |
 | &lt;M-t&gt; | Toggle Terminal |
 | jk | Insert mode to normal mode |
