@@ -1,3 +1,4 @@
+local fn = vim.fn
 -- Credit https://github.com/neovim/nvim-lspconfig/wiki/UI-customization
 local signs = {
     Error = ' ',
@@ -9,8 +10,10 @@ local signs = {
 -- Credit https://github.com/neovim/nvim-lspconfig/wiki/UI-customization
 for type, icon in pairs(signs) do
     local hl = 'LspDiagnosticsSign' .. type
-    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
+    fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
 end
+
+fn.sign_define('CodeActionSign', { text = '', texthl = 'LspDiagnosticsDefaultInformation' })
 
 -- Credit https://github.com/yamatsum/nvim-nonicons
 local lspKindIcons = {
