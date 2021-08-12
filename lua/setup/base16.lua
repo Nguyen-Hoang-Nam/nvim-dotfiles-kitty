@@ -24,62 +24,56 @@ local function highlight(all_highlights)
         local guifg = ui.guifg or 'NONE'
         local guibg = ui.guibg or 'NONE'
         local gui = ui.gui or 'NONE'
-        local guisp = ui.guisp or 'NONE'
+        if gui == 'underline' or gui == 'undercurl' then
+            local guisp = ui.guisp or 'NONE'
 
-        cmd(string.format('hi %s guifg=%s guibg=%s gui=%s guisp=%s', group, guifg, guibg, gui, guisp))
+            cmd(string.format('hi %s guifg=%s guibg=%s gui=%s guisp=%s', group, guifg, guibg, gui, guisp))
+        else
+            cmd(string.format('hi %s guifg=%s guibg=%s gui=%s', group, guifg, guibg, gui))
+        end
     end
 end
 
 -- Credit https://github.com/RRethy/nvim-base16/blob/master/lua/base16-colorscheme.lua
 highlight({
-    Bold = { gui = 'bold' },
-    ColorColumn = { guibg = base01 },
-    Conceal = { guifg = base0D, guibg = base00 },
-    Cursor = { guifg = base00, guibg = base05 },
-    CursorColumn = { guibg = base01 },
+    -- General
+    -- Conceal = { guifg = base0D, guibg = base00 },
+    Cursor = { guifg = base00 },
     CursorLine = { guibg = colors.cursorLine },
     CursorLineNr = { guifg = base0A, guibg = colors.cursorLine },
     Directory = { guifg = base0D },
-    ErrorMsg = { guifg = base08, guibg = base00 },
-    FoldColumn = { guifg = base0C, guibg = base01 },
-    Folded = { guifg = base03, guibg = base01 },
+    ErrorMsg = { guifg = base08, guibg = colors.background },
+    Folded = { guifg = colors.comment, guibg = colors.cursorLine },
     IncSearch = { guifg = base01, guibg = base09 },
-    Italic = { gui = 'italic' },
     LineNr = { guifg = colors.lineNumber, guibg = colors.background },
-    Macro = { guifg = base08 },
+    -- Macro = { guifg = base08 },
     MatchParen = { guibg = base03 },
-    ModeMsg = { guifg = base0B },
     MoreMsg = { guifg = base0B },
     NonText = { guifg = colors.comment },
     Normal = { guifg = base05, guibg = colors.background },
-    NormalFloat = { guifg = base05, guibg = base00 },
-    FloatBorder = { guifg = base05, guibg = base00 },
+    NormalFloat = { guifg = base05, guibg = colors.dark_background },
     NormalNC = { guifg = base05, guibg = colors.background },
+    FloatBorder = { guifg = base05, guibg = base00 },
     Pmenu = { guifg = base05, guibg = colors.dark_background },
-    PmenuSbar = { guifg = base05, guibg = base01 },
+    PmenuSbar = { guifg = base05, guibg = colors.dark_background },
     PmenuSel = { guifg = colors.dark_background, guibg = base0B },
-    PmenuThumb = { guifg = base05, guibg = base03 },
+    PmenuThumb = { guifg = base05, guibg = colors.scrollbar },
     Question = { guifg = base0D },
-    QuickFixLine = { guibg = base01 },
+    -- QuickFixLine = { guibg = base01 },
     Search = { guifg = base01, guibg = base0A },
     SignColumn = { guifg = base04, guibg = colors.background },
     SpecialKey = { guifg = base03 },
     StatusLine = { guifg = base04, guibg = base02 },
     StatucLineNC = { guifg = colors.border, guibg = colors.dark_background, gui = 'underline' },
     Substitute = { guifg = base01, guibg = base0A },
-    TabLine = { guifg = base04, guibg = base02 },
-    TabLineFill = { guifg = base03, guibg = base01 },
-    TabLineSel = { guifg = base0B, guibg = base01 },
-    TermCursor = { guifg = base00, guibg = base05 },
-    TermCursorNC = { guifg = base00, guibg = base05 },
+    TermCursor = { guifg = colors.background, guibg = base0C },
+    TermCursorNC = { guifg = colors.background, guibg = base05 },
     Title = { guifg = base0D },
-    TooLong = { guifg = base08 },
     VertSplit = { guifg = colors.dark_background, guibg = colors.dark_background },
-    Visual = { guibg = base02 },
+    Visual = { guibg = colors.cursorLine },
     VisualNOS = { guifg = base08 },
     WarningMsg = { guifg = base08 },
-    WildMenu = { guifg = base00, guibg = base05 },
-    EndOfBuffer = { guifg = colors.background },
+    -- WildMenu = { guifg = base00, guibg = base05 },
 
     -- Spell
     SpellBad = { gui = 'undercurl', guisp = base08 },
@@ -89,20 +83,20 @@ highlight({
 
     -- Syntax
     Comment = { guifg = base03, gui = 'italic' },
-    Constant = { guifg = base09 },
+    Constant = { guifg = base09, gui = 'italic' },
     String = { guifg = base0B },
     Character = { guifg = base0C },
-    Number = { guifg = base09 },
-    Boolean = { guifg = base09 },
-    Float = { guifg = base09 },
+    Number = { guifg = base09, gui = 'italic' },
+    Boolean = { guifg = base09, gui = 'italic' },
+    Float = { guifg = base09, gui = 'italic' },
     Identifier = { guifg = base08 },
     Fuction = { guifg = base0D },
     Statement = { guifg = base0E },
-    Conditional = { guifg = base0E },
-    Repeat = { guifg = base0E },
+    Conditional = { guifg = base0E, gui = 'italic' },
+    Repeat = { guifg = base0E, gui = 'italic' },
     Label = { guifg = base0E },
     Operator = { guifg = base05 },
-    Keyword = { guifg = base0E },
+    Keyword = { guifg = base0E, gui = 'italic' },
     Exception = { guifg = base0E },
     PreProc = { guifg = base0A },
     Include = { guifg = base0D },
@@ -110,6 +104,7 @@ highlight({
     Marco = { guifg = base0D },
     PreCondit = { guifg = base0D },
     Type = { guifg = base0D },
+    TypeDef = { guifg = base0A },
     StorageClass = { guifg = base0E },
     Structure = { guifg = base0E },
     Special = { guifg = base0C },
@@ -156,6 +151,7 @@ highlight({
     TSInclude = { guifg = base0D },
     TSKeyword = { guifg = base0E, gui = 'italic' },
     TSKeywordFunction = { guifg = base0E, gui = 'italic' },
+    TSKeywordOperator = { guifg = base0E, gui = 'italic' },
     TSLabel = { guifg = base0E },
     TSMethod = { guifg = base0D },
     TSNamespace = { guifg = base0E },
@@ -172,8 +168,10 @@ highlight({
     TSString = { guifg = base0B },
     TSStringRegex = { guifg = base0B },
     TSStringEscape = { guifg = base0C },
+    TSStringSpecial = { guifg = base0B },
     TSSymbol = { guifg = base0B },
     TSTag = { guifg = base0A },
+    TSTagAttribute = { guifg = base0A },
     TSTagDelimiter = { guifg = base0F },
     TSText = { guifg = base05 },
     TSStrong = { gui = 'bold' },
@@ -183,10 +181,12 @@ highlight({
     TSTitle = { guifg = base0D },
     TSLiteral = { guifg = base09 },
     TSURI = { guifg = base09, gui = 'underline' },
+    TSMath = { guifg = base0E },
     TSType = { guifg = base0A, gui = 'italic' },
     TSTypeBuiltin = { guifg = base0E },
     TSVariable = { guifg = base08 },
-    TSVariableBuiltin = { guifg = base0E },
+    TSVariableBuiltin = { guifg = base0E, 'italic' },
+
     TSDefinition = { gui = 'underline', guisp = base04 },
     TSDefinitionUsage = { gui = 'underline', guisp = base04 },
     TSCurrentScope = { gui = 'bold' },
@@ -202,7 +202,47 @@ highlight({
     DiffLine = { guifg = base0D, guibg = base00 },
     DiffRemoved = { guifg = base08, guibg = base00 },
 
-    NvimInternalError = { guifg = base00, guibg = base08 },
+    IndentBlanklineContextChar = { guifg = base0A },
+
+    -- Status line
+    StatuslineBackground = { guibg = colors.dark_background },
+    StatuslineDiagnosticsError = { guifg = base08, guibg = colors.dark_background },
+    StatuslineDiagnosticsWarning = { guifg = base0A, guibg = colors.dark_background },
+    StatuslineDiffAdded = { guifg = base0B, guibg = colors.dark_background },
+    StatuslineDiffModified = { guifg = base0D, guibg = colors.dark_background },
+    StatuslineDiffRemoved = { guifg = base08, guibg = colors.dark_background },
+    StatuslineSmiley = { guifg = base0A, guibg = colors.dark_background },
+
+    -- GitSign
+    GitSignsAdd = { guifg = base0B, guibg = colors.background },
+    GitSignsChange = { guifg = base0D, guibg = colors.background },
+    GitSignsDelete = { guifg = base08, guibg = colors.background },
+
+    TroubleNormal = { guibg = colors.dark_background },
+
+    -- Nvim-tree
+    NvimTreeFolderIcon = { guifg = base0D },
+    NvimTreeFolderName = { guifg = colors.white },
+    NvimTreeOpenedFolderName = { guifg = colors.white },
+    NvimTreeEmptyFolderName = { guifg = colors.white },
+    NvimTreeOpenedFile = { guifg = colors.white },
+    NvimTreeIndentMarker = { guifg = colors.indent },
+    NvimTreeVertSplit = { guifg = colors.dark_background, guibg = colors.dark_background },
+    NvimTreeStatuslineNc = { guifg = colors.dark_background, guibg = colors.dark_background, gui = 'underline' },
+    NvimTreeNormal = { guibg = colors.dark_background },
+    NvimTreeRootFolder = { guifg = colors.white, gui = 'bold' },
+
+    -- Telescope
+    TelescopeBorder = { guifg = colors.border },
+    TelescopePromptBorder = { guifg = colors.border },
+    TelescopeResultsBorder = { guifg = colors.border },
+    TelescopePreviewBorder = { guifg = colors.border },
+
+    DashboardHeader = { guifg = colors.comment },
+    DashboardCenter = { guifg = colors.comment },
+    DashboardShortcut = { guifg = colors.comment },
+
+    ScrollView = { guibg = colors.scrollbar },
 })
 
 vim.g.terminal_color_0 = base00
