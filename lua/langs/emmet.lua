@@ -7,7 +7,7 @@ if not lspconfig.emmet_ls then
     configs.emmet_ls = {
         default_config = {
             cmd = { 'emmet-ls', '--stdio' },
-            filetypes = { 'html', 'css' },
+            filetypes = { 'html', 'css', 'svelte', 'javascriptreact' },
             -- root_dir = function(_)
             -- 	return vim.loop.cwd()
             -- end,
