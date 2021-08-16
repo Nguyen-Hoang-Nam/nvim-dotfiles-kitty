@@ -23,6 +23,7 @@ local all_format = {
     php = { efm = 'Prettier' },
     python = { efm = 'Black' },
     tex = { efm = 'LatexIndent', texlab = 'TexLab' },
+    xml = { efm = 'Prettier' },
 }
 
 M.format_lsp = {
@@ -36,6 +37,7 @@ M.format_lsp = {
     php = 'efm',
     python = 'efm',
     tex = 'efm',
+    xml = 'efm',
 }
 
 M.change_formatter = function()
