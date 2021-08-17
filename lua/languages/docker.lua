@@ -1,14 +1,14 @@
 local lsp = require('languages.lsp')
 local M = {}
 
-M.efm = {
-    formatCommand = 'prettier --tab-width=4 --use-tabs=false --stdin-filepath ${INPUT}',
-    formatStdin = true,
-}
+-- M.efm = {
+--     formatCommand = 'prettier --tab-width=4 --use-tabs=false --stdin-filepath ${INPUT}',
+--     formatStdin = true,
+-- }
 
-M.all_format = { efm = 'Prettier' }
+M.all_format = { dockerls = 'DockerLS' }
 
-M.default_format = 'efm'
+M.default_format = 'dockerls'
 
 M.lsp = {
     capabilities = lsp.capabilities,
