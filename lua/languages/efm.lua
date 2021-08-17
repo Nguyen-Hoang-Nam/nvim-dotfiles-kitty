@@ -67,7 +67,6 @@ require('lspconfig').efm.setup({
         'xml',
     },
 
-
     init_options = { documentFormatting = true, codeAction = true },
     settings = {
         rootMarkers = { '.git/' },
@@ -83,7 +82,7 @@ require('lspconfig').efm.setup({
             tex = require('languages.tex').efm,
             markdown = require('languages.markdown').efm,
             yaml = require('languages.yaml').efm,
-            json = require('language.json').efm,
+            json = require('languages.json').efm,
             html = require('languages.html').efm,
             css = require('languages.css').efm,
             java = require('languages.java').efm,
