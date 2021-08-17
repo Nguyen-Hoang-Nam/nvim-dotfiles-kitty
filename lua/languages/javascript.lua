@@ -5,6 +5,13 @@ M.efm = {
     {
         formatCommand = 'prettier --tab-width=4 --use-tabs=false --stdin-filepath ${INPUT}',
         formatStdin = true,
+        lintCommand = 'eslint -f visualstudio --stdin --stdin-filename ${INPUT}',
+        -- lintIgnoreExitCode = true,
+        lintStdin = true,
+        lintFormats = {
+            '%f(%l,%c): %tarning %m',
+            '%f(%l,%c): %rror %m',
+        },
     },
 }
 
