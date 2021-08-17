@@ -14,7 +14,6 @@ vim.g.mapleader = ' '
 -- <Leader>l (normal): Move to right window
 -- p (normal): Paste code with indent
 -- jk (insert): Change to normal mode from insert mode
--- e (visual): Change to normal mode from visual mode
 -- t (terminal): Change to normal mode from terminal mode
 --
 --
@@ -25,7 +24,6 @@ map('n', '<Leader>h', '<C-w>h', options)
 map('n', '<Leader>l', '<C-w>l', options)
 map('n', 'p', 'p=`]', options)
 map('i', 'jk', '<Esc>', options)
--- map('v', 'e', '<Esc>', options)
 map('t', '<Esc>', '<C-\\><C-n>', options)
 
 ----------------------------------------
@@ -78,8 +76,8 @@ map('i', '<M-e>', [[compe#complete()]], { noremap = true, silent = true, expr = 
 --
 -- <Leader>f (normal): Find texts in current buffer
 -- <Leader>p (normal): Find files in current project
--- <Leader>r (normal): Find buffers in current project
--- <Leader>o (normal): Find old files
+-- <Leader>a (normal): Code action
+-- <Leader>o (normal): File buffers in current project
 -- <Leader>c (normal): Find git's commits
 -- <Leader>g (normal): Find gitmojis
 --
@@ -89,7 +87,6 @@ map('i', '<M-e>', [[compe#complete()]], { noremap = true, silent = true, expr = 
 map('n', '<Leader>f', [[<Cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>]], cmd_options)
 map('n', '<Leader>o', [[:lua require('telescope.builtin').buffers()<CR>]], cmd_options)
 map('n', '<Leader>p', [[:lua require('telescope.builtin').find_files()<CR>]], cmd_options)
--- map('n', '<Leader>o', [[:lua require('telescope.builtin').oldfiles()<CR>]], cmd_options)
 map('n', '<Leader>c', [[<Cmd>lua require('telescope.builtin').git_commits()<CR>]], cmd_options)
 map('n', '<Leader>a', [[<Cmd>lua require('telescope.builtin').lsp_code_actions()<CR>]], cmd_options)
 map('n', '<Leader>g', [[:lua require('telescope.builtin').symbols{ sources = {'gitmoji'} }<CR>]], cmd_options)
