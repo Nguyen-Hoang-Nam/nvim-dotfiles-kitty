@@ -1,51 +1,16 @@
-local fn = vim.fn
--- Credit https://github.com/neovim/nvim-lspconfig/wiki/UI-customization
-local signs = {
-    Error = ' ',
-    Warning = ' ',
-    Hint = ' ',
-    Information = ' ',
-}
+local lsp = require('lspconfig')
 
--- Credit https://github.com/neovim/nvim-lspconfig/wiki/UI-customization
-for type, icon in pairs(signs) do
-    local hl = 'LspDiagnosticsSign' .. type
-    fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
-end
-
-fn.sign_define('CodeActionSign', { text = '', texthl = 'LspDiagnosticsDefaultInformation' })
-
--- Credit https://github.com/yamatsum/nvim-nonicons
-local lspKindIcons = {
-    Class = ' (class)',
-    Color = ' (color)',
-    Constant = ' (constant)',
-    Constructor = ' (constructor)',
-    Enum = ' (enum)',
-    EnumMember = ' (enum member)',
-    Event = ' (event)',
-    Field = ' (field)',
-    File = ' (file)',
-    Folder = ' (folder)',
-    Function = ' (function)',
-    Interface = ' (interface)',
-    Keyword = ' (keyword)',
-    Method = ' (method)',
-    Module = '{} (module)',
-    Operator = ' (operator)',
-    Property = ' (property)',
-    Reference = ' (reference)',
-    Snippet = ' (snippet)',
-    Struct = ' (enum)',
-    Text = ' (text)',
-    TypeParameter = ' (type parameter)',
-    Unit = ' (unit)',
-    Value = ' (value)',
-    Variable = ' (variable)',
-}
-
--- Credit https://github.com/neovim/nvim-lspconfig/wiki/UI-customization
-local kinds = vim.lsp.protocol.CompletionItemKind
-for i, kind in ipairs(kinds) do
-    kinds[i] = lspKindIcons[kind] or kind
-end
+lsp.cssls.setup(require('languages.css').lsp)
+lsp.dockerls.setup(require('languages.docker').lsp)
+lsp.gopls.setup(require('languages.go').lsp)
+lsp.html.setup(require('languages.html').lsp)
+lsp.jdtls.setup(require('languages.java').lsp)
+lsp.sumneko_lua.setup(require('languages.lua').lsp)
+lsp.phpactor.setup(require('languages.php').lsp)
+lsp.pyright.setup(require('languages.python').lsp)
+lsp.rust_analyzer.setup(require('languages.rust').lsp)
+lsp.svelte.setup(require('languages.svelte').lsp)
+lsp.texlab.setup(require('languages.tex').lsp)
+lsp.tsserver.setup(require('languages.javascript').lsp)
+lsp.yamlls.setup(require('languages.yaml').lsp)
+lsp.jsonls.setup(require('languages.json').lsp)

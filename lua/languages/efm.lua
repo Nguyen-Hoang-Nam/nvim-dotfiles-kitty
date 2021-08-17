@@ -50,6 +50,7 @@ require('lspconfig').efm.setup({
     filetypes = {
         'javascript',
         'typescript',
+        'typescriptreact',
         'javascriptreact',
         'svelte',
         'python',
@@ -73,6 +74,7 @@ require('lspconfig').efm.setup({
         languages = {
             javascript = require('languages.javascript').efm,
             typescript = require('languages.typescript').efm,
+            typescriptreact = require('languages.typescript').efm,
             javascriptreact = require('languages.javascript').efm,
             svelte = require('languages.svelte').efm,
             python = require('languages.python').efm,

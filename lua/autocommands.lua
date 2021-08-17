@@ -28,7 +28,7 @@ augroup(
     [[
 augroup FormatAutogroup
     autocmd!
-    autocmd BufWritePre *.xml,*.php,*.java,*.py,*.js,*.jsx,*.ts,*.svelte,*.go,*.lua,*.rs,*.tex,*.css,*.html,*.yaml,*.yml,*.json lua require('format').format()
+    autocmd BufWritePre *.md,*.xml,*.php,*.java,*.py,*.js,*.jsx,*.ts,*.tsx,*.svelte,*.go,*.lua,*.rs,*.tex,*.css,*.html,*.yaml,*.yml,*.json lua require('format').format()
 augroup END
 ]],
     true

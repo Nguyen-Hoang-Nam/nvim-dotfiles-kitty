@@ -1,7 +1,7 @@
 local lspconfig = require('lspconfig')
 local configs = require('lspconfig/configs')
 
-local lsp = require('../lsp')
+local lsp = require('languages.lsp')
 
 if not lspconfig.emmet_ls then
     configs.emmet_ls = {

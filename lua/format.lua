@@ -16,10 +16,13 @@ local go = require('languages.go')
 local lua = require('languages.lua')
 local tex = require('languages.tex')
 local rust = require('languages.rust')
+local json = require('languages.json')
 
 local formatters = {
     javascript = javascript.all_format,
+    javascriptreact = javascript.all_format,
     typescript = typescript.all_format,
+    typescriptreact = typescript.all_format,
     svelte = svelte.all_format,
     go = go.all_format,
     rust = rust.all_format,
@@ -33,11 +36,14 @@ local formatters = {
     css = css.all_format,
     yaml = css.all_format,
     markdown = markdown.all_format,
+    json = json.all_format,
 }
 
 M.default_formatter = {
     javascript = javascript.default_format,
+    javascriptreact = javascript.default_format,
     typescript = typescript.default_format,
+    typescriptreact = typescript.default_format,
     svelte = svelte.default_format,
     go = go.default_format,
     rust = rust.default_format,
@@ -51,6 +57,7 @@ M.default_formatter = {
     css = css.default_format,
     yaml = yaml.default_format,
     markdown = markdown.default_format,
+    json = json.default_format,
 }
 
 M.choose_formatter = function()
