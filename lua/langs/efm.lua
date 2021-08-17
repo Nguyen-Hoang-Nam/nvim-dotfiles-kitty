@@ -10,6 +10,11 @@ local prettier_plugin_svelte = {
     formatStdin = true,
 }
 
+local prettier_plugin_xml = {
+    formatCommand = 'prettier --tab-width=4 --xml-whitespace-sensitivity ignore --stdin-filepath ${INPUT}',
+    formatStdin = true,
+}
+
 local black = {
     formatCommand = 'black --quiet -',
     formatStdin = true,
@@ -59,6 +64,7 @@ require('lspconfig').efm.setup({
         'css',
         'java',
         'php',
+        'xml',
     },
 
     init_options = { documentFormatting = true, codeAction = true },
@@ -81,6 +87,7 @@ require('lspconfig').efm.setup({
             css = { prettier },
             java = { prettier },
             php = { prettier },
+            xml = { prettier_plugin_xml },
         },
     },
     on_attach = lsp.on_attach,

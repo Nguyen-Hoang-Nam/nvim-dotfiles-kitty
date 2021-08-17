@@ -1,4 +1,4 @@
-local colors = require('../theme')
+local colors = require('theme')
 
 local base00 = '#282c34'
 local base01 = '#353b45'
@@ -173,7 +173,7 @@ highlight({
     TSTag = { guifg = base0A },
     TSTagAttribute = { guifg = base0A },
     TSTagDelimiter = { guifg = base0F },
-    TSText = { guifg = base05 },
+    TSText = { guifg = base08 },
     TSStrong = { gui = 'bold' },
     TSEmphasis = { guifg = base09, gui = 'italic' },
     TSUnderline = { guifg = base00, gui = 'underline' },
@@ -187,9 +187,9 @@ highlight({
     TSVariable = { guifg = base08 },
     TSVariableBuiltin = { guifg = base0E, 'italic' },
 
-    TSDefinition = { gui = 'underline', guisp = base04 },
-    TSDefinitionUsage = { gui = 'underline', guisp = base04 },
-    TSCurrentScope = { gui = 'bold' },
+    -- TSDefinition = { gui = 'underline', guisp = base04 },
+    -- TSDefinitionUsage = { gui = 'underline', guisp = base04 },
+    -- TSCurrentScope = { gui = 'bold' },
 
     -- Diff
     DiffAdd = { guifg = base0B, guibg = base00 },
