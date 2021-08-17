@@ -8,7 +8,7 @@ M.efm = {
     },
 }
 
-M.all_format = { efm = 'Prettier' }
+M.all_format = { efm = 'Prettier', lemminx = 'Lemminx' }
 
 M.default_format = 'efm'
 

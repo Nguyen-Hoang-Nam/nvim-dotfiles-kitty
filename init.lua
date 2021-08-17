@@ -23,6 +23,7 @@ require('lspicon')
 
 require('lsp.emmet')
 require('lsp.efm')
+require('lsp.xml')
 
 require('statusline')
 require('highlights')
