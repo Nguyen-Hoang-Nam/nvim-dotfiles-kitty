@@ -2,19 +2,18 @@
 
 This dotfiles no longer works without `Kitty` or `Iterm2`. If you are using other terminals check [2921e24](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles/tree/2921e241cd2db4ee94b8c4cf75e4c034d7f71d82)
 
-Base on [siduck76/NvChad](https://github.com/siduck76/NvChad) with several developer-friendly improvements. Supporting Javascript, Typescript, Python, Go, Rust, Lua, Java and PHP.
+Base on [siduck76/NvChad](https://github.com/siduck76/NvChad) with several developer-friendly improvements. Supporting JavaScript, Typescript, Python, Go, Rust, Lua, Java and PHP.
 
 ![Main](https://raw.githubusercontent.com/Nguyen-Hoang-Nam/readme-image/main/nvim-dotfiles/main.png)
 
-*Kitty with Fira code nerd, Cascadia, and nonicons*
+_Kitty with Fira code nerd, Cascadia, and nonicons_
 
 ## What I have done so far
 
-- Use vivid one dark instead of one dark. (Better contrast colors)
+- Use vivid one dark instead of one dark. (Better contrast colours)
 - Support code action. (Base on [nvim-lightbulb](https://github.com/kosayoda/nvim-lightbulb))
 - Work well with ligature fonts and italic fonts. (Thanks to [Kitty](https://github.com/kovidgoyal/kitty))
 - Load the previous session. (Thanks to [auto-session](https://github.com/rmagatti/auto-session))
-- Able to choose code formatter.
 - Support several language's snippet. (I get snippets from [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets))
 - Support Emmet. (Thanks to [emmet-ls](https://github.com/aca/emmet-ls))
 - Highlight current indent's scope. (Check for more information [indent-blankline#61](https://github.com/lukas-reineke/indent-blankline.nvim/issues/61))
@@ -23,7 +22,7 @@ Base on [siduck76/NvChad](https://github.com/siduck76/NvChad) with several devel
 - Show scrollbar. (Useful when u get lost in a large file 😁)
 - Show the EOF icon. (Useful when detect trailing spaces)
 - Show help's buffer in right.
-- Show ```nvim-tree``` in right. (This should be default setting)
+- Show `nvim-tree` in right. (This should be default setting)
 - Install all plugins manually.
 
 ## Screenshot
@@ -48,9 +47,9 @@ Base on [siduck76/NvChad](https://github.com/siduck76/NvChad) with several devel
 
 ![Help](https://raw.githubusercontent.com/Nguyen-Hoang-Nam/readme-image/main/nvim-dotfiles/help.png)
 
-### Javascript
+### JavaScript
 
-![Javascript](https://raw.githubusercontent.com/Nguyen-Hoang-Nam/readme-image/main/nvim-dotfiles/javascript.png)
+![JavaScript](https://raw.githubusercontent.com/Nguyen-Hoang-Nam/readme-image/main/nvim-dotfiles/javascript.png)
 
 ### Go
 
@@ -64,7 +63,7 @@ Base on [siduck76/NvChad](https://github.com/siduck76/NvChad) with several devel
 
 ### Theme
 
-You can change colors in ```lua/theme.lua```
+You can change colours in `lua/theme.lua`
 
 ```lua
 M = {
@@ -92,7 +91,7 @@ M = {
 
 ## Installation
 
-This config will work well with Kitty (ligature support, multiple fonts)
+This Configuration will work well with Kitty (ligature support, multiple fonts)
 
 ### Kitty
 
@@ -109,65 +108,65 @@ font_size 16
 
 ### Plugin list
 
-First step is creating ```~/.local/share/nvim/site/pack/what_ever_nam_but_not_this_one/start``` directory. Then, ```git clone``` list of plugins below.
+First step is creating `~/.local/share/nvim/site/pack/what_ever_nam_but_not_this_one/start` directory. Then, `git clone` list of plugins below.
 
-| Plugin |
-| ------ |
-| [auto-session](https://github.com/rmagatti/auto-session) |
-| [dashboard-nvim](https://github.com/glepnir/dashboard-nvim) |
-| [friendly-snippets](https://github.com/rafamadriz/friendly-snippets) |
-| [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) |
-| [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) |
-| [lsp_signature.nvim](https://github.com/ray-x/lsp_signature.nvim) |
-| [LuaSnip](https://github.com/L3MON4D3/LuaSnip) |
-| [nvim-autopair](https://github.com/windwp/nvim-autopairs) |
-| [nvim-bufferline.lua](https://github.com/akinsho/nvim-bufferline.lua) |
-| [nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua) |
-| [nvim-comment](https://github.com/terrortylor/nvim-comment) |
-| [nvim-compe](https://github.com/hrsh7th/nvim-compe) |
-| [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) |
-| [nvim-scrollview](https://github.com/dstein64/nvim-scrollview) |
-| [nvim-toggleterm.lua](https://github.com/akinsho/nvim-toggleterm.lua) |
-| [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua) |
-| [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) |
-| [nvim-treesitter-pairs](https://github.com/theHamsta/nvim-treesitter-pairs) |
-| [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag) |
+| Plugin                                                                                          |
+| ----------------------------------------------------------------------------------------------- |
+| [auto-session](https://github.com/rmagatti/auto-session)                                        |
+| [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)                                     |
+| [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)                            |
+| [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                                     |
+| [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)                 |
+| [lsp_signature.nvim](https://github.com/ray-x/lsp_signature.nvim)                               |
+| [LuaSnip](https://github.com/L3MON4D3/LuaSnip)                                                  |
+| [nvim-autopair](https://github.com/windwp/nvim-autopairs)                                       |
+| [nvim-bufferline.lua](https://github.com/akinsho/nvim-bufferline.lua)                           |
+| [nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)                            |
+| [nvim-comment](https://github.com/terrortylor/nvim-comment)                                     |
+| [nvim-compe](https://github.com/hrsh7th/nvim-compe)                                             |
+| [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)                                      |
+| [nvim-scrollview](https://github.com/dstein64/nvim-scrollview)                                  |
+| [nvim-toggleterm.lua](https://github.com/akinsho/nvim-toggleterm.lua)                           |
+| [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)                                    |
+| [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)                           |
+| [nvim-treesitter-pairs](https://github.com/theHamsta/nvim-treesitter-pairs)                     |
+| [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)                                    |
 | [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) |
-| [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow) |
-| [nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons) |
-| [plenary.nvim](https://github.com/nvim-lua/plenary.nvim) |
-| [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) |
-| [trouble.nvim](https://github.com/folke/trouble.nvim) |
+| [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)                                      |
+| [nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons)                            |
+| [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)                                        |
+| [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)                              |
+| [trouble.nvim](https://github.com/folke/trouble.nvim)                                           |
 
 ## Mappings
 
-| Key | Description |
-| --- | ----------- |
-| &lt;Leader&gt;a | Code action |
-| &lt;Leader&gt;b | Toggle Nvim-Tree |
-| &lt;Leader&gt;c | Show git commit search |
-| &lt;Leader&gt;d | Go to definition |
-| &lt;Leader&gt;f | Show text search |
-| &lt;Leader&gt;g | Show gitmoji search |
-| &lt;Leader&gt;h | Go to left window |
-| &lt;Leader&gt;l | Go to right window |
-| &lt;neader&gt;m | Change code formatter |
-| &lt;Leader&gt;r | Rename variable |
-| &lt;Leader&gt;o | Show buffer search |
-| &lt;Leader&gt;p | Show file search |
-| &lt;Leader&gt;q | Turn off highligh search |
-| &lt;Leader&gt;s | Save file |
-| &lt;Leader&gt;w | Delete current buffer |
-| &lt;Leader&gt;/ | Toggle comment |
-| &lt;Leader&gt;; | Jump to pairs |
-| &lt;M-t&gt; | Toggle Terminal |
-| jk | Insert mode to normal mode |
+| Key             | Description                |
+| --------------- | -------------------------- |
+| &lt;Leader&gt;a | Code action                |
+| &lt;Leader&gt;b | Toggle Nvim-Tree           |
+| &lt;Leader&gt;c | Show git commit search     |
+| &lt;Leader&gt;d | Go to definition           |
+| &lt;Leader&gt;f | Show text search           |
+| &lt;Leader&gt;g | Show gitmoji search        |
+| &lt;Leader&gt;h | Go to left window          |
+| &lt;Leader&gt;l | Go to right window         |
+| &lt;neader&gt;m | Change code formatter      |
+| &lt;Leader&gt;r | Rename variable            |
+| &lt;Leader&gt;o | Show buffer search         |
+| &lt;Leader&gt;p | Show file search           |
+| &lt;Leader&gt;q | Turn off highligh search   |
+| &lt;Leader&gt;s | Save file                  |
+| &lt;Leader&gt;w | Delete current buffer      |
+| &lt;Leader&gt;/ | Toggle comment             |
+| &lt;Leader&gt;; | Jump to pairs              |
+| &lt;M-t&gt;     | Toggle Terminal            |
+| jk              | Insert mode to normal mode |
 
 ## Treesitter
 
 Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Treesitter)
 
-## Lanuage Server
+## Language Server
 
 Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Language-server)
 
