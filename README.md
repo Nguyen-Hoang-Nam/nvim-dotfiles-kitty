@@ -1,28 +1,23 @@
 # Nvim-Dotfiles-Kity
 
-This dotfiles no longer works without `Kitty` or `Iterm2`. If you are using other terminals check [2921e24](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles/tree/2921e241cd2db4ee94b8c4cf75e4c034d7f71d82)
-
-Base on [siduck76/NvChad](https://github.com/siduck76/NvChad) with several developer-friendly improvements. Supporting JavaScript, Typescript, Python, Go, Rust, Lua, Java and PHP.
+NeoVim Configuration that makes me feel comfortable and pleasant. I use this daily for JavaScript, Python, Go, Rust, Lua, PHP and Java.
 
 ![Main](https://raw.githubusercontent.com/Nguyen-Hoang-Nam/readme-image/main/nvim-dotfiles/main.png)
 
-_Kitty with Fira code nerd, Cascadia, and nonicons_
+_Kitty with Fira, Cascadia, and Nonicons_
 
 ## What I have done so far
 
-- Use vivid one dark instead of one dark. (Better contrast colours)
-- Support code action. (Base on [nvim-lightbulb](https://github.com/kosayoda/nvim-lightbulb))
-- Work well with ligature fonts and italic fonts. (Thanks to [Kitty](https://github.com/kovidgoyal/kitty))
-- Load the previous session. (Thanks to [auto-session](https://github.com/rmagatti/auto-session))
+- Use primitive colours. (Default is Vivid One Dark)
+- Use ligature font, italic font and icon font. (Thanks to [Kitty](https://github.com/kovidgoyal/kitty))
+- Bigger icons. (Thanks to [Noicons](https://github.com/yamatsum/nonicons))
+- Saving the last session. (Thanks to [auto-session](https://github.com/rmagatti/auto-session))
+- Highlight current indent's scope. (Check for more information [indent-blankline#61](https://github.com/lukas-reineke/indent-blankline.nvim/issues/61))
 - Support several language's snippet. (I get snippets from [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets))
 - Support Emmet. (Thanks to [emmet-ls](https://github.com/aca/emmet-ls))
-- Highlight current indent's scope. (Check for more information [indent-blankline#61](https://github.com/lukas-reineke/indent-blankline.nvim/issues/61))
-- Bigger icons. (Thanks to [noicons](https://github.com/yamatsum/nonicons))
-- Check spell in git's commit, and markdown.
+- Support lint and formatter. (Thanks to [Efm-Langsever](https://github.com/mattn/efm-langserver))
 - Show scrollbar. (Useful when u get lost in a large file 😁)
 - Show the EOF icon. (Useful when detect trailing spaces)
-- Show help's buffer in right.
-- Show `nvim-tree` in right. (This should be default setting)
 - Install all plugins manually.
 
 ## Screenshot
@@ -63,7 +58,7 @@ _Kitty with Fira code nerd, Cascadia, and nonicons_
 
 ### Theme
 
-You can change colours in `lua/theme.lua`
+All primitive colours are stored in `lua/theme.lua`
 
 ```lua
 M = {
@@ -91,11 +86,18 @@ M = {
 
 ## Installation
 
-This Configuration will work well with Kitty (ligature support, multiple fonts)
+### Requirements
+
+- Kitty
+- Neovim 0.5
+
+### Fonts
+
+- [nonicons](https://github.com/yamatsum/nonicons)
+- Fira code (Or any ligature font)
+- Cascadia (Or any italic font)
 
 ### Kitty
-
-You can use Operator Mono if you can afford it. Cascadia seems to be a great alternative and it's open source. You need to install [nonicons](https://github.com/yamatsum/nonicons)
 
 ```
 font_family FiraCode Nerd Font Mono
@@ -104,11 +106,12 @@ italic_font Cascadia Mono
 bold_italic_font Cascadia Code
 symbol_map U+f101-U+f208 nonicons
 font_size 16
+cursor #6796E6
 ```
 
 ### Plugin list
 
-First step is creating `~/.local/share/nvim/site/pack/what_ever_nam_but_not_this_one/start` directory. Then, `git clone` list of plugins below.
+Git clone below plugins in `~/.local/share/nvim/site/pack/*/start`.
 
 | Plugin                                                                                          |
 | ----------------------------------------------------------------------------------------------- |
@@ -138,6 +141,18 @@ First step is creating `~/.local/share/nvim/site/pack/what_ever_nam_but_not_this
 | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)                              |
 | [trouble.nvim](https://github.com/folke/trouble.nvim)                                           |
 
+### Treesitter
+
+Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Treesitter)
+
+### Language Server
+
+Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Language-server)
+
+### Lint and Formatter
+
+Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Code-formatter)
+
 ## Mappings
 
 | Key             | Description                |
@@ -150,11 +165,11 @@ First step is creating `~/.local/share/nvim/site/pack/what_ever_nam_but_not_this
 | &lt;Leader&gt;g | Show gitmoji search        |
 | &lt;Leader&gt;h | Go to left window          |
 | &lt;Leader&gt;l | Go to right window         |
-| &lt;neader&gt;m | Change code formatter      |
-| &lt;Leader&gt;r | Rename variable            |
+| &lt;leader&gt;m | Change code formatter      |
 | &lt;Leader&gt;o | Show buffer search         |
 | &lt;Leader&gt;p | Show file search           |
 | &lt;Leader&gt;q | Turn off highligh search   |
+| &lt;Leader&gt;r | Rename variable            |
 | &lt;Leader&gt;s | Save file                  |
 | &lt;Leader&gt;w | Delete current buffer      |
 | &lt;Leader&gt;/ | Toggle comment             |
@@ -162,22 +177,9 @@ First step is creating `~/.local/share/nvim/site/pack/what_ever_nam_but_not_this
 | &lt;M-t&gt;     | Toggle Terminal            |
 | jk              | Insert mode to normal mode |
 
-## Treesitter
-
-Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Treesitter)
-
-## Language Server
-
-Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Language-server)
-
-## Code Formatter
-
-Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Code-formatter)
-
 ## TODO
 
 - [ ] Show theme in wiki
-- [ ] Add more treesitter highlight group
 - [ ] Support Flutter
 - [ ] Add PHP to wiki
 - [ ] Show images of all supporting languages
