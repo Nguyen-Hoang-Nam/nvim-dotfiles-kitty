@@ -4,6 +4,8 @@ local M = {}
 
 -- Credit https://github.com/neovim/nvim-lspconfig#keybindings-and-completion
 function M.on_attach(_, bufnr)
+    api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
     local opts = { noremap = true, silent = true }
 
     local function buf_set_keymap(mode, mapping, command)
