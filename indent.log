@@ -1,0 +1,35 @@
+INFO:  latexindent.pl version 3.10, 2021-06-19, a script to indent .tex files
+       latexindent.pl lives here: /usr/local/bin/
+       Tue Aug 17 15:34:08 2021
+       Reading input from STDIN
+INFO:  Processing switches:
+       -y|--yaml: YAML settings specified via command line
+INFO:  Directory for backup files and indent.log: .
+INFO:  Perl modules are being loaded from the following directories:
+       /usr/share/perl/5.32/FindBin.pm
+       /usr/local/share/perl/5.32.1/YAML/Tiny.pm
+       /usr/share/perl/5.32/File/Copy.pm
+       /usr/lib/x86_64-linux-gnu/perl-base/File/Basename.pm
+       /usr/lib/x86_64-linux-gnu/perl-base/Getopt/Long.pm
+       /usr/local/share/perl/5.32.1/File/HomeDir.pm
+       /usr/local/lib/x86_64-linux-gnu/perl/5.32.1/Unicode/GCString.pm
+INFO:  LatexIndent perl modules are being loaded from, for example:
+       /usr/local/bin/LatexIndent/Document.pm
+INFO:  YAML settings read: defaultSettings.yaml
+       Reading defaultSettings.yaml from /usr/local/bin/defaultSettings.yaml
+INFO:  YAML settings read: indentconfig.yaml or .indentconfig.yaml
+       Home directory is /home/nguyenhoangnam (didn't find either indentconfig.yaml or .indentconfig.yaml)
+       To specify user settings you would put indentconfig.yaml here: /home/nguyenhoangnam/indentconfig.yaml
+       Alternatively, you can use the hidden file .indentconfig.yaml as: /home/nguyenhoangnam/.indentconfig.yaml
+INFO:  YAML settings read: -y switch
+       YAML setting: defaultIndent:'  '
+       Updating masterSettings with defaultIndent:   
+INFO:  Phase 1: searching for objects
+INFO:  Phase 2: finding surrounding indentation
+INFO:  Phase 3: indenting objects
+INFO:  Phase 4: final indentation check
+INFO:  Output routine:
+       Not outputting to file; see -w and -o switches for more options.
+       --------------
+INFO:  Please direct all communication/issues to:
+        https://github.com/cmhughes/latexindent.pl

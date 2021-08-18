@@ -134,9 +134,7 @@ local async_load = vim.loop.new_async(vim.schedule_wrap(function()
                 .. lineBreak
                 .. '   '
                 .. fileType
-                -- .. '   '
-                -- .. global.format
-                .. [[   %{luaeval('require("lsp").formatter()')}]]
+                .. [[   %{luaeval('require("format").formatter_status()')}]]
         end
 
         line = line .. '%#StatuslineSmiley#  '

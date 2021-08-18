@@ -1,17 +1,13 @@
 local lspconfig = require('lspconfig')
 local configs = require('lspconfig/configs')
 
-local lsp = require('../lsp')
+local lsp = require('languages.lsp')
 
 if not lspconfig.emmet_ls then
     configs.emmet_ls = {
         default_config = {
             cmd = { 'emmet-ls', '--stdio' },
-            filetypes = { 'html', 'css', 'svelte', 'javascriptreact' },
-            -- root_dir = function(_)
-            -- 	return vim.loop.cwd()
-            -- end,
-
+            filetypes = { 'html', 'css', 'svelte', 'javascriptreact', 'typescriptreact' },
             root_dir = lspconfig.util.root_pattern('.git'),
             settings = {},
         },
