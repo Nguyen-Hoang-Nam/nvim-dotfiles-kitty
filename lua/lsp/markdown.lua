@@ -1,8 +1,6 @@
 local lspconfig = require('lspconfig')
 local configs = require('lspconfig/configs')
 
-local lsp = require('languages.lsp')
-
 if not lspconfig.remark_parse then
     configs.remark_parse = {
         default_config = {
@@ -14,7 +12,4 @@ if not lspconfig.remark_parse then
     }
 end
 
-lspconfig.remark_parse.setup({
-    capabilities = lsp.capabilities,
-    on_attach = lsp.on_attach,
-})
+lspconfig.remark_parse.setup(require('languages.markdown').lsp)
