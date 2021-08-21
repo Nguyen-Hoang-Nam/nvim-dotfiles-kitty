@@ -1,8 +1,6 @@
 local lspconfig = require('lspconfig')
 local configs = require('lspconfig/configs')
 
-local lsp = require('languages.lsp')
-
 if not lspconfig.lemminx then
     configs.lemminx = {
         default_config = {
@@ -18,7 +16,4 @@ if not lspconfig.lemminx then
     }
 end
 
-lspconfig.lemminx.setup({
-    capabilities = lsp.capabilities,
-    on_attach = lsp.on_attach,
-})
+lspconfig.lemminx.setup(require('languages.xml').lsp)

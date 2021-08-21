@@ -92,7 +92,7 @@ function M.bufdelete()
         end
     end
 
-    cmd('bd ' .. bufnr)
+    cmd('silent! ScrollViewDisable | bd ' .. bufnr .. ' | silent! ScrollViewEnable')
 end
 
 return M

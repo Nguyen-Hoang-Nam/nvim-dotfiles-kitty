@@ -1,50 +1,5 @@
 local lsp = require('languages.lsp')
 
--- local prettier = {
---     formatCommand = 'prettier --tab-width=4 --use-tabs=false --stdin-filepath ${INPUT}',
---     formatStdin = true,
--- }
-
--- local prettier_plugin_svelte = {
---     formatCommand = 'prettier --tab-width=4 --use-tabs=false --stdin-filepath ${INPUT} --plugin-search-dir .',
---     formatStdin = true,
--- }
-
--- local prettier_plugin_xml = {
---     formatCommand = 'prettier --tab-width=4 --xml-whitespace-sensitivity ignore --stdin-filepath ${INPUT}',
---     formatStdin = true,
--- }
-
--- local black = {
---     formatCommand = 'black --quiet -',
---     formatStdin = true,
--- }
-
--- local goimports = {
---     formatCommand = 'goimports',
---     formatStdin = true,
--- }
-
--- local gofumpt = {
---     formatCommand = 'gofumpt',
---     formatStdin = true,
--- }
-
--- local rustfmt = {
---     formatCommand = 'rustfmt --edition 2018',
---     formatStdin = true,
--- }
-
--- local stylua = {
---     formatCommand = 'stylua - --config-path ~/.config/stylua/stylua.toml',
---     formatStdin = true,
--- }
-
--- local latexindent = {
---     formatCommand = 'latexindent.pl -y="defaultIndent:\'  \'"',
---     formatStdin = true,
--- }
-
 require('lspconfig').efm.setup({
     root_dir = require('lspconfig').util.root_pattern('.git'),
     filetypes = {
@@ -92,6 +47,7 @@ require('lspconfig').efm.setup({
             xml = require('languages.xml').efm,
         },
     },
+
     on_attach = lsp.on_attach,
     capabilities = lsp.capabilities,
 })
