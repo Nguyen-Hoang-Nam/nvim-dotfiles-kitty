@@ -2,7 +2,6 @@ require('options')
 
 -- Setup
 require('setup.bufferline')
-require('setup.comment')
 require('setup.colorizer')
 require('setup.dashboard')
 require('setup.gitsigns')
