@@ -7,7 +7,7 @@ require('compe').setup({
         nvim_lua = { priority = 4, filetypes = { 'lua' } },
         luasnip = { priority = 3 },
         nvim_lsp = { priority = 2 },
-        buffer = { priority = 1 },
+        -- buffer = { priority = 1 },
         emoji = { priority = 1 },
     },
 })

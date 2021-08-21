@@ -85,6 +85,7 @@ map('i', '<M-e>', [[compe#complete()]], { noremap = true, silent = true, expr = 
 
 map('n', '<Leader>f', [[<Cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>]], cmd_options)
 map('n', '<Leader>o', [[:lua require('telescope.builtin').buffers()<CR>]], cmd_options)
+map('n', '<Leader>t', [[:lua require('telescope.builtin').lsp_document_diagnostics()<CR>]], cmd_options)
 map('n', '<Leader>p', [[:lua require('telescope.builtin').find_files()<CR>]], cmd_options)
 map('n', '<Leader>c', [[<Cmd>lua require('telescope.builtin').git_commits()<CR>]], cmd_options)
 map('n', '<Leader>a', [[<Cmd>lua require('telescope.builtin').lsp_code_actions()<CR>]], cmd_options)
@@ -117,15 +118,3 @@ map('v', '<Leader>/', [[:CommentToggle<CR>]], cmd_options)
 
 map('n', '<Leader>b', [[<Cmd>NvimTreeToggle<CR>]], cmd_options)
 map('v', '<Leader>b', [[<Cmd>NvimTreeToggle<CR>]], cmd_options)
-
-----------------------------------------
---
---
--- Nvim-Trouble
---
--- <Leader>t (normal): Open Error list
---
---
-----------------------------------------
-
-map('n', '<Leader>t', [[<Cmd>LspTroubleToggle<CR>]], cmd_options)

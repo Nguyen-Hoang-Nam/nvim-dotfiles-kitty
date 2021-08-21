@@ -21,7 +21,6 @@ option.relativenumber = true
 option.cursorline = true
 option.signcolumn = 'yes'
 option.list = true
--- option.listchars = 'tab:▏\\ ,trail:-,eol:↵'
 option.listchars = 'trail:-,eol:↵'
 option.foldmethod = 'expr'
 option.foldexpr = 'nvim_treesitter#foldexpr()'
