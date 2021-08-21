@@ -1,4 +1,4 @@
-# Nvim-Dotfiles-Kity
+# Nvim-Dotfiles-Kitty
 
 NeoVim Configuration that makes me feel comfortable and pleasant. I use this daily for JavaScript, Python, Go, Rust, Lua, PHP and Java.
 
@@ -19,6 +19,25 @@ _Kitty with Fira, Cascadia, and Nonicons_
 - Show scrollbar. (Useful when u get lost in a large file 😁)
 - Show the EOF icon. (Useful when detect trailing spaces)
 - Install all plugins manually.
+
+## Startup
+
+```text
+=====================================
+Top 10 plugins slowing nvim's startup
+=====================================
+1   2.143   nvim-compe
+2   1.766   indent-blankline.nvim
+3   1.565   nvim-scrollview
+4   0.605   nvim-treesitter
+5   0.575   auto-session
+6   0.334   nvim-ts-autotag
+7   0.238   nvim-treesitter-pairs
+8   0.133   dashboard-nvim
+9   0.117   LuaSnip
+10  0.117   telescope.nvim
+=====================================
+```
 
 ## Screenshot
 
@@ -99,7 +118,7 @@ M = {
 
 ### Kitty
 
-```
+```text
 font_family FiraCode Nerd Font Mono
 bold_font Cascadia Code
 italic_font Cascadia Mono
@@ -138,8 +157,8 @@ Git clone below plugins in `~/.local/share/nvim/site/pack/*/start`.
 | [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)                                      |
 | [nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons)                            |
 | [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)                                        |
+| [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim)        |
 | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)                              |
-| [trouble.nvim](https://github.com/folke/trouble.nvim)                                           |
 
 ### Treesitter
 
@@ -155,27 +174,27 @@ Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Code-f
 
 ## Mappings
 
-| Key             | Description                |
-| --------------- | -------------------------- |
-| &lt;Leader&gt;a | Code action                |
-| &lt;Leader&gt;b | Toggle Nvim-Tree           |
-| &lt;Leader&gt;c | Show git commit search     |
-| &lt;Leader&gt;d | Go to definition           |
-| &lt;Leader&gt;f | Show text search           |
-| &lt;Leader&gt;g | Show gitmoji search        |
-| &lt;Leader&gt;h | Go to left window          |
-| &lt;Leader&gt;l | Go to right window         |
-| &lt;leader&gt;m | Change code formatter      |
-| &lt;Leader&gt;o | Show buffer search         |
-| &lt;Leader&gt;p | Show file search           |
-| &lt;Leader&gt;q | Turn off highligh search   |
-| &lt;Leader&gt;r | Rename variable            |
-| &lt;Leader&gt;s | Save file                  |
-| &lt;Leader&gt;w | Delete current buffer      |
-| &lt;Leader&gt;/ | Toggle comment             |
-| &lt;Leader&gt;; | Jump to pairs              |
-| &lt;M-t&gt;     | Toggle Terminal            |
-| jk              | Insert mode to normal mode |
+| Key             | Description                 |
+| --------------- | --------------------------- |
+| &lt;Leader&gt;a | Code action                 |
+| &lt;Leader&gt;b | Toggle Nvim-Tree            |
+| &lt;Leader&gt;d | Go to definition            |
+| &lt;Leader&gt;e | Search emojis               |
+| &lt;Leader&gt;f | Show text search            |
+| &lt;Leader&gt;g | Search gitmojis             |
+| &lt;Leader&gt;h | Go to left window           |
+| &lt;Leader&gt;l | Go to right window          |
+| &lt;leader&gt;m | Change code formatter       |
+| &lt;Leader&gt;o | Search buffers              |
+| &lt;Leader&gt;p | Show file search            |
+| &lt;Leader&gt;q | Turn off search's highlight |
+| &lt;Leader&gt;r | Rename variable             |
+| &lt;Leader&gt;s | Save file                   |
+| &lt;Leader&gt;w | Delete current buffer       |
+| &lt;Leader&gt;/ | Toggle comment              |
+| &lt;Leader&gt;; | Jump to pairs               |
+| &lt;M-t&gt;     | Toggle Terminal             |
+| jk              | Insert mode to normal mode  |
 
 ## TODO
 
