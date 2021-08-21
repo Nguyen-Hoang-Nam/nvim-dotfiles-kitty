@@ -2,13 +2,50 @@
 require('compe').setup({
 
     source = {
-        path = { priority = 6 },
+        path = {
+            priority = 6,
+            filter_list = { 'javascript', 'javascriptreact', 'svelte', 'typescript', 'typescriptreact', 'go' },
+        },
         spell = { priority = 5, filetypes = { 'gitcommit', 'markdown' } },
         nvim_lua = { priority = 4, filetypes = { 'lua' } },
-        luasnip = { priority = 3 },
-        nvim_lsp = { priority = 2 },
+        luasnip = {
+            priority = 3,
+            filetypes = {
+                'lua',
+                'javascript',
+                'javascriptreact',
+                'html',
+                'svelte',
+                'typescript',
+                'typescriptreact',
+                'go',
+                'rust',
+                'java',
+                'php',
+                'xml',
+            },
+        },
+        nvim_lsp = {
+            priority = 2,
+            filetypes = {
+                'lua',
+                'javascript',
+                'javascriptreact',
+                'html',
+                'css',
+                'svelte',
+                'typescript',
+                'typescriptreact',
+                'go',
+                'rust',
+                'java',
+                'php',
+                'markdown',
+                'python',
+            },
+        },
         -- buffer = { priority = 1 },
-        emoji = { priority = 1 },
+        -- emoji = { priority = 1 },
     },
 })
 
