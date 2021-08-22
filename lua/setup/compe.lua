@@ -1,4 +1,5 @@
--- Default option
+local fn = vim.fn
+
 require('compe').setup({
 
     source = {
@@ -44,55 +45,52 @@ require('compe').setup({
                 'python',
             },
         },
-        -- buffer = { priority = 1 },
-        -- emoji = { priority = 1 },
+        --         buffer = { priority = 1 },
+        --         emoji = { priority = 1 },
     },
 })
 
-----------------------------------------
---
---
 -- Credit https://github.com/neovim/nvim-lspconfig/wiki/Autocompletion
---
---
-----------------------------------------
---
-local t = function(str)
+local replace_keycodes = function(str)
     return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
 
 local check_back_space = function()
-    local col = vim.fn.col('.') - 1
-    if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
+    local col = fn.col('.') - 1
+    if col == 0 or fn.getline('.'):sub(col, col):match('%s') then
         return true
     else
         return false
     end
 end
 
--- Use (s-)tab to:
---- move to prev/next item in completion menuone
---- jump to prev/next snippet's placeholder
 local luasnip = require('luasnip')
 
+require('tabout').setup({
+    tabkey = '',
+    backwards_tabkey = '',
+})
+
 _G.tab_complete = function()
-    if vim.fn.pumvisible() == 1 then
-        return t('<C-n>')
+    if fn.pumvisible() == 1 then
+        return replace_keycodes('<C-n>')
     elseif luasnip.expand_or_jumpable() then
-        return t('<Plug>luasnip-expand-or-jump')
+        return replace_keycodes('<Plug>luasnip-expand-or-jump')
     elseif check_back_space() then
-        return t('<Tab>')
+        return replace_keycodes('<Tab>')
     else
-        return vim.fn['compe#complete']()
+        return replace_keycodes('<Plug>(Tabout)')
+        --     else
+        --         return vim.fn['compe#complete']()
     end
 end
 
 _G.s_tab_complete = function()
-    if vim.fn.pumvisible() == 1 then
-        return t('<C-p>')
+    if fn.pumvisible() == 1 then
+        return replace_keycodes('<C-p>')
     elseif luasnip.jumpable(-1) then
-        return t('<Plug>luasnip-jump-prev')
+        return replace_keycodes('<Plug>luasnip-jump-prev')
     else
-        return t('<S-Tab>')
+        return replace_keycodes('<S-Tab>')
     end
 end

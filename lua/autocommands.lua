@@ -1,23 +1,23 @@
 local augroup = vim.api.nvim_exec
 
-augroup(
-    [[
-augroup Terminal
-    autocmd!
-    autocmd TermOpen * setlocal nonumber
-    autocmd TermOpen * setlocal norelativenumber
-augroup END
-]],
-    true
-)
+-- augroup(
+--     [[
+-- augroup Terminal
+--     autocmd!
+--     autocmd TermOpen * setlocal nonumber
+--     autocmd TermOpen * setlocal norelativenumber
+-- augroup END
+-- ]],
+--     true
+-- )
 
+-- autocmd VimEnter * set formatoptions-=cro
 augroup(
     [[
 augroup Config
     autocmd!
     autocmd InsertEnter * set nocursorline
     autocmd InsertLeave * set cursorline
-    autocmd VimEnter * set formatoptions-=cro
     autocmd! BufEnter * if &ft ==# 'help' | wincmd L | endif
 augroup END
 ]],
@@ -34,13 +34,13 @@ augroup END
     true
 )
 
+-- autocmd FileType markdown,gitcommit setlocal spell
+-- autocmd Filetype go,tex set tabstop=2 | set shiftwidth=2
+-- autocmd BufRead,BufNewFile *.md,*.gitcommit setlocal spell
 augroup(
     [[
 augroup UpdateGlobal
     autocmd!
-    autocmd FileType markdown,gitcommit setlocal spell
-    autocmd Filetype go,tex set tabstop=2 | set shiftwidth=2
-    autocmd BufRead,BufNewFile *.md,*.gitcommit setlocal spell
     autocmd CursorHold,CursorHoldI * lua require'utils'.code_action()
 augroup END
 ]],
