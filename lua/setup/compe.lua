@@ -6,8 +6,9 @@ require('compe').setup({
         path = {
             priority = 6,
             filter_list = { 'javascript', 'javascriptreact', 'svelte', 'typescript', 'typescriptreact', 'go' },
+            kind = ' (path)',
         },
-        spell = { priority = 5, filetypes = { 'gitcommit', 'markdown' } },
+        spell = { priority = 5, filetypes = { 'gitcommit', 'markdown' }, kind = ' (text)' },
         nvim_lua = { priority = 4, filetypes = { 'lua' } },
         luasnip = {
             priority = 3,
