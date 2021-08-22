@@ -42,6 +42,7 @@ augroup(
 augroup UpdateGlobal
     autocmd!
     autocmd CursorHold,CursorHoldI * lua require'utils'.code_action()
+    autocmd FileType java lua require'lsp.jdtls'.setup()
 augroup END
 ]],
     true
