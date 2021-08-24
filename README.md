@@ -12,7 +12,7 @@ _Kitty with Fira, Cascadia, and Nonicons_
 - Use ligature font, italic font and icon font. (Thanks to [Kitty](https://github.com/kovidgoyal/kitty))
 - Bigger icons. (Thanks to [Noicons](https://github.com/yamatsum/nonicons))
 - Saving the last session. (Thanks to [auto-session](https://github.com/rmagatti/auto-session))
-- Highlight current indent's scope. (Check for more information [indent-blankline#61](https://github.com/lukas-reineke/indent-blankline.nvim/issues/61))
+- Highlight current indent's scope. (Test with JS, Python, Go, Java, PHP, HTML, CSS, Svelte)
 - Support several language's snippet. (I get snippets from [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets))
 - Support Emmet. (Thanks to [emmet-ls](https://github.com/aca/emmet-ls))
 - Support lint and formatter. (Thanks to [Efm-Langsever](https://github.com/mattn/efm-langserver))
