@@ -20,6 +20,34 @@ local check_back_space = function()
     end
 end
 
+local lspKindIcons = {
+    Class = ' (class)',
+    Color = ' (color)',
+    Constant = ' (constant)',
+    Constructor = ' (constructor)',
+    Enum = ' (enum)',
+    EnumMember = ' (enum member)',
+    Event = ' (event)',
+    Field = ' (field)',
+    File = ' (file)',
+    Folder = ' (folder)',
+    Function = ' (function)',
+    Interface = ' (interface)',
+    Keyword = ' (keyword)',
+    Method = ' (method)',
+    Module = '{} (module)',
+    Operator = ' (operator)',
+    Property = ' (property)',
+    Reference = ' (reference)',
+    Snippet = ' (snippet)',
+    Struct = ' (enum)',
+    Text = ' (text)',
+    TypeParameter = ' (type parameter)',
+    Unit = ' (unit)',
+    Value = ' (value)',
+    Variable = ' (variable)',
+}
+
 cmp.setup({
     snippet = {
         expand = function(args)
@@ -54,5 +82,19 @@ cmp.setup({
                 fallback()
             end
         end),
+    },
+
+    formatting = {
+        format = function(entry, vim_item)
+            vim_item.kind = lspKindIcons[vim_item.kind]
+
+            vim_item.menu = ({
+                nvim_lsp = '[LSP]',
+                luasnip = '[Snippet]',
+                path = '[Path]',
+            })[entry.source.name]
+
+            return vim_item
+        end,
     },
 })
