@@ -135,6 +135,9 @@ Git clone below plugins in `~/.local/share/nvim/site/pack/*/start`.
 | Plugin                                                                                          |
 | ----------------------------------------------------------------------------------------------- |
 | [auto-session](https://github.com/rmagatti/auto-session)                                        |
+| [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)                                         |
+| [cmp-path](https://github.com/hrsh7th/cmp-path)                                                 |
+| [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)                                      |
 | [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)                                     |
 | [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)                            |
 | [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                                     |
@@ -144,8 +147,7 @@ Git clone below plugins in `~/.local/share/nvim/site/pack/*/start`.
 | [nvim-autopair](https://github.com/windwp/nvim-autopairs)                                       |
 | [nvim-bufferline.lua](https://github.com/akinsho/nvim-bufferline.lua)                           |
 | [nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)                            |
-| [nvim-comment](https://github.com/terrortylor/nvim-comment)                                     |
-| [nvim-compe](https://github.com/hrsh7th/nvim-compe)                                             |
+| [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)                                                 |
 | [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)                                      |
 | [nvim-scrollview](https://github.com/dstein64/nvim-scrollview)                                  |
 | [nvim-toggleterm.lua](https://github.com/akinsho/nvim-toggleterm.lua)                           |
