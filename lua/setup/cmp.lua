@@ -85,14 +85,14 @@ cmp.setup({
     },
 
     formatting = {
-        format = function(entry, vim_item)
+        format = function(_, vim_item)
             vim_item.kind = lspKindIcons[vim_item.kind]
 
-            vim_item.menu = ({
-                nvim_lsp = '[LSP]',
-                luasnip = '[Snippet]',
-                path = '[Path]',
-            })[entry.source.name]
+            --             vim_item.menu = ({
+            --                 nvim_lsp = '[LSP]',
+            --                 luasnip = '[Snippet]',
+            --                 path = '[Path]',
+            --             })[entry.source.name]
 
             return vim_item
         end,
