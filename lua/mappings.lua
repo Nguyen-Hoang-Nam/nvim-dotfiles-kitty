@@ -25,6 +25,7 @@ map('n', '<Leader>l', '<C-w>l', options)
 map('n', 'p', 'p=`]', options)
 map('i', 'jk', '<Esc>', options)
 map('t', '<Esc>', '<C-\\><C-n>', options)
+map('i', '<C-q>', '<Tab>', options)
 
 ----------------------------------------
 --

@@ -6,18 +6,24 @@ treesitter_config.setup({
         enable = true,
         -- use_languagetree = true,
     },
+
     rainbow = {
         enable = true,
         extended_mode = false,
     },
+
     autotag = { enable = true },
+
     indent = {
         enable = true,
     },
+
     pairs = {
         enable = true,
         highlight_self = false,
         goto_right_end = false,
         fallback_cmd_normal = 'normal! %',
     },
+
+    autopairs = { enable = true },
 })

@@ -1,8 +1,8 @@
 local npairs = require('nvim-autopairs')
 
 require('nvim-autopairs.completion.compe').setup({
-    map_cr = true, --  map <CR> on insert mode
-    map_complete = true, -- it will auto insert `(` after select function or method item
+    map_cr = true,
+    map_complete = true,
 })
 
 npairs.setup({
@@ -12,10 +12,6 @@ npairs.setup({
         javascript = { 'template_string' },
         java = false, -- don't check treesitter on java
     },
-})
-
-require('nvim-treesitter.configs').setup({
-    autopairs = { enable = true },
 })
 
 -- local ts_conds = require('nvim-autopairs.ts-conds')
