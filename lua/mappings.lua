@@ -47,6 +47,7 @@ map('i', '<M-k>', [[<Esc>:m .-2<CR>==gi]], cmd_options)
 map('n', '<M-j>', [[<Esc>:m .+1<CR>==gi]], cmd_options)
 map('n', '<M-k>', [[<Esc>:m .-2<CR>==gi]], cmd_options)
 map('n', '<Leader>m', [[<Cmd>lua require('format').choose_formatter()<CR>]], cmd_options)
+map('n', '<Leader>;', [[:lua require('utils').match_jump()<CR>]], cmd_options)
 
 ----------------------------------------
 --
@@ -119,3 +120,5 @@ map('v', '<Leader>/', [[:CommentToggle<CR>]], cmd_options)
 
 map('n', '<Leader>b', [[<Cmd>NvimTreeToggle<CR>]], cmd_options)
 map('v', '<Leader>b', [[<Cmd>NvimTreeToggle<CR>]], cmd_options)
+
+map('n', '<Leader>c', [[<cmd>DogeGenerate<CR>]], cmd_options)
