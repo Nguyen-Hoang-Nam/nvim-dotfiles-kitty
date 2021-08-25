@@ -2,7 +2,7 @@ local map = vim.api.nvim_set_keymap
 
 local options = { noremap = true }
 local cmd_options = { noremap = true, silent = true }
-local expression = { expr = true, silent = true }
+-- local expression = { expr = true, silent = true }
 
 vim.g.mapleader = ' '
 
@@ -64,11 +64,11 @@ map('n', '<Leader>;', [[:lua require('utils').match_jump()<CR>]], cmd_options)
 --
 ----------------------------------------
 
-map('i', '<Tab>', 'v:lua.tab_complete()', expression)
-map('s', '<Tab>', 'v:lua.tab_complete()', expression)
-map('i', '<S-Tab>', 'v:lua.s_tab_complete()', expression)
-map('s', '<S-Tab>', 'v:lua.s_tab_complete()', expression)
-map('i', '<M-e>', [[compe#complete()]], { noremap = true, silent = true, expr = true })
+-- map('i', '<Tab>', 'v:lua.tab_complete()', expression)
+-- map('s', '<Tab>', 'v:lua.tab_complete()', expression)
+-- map('i', '<S-Tab>', 'v:lua.s_tab_complete()', expression)
+-- map('s', '<S-Tab>', 'v:lua.s_tab_complete()', expression)
+-- map('i', '<M-e>', [[compe#complete()]], { noremap = true, silent = true, expr = true })
 
 ----------------------------------------
 --
@@ -122,4 +122,7 @@ map('v', '<Leader>/', [[:CommentToggle<CR>]], cmd_options)
 map('n', '<Leader>b', [[<Cmd>NvimTreeToggle<CR>]], cmd_options)
 map('v', '<Leader>b', [[<Cmd>NvimTreeToggle<CR>]], cmd_options)
 
-map('n', '<Leader>c', [[<cmd>DogeGenerate<CR>]], cmd_options)
+map('n', '<Leader>c', [[<Cmd>DogeGenerate<CR>]], cmd_options)
+
+map('n', ']b', '<Cmd>BufferLineCycleNext<CR>', cmd_options)
+map('n', '[b', '<Cmd>BufferLineCyclePrev<CR>', cmd_options)
