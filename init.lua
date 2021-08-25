@@ -25,7 +25,7 @@ require('lsp.xml')
 require('lsp.markdown')
 require('lsp.tailwindcss')
 
-require('statusline')
+-- require('statusline')
 require('highlights')
 require('mappings')
 require('autocommands')

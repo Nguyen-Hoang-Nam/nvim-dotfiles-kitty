@@ -61,27 +61,27 @@ cmp.setup({
             select = true,
         }),
 
-        ['<Tab>'] = cmp.mapping.mode({ 'i', 's' }, function(_, _)
-            if vim.fn.pumvisible() == 1 then
-                vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<C-n>', true, true, true), 'n')
+        ['<Tab>'] = function(_)
+            if fn.pumvisible() == 1 then
+                fn.feedkeys(vim.api.nvim_replace_termcodes('<C-n>', true, true, true), 'n')
             elseif luasnip.expand_or_jumpable() then
-                vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-expand-or-jump', true, true, true), '')
+                fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-expand-or-jump', true, true, true), '')
             elseif check_back_space() then
-                vim.fn.feedkeys(replace_keycodes('<C-q>'))
+                fn.feedkeys(replace_keycodes('<C-q>'))
             else
-                vim.fn.feedkeys(replace_keycodes('<Plug>(Tabout)'))
+                fn.feedkeys(replace_keycodes('<Plug>(Tabout)'))
             end
-        end),
+        end,
 
-        ['<S-Tab>'] = cmp.mapping.mode({ 'i', 's' }, function(_, fallback)
-            if vim.fn.pumvisible() == 1 then
-                vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<C-p>', true, true, true), 'n')
+        ['<S-Tab>'] = function(fallback)
+            if fn.pumvisible() == 1 then
+                fn.feedkeys(vim.api.nvim_replace_termcodes('<C-p>', true, true, true), 'n')
             elseif luasnip.jumpable(-1) then
-                vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-jump-prev', true, true, true), '')
+                fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-jump-prev', true, true, true), '')
             else
                 fallback()
             end
-        end),
+        end,
     },
 
     formatting = {
