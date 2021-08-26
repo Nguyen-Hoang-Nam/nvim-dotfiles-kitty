@@ -25,7 +25,6 @@ map('n', '<Leader>l', '<C-w>l', options)
 map('n', 'p', 'p=`]', options)
 map('i', 'jk', '<Esc>', options)
 map('t', '<Esc>', '<C-\\><C-n>', options)
-map('i', '<C-q>', '<Tab>', options)
 
 ----------------------------------------
 --
@@ -124,5 +123,5 @@ map('v', '<Leader>b', [[<Cmd>NvimTreeToggle<CR>]], cmd_options)
 
 map('n', '<Leader>c', [[<Cmd>DogeGenerate<CR>]], cmd_options)
 
-map('n', '%]b', '<Cmd>BufferLineCycleNext<CR>', cmd_options)
-map('n', '%[b', '<Cmd>BufferLineCyclePrev<CR>', cmd_options)
+map('n', ']b', '<Cmd>BufferLineCycleNext<CR>', cmd_options)
+map('n', '[b', '<Cmd>BufferLineCyclePrev<CR>', cmd_options)

@@ -56,32 +56,40 @@ cmp.setup({
     },
 
     mapping = {
+        ['<M-e>'] = cmp.mapping.complete(),
+
         ['<CR>'] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Insert,
             select = true,
         }),
 
-        ['<Tab>'] = function(_)
+        ['<Tab>'] = cmp.mapping(function(_)
             if fn.pumvisible() == 1 then
-                fn.feedkeys(vim.api.nvim_replace_termcodes('<C-n>', true, true, true), 'n')
+                fn.feedkeys(replace_keycodes('<C-n>'), 'n')
             elseif luasnip.expand_or_jumpable() then
-                fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-expand-or-jump', true, true, true), '')
+                fn.feedkeys(replace_keycodes('<Plug>luasnip-expand-or-jump'), '')
             elseif check_back_space() then
-                fn.feedkeys(replace_keycodes('<C-q>'))
+                fn.feedkeys(replace_keycodes('<Tab>'), 'n')
             else
                 fn.feedkeys(replace_keycodes('<Plug>(Tabout)'))
             end
-        end,
+        end, {
+            'i',
+            's',
+        }),
 
-        ['<S-Tab>'] = function(fallback)
+        ['<S-Tab>'] = cmp.mapping(function(fallback)
             if fn.pumvisible() == 1 then
-                fn.feedkeys(vim.api.nvim_replace_termcodes('<C-p>', true, true, true), 'n')
+                fn.feedkeys(replace_keycodes('<C-p>'), 'n')
             elseif luasnip.jumpable(-1) then
-                fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-jump-prev', true, true, true), '')
+                fn.feedkeys(replace_keycodes('<Plug>luasnip-jump-prev'), '')
             else
                 fallback()
             end
-        end,
+        end, {
+            'i',
+            's',
+        }),
     },
 
     formatting = {
