@@ -11,7 +11,7 @@ require('bufferline').setup({
         diagnostics_indicator = function(count, _)
             return '(' .. count .. ')'
         end,
-        offsets = { { filetype = 'NvimTree', text = 'Explorer', text_align = 'left' } },
+        offsets = { { filetype = 'Yanil', text = 'Explorer', text_align = 'left' } },
         show_buffer_close_icons = false,
         show_close_icon = false,
         -- separator_style = 'thin',

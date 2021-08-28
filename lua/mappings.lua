@@ -118,8 +118,8 @@ map('v', '<Leader>/', [[:CommentToggle<CR>]], cmd_options)
 --
 ----------------------------------------
 
-map('n', '<Leader>b', [[<Cmd>NvimTreeToggle<CR>]], cmd_options)
-map('v', '<Leader>b', [[<Cmd>NvimTreeToggle<CR>]], cmd_options)
+map('n', '<Leader>b', [[<Cmd>YanilToggle<CR>]], cmd_options)
+map('v', '<Leader>b', [[<Cmd>YanilToggle<CR>]], cmd_options)
 
 map('n', '<Leader>c', [[<Cmd>DogeGenerate<CR>]], cmd_options)
 

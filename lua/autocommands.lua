@@ -42,11 +42,20 @@ augroup(
 augroup UpdateGlobal
     autocmd!
     autocmd CursorHold,CursorHoldI * lua require'utils'.code_action()
-    autocmd FileType java lua require'lsp.jdtls'.setup()
 augroup END
 ]],
     true
 )
+
+-- augroup(
+--     [[
+-- augroup YanilHighlights
+--     autocmd!
+--     autocmd FileType Yanil setlocal winhighlight=Normal:NvimTreeNormal
+-- autogroup END
+-- ]],
+--     true
+-- )
 
 augroup(
     [[
