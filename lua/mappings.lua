@@ -41,13 +41,13 @@ map('t', '<Esc>', '<C-\\><C-n>', options)
 -- map('n', '<Leader>q', [[:xa<CR>]], cmd_options)
 map('n', '<Leader>q', [[<Cmd>let @/=""<CR>]], cmd_options)
 map('n', '<Leader>s', [[:w<CR>]], cmd_options)
-map('n', '<Leader>w', [[<Cmd>lua require('utils').bufdelete()<CR>]], cmd_options)
+map('n', '<Leader>w', [[<Cmd>lua require('utils.core').bufdelete()<CR>]], cmd_options)
 map('i', '<M-j>', [[<Esc>:m .+1<CR>==gi]], cmd_options)
 map('i', '<M-k>', [[<Esc>:m .-2<CR>==gi]], cmd_options)
 map('n', '<M-j>', [[<Esc>:m .+1<CR>==gi]], cmd_options)
 map('n', '<M-k>', [[<Esc>:m .-2<CR>==gi]], cmd_options)
 map('n', '<Leader>m', [[<Cmd>lua require('format').choose_formatter()<CR>]], cmd_options)
-map('n', '<Leader>;', [[:lua require('utils').match_jump()<CR>]], cmd_options)
+map('n', '<Leader>;', [[:lua require('utils.core').match_jump()<CR>]], cmd_options)
 
 ----------------------------------------
 --

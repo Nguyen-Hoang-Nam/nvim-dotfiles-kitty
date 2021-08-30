@@ -11,6 +11,8 @@ local augroup = vim.api.nvim_exec
 --     true
 -- )
 
+vim.api.nvim_command("command! -range CommentToggle lua require('utils.comment').comment_toggle(<line1>, <line2>)")
+
 -- autocmd VimEnter * set formatoptions-=cro
 augroup(
     [[
@@ -41,7 +43,7 @@ augroup(
     [[
 augroup UpdateGlobal
     autocmd!
-    autocmd CursorHold,CursorHoldI * lua require'utils'.code_action()
+    autocmd CursorHold,CursorHoldI * lua require'utils.lightbulb'.code_action()
 augroup END
 ]],
     true

@@ -49,7 +49,7 @@ local function create_node(tree, node)
     loop.fs_open(path, 'w+', 33188, function(err, fd)
         assert(not err, err)
 
-        local file_type = require('utils').file_type(name)
+        local file_type = require('utils.core').file_type(name)
         if file_type == 'java' then
             print('java')
         elseif file_type == 'md' then

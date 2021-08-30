@@ -1,9 +1,20 @@
+local bo = vim.bo
+local cmd = vim.cmd
 local api = vim.api
 
 local M = {}
 
--- Find length of table
--- @param T Table
+function M.bufdelete()
+    if bo.modified then
+        cmd('write')
+    end
+
+    local bufnr = api.nvim_get_current_buf()
+
+    cmd('bnext')
+    cmd('silent! ScrollViewDisable | bd ' .. bufnr .. ' | silent! ScrollViewEnable')
+end
+
 function M.tablelength(T)
     local count = 0
 

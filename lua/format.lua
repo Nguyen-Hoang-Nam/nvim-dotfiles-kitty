@@ -1,4 +1,4 @@
-local utils = require('utils')
+local utils = require('utils.core')
 local M = {}
 
 local html = require('languages.html')
