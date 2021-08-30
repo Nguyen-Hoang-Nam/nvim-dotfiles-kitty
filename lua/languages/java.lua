@@ -58,4 +58,13 @@ M.lsp = {
     on_attach = on_attach,
 }
 
+M.template = [[
+package %s;
+
+public class %s {
+
+    
+}
+]]
+
 return M

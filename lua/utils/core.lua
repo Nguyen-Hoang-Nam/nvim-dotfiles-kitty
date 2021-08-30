@@ -25,7 +25,7 @@ function M.tablelength(T)
     return count
 end
 
-function M.file_type(filename)
+function M.file_extension(filename)
     local t = {}
     for str in string.gmatch(filename, '([^%.]+)') do
         table.insert(t, str)

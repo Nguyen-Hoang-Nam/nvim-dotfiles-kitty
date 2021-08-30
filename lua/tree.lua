@@ -8,6 +8,8 @@ local devicons = require('yanil/devicons')
 local canvas = require('yanil/canvas')
 local utils = require('yanil/utils')
 
+local templates = require('utils.templates')
+
 local function create_node(tree, node)
     node = node:is_dir() and node or node.parent
     local name = vim.fn.input(string.format(
@@ -49,18 +51,23 @@ local function create_node(tree, node)
     loop.fs_open(path, 'w+', 33188, function(err, fd)
         assert(not err, err)
 
-        local file_type = require('utils.core').file_type(name)
-        if file_type == 'java' then
-            print('java')
-        elseif file_type == 'md' then
-            print('markdown')
-        elseif file_type == 'html' then
-            print('html')
+        local file_type = require('utils.core').file_extension(name)
+        local is_template_support = templates.file_supported(file_type)
+        if is_template_support then
+            local data = templates.generate(file_type, name, node.abs_path)
+            loop.fs_write(fd, data, function(write_err, _)
+                assert(not write_err, write_err)
+
+                loop.fs_close(fd, function(c_err, ok)
+                    assert(not c_err and ok, 'create file failed')
+                end)
+            end)
+        else
+            loop.fs_close(fd, function(c_err, ok)
+                assert(not c_err and ok, 'create file failed')
+            end)
         end
 
-        loop.fs_close(fd, function(c_err, ok)
-            assert(not c_err and ok, 'create file failed')
-        end)
         refresh()
     end)
 end
