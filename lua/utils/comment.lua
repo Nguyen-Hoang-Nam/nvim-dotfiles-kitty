@@ -36,26 +36,32 @@ function M.comment_toggle(line_start, line_end)
     end
 
     local esc_left = vim.pesc(left)
-    local is_comment = false
+    local commented_lines_counter = 0
+    local empty_counter = 0
+    local indent
 
     for _, v in pairs(lines) do
-        if v:find('^%s*' .. esc_left) or v:match('^%s*$') then
-            is_comment = true
-        elseif is_comment then
-            is_comment = false
-            break
+        if v:find('^%s*' .. esc_left) then
+            commented_lines_counter = commented_lines_counter + 1
+        elseif v:match('^%s*$') then
+            empty_counter = empty_counter + 1
+        end
+
+        local line_indent = v:match('^%s+') or ''
+        if (not indent or string.len(line_indent) < string.len(indent)) and line_indent ~= '' then
+            indent = line_indent
         end
     end
 
-    if not is_comment then
+    if commented_lines_counter ~= (#lines - empty_counter) then
         for i, v in pairs(lines) do
             if not v:match('^%s*$') then
-                local line = v:gsub('^', '')
+                local line = v:gsub('^' .. indent, '')
                 if right then
                     line = line .. right
                 end
 
-                lines[i] = left .. line
+                lines[i] = indent .. left .. line
             end
         end
     else

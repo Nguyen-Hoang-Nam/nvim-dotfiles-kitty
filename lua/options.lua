@@ -12,10 +12,7 @@ option.scrolloff = 18
 option.termguicolors = true
 option.completeopt = 'menuone,noselect'
 option.shortmess:append({ c = true })
--- vim.go.shortmess = vim.go.shortmess .. 'c'
--- vim.go.clipboard = vim.go.clipboard .. 'unnamedplus'
 option.clipboard:append({ 'unnamedplus' })
--- vim.go.fillchars = 'eob: '
 option.fillchars = 'eob: '
 
 -- Local to window
