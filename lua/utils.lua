@@ -18,6 +18,19 @@ function M.tablelength(T)
     return count
 end
 
+function M.file_type(filename)
+    local t = {}
+    for str in string.gmatch(filename, '([^%.]+)') do
+        table.insert(t, str)
+    end
+
+    if #t == 1 or t[1] == '' then
+        return ''
+    end
+
+    return t[#t]
+end
+
 -- Credit https://github.com/kosayoda/nvim-lightbulb/blob/master/lua/nvim-lightbulb.lua
 local function _update_sign(new_line)
     local old_line = vim.b.code_action_line

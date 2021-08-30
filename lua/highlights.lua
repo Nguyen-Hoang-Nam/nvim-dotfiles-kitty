@@ -221,6 +221,14 @@ highlight({
 
     TroubleNormal = { guibg = colors.dark_background },
 
+    YanilNormal = { guibg = colors.dark_background },
+    YanilDeviconDirectory = { guifg = base0D },
+    YanilTreeRoot = { guifg = colors.white },
+    YanilGitModified = { guifg = base0A },
+    YanilGitDirty = { guifg = base0A },
+    YanilGitClean = { guifg = base0B },
+    YanilIndentMarker = { guifg = colors.indent },
+
     -- Nvim-tree
     NvimTreeFolderIcon = { guifg = base0D },
     NvimTreeFolderName = { guifg = colors.white },
