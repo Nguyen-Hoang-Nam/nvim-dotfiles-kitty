@@ -20,33 +20,7 @@ local check_back_space = function()
     end
 end
 
-local lspKindIcons = {
-    Class = ' (class)',
-    Color = ' (color)',
-    Constant = ' (constant)',
-    Constructor = ' (constructor)',
-    Enum = ' (enum)',
-    EnumMember = ' (enum member)',
-    Event = ' (event)',
-    Field = ' (field)',
-    File = ' (file)',
-    Folder = ' (folder)',
-    Function = ' (function)',
-    Interface = ' (interface)',
-    Keyword = ' (keyword)',
-    Method = ' (method)',
-    Module = '{} (module)',
-    Operator = ' (operator)',
-    Property = ' (property)',
-    Reference = ' (reference)',
-    Snippet = ' (snippet)',
-    Struct = ' (enum)',
-    Text = ' (text)',
-    TypeParameter = ' (type parameter)',
-    Unit = ' (unit)',
-    Value = ' (value)',
-    Variable = ' (variable)',
-}
+local lspKindIcons = require('theme').lspKindIcons
 
 cmp.setup({
     snippet = {
@@ -57,11 +31,6 @@ cmp.setup({
 
     mapping = {
         ['<M-e>'] = cmp.mapping.complete(),
-
-        ['<CR>'] = cmp.mapping.confirm({
-            behavior = cmp.ConfirmBehavior.Insert,
-            select = true,
-        }),
 
         ['<Tab>'] = cmp.mapping(function(_)
             if fn.pumvisible() == 1 then
@@ -95,12 +64,6 @@ cmp.setup({
     formatting = {
         format = function(_, vim_item)
             vim_item.kind = lspKindIcons[vim_item.kind]
-
-            --             vim_item.menu = ({
-            --                 nvim_lsp = '[LSP]',
-            --                 luasnip = '[Snippet]',
-            --                 path = '[Path]',
-            --             })[entry.source.name]
 
             return vim_item
         end,

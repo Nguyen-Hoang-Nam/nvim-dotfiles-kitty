@@ -1,11 +1,14 @@
 local fn = vim.fn
+local theme = require('theme')
 -- Credit https://github.com/neovim/nvim-lspconfig/wiki/UI-customization
-local signs = {
-    Error = ' ',
-    Warning = ' ',
-    Hint = ' ',
-    Information = ' ',
-}
+-- local signs = {
+--     Error = ' ',
+--     Warning = ' ',
+--     Hint = ' ',
+--     Information = ' ',
+-- }
+
+local signs = theme.signs
 
 -- Credit https://github.com/neovim/nvim-lspconfig/wiki/UI-customization
 for type, icon in pairs(signs) do
@@ -16,33 +19,35 @@ end
 fn.sign_define('CodeActionSign', { text = '', texthl = 'LspDiagnosticsDefaultInformation' })
 
 -- Credit https://github.com/yamatsum/nvim-nonicons
-local lspKindIcons = {
-    Class = ' (class)',
-    Color = ' (color)',
-    Constant = ' (constant)',
-    Constructor = ' (constructor)',
-    Enum = ' (enum)',
-    EnumMember = ' (enum member)',
-    Event = ' (event)',
-    Field = ' (field)',
-    File = ' (file)',
-    Folder = ' (folder)',
-    Function = ' (function)',
-    Interface = ' (interface)',
-    Keyword = ' (keyword)',
-    Method = ' (method)',
-    Module = '{} (module)',
-    Operator = ' (operator)',
-    Property = ' (property)',
-    Reference = ' (reference)',
-    Snippet = ' (snippet)',
-    Struct = ' (enum)',
-    Text = ' (text)',
-    TypeParameter = ' (type parameter)',
-    Unit = ' (unit)',
-    Value = ' (value)',
-    Variable = ' (variable)',
-}
+-- local lspKindIcons = {
+--     Class = ' (class)',
+--     Color = ' (color)',
+--     Constant = ' (constant)',
+--     Constructor = ' (constructor)',
+--     Enum = ' (enum)',
+--     EnumMember = ' (enum member)',
+--     Event = ' (event)',
+--     Field = ' (field)',
+--     File = ' (file)',
+--     Folder = ' (folder)',
+--     Function = ' (function)',
+--     Interface = ' (interface)',
+--     Keyword = ' (keyword)',
+--     Method = ' (method)',
+--     Module = '{} (module)',
+--     Operator = ' (operator)',
+--     Property = ' (property)',
+--     Reference = ' (reference)',
+--     Snippet = ' (snippet)',
+--     Struct = ' (enum)',
+--     Text = ' (text)',
+--     TypeParameter = ' (type parameter)',
+--     Unit = ' (unit)',
+--     Value = ' (value)',
+--     Variable = ' (variable)',
+-- }
+
+local lspKindIcons = theme.lspKindIcons
 
 -- Credit https://github.com/neovim/nvim-lspconfig/wiki/UI-customization
 local kinds = vim.lsp.protocol.CompletionItemKind

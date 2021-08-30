@@ -20,4 +20,39 @@ local M = {
     indent = '#383C44',
 }
 
+M.signs = {
+    Error = ' ',
+    Warning = ' ',
+    Hint = ' ',
+    Information = ' ',
+}
+
+M.lspKindIcons = {
+    Class = ' (class)',
+    Color = ' (color)',
+    Constant = ' (constant)',
+    Constructor = ' (constructor)',
+    Enum = ' (enum)',
+    EnumMember = ' (enum member)',
+    Event = ' (event)',
+    Field = ' (field)',
+    File = ' (file)',
+    Folder = ' (folder)',
+    Function = ' (function)',
+    Interface = ' (interface)',
+    Keyword = ' (keyword)',
+    Method = ' (method)',
+    Module = '{} (module)',
+    Operator = ' (operator)',
+    Property = ' (property)',
+    Reference = ' (reference)',
+    Snippet = ' (snippet)',
+    Struct = ' (enum)',
+    Text = ' (text)',
+    TypeParameter = ' (type parameter)',
+    Unit = ' (unit)',
+    Value = ' (value)',
+    Variable = ' (variable)',
+}
+
 return M
