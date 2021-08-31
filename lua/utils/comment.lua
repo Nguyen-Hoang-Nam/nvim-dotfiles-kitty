@@ -47,9 +47,11 @@ function M.comment_toggle(line_start, line_end)
             empty_counter = empty_counter + 1
         end
 
-        local line_indent = v:match('^%s+') or ''
-        if (not indent or string.len(line_indent) < string.len(indent)) and line_indent ~= '' then
-            indent = line_indent
+        if not v:match('^%s*$') then
+            local line_indent = v:match('^%s+') or ''
+            if not indent or string.len(line_indent) < string.len(indent) then
+                indent = line_indent
+            end
         end
     end
 

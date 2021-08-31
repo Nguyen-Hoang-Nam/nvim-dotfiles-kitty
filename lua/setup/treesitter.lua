@@ -14,10 +14,6 @@ treesitter_config.setup({
 
     autotag = { enable = true },
 
-    indent = {
-        enable = true,
-    },
-
     pairs = {
         enable = true,
         highlight_self = false,
