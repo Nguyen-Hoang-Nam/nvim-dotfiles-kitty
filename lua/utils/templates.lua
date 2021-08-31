@@ -5,7 +5,7 @@ function M.file_supported(file_extension)
 end
 
 local function remove_extension(filename, file_extension)
-    return string.sub(filename, 1, #filename - #file_extension + 1)
+    return string.sub(filename, 1, #filename - #file_extension - 1)
 end
 
 local function slice(tbl, s, e)
@@ -41,11 +41,11 @@ local function java_group(path, filename)
     return t[#t]
 end
 
-function M.generate(file_extension, filename, path)
+function M.generate(file_extension, filename, path, file_type)
     if file_extension == 'md' and filename == 'README' then
         return require('languages.markdown').template
     elseif file_extension == 'java' then
-        local template = require('languages.java').template
+        local template = require('languages.java').template[file_type]
         local name = remove_extension(filename, file_extension)
         local group = java_group(path, filename)
 

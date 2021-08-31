@@ -47,14 +47,20 @@ local function create_node(tree, node)
         return
     end
 
+    local file_extension = require('utils.core').file_extension(name)
+    local is_template_support = templates.file_supported(file_extension)
+
+    local file_type = ''
+    if file_extension == 'java' then
+        file_type = vim.fn.input('\nEnter file type: [1] Class, [2] Interface: ')
+    end
+
     -- 0644
     loop.fs_open(path, 'w+', 33188, function(err, fd)
         assert(not err, err)
 
-        local file_type = require('utils.core').file_extension(name)
-        local is_template_support = templates.file_supported(file_type)
         if is_template_support then
-            local data = templates.generate(file_type, name, node.abs_path)
+            local data = templates.generate(file_extension, name, node.abs_path, file_type)
             loop.fs_write(fd, data, function(write_err, _)
                 assert(not write_err, write_err)
 
