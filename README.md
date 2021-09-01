@@ -1,21 +1,27 @@
 # Nvim-Dotfiles-Kitty
 
-NeoVim Configuration that makes me feel comfortable and pleasant. I use this daily for JavaScript, Python, Go, Rust, Lua, PHP and Java.
+NeoVim Configuration that makes me feel comfortable and pleasant.
+I use this daily for JavaScript, Python, Go, Rust, Lua, PHP and Java.
 
 ![Main](https://raw.githubusercontent.com/Nguyen-Hoang-Nam/readme-image/main/nvim-dotfiles/main.png)
-
 _Kitty with Fira, Cascadia, and Nonicons_
 
 ## What I have done so far
 
 - Use primitive colours. (Default is Vivid One Dark)
-- Use ligature font, italic font and icon font. (Thanks to [Kitty](https://github.com/kovidgoyal/kitty))
+- Use ligature font, italic font and icon font.
+  (Thanks to [Kitty](https://github.com/kovidgoyal/kitty))
 - Bigger icons. (Thanks to [Noicons](https://github.com/yamatsum/nonicons))
-- Saving the last session. (Thanks to [auto-session](https://github.com/rmagatti/auto-session))
-- Highlight current indent's scope. (Test with JS, Python, Go, Java, PHP, HTML, CSS, Svelte)
-- Support several language's snippet. (I get snippets from [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets))
-- Support Emmet. (Thanks to [emmet-ls](https://github.com/aca/emmet-ls))
-- Support lint and formatter. (Thanks to [Efm-Langsever](https://github.com/mattn/efm-langserver))
+- Saving the last session.
+  (Thanks to [auto-session](https://github.com/rmagatti/auto-session))
+- Highlight current indent's scope.
+  (Test with JS, Python, Go, Java, PHP, HTML, CSS, Svelte)
+- Support several language's snippet.
+  (I get snippets from [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets))
+- Support Emmet.
+  (Thanks to [emmet-ls](https://github.com/aca/emmet-ls))
+- Support lint and formatter.
+  (Thanks to [Efm-Langsever](https://github.com/mattn/efm-langserver))
 - Show scrollbar. (Useful when u get lost in a large file 😁)
 - Show the EOF icon. (Useful when detect trailing spaces)
 - Install all plugins manually.
@@ -203,14 +209,15 @@ Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Code-f
 
 ## TODO
 
-- [ ] Show theme in wiki
-- [ ] Support Flutter
-- [ ] Add PHP to wiki
-- [ ] Show images of all supporting languages
+- \[ ] Show theme in wiki
+- \[ ] Support Flutter
+- \[ ] Add PHP to wiki
+- \[ ] Show images of all supporting languages
 
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Pull requests are welcome. For major changes,
+please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
 
