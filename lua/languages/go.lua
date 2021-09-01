@@ -10,6 +10,12 @@ M.efm = {
         formatCommand = 'gofumpt',
         formatStdin = true,
     },
+    {
+        lintCommand = 'staticcheck ${INPUT}',
+        lintFormats = {
+            '%f:%l:%c: %m',
+        },
+    },
 }
 
 M.all_format = { efm = 'Goimports   Gofumpt' }

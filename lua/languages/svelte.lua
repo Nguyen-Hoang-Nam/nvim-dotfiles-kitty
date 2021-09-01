@@ -8,7 +8,7 @@ M.efm = {
     },
 }
 
-M.all_format = { efm = 'Pretter-Plugin-Svelte' }
+M.all_format = { efm = 'Pretter' }
 
 M.default_format = 'efm'
 
