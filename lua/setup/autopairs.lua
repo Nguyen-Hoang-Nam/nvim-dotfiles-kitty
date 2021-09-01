@@ -13,5 +13,3 @@ npairs.setup({
         javascript = { 'template_string' },
     },
 })
-
--- local ts_conds = require('nvim-autopairs.ts-conds')

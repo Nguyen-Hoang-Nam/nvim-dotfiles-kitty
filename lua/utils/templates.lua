@@ -42,7 +42,7 @@ local function java_group(path, filename)
 end
 
 function M.generate(file_extension, filename, path, file_type)
-    if file_extension == 'md' and filename == 'README' then
+    if file_extension == 'md' and filename == 'README.md' then
         return require('languages.markdown').template
     elseif file_extension == 'java' then
         local template = require('languages.java').template[file_type]

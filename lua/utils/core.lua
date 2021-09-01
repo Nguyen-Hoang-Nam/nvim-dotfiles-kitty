@@ -4,6 +4,8 @@ local api = vim.api
 
 local M = {}
 
+-- Delete current buffer
+-- Unlike bdelete, this command will jump to next buffer by id
 function M.bufdelete()
     if bo.modified then
         cmd('write')
@@ -15,6 +17,9 @@ function M.bufdelete()
     cmd('silent! ScrollViewDisable | bd ' .. bufnr .. ' | silent! ScrollViewEnable')
 end
 
+-- Count number of properties in table
+-- Because of lua only count consecutive properties
+-- @param T Table
 function M.tablelength(T)
     local count = 0
 

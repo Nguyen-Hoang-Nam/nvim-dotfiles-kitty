@@ -26,16 +26,16 @@ _Kitty with Fira, Cascadia, and Nonicons_
 =====================================
 Top 10 plugins slowing nvim's startup
 =====================================
-1   2.143   nvim-compe
-2   1.766   indent-blankline.nvim
-3   1.565   nvim-scrollview
-4   0.605   nvim-treesitter
-5   0.575   auto-session
-6   0.334   nvim-ts-autotag
-7   0.238   nvim-treesitter-pairs
-8   0.133   dashboard-nvim
-9   0.117   LuaSnip
-10  0.117   telescope.nvim
+1   1.627   nvim-scrollview
+2   0.847   nvim-treesitter-textobjects
+3   0.808   indent-blankline.nvim
+4   0.658   cmp-nvim-lsp
+5   0.639   auto-session
+6   0.511   nvim-treesitter
+7   0.509   cmp_luasnip
+8   0.500   cmp-path
+9   0.475   vim-doge
+10  0.377   nvim-ts-autotag
 =====================================
 ```
 
@@ -161,6 +161,8 @@ Git clone below plugins in `~/.local/share/nvim/site/pack/*/start`.
 | [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)                                        |
 | [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim)        |
 | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)                              |
+| [vim-doge](https://github.com/kkoomen/vim-doge)                                                 |
+| [yanil](https://github.com/Xuyuanp/yanil)                                                       |
 
 ### Treesitter
 
@@ -180,6 +182,7 @@ Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Code-f
 | --------------- | --------------------------- |
 | &lt;Leader&gt;a | Code action                 |
 | &lt;Leader&gt;b | Toggle Nvim-Tree            |
+| &lt;Leader&gt;c | Add document                |
 | &lt;Leader&gt;d | Go to definition            |
 | &lt;Leader&gt;e | Search emojis               |
 | &lt;Leader&gt;f | Show text search            |
