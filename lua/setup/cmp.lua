@@ -20,33 +20,7 @@ local check_back_space = function()
     end
 end
 
-local lspKindIcons = {
-    Class = ' (class)',
-    Color = ' (color)',
-    Constant = ' (constant)',
-    Constructor = ' (constructor)',
-    Enum = ' (enum)',
-    EnumMember = ' (enum member)',
-    Event = ' (event)',
-    Field = ' (field)',
-    File = ' (file)',
-    Folder = ' (folder)',
-    Function = ' (function)',
-    Interface = ' (interface)',
-    Keyword = ' (keyword)',
-    Method = ' (method)',
-    Module = '{} (module)',
-    Operator = ' (operator)',
-    Property = ' (property)',
-    Reference = ' (reference)',
-    Snippet = ' (snippet)',
-    Struct = ' (enum)',
-    Text = ' (text)',
-    TypeParameter = ' (type parameter)',
-    Unit = ' (unit)',
-    Value = ' (value)',
-    Variable = ' (variable)',
-}
+local lspKindIcons = require('theme').lspKindIcons
 
 cmp.setup({
     snippet = {
@@ -56,43 +30,40 @@ cmp.setup({
     },
 
     mapping = {
-        ['<CR>'] = cmp.mapping.confirm({
-            behavior = cmp.ConfirmBehavior.Insert,
-            select = true,
-        }),
+        ['<M-e>'] = cmp.mapping.complete(),
 
-        ['<Tab>'] = function(_)
+        ['<Tab>'] = cmp.mapping(function(_)
             if fn.pumvisible() == 1 then
-                fn.feedkeys(vim.api.nvim_replace_termcodes('<C-n>', true, true, true), 'n')
+                fn.feedkeys(replace_keycodes('<C-n>'), 'n')
             elseif luasnip.expand_or_jumpable() then
-                fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-expand-or-jump', true, true, true), '')
+                fn.feedkeys(replace_keycodes('<Plug>luasnip-expand-or-jump'), '')
             elseif check_back_space() then
-                fn.feedkeys(replace_keycodes('<C-q>'))
+                fn.feedkeys(replace_keycodes('<Tab>'), 'n')
             else
                 fn.feedkeys(replace_keycodes('<Plug>(Tabout)'))
             end
-        end,
+        end, {
+            'i',
+            's',
+        }),
 
-        ['<S-Tab>'] = function(fallback)
+        ['<S-Tab>'] = cmp.mapping(function(fallback)
             if fn.pumvisible() == 1 then
-                fn.feedkeys(vim.api.nvim_replace_termcodes('<C-p>', true, true, true), 'n')
+                fn.feedkeys(replace_keycodes('<C-p>'), 'n')
             elseif luasnip.jumpable(-1) then
-                fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-jump-prev', true, true, true), '')
+                fn.feedkeys(replace_keycodes('<Plug>luasnip-jump-prev'), '')
             else
                 fallback()
             end
-        end,
+        end, {
+            'i',
+            's',
+        }),
     },
 
     formatting = {
         format = function(_, vim_item)
             vim_item.kind = lspKindIcons[vim_item.kind]
-
-            --             vim_item.menu = ({
-            --                 nvim_lsp = '[LSP]',
-            --                 luasnip = '[Snippet]',
-            --                 path = '[Path]',
-            --             })[entry.source.name]
 
             return vim_item
         end,

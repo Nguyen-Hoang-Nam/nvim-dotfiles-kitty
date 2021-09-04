@@ -1,21 +1,27 @@
 # Nvim-Dotfiles-Kitty
 
-NeoVim Configuration that makes me feel comfortable and pleasant. I use this daily for JavaScript, Python, Go, Rust, Lua, PHP and Java.
+NeoVim Configuration that makes me feel comfortable and pleasant.
+I use this daily for JavaScript, Python, Go, Rust, Lua, PHP and Java.
 
 ![Main](https://raw.githubusercontent.com/Nguyen-Hoang-Nam/readme-image/main/nvim-dotfiles/main.png)
-
 _Kitty with Fira, Cascadia, and Nonicons_
 
 ## What I have done so far
 
 - Use primitive colours. (Default is Vivid One Dark)
-- Use ligature font, italic font and icon font. (Thanks to [Kitty](https://github.com/kovidgoyal/kitty))
+- Use ligature font, italic font and icon font.
+  (Thanks to [Kitty](https://github.com/kovidgoyal/kitty))
 - Bigger icons. (Thanks to [Noicons](https://github.com/yamatsum/nonicons))
-- Saving the last session. (Thanks to [auto-session](https://github.com/rmagatti/auto-session))
-- Highlight current indent's scope. (Test with JS, Python, Go, Java, PHP, HTML, CSS, Svelte)
-- Support several language's snippet. (I get snippets from [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets))
-- Support Emmet. (Thanks to [emmet-ls](https://github.com/aca/emmet-ls))
-- Support lint and formatter. (Thanks to [Efm-Langsever](https://github.com/mattn/efm-langserver))
+- Saving the last session.
+  (Thanks to [auto-session](https://github.com/rmagatti/auto-session))
+- Highlight current indent's scope.
+  (Test with JS, Python, Go, Java, PHP, HTML, CSS, Svelte)
+- Support several language's snippet.
+  (I get snippets from [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets))
+- Support Emmet.
+  (Thanks to [emmet-ls](https://github.com/aca/emmet-ls))
+- Support lint and formatter.
+  (Thanks to [Efm-Langsever](https://github.com/mattn/efm-langserver))
 - Show scrollbar. (Useful when u get lost in a large file 😁)
 - Show the EOF icon. (Useful when detect trailing spaces)
 - Install all plugins manually.
@@ -26,16 +32,16 @@ _Kitty with Fira, Cascadia, and Nonicons_
 =====================================
 Top 10 plugins slowing nvim's startup
 =====================================
-1   2.143   nvim-compe
-2   1.766   indent-blankline.nvim
-3   1.565   nvim-scrollview
-4   0.605   nvim-treesitter
-5   0.575   auto-session
-6   0.334   nvim-ts-autotag
-7   0.238   nvim-treesitter-pairs
-8   0.133   dashboard-nvim
-9   0.117   LuaSnip
-10  0.117   telescope.nvim
+1   1.627   nvim-scrollview
+2   0.847   nvim-treesitter-textobjects
+3   0.808   indent-blankline.nvim
+4   0.658   cmp-nvim-lsp
+5   0.639   auto-session
+6   0.511   nvim-treesitter
+7   0.509   cmp_luasnip
+8   0.500   cmp-path
+9   0.475   vim-doge
+10  0.377   nvim-ts-autotag
 =====================================
 ```
 
@@ -161,6 +167,8 @@ Git clone below plugins in `~/.local/share/nvim/site/pack/*/start`.
 | [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)                                        |
 | [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim)        |
 | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)                              |
+| [vim-doge](https://github.com/kkoomen/vim-doge)                                                 |
+| [yanil](https://github.com/Xuyuanp/yanil)                                                       |
 
 ### Treesitter
 
@@ -180,6 +188,7 @@ Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Code-f
 | --------------- | --------------------------- |
 | &lt;Leader&gt;a | Code action                 |
 | &lt;Leader&gt;b | Toggle Nvim-Tree            |
+| &lt;Leader&gt;c | Add document                |
 | &lt;Leader&gt;d | Go to definition            |
 | &lt;Leader&gt;e | Search emojis               |
 | &lt;Leader&gt;f | Show text search            |
@@ -200,14 +209,15 @@ Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Code-f
 
 ## TODO
 
-- [ ] Show theme in wiki
-- [ ] Support Flutter
-- [ ] Add PHP to wiki
-- [ ] Show images of all supporting languages
+- \[ ] Show theme in wiki
+- \[ ] Support Flutter
+- \[ ] Add PHP to wiki
+- \[ ] Show images of all supporting languages
 
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Pull requests are welcome. For major changes,
+please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
 

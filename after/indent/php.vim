@@ -1,4 +1,4 @@
-setlocal tabstop=2
-setlocal shiftwidth=2
+setlocal autoindent
+setlocal smartindent
 
 set indentexpr=nvim_treesitter#indent()

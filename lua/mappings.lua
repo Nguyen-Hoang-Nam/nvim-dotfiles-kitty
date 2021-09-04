@@ -25,7 +25,6 @@ map('n', '<Leader>l', '<C-w>l', options)
 map('n', 'p', 'p=`]', options)
 map('i', 'jk', '<Esc>', options)
 map('t', '<Esc>', '<C-\\><C-n>', options)
-map('i', '<C-q>', '<Tab>', options)
 
 ----------------------------------------
 --
@@ -42,33 +41,13 @@ map('i', '<C-q>', '<Tab>', options)
 -- map('n', '<Leader>q', [[:xa<CR>]], cmd_options)
 map('n', '<Leader>q', [[<Cmd>let @/=""<CR>]], cmd_options)
 map('n', '<Leader>s', [[:w<CR>]], cmd_options)
-map('n', '<Leader>w', [[<Cmd>lua require('utils').bufdelete()<CR>]], cmd_options)
+map('n', '<Leader>w', [[<Cmd>lua require('utils.core').bufdelete()<CR>]], cmd_options)
 map('i', '<M-j>', [[<Esc>:m .+1<CR>==gi]], cmd_options)
 map('i', '<M-k>', [[<Esc>:m .-2<CR>==gi]], cmd_options)
 map('n', '<M-j>', [[<Esc>:m .+1<CR>==gi]], cmd_options)
 map('n', '<M-k>', [[<Esc>:m .-2<CR>==gi]], cmd_options)
 map('n', '<Leader>m', [[<Cmd>lua require('format').choose_formatter()<CR>]], cmd_options)
-map('n', '<Leader>;', [[:lua require('utils').match_jump()<CR>]], cmd_options)
-
-----------------------------------------
---
---
--- Nvim-Compe
---
--- <Tab> (insert): Choose the next option
--- <Tab> (select): Choose the next option
--- <S-Tab> (insert): Choose the previous option
--- <S-Tab> (select): Choose the previous option
--- <M-e> (insert): Trigger completion for emmet
---
---
-----------------------------------------
-
--- map('i', '<Tab>', 'v:lua.tab_complete()', expression)
--- map('s', '<Tab>', 'v:lua.tab_complete()', expression)
--- map('i', '<S-Tab>', 'v:lua.s_tab_complete()', expression)
--- map('s', '<S-Tab>', 'v:lua.s_tab_complete()', expression)
--- map('i', '<M-e>', [[compe#complete()]], { noremap = true, silent = true, expr = true })
+map('n', '<Leader>;', [[:lua require('utils.core').match_jump()<CR>]], cmd_options)
 
 ----------------------------------------
 --
@@ -119,10 +98,10 @@ map('v', '<Leader>/', [[:CommentToggle<CR>]], cmd_options)
 --
 ----------------------------------------
 
-map('n', '<Leader>b', [[<Cmd>NvimTreeToggle<CR>]], cmd_options)
-map('v', '<Leader>b', [[<Cmd>NvimTreeToggle<CR>]], cmd_options)
+map('n', '<Leader>b', [[<Cmd>YanilToggle<CR>]], cmd_options)
+map('v', '<Leader>b', [[<Cmd>YanilToggle<CR>]], cmd_options)
 
 map('n', '<Leader>c', [[<Cmd>DogeGenerate<CR>]], cmd_options)
 
-map('n', '%]b', '<Cmd>BufferLineCycleNext<CR>', cmd_options)
-map('n', '%[b', '<Cmd>BufferLineCyclePrev<CR>', cmd_options)
+map('n', ']b', '<Cmd>BufferLineCycleNext<CR>', cmd_options)
+map('n', '[b', '<Cmd>BufferLineCyclePrev<CR>', cmd_options)

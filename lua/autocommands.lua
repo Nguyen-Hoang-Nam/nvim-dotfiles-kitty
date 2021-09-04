@@ -1,17 +1,7 @@
 local augroup = vim.api.nvim_exec
 
--- augroup(
---     [[
--- augroup Terminal
---     autocmd!
---     autocmd TermOpen * setlocal nonumber
---     autocmd TermOpen * setlocal norelativenumber
--- augroup END
--- ]],
---     true
--- )
+vim.api.nvim_command("command! -range CommentToggle lua require('utils.comment').comment_toggle(<line1>, <line2>)")
 
--- autocmd VimEnter * set formatoptions-=cro
 augroup(
     [[
 augroup Config
@@ -34,15 +24,11 @@ augroup END
     true
 )
 
--- autocmd FileType markdown,gitcommit setlocal spell
--- autocmd Filetype go,tex set tabstop=2 | set shiftwidth=2
--- autocmd BufRead,BufNewFile *.md,*.gitcommit setlocal spell
 augroup(
     [[
 augroup UpdateGlobal
     autocmd!
-    autocmd CursorHold,CursorHoldI * lua require'utils'.code_action()
-    autocmd FileType java lua require'lsp.jdtls'.setup()
+    autocmd CursorHold,CursorHoldI * lua require'utils.lightbulb'.code_action()
 augroup END
 ]],
     true

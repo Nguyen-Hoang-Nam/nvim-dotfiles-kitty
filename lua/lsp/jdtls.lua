@@ -15,11 +15,11 @@ local workspace_folder = home .. '/.workspace' .. vim.fn.fnamemodify(root_dir, '
 function M.setup()
     local config = {
         flags = {
-            --             allow_incremental_sync = true,
+            -- allow_incremental_sync = true,
             server_side_fuzzy_completion = true,
         },
-        --         capabilities = java.lsp.capabilities,
-        on_attach = java.lsp.on_attach,
+        -- capabilities = java.lsp.capabilities,
+        -- on_attach = java.lsp.on_attach,
     }
 
     local extendedClientCapabilities = require('jdtls').extendedClientCapabilities
@@ -30,20 +30,20 @@ function M.setup()
     }
 
     config.settings = {
-        --         ['java.format.settings.url'] = home .. '/.config/nvim/language-servers/java-google-formatter.xml',
-        --         ['java.format.settings.profile'] = 'GoogleStyle',
+        -- ['java.format.settings.url'] = home .. '/.config/nvim/language-servers/java-google-formatter.xml',
+        -- ['java.format.settings.profile'] = 'GoogleStyle',
         java = {
             signatureHelp = { enabled = true },
             contentProvider = { preferred = 'fernflower' },
             completion = {
                 favoriteStaticMembers = {
-                    'org.hamcrest.MatcherAssert.assertThat',
-                    'org.hamcrest.Matchers.*',
-                    'org.hamcrest.CoreMatchers.*',
-                    'org.junit.jupiter.api.Assertions.*',
-                    'java.util.Objects.requireNonNull',
-                    'java.util.Objects.requireNonNullElse',
-                    'org.mockito.Mockito.*',
+                    -- 'org.hamcrest.MatcherAssert.assertThat',
+                    -- 'org.hamcrest.Matchers.*',
+                    -- 'org.hamcrest.CoreMatchers.*',
+                    -- 'org.junit.jupiter.api.Assertions.*',
+                    -- 'java.util.Objects.requireNonNull',
+                    -- 'java.util.Objects.requireNonNullElse',
+                    -- 'org.mockito.Mockito.*',
                 },
             },
             sources = {
@@ -53,9 +53,10 @@ function M.setup()
                 },
             },
             codeGeneration = {
-                toString = {
-                    template = '${object.className}{${member.name()}=${member.value}, ${otherMembers}}',
-                },
+                generateComments = true,
+                -- toString = {
+                --     template = '${object.className}{${member.name()}=${member.value}, ${otherMembers}}',
+                -- },
             },
             configuration = {
                 runtimes = {
