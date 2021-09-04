@@ -28,8 +28,8 @@ require('lspconfig').efm.setup({
         rootMarkers = { '.git/' },
         languages = {
             javascript = require('languages.javascript').efm,
-            typescript = require('languages.typescript').efm,
-            typescriptreact = require('languages.typescript').efm,
+            typescript = require('languages.javascript').efm,
+            typescriptreact = require('languages.javascript').efm,
             javascriptreact = require('languages.javascript').efm,
             svelte = require('languages.svelte').efm,
             python = require('languages.python').efm,

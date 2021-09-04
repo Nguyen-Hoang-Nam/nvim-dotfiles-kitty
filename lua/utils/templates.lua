@@ -34,7 +34,7 @@ local function java_group(path, filename)
     end
 
     if find_java then
-        local new_tbl = slice(t, position, #t)
+        local new_tbl = slice(t, position + 1, #t)
         return table.concat(new_tbl, '.')
     end
 
