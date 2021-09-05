@@ -1,7 +1,7 @@
 require('indent_blankline').setup({
     char = '▏',
     buftype_exclude = { 'terminal' },
-    filetype_exclude = { 'help', 'dashboard', 'lspinfo', 'markdown', 'gomod' },
+    filetype_exclude = { 'help', 'dashboard', 'lspinfo', 'markdown', 'gomod', 'Yanil' },
     --     show_end_of_line = true,
     use_treesitter = true,
     show_current_context = true,
