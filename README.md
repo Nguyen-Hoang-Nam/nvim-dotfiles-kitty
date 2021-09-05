@@ -55,10 +55,6 @@ Top 10 plugins slowing nvim's startup
 
 ![Telescope](https://raw.githubusercontent.com/Nguyen-Hoang-Nam/readme-image/main/nvim-dotfiles/telescope.png)
 
-### Tree
-
-![Tree](https://raw.githubusercontent.com/Nguyen-Hoang-Nam/readme-image/main/nvim-dotfiles/tree.png)
-
 ### Terminal
 
 ![Terminal](https://raw.githubusercontent.com/Nguyen-Hoang-Nam/readme-image/main/nvim-dotfiles/terminal.png)
@@ -75,9 +71,7 @@ Top 10 plugins slowing nvim's startup
 
 ![Go](https://raw.githubusercontent.com/Nguyen-Hoang-Nam/readme-image/main/nvim-dotfiles/go.png)
 
-### Rust
-
-![Rust](https://raw.githubusercontent.com/Nguyen-Hoang-Nam/readme-image/main/nvim-dotfiles/rust.png)
+Find more in [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Screenshot)
 
 ## Configuration
 
@@ -168,7 +162,7 @@ Git clone below plugins in `~/.local/share/nvim/site/pack/*/start`.
 | [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim)        |
 | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)                              |
 | [vim-doge](https://github.com/kkoomen/vim-doge)                                                 |
-| [yanil](https://github.com/Xuyuanp/yanil)                                                       |
+| [yanil](https://github.com/Nguyen-Hoang-Nam/yanil/tree/customize-ui)                            |
 
 ### Treesitter
 

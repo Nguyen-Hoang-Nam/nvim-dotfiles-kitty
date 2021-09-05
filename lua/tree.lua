@@ -13,9 +13,7 @@ local templates = require('utils.templates')
 local function create_node(tree, node)
     node = node:is_dir() and node or node.parent
     local name = vim.fn.input(string.format(
-        [[Add a childnode
-        ==========================================================
-        Enter the dir/file name to be created. Dirs end with a '/'
+        [[Enter the dir/file name to be created. Dirs end with a '/'
         %s]],
         node.abs_path
     ))
@@ -97,9 +95,7 @@ local function delete_node(tree, node)
     end
     if node:is_dir() and #node.entries > 0 then
         local answer = vim.fn.input(string.format(
-            [[Delete the current node
-            ==========================================================
-            STOP! Directory is not empty! To delete, type 'yes'
+            [[STOP! Directory is not empty! To delete, type 'yes'
             %s: ]],
             node.abs_path
         ))
@@ -126,6 +122,37 @@ local function delete_node(tree, node)
         end,
     }
     require('plenary/job'):new(job_desc):start()
+end
+
+local function rename_node(tree, node)
+    local name = vim.fn.input([[New name: ]])
+    local abs_path = node.abs_path
+
+    local name_length = #abs_path - #node.name
+    local abs_path_new = ''
+    if node:is_dir() then
+        abs_path_new = string.sub(abs_path, 1, name_length - 1) .. name .. '/'
+    else
+        abs_path_new = string.sub(abs_path, 1, name_length) .. name
+    end
+
+    local job_desc = {
+        command = 'mv',
+        args = { abs_path, abs_path_new },
+        on_exit = function(_, code, _)
+            if code ~= 0 then
+                print('Rename node failed')
+                return
+            end
+        end,
+    }
+    require('plenary/job'):new(job_desc):start()
+
+    local refresh = vim.schedule_wrap(function()
+        tree:force_refresh_node(node.parent)
+        git.update(tree.cwd)
+    end)
+    refresh()
 end
 
 yanil.setup()
@@ -159,6 +186,7 @@ tree:setup({
                 '^%.DS_Store$',
                 '%.o$',
                 '%.d$',
+                '^%node_modules',
             }
             for _, pat in ipairs(patterns) do
                 if string.find(name, pat) then
@@ -173,6 +201,7 @@ tree:setup({
         ['[c'] = git.jump_prev,
         ['a'] = create_node,
         ['d'] = delete_node,
+        ['n'] = rename_node,
     },
 })
 

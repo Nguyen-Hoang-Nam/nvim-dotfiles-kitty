@@ -230,16 +230,16 @@ highlight({
     YanilIndentMarker = { guifg = colors.indent },
 
     -- Nvim-tree
-    NvimTreeFolderIcon = { guifg = base0D },
-    NvimTreeFolderName = { guifg = colors.white },
-    NvimTreeOpenedFolderName = { guifg = colors.white },
-    NvimTreeEmptyFolderName = { guifg = colors.white },
-    NvimTreeOpenedFile = { guifg = colors.white },
-    NvimTreeIndentMarker = { guifg = colors.indent },
-    NvimTreeVertSplit = { guifg = colors.dark_background, guibg = colors.dark_background },
-    NvimTreeStatuslineNc = { guifg = colors.dark_background, guibg = colors.dark_background, gui = 'underline' },
-    NvimTreeNormal = { guibg = colors.dark_background },
-    NvimTreeRootFolder = { guifg = colors.white, gui = 'bold' },
+    -- NvimTreeFolderIcon = { guifg = base0D },
+    -- NvimTreeFolderName = { guifg = colors.white },
+    -- NvimTreeOpenedFolderName = { guifg = colors.white },
+    -- NvimTreeEmptyFolderName = { guifg = colors.white },
+    -- NvimTreeOpenedFile = { guifg = colors.white },
+    -- NvimTreeIndentMarker = { guifg = colors.indent },
+    -- NvimTreeVertSplit = { guifg = colors.dark_background, guibg = colors.dark_background },
+    -- NvimTreeStatuslineNc = { guifg = colors.dark_background, guibg = colors.dark_background, gui = 'underline' },
+    -- NvimTreeNormal = { guibg = colors.dark_background },
+    -- NvimTreeRootFolder = { guifg = colors.white, gui = 'bold' },
 
     -- Telescope
     TelescopeBorder = { guifg = colors.border },
