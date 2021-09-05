@@ -159,6 +159,7 @@ tree:setup({
                 '^%.DS_Store$',
                 '%.o$',
                 '%.d$',
+                '^%node_modules',
             }
             for _, pat in ipairs(patterns) do
                 if string.find(name, pat) then
