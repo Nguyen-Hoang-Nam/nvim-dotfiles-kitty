@@ -21,7 +21,7 @@ require('lspicon')
 
 require('lsp.emmet')
 require('lsp.efm')
-require('lsp.xml')
+-- require('lsp.xml')
 -- require('lsp.markdown')
 require('lsp.tailwindcss')
 
