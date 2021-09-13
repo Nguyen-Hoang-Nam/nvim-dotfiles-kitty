@@ -110,17 +110,17 @@ local async_load = vim.loop.new_async(vim.schedule_wrap(function()
 
         if fileType ~= 'Help' then
             line = line
-                .. '%#StatuslineBackground#   '
+                .. '%#StatuslineBackground#   '
                 .. M.get_git_detached_head()
-                .. '   %#StatuslineDiagnosticsError#'
+                .. '   %#StatuslineDiagnosticsError#'
                 .. [[ %{luaeval('require("statusline").diagnostics_error()')}]]
-                .. '%#StatuslineDiagnosticsWarning#'
+                .. '%#StatuslineDiagnosticsWarning#'
                 .. [[ %{luaeval('require("statusline").diagnostics_warning()')}]]
-                .. '  %#StatuslineDiffAdded#'
+                .. '  %#StatuslineDiffAdded#'
                 .. [[ %{luaeval('require("statusline").get_hunks_data()[1]')}]]
-                .. ' %#StatuslineDiffModified#'
+                .. ' %#StatuslineDiffModified#'
                 .. [[ %{luaeval('require("statusline").get_hunks_data()[2]')}]]
-                .. ' %#StatuslineDiffRemoved#'
+                .. ' %#StatuslineDiffRemoved#'
                 .. [[ %{luaeval('require("statusline").get_hunks_data()[3]')}]]
         end
 
@@ -137,7 +137,7 @@ local async_load = vim.loop.new_async(vim.schedule_wrap(function()
                 .. [[   %{luaeval('require("format").formatter_status()')}]]
         end
 
-        line = line .. '%#StatuslineSmiley#  '
+        line = line .. '%#StatuslineSmiley#  '
     else
         line = '%#StatuslineBackground#'
     end

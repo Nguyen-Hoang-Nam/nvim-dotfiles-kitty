@@ -9,7 +9,7 @@ for type, icon in pairs(signs) do
     fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
 end
 
-fn.sign_define('CodeActionSign', { text = '', texthl = 'LspDiagnosticsDefaultInformation' })
+fn.sign_define('CodeActionSign', { text = '', texthl = 'LspDiagnosticsDefaultInformation' })
 
 local lspKindIcons = theme.lspKindIcons
 

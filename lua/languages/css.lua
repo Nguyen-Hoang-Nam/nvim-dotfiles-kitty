@@ -12,8 +12,11 @@ M.all_format = { efm = 'Prettier' }
 
 M.default_format = 'efm'
 
+local capabilities = lsp.capabilities
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 M.lsp = {
-    capabilities = lsp.capabilities,
+    capabilities,
     on_attach = lsp.on_attach,
 }
 

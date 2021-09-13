@@ -4,14 +4,14 @@ NeoVim Configuration that makes me feel comfortable and pleasant.
 I use this daily for JavaScript, Python, Go, Rust, Lua, PHP and Java.
 
 ![Main](https://raw.githubusercontent.com/Nguyen-Hoang-Nam/readme-image/main/nvim-dotfiles/main.png)
-_Kitty with Fira, Cascadia, and Nonicons_
+_Kitty with Fira, Cascadia, and Mini-File-Icons_
 
 ## What I have done so far
 
 - Use primitive colours. (Default is Vivid One Dark)
 - Use ligature font, italic font and icon font.
   (Thanks to [Kitty](https://github.com/kovidgoyal/kitty))
-- Bigger icons. (Thanks to [Noicons](https://github.com/yamatsum/nonicons))
+- Bigger icons. (Thanks to [mini-file-icons](https://github.com/Nguyen-Hoang-Nam/mini-file-icons))
 - Saving the last session.
   (Thanks to [auto-session](https://github.com/rmagatti/auto-session))
 - Highlight current indent's scope.
@@ -112,7 +112,7 @@ M = {
 
 ### Fonts
 
-- [nonicons](https://github.com/yamatsum/nonicons)
+- [mini-file-icons](https://github.com/Nguyen-Hoang-Nam/mini-file-icons)
 - Fira code (Or any ligature font)
 - Cascadia (Or any italic font)
 
@@ -123,7 +123,7 @@ font_family FiraCode Nerd Font Mono
 bold_font Cascadia Code
 italic_font Cascadia Mono
 bold_italic_font Cascadia Code
-symbol_map U+f101-U+f208 nonicons
+symbol_map U+e900-U+e954 mini-file-icons
 font_size 16
 cursor #6796E6
 ```
@@ -157,7 +157,7 @@ Git clone below plugins in `~/.local/share/nvim/site/pack/*/start`.
 | [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)                                    |
 | [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) |
 | [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)                                      |
-| [nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons)                            |
+| [nvim-web-devicons](https://github.com/Nguyen-Hoang-Nam/nvim-web-devicons)                      |
 | [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)                                        |
 | [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim)        |
 | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)                              |
