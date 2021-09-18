@@ -1,11 +1,11 @@
 require('toggleterm').setup({
-    size = 10,
     open_mapping = [[<M-t>]],
-    shade_terminals = false,
-    direction = 'float',
-    float_opts = {
-        border = 'curved',
-        width = 100,
-        winblend = 0,
-    },
+    direction = 'tab',
+    -- size = 10,
+    -- shade_terminals = false,
+    -- float_opts = {
+    --     border = 'curved',
+    --     width = 100,
+    --     winblend = 0,
+    -- },
 })

@@ -11,7 +11,7 @@ _Kitty with Fira, Cascadia, and Mini-File-Icons_
 - Use primitive colours. (Default is Vivid One Dark)
 - Use ligature font, italic font and icon font.
   (Thanks to [Kitty](https://github.com/kovidgoyal/kitty))
-- Bigger icons. (Thanks to [mini-file-icons](https://github.com/Nguyen-Hoang-Nam/mini-file-icons))
+- Bigger icons. (Thanks to [nvim-mini-file-icons](https://github.com/Nguyen-Hoang-Nam/nvim-mini-file-icons))
 - Saving the last session.
   (Thanks to [auto-session](https://github.com/rmagatti/auto-session))
 - Highlight current indent's scope.
