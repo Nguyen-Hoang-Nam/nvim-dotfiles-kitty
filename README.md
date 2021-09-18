@@ -26,6 +26,16 @@ _Kitty with Fira, Cascadia, and Mini-File-Icons_
 - Show the EOF icon. (Useful when detect trailing spaces)
 - Install all plugins manually.
 
+## Supported framework
+
+- React
+- Svelte
+- TailwindCSS
+- Gin/gonic
+- FastAPI
+- Laravel
+- Spring Boot
+
 ## Startup
 
 ```text
@@ -149,6 +159,7 @@ Git clone below plugins in `~/.local/share/nvim/site/pack/*/start`.
 | [nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)                            |
 | [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)                                                 |
 | [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)                                      |
+| [nvim-mini-file-icons](https://github.com/Nguyen-Hoang-Nam/nvim-mini-file-icons)                |
 | [nvim-scrollview](https://github.com/dstein64/nvim-scrollview)                                  |
 | [nvim-toggleterm.lua](https://github.com/akinsho/nvim-toggleterm.lua)                           |
 | [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)                                    |
@@ -157,7 +168,6 @@ Git clone below plugins in `~/.local/share/nvim/site/pack/*/start`.
 | [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)                                    |
 | [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) |
 | [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)                                      |
-| [nvim-web-devicons](https://github.com/Nguyen-Hoang-Nam/nvim-web-devicons)                      |
 | [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)                                        |
 | [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim)        |
 | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)                              |

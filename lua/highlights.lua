@@ -222,7 +222,8 @@ highlight({
     TroubleNormal = { guibg = colors.dark_background },
 
     YanilNormal = { guibg = colors.dark_background },
-    YanilDeviconDirectory = { guifg = base0D },
+    YanilDeviconDirectory = { guifg = '#cccccc' },
+    YanilDeviconFile = { guifg = '#cccccc' },
     YanilTreeRoot = { guifg = colors.white },
     YanilGitModified = { guifg = base0A },
     YanilGitDirty = { guifg = base0A },
