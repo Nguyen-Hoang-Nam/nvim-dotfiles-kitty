@@ -21,15 +21,10 @@ function M.get_git_detached_head()
     local count_status_data = count_status:read('*l')
     io.close(count_status)
     if not count_status_data then
-        -- return ''
         return git_branches_data:sub(3)
     end
 
-    -- if count_status_data ~= '' then
     return git_branches_data:sub(3) .. '*'
-    -- else
-    -- return git_branches_data:sub(3)
-    -- end
 end
 
 -- Credit https://github.com/glepnir/galaxyline.nvim/blob/main/lua/galaxyline/provider_diagnostic.lua
