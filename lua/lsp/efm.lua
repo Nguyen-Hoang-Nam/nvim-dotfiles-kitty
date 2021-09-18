@@ -1,6 +1,7 @@
 local lsp = require('languages.lsp')
 
 require('lspconfig').efm.setup({
+    cmd = {'efm-langserver', '-logfile', '/tmp/efm.log', '-loglevel', '5'},
     root_dir = require('lspconfig').util.root_pattern('.git'),
     filetypes = {
         'javascript',
@@ -21,6 +22,7 @@ require('lspconfig').efm.setup({
         'java',
         'php',
         'xml',
+        'dockerfile',
     },
 
     init_options = { documentFormatting = true, codeAction = true },
@@ -45,6 +47,7 @@ require('lspconfig').efm.setup({
             java = require('languages.java').efm,
             php = require('languages.php').efm,
             xml = require('languages.xml').efm,
+            dockerfile = require('languages.docker').efm,
         },
     },
 

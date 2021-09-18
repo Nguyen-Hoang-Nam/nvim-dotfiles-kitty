@@ -1,10 +1,16 @@
 local lsp = require('languages.lsp')
 local M = {}
 
--- M.efm = {
---     formatCommand = 'prettier --tab-width=4 --use-tabs=false --stdin-filepath ${INPUT}',
---     formatStdin = true,
--- }
+M.efm = {
+    {
+        lintCommand = 'hadolint --no-color ${INPUT}',
+        -- lintCommand = 'hadolint',
+        lintStdin = false,
+        lintFormats = {
+            '%f:%l %m',
+        },
+    }
+}
 
 M.all_format = { dockerls = 'DockerLS' }
 
