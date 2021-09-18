@@ -78,6 +78,7 @@ function M.get_hunks_data()
         diff_data[2] = tonumber(gitsigns_dict:match('~(%d+)')) or 0
         diff_data[3] = tonumber(gitsigns_dict:match('-(%d+)')) or 0
     end
+
     return diff_data
 end
 
