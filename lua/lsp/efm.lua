@@ -1,7 +1,6 @@
 local lsp = require('languages.lsp')
 
 require('lspconfig').efm.setup({
-    cmd = {'efm-langserver', '-logfile', '/tmp/efm.log', '-loglevel', '5'},
     root_dir = require('lspconfig').util.root_pattern('.git'),
     filetypes = {
         'javascript',
