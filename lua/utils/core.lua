@@ -62,4 +62,22 @@ function M.match_jump()
     end
 end
 
+function M.git_hover()
+    local blame = require('git_utils').blame(vim.fn.expand('%:p'), vim.api.nvim_win_get_cursor(0)[1])
+    print('Author: ' .. blame.author)
+    print(' ')
+
+    local message = blame.message
+    local count_line = 0
+    for line in string.gmatch(message, '[^\n]+') do
+        if count_line == 0 then
+            print('Summary: ' .. line)
+            print(' ')
+            count_line = count_line + 1
+        else
+            print(line)
+        end
+    end
+end
+
 return M

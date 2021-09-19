@@ -1,32 +1,5 @@
 local M = {}
 
--- Credit https://github.com/glepnir/galaxyline.nvim/blob/main/lua/galaxyline/provider_vcs.lua
-function M.get_git_detached_head()
-    local git_branches_file = io.popen('git branch -a --no-abbrev 2> /dev/null', 'r')
-    if not git_branches_file then
-        return ''
-    end
-
-    local git_branches_data = git_branches_file:read('*l')
-    io.close(git_branches_file)
-    if not git_branches_data then
-        return ''
-    end
-
-    local count_status = io.popen('git diff --shortstat 2> /dev/null', 'r')
-    if not count_status then
-        return ''
-    end
-
-    local count_status_data = count_status:read('*l')
-    io.close(count_status)
-    if not count_status_data then
-        return git_branches_data:sub(3)
-    end
-
-    return git_branches_data:sub(3) .. '*'
-end
-
 -- Credit https://github.com/glepnir/galaxyline.nvim/blob/main/lua/galaxyline/provider_diagnostic.lua
 local function get_nvim_lsp_diagnostic(diag_type)
     if next(vim.lsp.buf_get_clients(0)) == nil then
@@ -107,7 +80,7 @@ local async_load = vim.loop.new_async(vim.schedule_wrap(function()
         if fileType ~= 'Help' then
             line = line
                 .. '%#StatuslineBackground#   '
-                .. M.get_git_detached_head()
+                .. require('git_utils').branch('')
                 .. '   %#StatuslineDiagnosticsError#'
                 .. [[ %{luaeval('require("statusline").diagnostics_error()')}]]
                 .. '%#StatuslineDiagnosticsWarning#'

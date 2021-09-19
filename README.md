@@ -11,7 +11,8 @@ _Kitty with Fira, Cascadia, and Mini-File-Icons_
 - Use primitive colours. (Default is Vivid One Dark)
 - Use ligature font, italic font and icon font.
   (Thanks to [Kitty](https://github.com/kovidgoyal/kitty))
-- Bigger icons. (Thanks to [nvim-mini-file-icons](https://github.com/Nguyen-Hoang-Nam/nvim-mini-file-icons))
+- Bigger icons.
+  (Thanks to [nvim-mini-file-icons](https://github.com/Nguyen-Hoang-Nam/nvim-mini-file-icons))
 - Saving the last session.
   (Thanks to [auto-session](https://github.com/rmagatti/auto-session))
 - Highlight current indent's scope.
@@ -150,6 +151,7 @@ Git clone below plugins in `~/.local/share/nvim/site/pack/*/start`.
 | [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)                                      |
 | [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)                                     |
 | [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)                            |
+| [git-utils.nvim](https://github.com/Nguyen-Hoang-Nam/git-utils.nvim)                            |
 | [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                                     |
 | [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)                 |
 | [lsp_signature.nvim](https://github.com/ray-x/lsp_signature.nvim)                               |

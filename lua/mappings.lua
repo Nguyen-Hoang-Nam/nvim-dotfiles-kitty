@@ -105,3 +105,5 @@ map('n', '<Leader>c', [[<Cmd>DogeGenerate<CR>]], cmd_options)
 
 map('n', ']b', '<Cmd>BufferLineCycleNext<CR>', cmd_options)
 map('n', '[b', '<Cmd>BufferLineCyclePrev<CR>', cmd_options)
+
+vim.api.nvim_command([[command GitHover call luaeval('require("utils.core").git_hover()')]])
