@@ -24,7 +24,12 @@ M.default_format = 'efm'
 
 M.lsp = {
     capabilities = lsp.capabilities,
-    cmd = { 'gopls', 'serve' },
+    -- cmd = { 'gopls', 'serve' },
+    -- root_dir = function(fname)
+    --     return require('lspconfig.util').root_pattern('go.work')(fname) or require('lspconfig.util').root_pattern(
+    --         'go.mod'
+    --     )(fname)
+    -- end,
     settings = {
         gopls = {
             analyses = {

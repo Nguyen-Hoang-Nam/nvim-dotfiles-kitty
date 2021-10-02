@@ -18,7 +18,7 @@ augroup(
     [[
 augroup FormatAutogroup
     autocmd!
-    autocmd BufWritePre Dockerfile,*.md,*.xml,*.php,*.java,*.py,*.js,*.jsx,*.ts,*.tsx,*.svelte,*.go,*.lua,*.rs,*.tex,*.css,*.html,*.yaml,*.yml,*.json lua require('format').format()
+    autocmd BufWritePre Dockerfile,*.md,*.php,*.py,*.js,*.jsx,*.ts,*.tsx,*.svelte,*.go,*.lua,*.rs,*.tex,*.css,*.html,*.yaml,*.yml,*.json lua require('format').format()
 augroup END
 ]],
     true
