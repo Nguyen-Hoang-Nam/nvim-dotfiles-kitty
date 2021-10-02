@@ -36,7 +36,7 @@ map('t', '<Esc>', '<C-\\><C-n>', options)
 --
 ----------------------------------------
 
-map('n', '<Leader>q', [[<Cmd>let @/=""<CR>]], cmd_options)
+-- map('n', '<Leader>q', [[<Cmd>let @/=""<CR>]], cmd_options)
 map('n', '<Leader>s', [[:w<CR>]], cmd_options)
 map('n', '<Leader>w', [[<Cmd>lua require('utils.core').bufdelete()<CR>]], cmd_options)
 map('n', '<Leader>m', [[<Cmd>lua require('format').format()<CR>]], cmd_options)
@@ -58,3 +58,5 @@ map('v', '<Leader>b', [[<Cmd>YanilToggle<CR>]], cmd_options)
 
 map('n', ']b', '<Cmd>BufferLineCycleNext<CR>', cmd_options)
 map('n', '[b', '<Cmd>BufferLineCyclePrev<CR>', cmd_options)
+
+map('n', '<Leader>q', [[<Cmd>Wquit<CR>]], cmd_options)

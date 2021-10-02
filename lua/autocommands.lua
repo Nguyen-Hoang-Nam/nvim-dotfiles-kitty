@@ -10,12 +10,12 @@ augroup Config
     autocmd InsertLeave * set cursorline
     autocmd! BufEnter * if &ft ==# 'help' | wincmd L | endif
     autocmd bufenter * if (winnr("$") == 1 && &filetype == "Yanil") | q | endif
+
+    autocmd VimEnter * WindLineFloatToggle
 augroup END
 ]],
     true
 )
-
--- autocmd bufenter * if (winnr("$") == 1 && &filetype == "Yanil" && YanilClose | q endif
 
 augroup(
     [[
@@ -37,13 +37,13 @@ augroup END
     true
 )
 
-augroup(
-    [[
-augroup StatusLine
-    autocmd!
-    autocmd BufEnter * lua require('statusline').load()
-    autocmd BufWritePost * lua require('statusline').load()
-augroup END
-]],
-    true
-)
+-- augroup(
+--     [[
+-- augroup StatusLine
+--     autocmd!
+--     autocmd BufEnter * lua require('statusline').load()
+--     autocmd BufWritePost * lua require('statusline').load()
+-- augroup END
+-- ]],
+--     true
+-- )
