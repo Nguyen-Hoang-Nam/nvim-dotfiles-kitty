@@ -39,7 +39,7 @@ map('t', '<Esc>', '<C-\\><C-n>', options)
 map('n', '<Leader>q', [[<Cmd>let @/=""<CR>]], cmd_options)
 map('n', '<Leader>s', [[:w<CR>]], cmd_options)
 map('n', '<Leader>w', [[<Cmd>lua require('utils.core').bufdelete()<CR>]], cmd_options)
-map('n', '<Leader>m', [[<Cmd>lua require('format').choose_formatter()<CR>]], cmd_options)
+map('n', '<Leader>m', [[<Cmd>lua require('format').format()<CR>]], cmd_options)
 map('n', '<Leader>;', [[:lua require('utils.core').match_jump()<CR>]], cmd_options)
 
 map('n', '<Leader>f', [[<Cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>]], cmd_options)
@@ -55,8 +55,6 @@ map('v', '<Leader>/', [[:CommentToggle<CR>]], cmd_options)
 
 map('n', '<Leader>b', [[<Cmd>YanilToggle<CR>]], cmd_options)
 map('v', '<Leader>b', [[<Cmd>YanilToggle<CR>]], cmd_options)
-
-map('n', '<Leader>c', [[<Cmd>DogeGenerate<CR>]], cmd_options)
 
 map('n', ']b', '<Cmd>BufferLineCycleNext<CR>', cmd_options)
 map('n', '[b', '<Cmd>BufferLineCyclePrev<CR>', cmd_options)

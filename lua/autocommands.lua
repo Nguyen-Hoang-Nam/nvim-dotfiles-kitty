@@ -9,10 +9,13 @@ augroup Config
     autocmd InsertEnter * set nocursorline
     autocmd InsertLeave * set cursorline
     autocmd! BufEnter * if &ft ==# 'help' | wincmd L | endif
+    autocmd bufenter * if (winnr("$") == 1 && &filetype == "Yanil") | q | endif
 augroup END
 ]],
     true
 )
+
+-- autocmd bufenter * if (winnr("$") == 1 && &filetype == "Yanil" && YanilClose | q endif
 
 augroup(
     [[
