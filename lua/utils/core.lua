@@ -13,7 +13,16 @@ function M.bufdelete()
 
     local bufnr = api.nvim_get_current_buf()
 
-    cmd('bnext')
+    local buffers = vim.tbl_filter(function(buf)
+        return bo[buf].buflisted and api.nvim_buf_is_valid(buf)
+    end, api.nvim_list_bufs())
+
+    if bufnr ~= buffers[#buffers] then
+        cmd('bnext')
+    else
+        cmd('bprevious')
+    end
+
     cmd('silent! ScrollViewDisable | bd ' .. bufnr .. ' | silent! ScrollViewEnable')
 end
 
