@@ -118,4 +118,15 @@ M.format = function()
     vim.lsp.buf.formatting_sync(nil, 1000)
 end
 
+M.range_format = function()
+    local vim_mode = vim.api.nvim_eval('mode()')
+
+    if vim_mode == 'v' then
+        local start_position = vim.api.nvim_eval('getpos("v")')
+        local end_position = vim.api.nvim_eval('getpos(".")')
+
+        vim.lsp.buf.range_formatting({}, { start_position[2], 0 }, { end_position[2], 0 })
+    end
+end
+
 return M
