@@ -9,7 +9,7 @@ augroup Config
     autocmd InsertEnter * set nocursorline
     autocmd InsertLeave * set cursorline
     autocmd! BufEnter * if &ft ==# 'help' | wincmd L | endif
-    autocmd bufenter * if (winnr("$") == 1 && &filetype == "Yanil") | q | endif
+    autocmd bufenter * if (winnr("$") == 2 && &filetype == "Yanil") | q | endif
 
     autocmd VimEnter * WindLineFloatToggle
     autocmd VimLeave * WindLineFloatToggle
