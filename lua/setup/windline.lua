@@ -1,7 +1,7 @@
 local windline = require('windline')
-local helper = require('windline.helpers')
+-- local helper = require('windline.helpers')
 local b_components = require('windline.components.basic')
-local utils = require('windline.utils')
+-- local utils = require('windline.utils')
 
 local colors_theme = require('theme')
 
@@ -85,13 +85,25 @@ basic.line_col = {
         default = hl_list.Black,
         white = { 'white', 'black' },
     },
-    text = function(_, _, width)
-        if width > breakpoint_width then
-            return {
-                { line_col_lua, 'white' },
-                { '   ', '' },
-            }
-        end
+    text = function(_, _, _)
+        return {
+            { line_col_lua, 'white' },
+            { '   ', '' },
+        }
+    end,
+}
+
+basic.tabsize = {
+    name = 'file',
+    hl_colors = {
+        default = hl_list.Black,
+        white = { 'white', 'black' },
+    },
+    text = function(_, _, _)
+        return {
+            { 'Tabsizes ' .. vim.api.nvim_eval('&tabstop'), 'white' },
+            { '   ', '' },
+        }
     end,
 }
 
@@ -137,6 +149,7 @@ local default = {
         basic.git,
         basic.divider,
         basic.line_col,
+        basic.tabsize,
         basic.filetype,
         { '  ', { 'yellow', 'black' } },
     },
