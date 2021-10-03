@@ -3,7 +3,7 @@ local M = {}
 
 M.efm = {
     {
-        formatCommand = 'prettier --tab-width=4 --use-tabs=false --stdin-filepath ${INPUT}',
+        formatCommand = 'prettier --tab-width=4 --stdin-filepath ${INPUT}',
         formatStdin = true,
     },
 }

@@ -9,6 +9,10 @@ augroup Config
     autocmd InsertEnter * set nocursorline
     autocmd InsertLeave * set cursorline
     autocmd! BufEnter * if &ft ==# 'help' | wincmd L | endif
+    autocmd bufenter * if (winnr("$") == 1 && &filetype == "Yanil") | q | endif
+
+    autocmd VimEnter * WindLineFloatToggle
+    autocmd VimLeave * WindLineFloatToggle
 augroup END
 ]],
     true
@@ -18,7 +22,7 @@ augroup(
     [[
 augroup FormatAutogroup
     autocmd!
-    autocmd BufWritePre Dockerfile,*.md,*.xml,*.php,*.java,*.py,*.js,*.jsx,*.ts,*.tsx,*.svelte,*.go,*.lua,*.rs,*.tex,*.css,*.html,*.yaml,*.yml,*.json lua require('format').format()
+    autocmd BufWritePre Dockerfile,*.md,*.php,*.py,*.js,*.jsx,*.ts,*.tsx,*.svelte,*.go,*.lua,*.rs,*.tex,*.css,*.html,*.yaml,*.yml,*.json lua require('format').format()
 augroup END
 ]],
     true
@@ -34,13 +38,13 @@ augroup END
     true
 )
 
-augroup(
-    [[
-augroup StatusLine
-    autocmd!
-    autocmd BufEnter * lua require('statusline').load()
-    autocmd BufWritePost * lua require('statusline').load()
-augroup END
-]],
-    true
-)
+-- augroup(
+--     [[
+-- augroup StatusLine
+--     autocmd!
+--     autocmd BufEnter * lua require('statusline').load()
+--     autocmd BufWritePost * lua require('statusline').load()
+-- augroup END
+-- ]],
+--     true
+-- )

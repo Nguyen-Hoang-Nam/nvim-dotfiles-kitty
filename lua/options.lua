@@ -33,3 +33,4 @@ option.tabstop = 4
 option.expandtab = true
 option.smartindent = true
 option.swapfile = false
+option.fileformat = 'unix'

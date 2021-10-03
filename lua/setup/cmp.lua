@@ -35,6 +35,7 @@ cmp.setup({
         ['<Tab>'] = cmp.mapping(function(_)
             if fn.pumvisible() == 1 then
                 fn.feedkeys(replace_keycodes('<C-n>'), 'n')
+                -- cmp.select_next_item()
             elseif luasnip.expand_or_jumpable() then
                 fn.feedkeys(replace_keycodes('<Plug>luasnip-expand-or-jump'), '')
             elseif check_back_space() then

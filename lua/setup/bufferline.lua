@@ -3,10 +3,9 @@ local colors = require('../theme')
 require('bufferline').setup({
     options = {
         indicator_icon = '▌',
-        -- modified_icon = '●',
-        max_name_length = 14,
-        max_prefix_length = 13,
-        tab_size = 16,
+        -- max_name_length = 14,
+        -- max_prefix_length = 10,
+        -- tab_size = 16,
         diagnostics = 'nvim_lsp',
         diagnostics_indicator = function(count, _)
             return '(' .. count .. ')'

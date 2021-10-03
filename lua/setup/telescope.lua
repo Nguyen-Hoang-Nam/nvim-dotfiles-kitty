@@ -29,8 +29,6 @@ end
 -- Credit https://github.com/nvim-telescope/telescope.nvim
 telescope.setup({
     defaults = {
-
-        mappings = { n = { ['q'] = actions.close } },
         prompt_prefix = ' ',
 
         layout_config = {
