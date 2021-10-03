@@ -23,7 +23,7 @@ local line_col_lua = function(_, winid, _, is_floatline)
         winid = 0
     end
     local row, col = unpack(vim.api.nvim_win_get_cursor(winid or 0))
-    return string.format('ln %s, col %s', row, col)
+    return string.format('Ln %s, Col %s', row, col)
 end
 
 basic.divider = { b_components.divider, '' }
@@ -101,7 +101,7 @@ basic.tabsize = {
     },
     text = function(_, _, _)
         return {
-            { 'Tabsizes ' .. vim.api.nvim_eval('&tabstop'), 'white' },
+            { 'Spaces: ' .. vim.api.nvim_eval('&tabstop'), 'white' },
             { '   ', '' },
         }
     end,

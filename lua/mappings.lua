@@ -58,5 +58,3 @@ map('v', '<Leader>b', [[<Cmd>YanilToggle<CR>]], cmd_options)
 
 map('n', ']b', '<Cmd>BufferLineCycleNext<CR>', cmd_options)
 map('n', '[b', '<Cmd>BufferLineCyclePrev<CR>', cmd_options)
-
-map('n', '<Leader>q', [[<Cmd>Wquit<CR>]], cmd_options)
