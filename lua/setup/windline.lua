@@ -1,6 +1,7 @@
 local windline = require('windline')
 local helper = require('windline.helpers')
 local b_components = require('windline.components.basic')
+local utils = require('windline.utils')
 
 local colors_theme = require('theme')
 
@@ -16,6 +17,15 @@ local hl_list = {
 local basic = {}
 
 local breakpoint_width = 90
+
+local line_col_lua = function(_, winid, _, is_floatline)
+    if is_floatline then
+        winid = 0
+    end
+    local row, col = unpack(vim.api.nvim_win_get_cursor(winid or 0))
+    return string.format('ln %s, col %s', row, col)
+end
+
 basic.divider = { b_components.divider, '' }
 basic.bg = { ' ', 'StatusLine' }
 
@@ -78,8 +88,8 @@ basic.line_col = {
     text = function(_, _, width)
         if width > breakpoint_width then
             return {
-                { b_components.line_col_lua, 'white' },
-                { '  ', '' },
+                { line_col_lua, 'white' },
+                { '   ', '' },
             }
         end
     end,
@@ -93,58 +103,26 @@ basic.filetype = {
     },
     text = function(_, _, _)
         return {
-            { vim.bo.filetype, 'white' },
-            { '  ', '' },
+            { string.gsub(vim.bo.filetype, '^%l', string.upper), 'white' },
+            { '   ', '' },
         }
     end,
 }
 
-basic.file_right = {
-    hl_colors = {
-        default = hl_list.Black,
-        white = { 'white', 'black' },
-        magenta = { 'magenta', 'black' },
-    },
-    text = function(_, _, width)
-        if width < breakpoint_width then
-            return {
-                { b_components.line_col_lua, 'white' },
-                { b_components.progress_lua, '' },
-            }
-        end
-    end,
-}
-
 local quickfix = {
-    filetypes = { 'qf', 'Trouble' },
-    active = {
-        { '🚦 Quickfix ', { 'white', 'black' } },
-        { helper.separators.slant_right, { 'black', 'black_light' } },
-        {
-            function()
-                return vim.fn.getqflist({ title = 0 }).title
-            end,
-            { 'cyan', 'black_light' },
-        },
-        { ' Total : %L ', { 'cyan', 'black_light' } },
-        { helper.separators.slant_right, { 'black_light', 'InactiveBg' } },
-        { ' ', { 'InactiveFg', 'InactiveBg' } },
-        basic.divider,
-        { helper.separators.slant_right, { 'InactiveBg', 'black' } },
-        { '🧛 ', { 'white', 'black' } },
-    },
-
+    filetypes = {},
+    active = {},
     always_active = true,
     show_last_status = true,
 }
 
 local explorer = {
-    filetypes = { 'fern', 'NvimTree', 'lir' },
+    filetypes = { 'Yanil' },
     active = {
-        { '  ', { 'black', 'red' } },
-        { helper.separators.slant_right, { 'red', 'NormalBg' } },
-        { b_components.divider, '' },
-        { b_components.file_name(''), { 'white', 'NormalBg' } },
+        basic.git_branch,
+        basic.divider,
+        basic.filetype,
+        { '  ', { 'yellow', 'black' } },
     },
     always_active = true,
     show_last_status = true,
@@ -160,6 +138,7 @@ local default = {
         basic.divider,
         basic.line_col,
         basic.filetype,
+        { '  ', { 'yellow', 'black' } },
     },
     inactive = {},
 }

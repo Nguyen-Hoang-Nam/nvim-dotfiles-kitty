@@ -12,6 +12,7 @@ augroup Config
     autocmd bufenter * if (winnr("$") == 1 && &filetype == "Yanil") | q | endif
 
     autocmd VimEnter * WindLineFloatToggle
+    autocmd VimLeave * WindLineFloatToggle
 augroup END
 ]],
     true
