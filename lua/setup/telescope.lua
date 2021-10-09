@@ -1,5 +1,5 @@
 local telescope = require('telescope')
-local actions = require('telescope.actions')
+-- local actions = require('telescope.actions')
 
 -- Credit https://github.com/nvim-telescope/telescope.nvim/issues/223#issuecomment-810091610
 local previewers = require('telescope.previewers')

@@ -2,7 +2,6 @@ local map = vim.api.nvim_set_keymap
 
 local options = { noremap = true }
 local cmd_options = { noremap = true, silent = true }
--- local expression = { expr = true, silent = true }
 
 vim.g.mapleader = ' '
 
@@ -36,7 +35,7 @@ map('t', '<Esc>', '<C-\\><C-n>', options)
 --
 ----------------------------------------
 
--- map('n', '<Leader>q', [[<Cmd>let @/=""<CR>]], cmd_options)
+map('n', '<Leader>q', [[<Cmd>let @/=""<CR>]], cmd_options)
 map('n', '<Leader>s', [[:w<CR>]], cmd_options)
 map('n', '<Leader>w', [[<Cmd>lua require('utils.core').bufdelete()<CR>]], cmd_options)
 map('n', '<Leader>m', [[<Cmd>lua require('format').format()<CR>]], cmd_options)

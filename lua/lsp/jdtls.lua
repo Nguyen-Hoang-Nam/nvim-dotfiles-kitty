@@ -7,10 +7,12 @@ local java = require('languages.java')
 
 local M = {}
 
-local root_markers = { 'gradlew', 'pom.xml' }
-local root_dir = require('jdtls.setup').find_root(root_markers)
-local home = os.getenv('HOME')
-local workspace_folder = home .. '/.workspace' .. vim.fn.fnamemodify(root_dir, ':p:h:t')
+-- local root_markers = { 'gradlew', 'pom.xml' }
+-- local root_dir = require('jdtls.setup').find_root(root_markers)
+-- local home = os.getenv('HOME')
+-- local workspace_folder = home .. '/.local/share/java/' .. vim.fn.fnamemodify(root_dir, ':p:h:t')
+
+-- local workspace_folder = home .. '/.local/share/java'
 
 function M.setup()
     local config = {
@@ -69,7 +71,8 @@ function M.setup()
         },
     }
 
-    config.cmd = { 'java-lsp.sh', workspace_folder }
+    -- config.cmd = { 'java-lsp.sh', workspace_folder }
+    config.cmd = { 'java-lsp.sh' }
     config.on_attach = java.lsp.on_attach
 
     config.on_init = function(client, _)

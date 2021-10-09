@@ -1,7 +1,10 @@
 # Nvim-Dotfiles-Kitty
 
-NeoVim Configuration that makes me feel comfortable and pleasant.
-I use this daily for JavaScript, Python, Go, Rust, Lua, PHP and Java.
+Neovim is great, but time-consuming to configure it works properly.
+I deal with it from 2021, and still change it weekly to fit my job at cooperation.
+
+This configuration works properly with
+JavaScript, Python, Go, Rust, Lua, PHP and Java.
 
 ![Main](https://raw.githubusercontent.com/Nguyen-Hoang-Nam/readme-image/main/nvim-dotfiles/main.png)
 _Kitty with Fira, Cascadia, and Mini-File-Icons_
@@ -23,15 +26,27 @@ _Kitty with Fira, Cascadia, and Mini-File-Icons_
   (Thanks to [emmet-ls](https://github.com/aca/emmet-ls))
 - Support lint and formatter.
   (Thanks to [Efm-Langsever](https://github.com/mattn/efm-langserver))
+- Single status bar.
+  (Thanks to [windline.nvim](https://github.com/windwp/windline.nvim))
+- Modern explorer sidebar.
+  (Thanks to [yanil](https://github.com/Nguyen-Hoang-Nam/yanil/tree/customize-ui))
+- Range format.
+  (Not stable)
 - Show scrollbar. (Useful when u get lost in a large file 😁)
 - Show the EOF icon. (Useful when detect trailing spaces)
 - Install all plugins manually.
+
+## Something I want to do
+
+- Perfect center dashboard header and show dashboard if there is no buffer.
+- Use nix to manage package
 
 ## Supported framework
 
 - React
 - Svelte
 - TailwindCSS
+- Express
 - Gin/gonic
 - FastAPI
 - Laravel
@@ -43,16 +58,16 @@ _Kitty with Fira, Cascadia, and Mini-File-Icons_
 =====================================
 Top 10 plugins slowing nvim's startup
 =====================================
-1   1.627   nvim-scrollview
-2   0.847   nvim-treesitter-textobjects
-3   0.808   indent-blankline.nvim
-4   0.658   cmp-nvim-lsp
-5   0.639   auto-session
-6   0.511   nvim-treesitter
-7   0.509   cmp_luasnip
-8   0.500   cmp-path
-9   0.475   vim-doge
-10  0.377   nvim-ts-autotag
+1    1.820   nvim-scrollview
+2    1.573   auto-session
+3    0.995   indent-blankline.nvim
+4    0.678   nvim-ts-autotag
+5    0.671   nvim-treesitter
+6    0.374   nvim-treesitter-pairs
+7    0.373   cmp_luasnip
+8    0.338   cmp-path
+9    0.213   nvim-ts-rainbow
+10   0.169   dashboard-nvim
 =====================================
 ```
 
@@ -173,7 +188,7 @@ Git clone below plugins in `~/.local/share/nvim/site/pack/*/start`.
 | [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)                                        |
 | [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim)        |
 | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)                              |
-| [vim-doge](https://github.com/kkoomen/vim-doge)                                                 |
+| [windline.nvim](https://github.com/windwp/windline.nvim)                                        |
 | [yanil](https://github.com/Nguyen-Hoang-Nam/yanil/tree/customize-ui)                            |
 
 ### Treesitter
@@ -190,35 +205,39 @@ Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Code-f
 
 ## Mappings
 
-| Key             | Description                 |
-| --------------- | --------------------------- |
-| &lt;Leader&gt;a | Code action                 |
-| &lt;Leader&gt;b | Toggle Nvim-Tree            |
-| &lt;Leader&gt;c | Add document                |
-| &lt;Leader&gt;d | Go to definition            |
-| &lt;Leader&gt;e | Search emojis               |
-| &lt;Leader&gt;f | Show text search            |
-| &lt;Leader&gt;g | Search gitmojis             |
-| &lt;Leader&gt;h | Go to left window           |
-| &lt;Leader&gt;l | Go to right window          |
-| &lt;leader&gt;m | Change code formatter       |
-| &lt;Leader&gt;o | Search buffers              |
-| &lt;Leader&gt;p | Show file search            |
-| &lt;Leader&gt;q | Turn off search's highlight |
-| &lt;Leader&gt;r | Rename variable             |
-| &lt;Leader&gt;s | Save file                   |
-| &lt;Leader&gt;w | Delete current buffer       |
-| &lt;Leader&gt;/ | Toggle comment              |
-| &lt;Leader&gt;; | Jump to pairs               |
-| &lt;M-t&gt;     | Toggle Terminal             |
-| jk              | Insert mode to normal mode  |
+| Key             | Description                                 |
+| --------------- | ------------------------------------------- |
+| &lt;Leader&gt;a | Code action                                 |
+| &lt;Leader&gt;b | Toggle Explorer                             |
+| &lt;Leader&gt;c | Range format                                |
+| &lt;Leader&gt;d | Go to definition                            |
+| &lt;Leader&gt;e | Search emojis                               |
+| &lt;Leader&gt;f | Show text search                            |
+| &lt;Leader&gt;g | Search gitmojis                             |
+| &lt;Leader&gt;h | Go to left window                           |
+| &lt;Leader&gt;l | Go to right window                          |
+| &lt;leader&gt;m | Format code                                 |
+| &lt;Leader&gt;o | Search buffers                              |
+| &lt;Leader&gt;p | Search file                                 |
+| &lt;Leader&gt;q | Turn off search's highlight                 |
+| &lt;Leader&gt;r | Rename variable                             |
+| &lt;Leader&gt;s | Save file                                   |
+| &lt;Leader&gt;w | Delete current buffer                       |
+| &lt;Leader&gt;/ | Toggle comment                              |
+| &lt;Leader&gt;; | Jump to pairs (Bracket, Parentheses, Quote) |
+| &lt;M-t&gt;     | Toggle Terminal                             |
+| jk              | Insert mode to normal mode                  |
+| ]d              | Next diagnostic                             |
+| [d              | Previous diagnostic                         |
+| ]b              | Next buffer                                 |
+| [b              | Previous buffer                             |
 
 ## TODO
 
 - \[ ] Show theme in wiki
 - \[ ] Support Flutter
-- \[ ] Add PHP to wiki
-- \[ ] Show images of all supporting languages
+- \[x] Add PHP to wiki
+- \[x] Show images of all supporting languages
 
 ## Contributing
 
