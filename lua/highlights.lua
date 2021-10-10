@@ -55,10 +55,19 @@ highlight({
     NormalFloat = { guifg = base05, guibg = colors.dark_background },
     NormalNC = { guifg = base05, guibg = colors.background },
     FloatBorder = { guifg = base05, guibg = base00 },
+
     Pmenu = { guifg = base05, guibg = colors.dark_background },
     PmenuSbar = { guifg = base05, guibg = colors.dark_background },
     PmenuSel = { guifg = colors.dark_background, guibg = base0B },
     PmenuThumb = { guifg = base05, guibg = colors.scrollbar },
+
+    CmpItemMenu = { guifg = base05, guibg = colors.dark_background },
+    CmpItemKind = { guifg = colors.cyan },
+    CmpItemAbbrMatchFuzzy = { guifg = '#fff' },
+    CmpItemAbbrMatch = { guifg = '#fff' },
+    CmpItemAbbr = { guifg = '#fff' },
+    CmpItemAbbrDeprecated = { guifg = '#fff' },
+
     Question = { guifg = base0D },
     -- QuickFixLine = { guibg = base01 },
     Search = { guifg = base01, guibg = base0A },
@@ -206,13 +215,13 @@ highlight({
     IndentBlanklineContextChar = { guifg = base0A },
 
     -- Status line
-    StatuslineBackground = { guibg = colors.dark_background },
-    StatuslineDiagnosticsError = { guifg = base08, guibg = colors.dark_background },
-    StatuslineDiagnosticsWarning = { guifg = base0A, guibg = colors.dark_background },
-    StatuslineDiffAdded = { guifg = base0B, guibg = colors.dark_background },
-    StatuslineDiffModified = { guifg = base0D, guibg = colors.dark_background },
-    StatuslineDiffRemoved = { guifg = base08, guibg = colors.dark_background },
-    StatuslineSmiley = { guifg = base0A, guibg = colors.dark_background },
+    -- StatuslineBackground = { guibg = colors.dark_background },
+    -- StatuslineDiagnosticsError = { guifg = base08, guibg = colors.dark_background },
+    -- StatuslineDiagnosticsWarning = { guifg = base0A, guibg = colors.dark_background },
+    -- StatuslineDiffAdded = { guifg = base0B, guibg = colors.dark_background },
+    -- StatuslineDiffModified = { guifg = base0D, guibg = colors.dark_background },
+    -- StatuslineDiffRemoved = { guifg = base08, guibg = colors.dark_background },
+    -- StatuslineSmiley = { guifg = base0A, guibg = colors.dark_background },
 
     -- GitSign
     GitSignsAdd = { guifg = base0B, guibg = colors.background },

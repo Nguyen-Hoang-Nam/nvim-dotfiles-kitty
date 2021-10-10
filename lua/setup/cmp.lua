@@ -32,10 +32,9 @@ cmp.setup({
     mapping = {
         ['<M-e>'] = cmp.mapping.complete(),
 
-        ['<Tab>'] = cmp.mapping(function(_)
-            if fn.pumvisible() == 1 then
-                fn.feedkeys(replace_keycodes('<C-n>'), 'n')
-                -- cmp.select_next_item()
+        ['<Tab>'] = function(_)
+            if cmp.visible() then
+                cmp.select_next_item()
             elseif luasnip.expand_or_jumpable() then
                 fn.feedkeys(replace_keycodes('<Plug>luasnip-expand-or-jump'), '')
             elseif check_back_space() then
@@ -43,23 +42,19 @@ cmp.setup({
             else
                 fn.feedkeys(replace_keycodes('<Plug>(Tabout)'))
             end
-        end, {
-            'i',
-            's',
-        }),
+        end,
 
-        ['<S-Tab>'] = cmp.mapping(function(fallback)
-            if fn.pumvisible() == 1 then
-                fn.feedkeys(replace_keycodes('<C-p>'), 'n')
+        ['<S-Tab>'] = function(_)
+            if cmp.visible() then
+                cmp.select_prev_item()
             elseif luasnip.jumpable(-1) then
                 fn.feedkeys(replace_keycodes('<Plug>luasnip-jump-prev'), '')
+            elseif check_back_space() then
+                fn.feedkeys(replace_keycodes('<C-d>'), 'i')
             else
-                fallback()
+                fn.feedkeys(replace_keycodes('<Plug>(TaboutBack)'))
             end
-        end, {
-            'i',
-            's',
-        }),
+        end,
     },
 
     formatting = {

@@ -10,7 +10,7 @@ option.hidden = true
 option.showtabline = 2
 option.scrolloff = 18
 option.termguicolors = true
-option.completeopt = 'menuone,noselect'
+-- option.completeopt = 'menuone,noselect'
 option.shortmess:append({ c = true })
 option.clipboard:append({ 'unnamedplus' })
 option.fillchars = 'eob: '
