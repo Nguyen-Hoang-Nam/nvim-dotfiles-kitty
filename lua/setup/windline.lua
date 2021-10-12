@@ -101,7 +101,7 @@ basic.tabsize = {
     },
     text = function(_, _, _)
         return {
-            { 'Spaces: ' .. vim.api.nvim_eval('&tabstop'), 'white' },
+            { (vim.api.nvim_eval('&et') == 1 and 'Spaces: ' or 'Tab sizes: ') .. vim.api.nvim_eval('&tabstop'), 'white' },
             { '   ', '' },
         }
     end,

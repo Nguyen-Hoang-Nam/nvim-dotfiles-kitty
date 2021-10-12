@@ -21,7 +21,7 @@ option.relativenumber = true
 option.cursorline = true
 option.signcolumn = 'yes'
 option.list = true
-option.listchars = 'trail:-,eol:↵'
+option.listchars = 'tab:\\ ,trail:-,eol:↵'
 option.foldmethod = 'expr'
 option.foldexpr = 'nvim_treesitter#foldexpr()'
 -- Hack indent-blankline https://github.com/lukas-reineke/indent-blankline.nvim/issues/59#issuecomment-806398054

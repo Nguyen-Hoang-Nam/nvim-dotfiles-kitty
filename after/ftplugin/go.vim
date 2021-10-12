@@ -1,5 +1,5 @@
-setlocal tabstop=2
-setlocal shiftwidth=2
+setlocal tabstop=4
+setlocal noet
 
 lua require('cmp').setup.buffer({sources = {{name = 'nvim_lsp' }, {name = 'luasnip'}}})
 

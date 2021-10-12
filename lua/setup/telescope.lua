@@ -29,7 +29,7 @@ end
 -- Credit https://github.com/nvim-telescope/telescope.nvim
 telescope.setup({
     defaults = {
-        prompt_prefix = ' ',
+        prompt_prefix = '  ',
 
         layout_config = {
             horizontal = { mirror = false, preview_width = 0.5 },
