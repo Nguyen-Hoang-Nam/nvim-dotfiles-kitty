@@ -1,7 +1,7 @@
 local M = {}
 
 function M.file_supported(file_extension)
-    return file_extension == 'java' or file_extension == 'md' or file_extension == 'html'
+    return file_extension == 'java' or file_extension == 'md'
 end
 
 local function remove_extension(filename, file_extension)

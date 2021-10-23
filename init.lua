@@ -1,6 +1,7 @@
 require('options')
 
 -- Setup
+require('setup.windline')
 require('setup.bufferline')
 require('setup.colorizer')
 require('setup.dashboard')
@@ -13,7 +14,6 @@ require('setup.treesitter')
 require('setup.telescope')
 require('setup.blankline')
 require('setup.signature')
-require('setup.windline')
 require('luasnip/loaders/from_vscode').lazy_load()
 require('setup.lspconfig')
 require('lspicon')

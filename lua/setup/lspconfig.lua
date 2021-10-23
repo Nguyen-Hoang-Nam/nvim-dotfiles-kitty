@@ -15,3 +15,5 @@ lsp.tsserver.setup(require('languages.javascript').lsp)
 -- lsp.yamlls.setup(require('languages.yaml').lsp)
 lsp.jsonls.setup(require('languages.json').lsp)
 lsp.lemminx.setup(require('languages.xml').lsp)
+
+lsp.hls.setup(require('languages.haskell').lsp)

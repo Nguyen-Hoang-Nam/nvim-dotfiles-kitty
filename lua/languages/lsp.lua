@@ -12,8 +12,6 @@ function M.on_attach(_, bufnr)
         api.nvim_buf_set_keymap(bufnr, mode, mapping, command, opts)
     end
 
-    api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-
     -- See `:help vim.lsp.*` for documentation on any of the below functions
     buf_set_keymap('n', '<Leader>d', '<Cmd>lua vim.lsp.buf.definition()<CR>')
     buf_set_keymap('n', '<Leader><Leader>', '<Cmd>lua vim.lsp.buf.hover()<CR>')
