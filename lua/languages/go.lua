@@ -10,12 +10,6 @@ M.efm = {
         formatCommand = 'gofumpt',
         formatStdin = true,
     },
-    {
-        lintCommand = 'staticcheck ${INPUT}',
-        lintFormats = {
-            '%f:%l:%c: %m',
-        },
-    },
 }
 
 M.all_format = { efm = 'Goimports   Gofumpt' }
@@ -30,7 +24,6 @@ M.lsp = {
                 unusedparams = true,
             },
         },
-        staticcheck = true,
     },
     on_attach = lsp.on_attach,
 }
