@@ -215,13 +215,13 @@ highlight({
     IndentBlanklineContextChar = { guifg = base0A },
 
     -- Status line
-    -- StatuslineBackground = { guibg = colors.dark_background },
-    -- StatuslineDiagnosticsError = { guifg = base08, guibg = colors.dark_background },
-    -- StatuslineDiagnosticsWarning = { guifg = base0A, guibg = colors.dark_background },
-    -- StatuslineDiffAdded = { guifg = base0B, guibg = colors.dark_background },
-    -- StatuslineDiffModified = { guifg = base0D, guibg = colors.dark_background },
-    -- StatuslineDiffRemoved = { guifg = base08, guibg = colors.dark_background },
-    -- StatuslineSmiley = { guifg = base0A, guibg = colors.dark_background },
+    StatuslineBackground = { guibg = colors.dark_background },
+    StatuslineDiagnosticsError = { guifg = base08, guibg = colors.dark_background },
+    StatuslineDiagnosticsWarning = { guifg = base0A, guibg = colors.dark_background },
+    StatuslineDiffAdded = { guifg = base0B, guibg = colors.dark_background },
+    StatuslineDiffModified = { guifg = base0D, guibg = colors.dark_background },
+    StatuslineDiffRemoved = { guifg = base08, guibg = colors.dark_background },
+    StatuslineSmiley = { guifg = base0A, guibg = colors.dark_background },
 
     -- GitSign
     GitSignsAdd = { guifg = base0B, guibg = colors.background },

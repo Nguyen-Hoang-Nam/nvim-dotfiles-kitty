@@ -26,8 +26,6 @@ _Kitty with Fira, Cascadia, and Mini-File-Icons_
   (Thanks to [emmet-ls](https://github.com/aca/emmet-ls))
 - Support lint and formatter.
   (Thanks to [Efm-Langsever](https://github.com/mattn/efm-langserver))
-- Single status bar.
-  (Thanks to [windline.nvim](https://github.com/windwp/windline.nvim))
 - Modern explorer sidebar.
   (Thanks to [yanil](https://github.com/Nguyen-Hoang-Nam/yanil/tree/customize-ui))
 - Range format.
@@ -188,7 +186,6 @@ Git clone below plugins in `~/.local/share/nvim/site/pack/*/start`.
 | [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)                                        |
 | [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim)        |
 | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)                              |
-| [windline.nvim](https://github.com/windwp/windline.nvim)                                        |
 | [yanil](https://github.com/Nguyen-Hoang-Nam/yanil/tree/customize-ui)                            |
 
 ### Treesitter

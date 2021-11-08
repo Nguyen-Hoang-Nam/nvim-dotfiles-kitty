@@ -116,7 +116,28 @@ end))
 
 -- Credit https://github.com/glepnir/galaxyline.nvim/blob/main/lua/galaxyline.lua
 function M.load()
-    async_load:send()
+    local fileType = vim.bo.filetype
+    if
+        fileType == 'dapui_watches'
+        or fileType == 'dapui_stacks'
+        or fileType == 'dapui_scopes'
+        or fileType == 'dap-repl'
+    then
+        local windowType
+        if fileType == 'dapui_watches' then
+            windowType = 'Watches'
+        elseif fileType == 'dapui_stacks' then
+            windowType = 'Stacks'
+        elseif fileType == 'dapui_scopes' then
+            windowType = 'Scopes'
+        else
+            windowType = 'Repl'
+        end
+
+        vim.wo.statusline = '%#StatuslineBackground#  ' .. windowType .. '%#StatuslineBackground#'
+    else
+        async_load:send()
+    end
 end
 
 return M

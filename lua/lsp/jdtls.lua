@@ -29,6 +29,11 @@ function M.setup()
 
     config.init_options = {
         extendedClientCapabilities = extendedClientCapabilities,
+        bundles = {
+            vim.fn.glob(
+                '/home/nguyenhoangnam/.local/share/dap/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar'
+            ),
+        },
     }
 
     config.settings = {
