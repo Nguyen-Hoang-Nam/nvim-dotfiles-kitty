@@ -17,3 +17,5 @@ lsp.jsonls.setup(require('languages.json').lsp)
 lsp.lemminx.setup(require('languages.xml').lsp)
 
 lsp.hls.setup(require('languages.haskell').lsp)
+
+lsp.zls.setup(require('languages.zig').lsp)

@@ -38,6 +38,8 @@ local function on_attach(_, bufnr)
     buf_set_keymap('v', 'gde', "<Esc><Cmd>lua require('jdtls').extract_variable(true)<CR>")
     buf_set_keymap('n', 'gde', "<Cmd>lua require('jdtls').extract_variable()<CR>")
     buf_set_keymap('v', 'gdm', "<Esc><Cmd>lua require('jdtls').extract_method(true)<CR>")
+
+    require('jdtls').setup_dap({ hotcodereplace = 'auto' })
 end
 
 local capabilities = {

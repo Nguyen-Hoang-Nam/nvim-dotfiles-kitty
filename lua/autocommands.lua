@@ -10,9 +10,6 @@ augroup Config
     autocmd InsertLeave * set cursorline
     autocmd! BufEnter * if &ft ==# 'help' | wincmd L | endif
     autocmd bufenter * if (winnr("$") == 2 && &filetype == "Yanil") | q | endif
-
-    autocmd VimEnter * WindLineFloatToggle
-    autocmd VimLeave * WindLineFloatToggle
 augroup END
 ]],
     true
@@ -38,13 +35,16 @@ augroup END
     true
 )
 
--- augroup(
---     [[
--- augroup StatusLine
---     autocmd!
---     autocmd BufEnter * lua require('statusline').load()
---     autocmd BufWritePost * lua require('statusline').load()
--- augroup END
--- ]],
---     true
--- )
+augroup(
+    [[
+augroup StatusLine
+    autocmd!
+    autocmd BufEnter * lua require('statusline').load()
+    autocmd BufWritePost * lua require('statusline').load()
+
+    autocmd FileType dapui* lua require('statusline').load()
+    autocmd FileType dap-repl lua require('statusline').load()
+augroup END
+]],
+    true
+)

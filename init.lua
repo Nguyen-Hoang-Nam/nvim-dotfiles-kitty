@@ -1,7 +1,6 @@
 require('options')
 
--- Setup
-require('setup.windline')
+-- require('setup.windline')
 require('setup.bufferline')
 require('setup.colorizer')
 require('setup.dashboard')
@@ -9,13 +8,14 @@ require('setup.gitsigns')
 require('setup.cmp')
 require('setup.autopairs')
 require('setup.toggleterm')
--- require('setup.tree')
+
 require('setup.treesitter')
 require('setup.telescope')
 require('setup.blankline')
 require('setup.signature')
 require('luasnip/loaders/from_vscode').lazy_load()
 require('setup.lspconfig')
+
 require('lspicon')
 
 require('lsp.emmet')
@@ -25,7 +25,8 @@ require('lsp.efm')
 require('lsp.tailwindcss')
 
 require('tree')
-require('highlights')
-require('mappings')
 
+require('mappings')
+require('highlights')
+require('setup.dap')
 require('autocommands')
