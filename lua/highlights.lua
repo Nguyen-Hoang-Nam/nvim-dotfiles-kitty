@@ -223,6 +223,9 @@ highlight({
     StatuslineDiffRemoved = { guifg = base08, guibg = colors.dark_background },
     StatuslineSmiley = { guifg = base0A, guibg = colors.dark_background },
 
+    DapBreakpoint = { guifg = base08 },
+    DapStopped = { guifg = base0B },
+
     -- GitSign
     GitSignsAdd = { guifg = base0B, guibg = colors.background },
     GitSignsChange = { guifg = base0D, guibg = colors.background },

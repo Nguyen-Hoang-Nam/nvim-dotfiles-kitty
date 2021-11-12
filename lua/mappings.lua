@@ -61,6 +61,8 @@ map('n', '<Leader>3', [[:lua require'dap'.disconnect()<CR>]], cmd_options)
 map('n', '<Leader>4', [[:lua require'dap'.step_over()<CR>]], cmd_options)
 map('n', '<Leader>5', [[:lua require'dap'.step_into()<CR>]], cmd_options)
 map('n', '<Leader>6', [[:lua require'dap'.step_out()<CR>]], cmd_options)
+map('n', '<Leader>8', [[:lua require'dapui'.float_element("scopes")<CR>]], cmd_options)
+map('n', '<Leader>9', [[:lua require'dapui'.toggle("sidebar")<CR>]], cmd_options)
 map('n', '<Leader>0', [[:lua require'dap'.toggle_breakpoint()<CR>]], cmd_options)
 
 map('n', '<Leader>/', [[<Cmd>CommentToggle<CR>]], cmd_options)

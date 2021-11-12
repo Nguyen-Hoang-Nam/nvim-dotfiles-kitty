@@ -1,16 +1,14 @@
-local dap = require('dap')
+require('dap')
 
-require('jdtls.dap').setup_dap_main_class_configs()
+local M = {}
 
--- dap.defaults.fallback.terminal_win_cmd = '50vsplit new'
-
-vim.fn.sign_define('DapBreakpoint', { text = '🛑', texthl = '', linehl = '', numhl = '' })
+vim.fn.sign_define('DapBreakpoint', { text = '', texthl = 'DapBreakpoint', linehl = '', numhl = '' })
+vim.fn.sign_define('DapStopped', { text = '', texthl = 'DapStopped', linehl = '', numhl = '' })
 
 require('dapui').setup({
     icons = { expanded = '▾', collapsed = '▸' },
 
     mappings = {
-        -- Use a table to apply multiple mappings
         expand = { '<CR>', '<2-LeftMouse>' },
         open = 'o',
         remove = 'd',
@@ -20,19 +18,11 @@ require('dapui').setup({
 
     sidebar = {
         elements = {
-            { id = 'scopes', size = 0.25 },
-            -- { id = 'breakpoints', size = 0.25 },
-            { id = 'stacks', size = 0.25 },
-            { id = 'watches', size = 0.5 },
+            { id = 'scopes', size = 0.5 },
+            { id = 'stacks', size = 0.5 },
         },
-        size = 50,
+        size = 40,
         position = 'left',
-    },
-
-    tray = {
-        elements = { 'repl' },
-        size = 10,
-        position = 'bottom', -- Can be "left", "right", "top", "bottom"
     },
 
     floating = {
@@ -46,3 +36,5 @@ require('dapui').setup({
 
     windows = { indent = 1 },
 })
+
+return M

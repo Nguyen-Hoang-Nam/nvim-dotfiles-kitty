@@ -16,8 +16,6 @@ require('setup.signature')
 require('luasnip/loaders/from_vscode').lazy_load()
 require('setup.lspconfig')
 
-require('highlights')
-require('setup.dap')
 require('lspicon')
 
 require('lsp.emmet')
@@ -27,6 +25,8 @@ require('lsp.efm')
 require('lsp.tailwindcss')
 
 require('tree')
-require('mappings')
 
+require('mappings')
+require('highlights')
+require('setup.dap')
 require('autocommands')
