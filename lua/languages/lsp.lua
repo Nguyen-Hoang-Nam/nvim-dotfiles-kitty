@@ -3,13 +3,17 @@ local api = vim.api
 local M = {}
 
 -- Credit https://github.com/neovim/nvim-lspconfig#keybindings-and-completion
-function M.on_attach(_, bufnr)
+function M.on_attach(client, bufnr)
     api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
     local opts = { noremap = true, silent = true }
 
     local function buf_set_keymap(mode, mapping, command)
         api.nvim_buf_set_keymap(bufnr, mode, mapping, command, opts)
+    end
+
+    if vim.bo.filetype == 'zig' then
+        client.resolved_capabilities.code_action = true
     end
 
     -- See `:help vim.lsp.*` for documentation on any of the below functions
