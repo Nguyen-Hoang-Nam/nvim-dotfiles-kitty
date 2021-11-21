@@ -1,3 +1,5 @@
+vim.g.tex_flavor = 'latex' -- Fix plaintex filetype in new tex file
+
 require('options')
 
 -- require('setup.windline')

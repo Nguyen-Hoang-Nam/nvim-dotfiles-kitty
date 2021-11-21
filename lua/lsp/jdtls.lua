@@ -2,6 +2,7 @@ local finders = require('telescope.finders')
 local sorters = require('telescope.sorters')
 local actions = require('telescope.actions')
 local pickers = require('telescope.pickers')
+local action_state = require('telescope.actions.state')
 
 local java = require('languages.java')
 
@@ -101,7 +102,8 @@ function M.setup()
             sorter = sorters.get_generic_fuzzy_sorter(),
             attach_mappings = function(prompt_bufnr)
                 actions.select_default:replace(function()
-                    local selection = actions.get_selected_entry()
+                    local selection = action_state.get_selected_entry()
+
                     actions.close(prompt_bufnr)
 
                     cb(selection.value)
