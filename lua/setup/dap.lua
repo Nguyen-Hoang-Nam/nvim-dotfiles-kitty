@@ -1,4 +1,7 @@
-require('dap')
+-- require('dap')
+local dap = require('dap')
+
+dap.defaults.fallback.terminal_win_cmd = ':belowright new | resize 10 | setlocal bt=nofile bh=wipe nobl noswapfile nu'
 
 local M = {}
 
