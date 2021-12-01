@@ -63,10 +63,12 @@ highlight({
 
     CmpItemMenu = { guifg = base05, guibg = colors.dark_background },
     CmpItemKind = { guifg = colors.cyan },
-    CmpItemAbbrMatchFuzzy = { guifg = '#fff' },
-    CmpItemAbbrMatch = { guifg = '#fff' },
-    CmpItemAbbr = { guifg = '#fff' },
-    CmpItemAbbrDeprecated = { guifg = '#fff' },
+    CmpItemKindMethod = { guifg = base0A },
+    CmpItemKindFunction = { guifg = base0E },
+    CmpItemAbbrMatchFuzzy = { guifg = base0B },
+    CmpItemAbbrMatch = { guifg = base0B },
+    CmpItemAbbr = { guifg = base05 },
+    CmpItemAbbrDeprecated = { guifg = '#ffffff' },
 
     Question = { guifg = base0D },
     -- QuickFixLine = { guibg = base01 },
@@ -259,6 +261,8 @@ highlight({
     TelescopePromptBorder = { guifg = colors.border },
     TelescopeResultsBorder = { guifg = colors.border },
     TelescopePreviewBorder = { guifg = colors.border },
+
+    DapUIFloatBorder = { guifg = colors.border },
 
     DashboardHeader = { guifg = colors.comment },
     DashboardCenter = { guifg = colors.comment },

@@ -64,9 +64,17 @@ cmp.setup({
 
     formatting = {
         format = function(_, vim_item)
+            if string.len(vim_item.abbr) > 60 then
+                vim_item.abbr = string.sub(vim_item.abbr, 1, 50)
+            end
+
             vim_item.kind = lspKindIcons[vim_item.kind]
 
             return vim_item
         end,
+    },
+
+    documentation = {
+        maxwidth = 30,
     },
 })
