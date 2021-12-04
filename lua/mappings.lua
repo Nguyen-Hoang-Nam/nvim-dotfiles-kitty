@@ -52,8 +52,9 @@ map('n', '<Leader>o', [[:lua require('telescope.builtin').buffers()<CR>]], cmd_o
 map('n', '<Leader>t', [[:lua require('telescope.builtin').lsp_document_diagnostics()<CR>]], cmd_options)
 map('n', '<Leader>p', [[:lua require('telescope.builtin').find_files()<CR>]], cmd_options)
 map('n', '<Leader>a', [[<Cmd>lua require('telescope.builtin').lsp_code_actions()<CR>]], cmd_options)
-map('n', '<Leader>g', [[:lua require('telescope.builtin').symbols{ sources = {'gitmoji'} }<CR>]], cmd_options)
-map('n', '<Leader>e', [[:lua require('telescope.builtin').symbols{ sources = {'emoji'} }<CR>]], cmd_options)
+map('n', '<Leader>e', [[:lua require('telescope.builtin').symbols{ sources = {'gitmoji'} }<CR>]], cmd_options)
+map('n', '<Leader>g', [[<Cmd>lua require("utils.core").git_hover()<CR>]], cmd_options)
+-- map('n', '<Leader>e', [[:lua require('telescope.builtin').symbols{ sources = {'emoji'} }<CR>]], cmd_options)
 
 map('n', '<Leader>1', [[:lua require('jdtls.dap').setup_dap_main_class_configs()<CR>]], cmd_options)
 map('n', '<Leader>2', [[:lua require'dap'.continue()<CR>]], cmd_options)

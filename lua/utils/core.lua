@@ -78,10 +78,9 @@ function M.git_hover()
 
     local message = blame.message
     local count_line = 0
-    for line in string.gmatch(message, '[^\n]+') do
+    for line in string.gmatch(message, '([^\n]*)(\n?)') do
         if count_line == 0 then
             table.insert(texts, 'Summary: ' .. line)
-            table.insert(texts, '')
             count_line = count_line + 1
         else
             table.insert(texts, line)
@@ -112,6 +111,10 @@ function M.git_hover()
     api.nvim_buf_set_lines(buf, 0, #texts, false, texts)
 
     api.nvim_buf_set_keymap(buf, 'n', 'q', ':close<CR>', { silent = true, nowait = true, noremap = true })
+
+    api.nvim_buf_set_option(buf, 'buftype', 'nofile')
+    api.nvim_buf_set_option(buf, 'bufhidden', 'delete')
+    api.nvim_buf_set_option(buf, 'modifiable', false)
 end
 
 return M
