@@ -16,7 +16,6 @@ function M.on_attach(client, bufnr)
         client.resolved_capabilities.code_action = true
     end
 
-    -- See `:help vim.lsp.*` for documentation on any of the below functions
     buf_set_keymap('n', '<Leader>d', '<Cmd>lua vim.lsp.buf.definition()<CR>')
     buf_set_keymap('n', '<Leader><Leader>', '<Cmd>lua vim.lsp.buf.hover()<CR>')
     buf_set_keymap('n', '<Leader>r', '<cmd>lua vim.lsp.buf.rename()<CR>')

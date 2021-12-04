@@ -53,6 +53,8 @@ map('n', '<Leader>t', [[:lua require('telescope.builtin').lsp_document_diagnosti
 map('n', '<Leader>p', [[:lua require('telescope.builtin').find_files()<CR>]], cmd_options)
 map('n', '<Leader>a', [[<Cmd>lua require('telescope.builtin').lsp_code_actions()<CR>]], cmd_options)
 map('n', '<Leader>e', [[:lua require('telescope.builtin').symbols{ sources = {'gitmoji'} }<CR>]], cmd_options)
+map('n', '<Leader>x', [[:lua require('telescope.builtin').registers()<CR>]], cmd_options)
+
 map('n', '<Leader>g', [[<Cmd>lua require("utils.core").git_hover()<CR>]], cmd_options)
 -- map('n', '<Leader>e', [[:lua require('telescope.builtin').symbols{ sources = {'emoji'} }<CR>]], cmd_options)
 
@@ -74,3 +76,5 @@ map('v', '<Leader>b', [[<Cmd>YanilToggle<CR>]], cmd_options)
 
 map('n', ']b', '<Cmd>BufferLineCycleNext<CR>', cmd_options)
 map('n', '[b', '<Cmd>BufferLineCyclePrev<CR>', cmd_options)
+
+map('n', '<Leader>z', [[<Cmd>lua require('goto-preview').goto_preview_definition()<CR>]], cmd_options)
