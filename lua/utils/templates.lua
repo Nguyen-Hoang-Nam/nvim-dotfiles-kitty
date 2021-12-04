@@ -43,13 +43,15 @@ end
 
 function M.generate(file_extension, filename, path, file_type)
     if file_extension == 'md' and filename == 'README.md' then
-        return require('languages.markdown').template
+        return require('languages.markdown').template[file_type]
     elseif file_extension == 'java' then
         local template = require('languages.java').template[file_type]
         local name = remove_extension(filename, file_extension)
         local group = java_group(path, filename)
 
         return string.format(template, group, name)
+    else
+        return ''
     end
 end
 

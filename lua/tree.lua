@@ -48,7 +48,7 @@ local function create_node(tree, node)
     local file_extension = require('utils.core').file_extension(name)
     local is_template_support = templates.file_supported(file_extension)
 
-    local file_type = ''
+    local file_type = '1'
     if file_extension == 'java' then
         file_type = vim.fn.input('\nEnter file type: [1] Class, [2] Interface: ')
     end
