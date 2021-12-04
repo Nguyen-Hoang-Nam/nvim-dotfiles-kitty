@@ -52,41 +52,66 @@ function M.file_extension(filename)
     return t[#t]
 end
 
-function M.match_jump()
-    local current_node = require('nvim-treesitter.ts_utils').get_node_at_cursor()
+-- function M.match_jump()
+--     local current_node = require('nvim-treesitter.ts_utils').get_node_at_cursor()
 
-    if current_node:type() == 'string' then
-        local start_row, start_col, end_row, end_col = current_node:range()
-        local current_position = api.nvim_win_get_cursor(0)
-        local current_row = current_position[1]
-        local current_col = current_position[2]
+--     if current_node:type() == 'string' then
+--         local start_row, start_col, end_row, end_col = current_node:range()
+--         local current_position = api.nvim_win_get_cursor(0)
+--         local current_row = current_position[1]
+--         local current_col = current_position[2]
 
-        if current_row == start_row + 1 and current_col == start_col then
-            api.nvim_win_set_cursor(0, { end_row + 1, end_col - 1 })
-        elseif current_row == end_row + 1 and current_col == end_col - 1 then
-            api.nvim_win_set_cursor(0, { start_row + 1, start_col })
-        end
-    else
-        require('nvim-treesitter.pairs').goto_partner()
-    end
-end
+--         if current_row == start_row + 1 and current_col == start_col then
+--             api.nvim_win_set_cursor(0, { end_row + 1, end_col - 1 })
+--         elseif current_row == end_row + 1 and current_col == end_col - 1 then
+--             api.nvim_win_set_cursor(0, { start_row + 1, start_col })
+--         end
+--     else
+--         require('nvim-treesitter.pairs').goto_partner()
+--     end
+-- end
 
 function M.git_hover()
     local blame = require('git_utils').blame(vim.fn.expand('%:p'), vim.api.nvim_win_get_cursor(0)[1])
-    print('Author: ' .. blame.author)
-    print(' ')
+
+    local texts = { 'Author: ' .. blame.author, '' }
 
     local message = blame.message
     local count_line = 0
     for line in string.gmatch(message, '[^\n]+') do
         if count_line == 0 then
-            print('Summary: ' .. line)
-            print(' ')
+            table.insert(texts, 'Summary: ' .. line)
+            table.insert(texts, '')
             count_line = count_line + 1
         else
-            print(line)
+            table.insert(texts, line)
         end
     end
+
+    local width = 72
+    local height = 10
+
+    if #texts < 10 then
+        height = #texts
+    end
+
+    local buf = api.nvim_create_buf(false, true)
+
+    local opts = {
+        relative = 'cursor',
+        width = width,
+        height = height,
+        col = 0,
+        row = 1,
+        anchor = 'NW',
+        style = 'minimal',
+    }
+
+    api.nvim_open_win(buf, 1, opts)
+
+    api.nvim_buf_set_lines(buf, 0, #texts, false, texts)
+
+    api.nvim_buf_set_keymap(buf, 'n', 'q', ':close<CR>', { silent = true, nowait = true, noremap = true })
 end
 
 return M

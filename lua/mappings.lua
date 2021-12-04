@@ -45,7 +45,7 @@ map('n', '<Leader>w', [[<Cmd>lua require('utils.core').bufdelete()<CR>]], cmd_op
 
 map('n', '<Leader>m', [[<Cmd>lua require('format').format()<CR>]], cmd_options)
 map('v', '<Leader>c', [[<Cmd>lua require('format').range_format()<CR><Esc>]], cmd_options)
-map('n', '<Leader>;', [[:lua require('utils.core').match_jump()<CR>]], cmd_options)
+-- map('n', '<Leader>;', [[:lua require('utils.core').match_jump()<CR>]], cmd_options)
 
 map('n', '<Leader>f', [[<Cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>]], cmd_options)
 map('n', '<Leader>o', [[:lua require('telescope.builtin').buffers()<CR>]], cmd_options)

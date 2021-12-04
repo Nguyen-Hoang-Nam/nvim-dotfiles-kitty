@@ -179,7 +179,6 @@ Git clone below plugins in `~/.local/share/nvim/site/pack/*/start`.
 | [nvim-toggleterm.lua](https://github.com/akinsho/nvim-toggleterm.lua)                           |
 | [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)                                    |
 | [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)                           |
-| [nvim-treesitter-pairs](https://github.com/theHamsta/nvim-treesitter-pairs)                     |
 | [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)                                    |
 | [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) |
 | [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)                                      |
