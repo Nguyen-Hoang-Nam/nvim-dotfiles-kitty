@@ -4,8 +4,6 @@ local api = vim.api
 
 local M = {}
 
--- Delete current buffer
--- Unlike bdelete, this command will jump to next buffer by id
 function M.bufdelete()
     if bo.modified then
         cmd('write')
@@ -51,25 +49,6 @@ function M.file_extension(filename)
 
     return t[#t]
 end
-
--- function M.match_jump()
---     local current_node = require('nvim-treesitter.ts_utils').get_node_at_cursor()
-
---     if current_node:type() == 'string' then
---         local start_row, start_col, end_row, end_col = current_node:range()
---         local current_position = api.nvim_win_get_cursor(0)
---         local current_row = current_position[1]
---         local current_col = current_position[2]
-
---         if current_row == start_row + 1 and current_col == start_col then
---             api.nvim_win_set_cursor(0, { end_row + 1, end_col - 1 })
---         elseif current_row == end_row + 1 and current_col == end_col - 1 then
---             api.nvim_win_set_cursor(0, { start_row + 1, start_col })
---         end
---     else
---         require('nvim-treesitter.pairs').goto_partner()
---     end
--- end
 
 function M.git_hover()
     local blame = require('git_utils').blame(vim.fn.expand('%:p'), vim.api.nvim_win_get_cursor(0)[1])
