@@ -50,11 +50,11 @@ highlight({
     MatchParen = { guibg = base03 },
     MoreMsg = { guifg = base0B },
     NonText = { guifg = colors.comment },
-    -- Normal = { guifg = base05, guibg = colors.background },
     Normal = { guibg = colors.background },
     NormalFloat = { guifg = base05, guibg = colors.dark_background },
     NormalNC = { guifg = base05, guibg = colors.background },
     FloatBorder = { guifg = base05, guibg = base00 },
+    ColorColumn = { guibg = colors.cursorLine },
 
     Pmenu = { guifg = base05, guibg = colors.dark_background },
     PmenuSbar = { guifg = base05, guibg = colors.dark_background },

@@ -1,39 +1,19 @@
 local M = {}
 
--- Credit https://github.com/glepnir/galaxyline.nvim/blob/main/lua/galaxyline/provider_diagnostic.lua
-local function get_nvim_lsp_diagnostic(diag_type)
+local function get_nvim_lsp_diagnostic(severity)
     if next(vim.lsp.buf_get_clients(0)) == nil then
         return '0 '
     end
-    local active_clients = vim.lsp.get_active_clients()
 
-    if active_clients then
-        local count = 0
-
-        for _, client in ipairs(active_clients) do
-            count = count + vim.lsp.diagnostic.get_count(vim.api.nvim_get_current_buf(), diag_type, client.id)
-        end
-
-        return count .. ' '
-    end
+    return #vim.diagnostic.get(vim.api.nvim_get_current_buf(), { severity }) .. ' '
 end
 
--- Credit https://github.com/glepnir/galaxyline.nvim/blob/main/lua/galaxyline/provider_diagnostic.lua
 function M.diagnostics_error()
-    if not vim.tbl_isempty(vim.lsp.buf_get_clients(0)) then
-        return get_nvim_lsp_diagnostic('Error')
-    end
-
-    return '0 '
+    return get_nvim_lsp_diagnostic(vim.diagnostic.severity.ERROR)
 end
 
--- Credit https://github.com/glepnir/galaxyline.nvim/blob/main/lua/galaxyline/provider_diagnostic.lua
 function M.diagnostics_warning()
-    if not vim.tbl_isempty(vim.lsp.buf_get_clients(0)) then
-        return get_nvim_lsp_diagnostic('Warning')
-    end
-
-    return '0 '
+    return get_nvim_lsp_diagnostic(vim.diagnostic.severity.WARN)
 end
 
 -- Credit https://github.com/glepnir/galaxyline.nvim/blob/main/lua/galaxyline/provider_vcs.lua
@@ -60,7 +40,6 @@ local async_load = vim.loop.new_async(vim.schedule_wrap(function()
 
         if fileType ~= '' and fileType ~= 'toggleterm' then
             is_update = true
-            -- tab = vim.api.nvim_eval('&tabstop')
 
             fileType = fileType:gsub('^%l', string.upper)
 
