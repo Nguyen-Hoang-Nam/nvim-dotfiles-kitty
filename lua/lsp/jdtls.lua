@@ -21,8 +21,8 @@ function M.setup()
             -- allow_incremental_sync = true,
             server_side_fuzzy_completion = true,
         },
-        -- capabilities = java.lsp.capabilities,
-        -- on_attach = java.lsp.on_attach,
+        cmd = { 'java-lsp.sh' },
+        on_attach = java.lsp.on_attach,
     }
 
     local extendedClientCapabilities = require('jdtls').extendedClientCapabilities
@@ -76,10 +76,6 @@ function M.setup()
             },
         },
     }
-
-    -- config.cmd = { 'java-lsp.sh', workspace_folder }
-    config.cmd = { 'java-lsp.sh' }
-    config.on_attach = java.lsp.on_attach
 
     config.on_init = function(client, _)
         client.notify('workspace/didChangeConfiguration', { settings = config.settings })
