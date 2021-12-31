@@ -23,8 +23,13 @@ map('n', '<Leader>w', [[<Cmd>lua require('utils.core').bufdelete()<CR>]], cmd_op
 map('n', '<Leader>m', [[<Cmd>lua require('format').format()<CR>]], cmd_options)
 map('v', '<Leader>c', [[<Cmd>lua require('format').range_format()<CR><Esc>]], cmd_options)
 
-map('n', '<Leader>f', [[<Cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>]], cmd_options)
--- map('n', '<Leader>o', [[<Cmd>lua require('telescope.builtin').buffers()<CR>]], cmd_options)
+map(
+    'n',
+    '<Leader>f',
+    [[<Cmd>lua require('telescope.builtin').current_buffer_fuzzy_find({skip_empty_lines = true})<CR>]],
+    cmd_options
+)
+map('n', '<Leader>o', [[<Cmd>lua require('telescope.builtin').buffers()<CR>]], cmd_options)
 map('n', '<Leader>p', [[<Cmd>lua require('telescope.builtin').find_files()<CR>]], cmd_options)
 map('n', '<Leader>a', [[<Cmd>lua require('telescope.builtin').lsp_code_actions()<CR>]], cmd_options)
 map('n', '<Leader>e', [[<Cmd>lua require('telescope.builtin').symbols{ sources = {'gitmoji'} }<CR>]], cmd_options)

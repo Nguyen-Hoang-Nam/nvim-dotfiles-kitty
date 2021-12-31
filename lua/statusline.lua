@@ -93,7 +93,6 @@ local async_load = vim.loop.new_async(vim.schedule_wrap(function()
     vim.wo.statusline = line
 end))
 
--- Credit https://github.com/glepnir/galaxyline.nvim/blob/main/lua/galaxyline.lua
 function M.load()
     local fileType = vim.bo.filetype
     if fileType == 'dapui_watches' or fileType == 'dapui_stacks' or fileType == 'dapui_scopes' then
