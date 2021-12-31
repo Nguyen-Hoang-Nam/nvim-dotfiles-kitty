@@ -5,7 +5,7 @@ local function get_nvim_lsp_diagnostic(severity)
         return '0 '
     end
 
-    return #vim.diagnostic.get(vim.api.nvim_get_current_buf(), { severity }) .. ' '
+    return #vim.diagnostic.get(vim.api.nvim_get_current_buf(), { severity = severity }) .. ' '
 end
 
 function M.diagnostics_error()
