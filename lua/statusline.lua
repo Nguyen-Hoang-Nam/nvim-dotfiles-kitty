@@ -34,7 +34,7 @@ local async_load = vim.loop.new_async(vim.schedule_wrap(function()
     local line
     if vim.fn.winwidth(0) > 30 then
         local fileType = vim.bo.filetype
-        local lineBreak = vim.go.fileformat
+        local lineBreak = vim.api.nvim_eval('&fileformat')
         local is_update = false
         local tab = vim.api.nvim_eval('&tabstop')
 
