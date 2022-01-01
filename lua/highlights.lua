@@ -75,8 +75,8 @@ highlight({
     Search = { guifg = base01, guibg = base0A },
     SignColumn = { guifg = base04, guibg = colors.background },
     SpecialKey = { guifg = base03 },
-    StatusLine = { guifg = base04, guibg = base02 },
-    StatucLineNC = { guifg = colors.border, guibg = colors.dark_background, gui = 'underline' },
+    StatusLine = { guifg = colors.dark_background, guibg = colors.dark_background },
+    StatucLineNC = { guifg = colors.dark_background, guibg = colors.dark_background, gui = 'underline' },
     Substitute = { guifg = base01, guibg = base0A },
     TermCursor = { guifg = colors.background, guibg = base0C },
     TermCursorNC = { guifg = colors.background, guibg = base05 },
@@ -218,6 +218,7 @@ highlight({
 
     -- Status line
     StatuslineBackground = { guibg = colors.dark_background },
+    StatuslineEmptyBackground = { guifg = colors.dark_background, guibg = colors.dark_background },
     StatuslineDiagnosticsError = { guifg = base08, guibg = colors.dark_background },
     StatuslineDiagnosticsWarning = { guifg = base0A, guibg = colors.dark_background },
     StatuslineDiffAdded = { guifg = base0B, guibg = colors.dark_background },

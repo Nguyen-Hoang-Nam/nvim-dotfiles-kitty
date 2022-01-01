@@ -7,8 +7,8 @@ require('tabout').setup({
     backwards_tabkey = '',
 })
 
-local replace_keycodes = function(str)
-    return vim.api.nvim_replace_termcodes(str, true, true, true)
+local feedkey = function(key, mode)
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
 end
 
 local check_back_space = function()
@@ -25,7 +25,7 @@ local lspKindIcons = require('theme').lspKindIcons
 cmp.setup({
     snippet = {
         expand = function(args)
-            require('luasnip').lsp_expand(args.body)
+            luasnip.lsp_expand(args.body)
         end,
     },
 
@@ -41,11 +41,11 @@ cmp.setup({
             if cmp.visible() then
                 cmp.select_next_item()
             elseif luasnip.expand_or_jumpable() then
-                fn.feedkeys(replace_keycodes('<Plug>luasnip-expand-or-jump'), '')
+                luasnip.expand_or_jump()
             elseif check_back_space() then
-                fn.feedkeys(replace_keycodes('<Tab>'), 'n')
+                feedkey('<Tab>', 'n')
             else
-                fn.feedkeys(replace_keycodes('<Plug>(Tabout)'))
+                feedkey('<Plug>(Tabout)', '')
             end
         end,
 
@@ -53,11 +53,11 @@ cmp.setup({
             if cmp.visible() then
                 cmp.select_prev_item()
             elseif luasnip.jumpable(-1) then
-                fn.feedkeys(replace_keycodes('<Plug>luasnip-jump-prev'), '')
+                luasnip.jump(-1)
             elseif check_back_space() then
-                fn.feedkeys(replace_keycodes('<C-d>'), 'i')
+                feedkey('<C-d>', 'i')
             else
-                fn.feedkeys(replace_keycodes('<Plug>(TaboutBack)'))
+                feedkey('<Plug>(TaboutBack)', '')
             end
         end,
     },

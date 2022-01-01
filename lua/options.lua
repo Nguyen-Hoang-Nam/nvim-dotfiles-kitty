@@ -6,12 +6,11 @@ option.updatetime = 300
 option.splitright = true
 option.showmatch = true
 option.showmode = false
--- option.hidden = true
 option.showtabline = 2
 option.scrolloff = 18
 option.termguicolors = true
 -- option.completeopt = 'menuone,noselect'
-option.shortmess:append({ c = true })
+option.shortmess:append({ c = true, F = true })
 option.clipboard:append({ 'unnamedplus' })
 option.fillchars = 'eob: '
 

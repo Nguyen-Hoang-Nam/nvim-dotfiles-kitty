@@ -1,3 +1,6 @@
+local api = vim.api
+local fn = vim.fn
+
 local M = {}
 
 local function get_nvim_lsp_diagnostic(severity)
@@ -5,7 +8,7 @@ local function get_nvim_lsp_diagnostic(severity)
         return '0 '
     end
 
-    return #vim.diagnostic.get(vim.api.nvim_get_current_buf(), { severity }) .. ' '
+    return #vim.diagnostic.get(api.nvim_get_current_buf(), { severity = severity }) .. ' '
 end
 
 function M.diagnostics_error()
@@ -20,8 +23,8 @@ end
 function M.get_hunks_data()
     -- diff data 1:add 2:modified 3:remove
     local diff_data = { 0, 0, 0 }
-    if vim.fn.exists('b:gitsigns_status') == 1 then
-        local gitsigns_dict = vim.api.nvim_buf_get_var(0, 'gitsigns_status')
+    if fn.exists('b:gitsigns_status') == 1 then
+        local gitsigns_dict = api.nvim_buf_get_var(0, 'gitsigns_status')
         diff_data[1] = tonumber(gitsigns_dict:match('+(%d+)')) or 0
         diff_data[2] = tonumber(gitsigns_dict:match('~(%d+)')) or 0
         diff_data[3] = tonumber(gitsigns_dict:match('-(%d+)')) or 0
@@ -32,11 +35,12 @@ end
 
 local async_load = vim.loop.new_async(vim.schedule_wrap(function()
     local line
-    if vim.fn.winwidth(0) > 30 then
+    if fn.winwidth(0) > 30 then
         local fileType = vim.bo.filetype
-        local lineBreak = vim.go.fileformat
+        local lineBreak = api.nvim_eval('&fileformat')
         local is_update = false
-        local tab = vim.api.nvim_eval('&tabstop')
+        local tab = api.nvim_eval('&tabstop')
+        local tab_type = api.nvim_eval('&et') == 1 and 'Spaces: ' or 'Tab Size: '
 
         if fileType ~= '' and fileType ~= 'toggleterm' then
             is_update = true
@@ -72,11 +76,11 @@ local async_load = vim.loop.new_async(vim.schedule_wrap(function()
                 .. [[ %{luaeval('require("statusline").get_hunks_data()[3]')}]]
         end
 
-        line = line .. '%#StatuslineBackground#%=ln %l, col %c   '
+        line = line .. '%#StatuslineBackground#%=Ln %l, Col %c   '
 
-        if is_update and vim.fn.winwidth(0) > 80 then
+        if is_update and fn.winwidth(0) > 80 then
             line = line
-                .. 'Tabsizes '
+                .. tab_type
                 .. tab
                 .. '   '
                 .. lineBreak
@@ -87,13 +91,12 @@ local async_load = vim.loop.new_async(vim.schedule_wrap(function()
 
         line = line .. '%#StatuslineSmiley#  '
     else
-        line = '%#StatuslineBackground#'
+        line = '%#StatuslineEmptyBackground#'
     end
 
     vim.wo.statusline = line
 end))
 
--- Credit https://github.com/glepnir/galaxyline.nvim/blob/main/lua/galaxyline.lua
 function M.load()
     local fileType = vim.bo.filetype
     if fileType == 'dapui_watches' or fileType == 'dapui_stacks' or fileType == 'dapui_scopes' then
@@ -106,7 +109,7 @@ function M.load()
             windowType = 'Scopes'
         end
 
-        vim.wo.statusline = '%#StatuslineBackground#  ' .. windowType .. '%#StatuslineBackground#'
+        vim.wo.statusline = '%#StatuslineEmptyBackground#  ' .. windowType .. '%#StatuslineEmptyBackground#'
     else
         async_load:send()
     end

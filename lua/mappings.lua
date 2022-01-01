@@ -1,22 +1,19 @@
 local map = vim.api.nvim_set_keymap
 
+local telescope = require('telescope.builtin')
+local utils_core = require('utils.core')
+local format = require('format')
+local dap = require('dap')
+local goto_preview = require('goto-preview')
+
 local options = { noremap = true }
 local cmd_options = { noremap = true, silent = true }
 
-vim.g.mapleader = ' '
+local function cmd_option(callback)
+    return { noremap = true, silent = true, callback = callback }
+end
 
-----------------------------------------
---
---
--- <Enter> (normal): Add new blank line
--- <Leader>h (normal): Move to left window
--- <Leader>l (normal): Move to right window
--- p (normal): Paste code with indent
--- jk (insert): Change to normal mode from insert mode
--- t (terminal): Change to normal mode from terminal mode
---
---
-----------------------------------------
+vim.g.mapleader = ' '
 
 map('n', '<Enter>', 'o<Esc>', options)
 map('n', '<Leader>h', '<C-w>h', options)
@@ -29,44 +26,35 @@ map('t', '<Esc>', '<C-\\><C-n>', options)
 map('v', '<Tab>', '>gV', options)
 map('v', '<S-Tab>', '<gV', options)
 
-----------------------------------------
---
---
--- <Leader>q (normal): Turn off highlight
--- <Leader>s (normal): Save file
--- <Leader>w (normal): Close current buffer
---
---
-----------------------------------------
-
 map('n', '<Leader>q', [[<Cmd>let @/=""<CR>]], cmd_options)
 map('n', '<Leader>s', [[:w<CR>]], cmd_options)
-map('n', '<Leader>w', [[<Cmd>lua require('utils.core').bufdelete()<CR>]], cmd_options)
+map('n', '<Leader>w', '', cmd_option(utils_core.bufdelete))
 
-map('n', '<Leader>m', [[<Cmd>lua require('format').format()<CR>]], cmd_options)
-map('v', '<Leader>c', [[<Cmd>lua require('format').range_format()<CR><Esc>]], cmd_options)
--- map('n', '<Leader>;', [[:lua require('utils.core').match_jump()<CR>]], cmd_options)
+map('n', '<Leader>m', '', cmd_option(format.format))
+map('n', '<Leader>c', '', cmd_option(format.range_format))
 
-map('n', '<Leader>f', [[<Cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>]], cmd_options)
-map('n', '<Leader>o', [[:lua require('telescope.builtin').buffers()<CR>]], cmd_options)
-map('n', '<Leader>t', [[:lua require('telescope.builtin').lsp_document_diagnostics()<CR>]], cmd_options)
-map('n', '<Leader>p', [[:lua require('telescope.builtin').find_files()<CR>]], cmd_options)
-map('n', '<Leader>a', [[<Cmd>lua require('telescope.builtin').lsp_code_actions()<CR>]], cmd_options)
-map('n', '<Leader>e', [[:lua require('telescope.builtin').symbols{ sources = {'gitmoji'} }<CR>]], cmd_options)
-map('n', '<Leader>x', [[:lua require('telescope.builtin').registers()<CR>]], cmd_options)
+map(
+    'n',
+    '<Leader>f',
+    [[<Cmd>lua require('telescope.builtin').current_buffer_fuzzy_find({skip_empty_lines = true})<CR>]],
+    cmd_options
+)
+map('n', '<Leader>o', '', cmd_option(telescope.buffers))
+map('n', '<Leader>p', '', cmd_option(telescope.find_files))
+map('n', '<Leader>a', '', cmd_option(telescope.lsp_code_actions))
+map('n', '<Leader>e', [[<Cmd>lua require('telescope.builtin').symbols{ sources = {'gitmoji'} }<CR>]], cmd_options)
 
-map('n', '<Leader>g', [[<Cmd>lua require("utils.core").git_hover()<CR>]], cmd_options)
--- map('n', '<Leader>e', [[:lua require('telescope.builtin').symbols{ sources = {'emoji'} }<CR>]], cmd_options)
+map('n', '<Leader>g', '', cmd_option(utils_core.git_hover))
 
-map('n', '<Leader>1', [[:lua require('jdtls.dap').setup_dap_main_class_configs()<CR>]], cmd_options)
-map('n', '<Leader>2', [[:lua require'dap'.continue()<CR>]], cmd_options)
-map('n', '<Leader>3', [[:lua require'dap'.disconnect()<CR>]], cmd_options)
-map('n', '<Leader>4', [[:lua require'dap'.step_over()<CR>]], cmd_options)
-map('n', '<Leader>5', [[:lua require'dap'.step_into()<CR>]], cmd_options)
-map('n', '<Leader>6', [[:lua require'dap'.step_out()<CR>]], cmd_options)
-map('n', '<Leader>8', [[:lua require'dapui'.float_element("scopes")<CR>]], cmd_options)
-map('n', '<Leader>9', [[:lua require'dapui'.toggle("sidebar")<CR>]], cmd_options)
-map('n', '<Leader>0', [[:lua require'dap'.toggle_breakpoint()<CR>]], cmd_options)
+map('n', '<Leader>1', [[<Cmd>lua require('jdtls.dap').setup_dap_main_class_configs()<CR>]], cmd_options)
+map('n', '<Leader>2', '', cmd_option(dap.continue))
+map('n', '<Leader>3', '', cmd_option(dap.disconnect))
+map('n', '<Leader>4', '', cmd_option(dap.step_over))
+map('n', '<Leader>5', '', cmd_option(dap.step_into))
+map('n', '<Leader>6', '', cmd_option(dap.step_out))
+map('n', '<Leader>8', [[<Cmd>lua require'dapui'.float_element("scopes")<CR>]], cmd_options)
+map('n', '<Leader>9', [[<Cmd>lua require'dapui'.toggle("sidebar")<CR>]], cmd_options)
+map('n', '<Leader>0', '', cmd_option(dap.toggle_breakpoint))
 
 map('n', '<Leader>/', [[<Cmd>CommentToggle<CR>]], cmd_options)
 map('v', '<Leader>/', [[:CommentToggle<CR>]], cmd_options)
@@ -77,4 +65,4 @@ map('v', '<Leader>b', [[<Cmd>YanilToggle<CR>]], cmd_options)
 map('n', ']b', '<Cmd>BufferLineCycleNext<CR>', cmd_options)
 map('n', '[b', '<Cmd>BufferLineCyclePrev<CR>', cmd_options)
 
-map('n', '<Leader>z', [[<Cmd>lua require('goto-preview').goto_preview_definition()<CR>]], cmd_options)
+map('n', '<Leader>z', '', cmd_option(goto_preview.goto_preview_definition))
