@@ -46,7 +46,7 @@ map('n', '<Leader>e', [[<Cmd>lua require('telescope.builtin').symbols{ sources =
 
 map('n', '<Leader>g', '', cmd_option(utils_core.git_hover))
 
-map('n', '<Leader>1', [[<Cmd>lua require('jdtls.dap').setup_dap_main_class_configs()<CR>]], cmd_options)
+map('n', '<Leader>1', '', cmd_option(require('jdtls.dap').setup_dap_main_class_configs))
 map('n', '<Leader>2', '', cmd_option(dap.continue))
 map('n', '<Leader>3', '', cmd_option(dap.disconnect))
 map('n', '<Leader>4', '', cmd_option(dap.step_over))
@@ -60,7 +60,7 @@ map('n', '<Leader>/', [[<Cmd>CommentToggle<CR>]], cmd_options)
 map('v', '<Leader>/', [[:CommentToggle<CR>]], cmd_options)
 
 map('n', '<Leader>b', [[<Cmd>YanilToggle<CR>]], cmd_options)
-map('v', '<Leader>b', [[<Cmd>YanilToggle<CR>]], cmd_options)
+map('v', '<Leader>b', [[:YanilToggle<CR>]], cmd_options)
 
 map('n', ']b', '<Cmd>BufferLineCycleNext<CR>', cmd_options)
 map('n', '[b', '<Cmd>BufferLineCyclePrev<CR>', cmd_options)
