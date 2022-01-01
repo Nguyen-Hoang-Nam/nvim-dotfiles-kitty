@@ -37,6 +37,7 @@ local async_load = vim.loop.new_async(vim.schedule_wrap(function()
         local lineBreak = vim.api.nvim_eval('&fileformat')
         local is_update = false
         local tab = vim.api.nvim_eval('&tabstop')
+        local tab_type = vim.api.nvim_eval('&et') == 1 and 'Spaces: ' or 'Tab Size: '
 
         if fileType ~= '' and fileType ~= 'toggleterm' then
             is_update = true
@@ -72,11 +73,11 @@ local async_load = vim.loop.new_async(vim.schedule_wrap(function()
                 .. [[ %{luaeval('require("statusline").get_hunks_data()[3]')}]]
         end
 
-        line = line .. '%#StatuslineBackground#%=ln %l, col %c   '
+        line = line .. '%#StatuslineBackground#%=Ln %l, Col %c   '
 
         if is_update and vim.fn.winwidth(0) > 80 then
             line = line
-                .. 'Tabsizes '
+                .. tab_type
                 .. tab
                 .. '   '
                 .. lineBreak
