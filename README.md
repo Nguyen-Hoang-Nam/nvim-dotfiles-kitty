@@ -48,7 +48,7 @@ _Kitty with Fira, Cascadia, and Mini-File-Icons_
 - Svelte
 - TailwindCSS
 - Express
-- Gin/gonic
+- Gonic
 - FastAPI
 - Laravel
 - Spring Boot
@@ -135,7 +135,7 @@ M = {
 ### Requirements
 
 - Kitty
-- Neovim 0.7 (Last updated Dec 12 2021)
+- Neovim 0.7 (Last updated Jan 1 2021)
 
 ### Fonts
 
@@ -157,42 +157,42 @@ cursor #6796E6
 
 ### Plugin list
 
-If you plan to install plugins manually, you can clone below plugins and store
-in `~/.local/share/nvim/site/pack/*/start/`.
+If you plan to install plugins manually, you can clone below plugins and
+store in `~/.local/share/nvim/site/pack/*/start/`.
 
 | Plugin                                                                                          | Last updated |
 | ----------------------------------------------------------------------------------------------- | ------------ |
 | [auto-session](https://github.com/rmagatti/auto-session)                                        | Dec 6 2021   |
 | [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)                                         | Nov 10 2021  |
-| [cmp-path](https://github.com/hrsh7th/cmp-path)                                                 | Dec 2 2021   |
-| [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)                                      | Dec 4 2021   |
+| [cmp-path](https://github.com/hrsh7th/cmp-path)                                                 | Dec 30 2021  |
+| [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)                                      | Dec 12 2021  |
 | [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)                                     | Apr 17 2021  |
-| [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)                            | Dec 7 2021   |
+| [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)                            | Dec 29 2021  |
 | [git-utils.nvim](https://github.com/Nguyen-Hoang-Nam/git-utils.nvim)                            |              |
-| [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                                     | Dec 10 2021  |
-| [goto-preview](https://github.com/rmagatti/goto-preview)                                        | Nov 29 2021  |
+| [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                                     | Dec 30 2021  |
+| [goto-preview](https://github.com/rmagatti/goto-preview)                                        | Dec 25 2021  |
 | [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)                 | Dec 1 2021   |
-| [lsp_signature.nvim](https://github.com/ray-x/lsp_signature.nvim)                               | Dec 10 2021  |
-| [LuaSnip](https://github.com/L3MON4D3/LuaSnip)                                                  | Dec 9 2021   |
-| [nvim-autopair](https://github.com/windwp/nvim-autopairs)                                       | Dec 11 2021  |
-| [nvim-bufferline.lua](https://github.com/akinsho/nvim-bufferline.lua)                           | Nov 15 2021  |
-| [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)                                                 | Dec 7 2021   |
+| [lsp_signature.nvim](https://github.com/ray-x/lsp_signature.nvim)                               | Dec 22 2021  |
+| [LuaSnip](https://github.com/L3MON4D3/LuaSnip)                                                  | Dec 29 2021  |
+| [nvim-autopair](https://github.com/windwp/nvim-autopairs)                                       | Dec 26 2021  |
+| [nvim-bufferline.lua](https://github.com/akinsho/nvim-bufferline.lua)                           | Dec 15 2021  |
+| [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)                                                 | Dec 30 2021  |
 | [nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)                            | Apr 20 2020  |
-| [nvim-dap](https://github.com/mfussenegger/nvim-dap)                                            | Dec 10 2021  |
-| [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)                                          | Dec 4 2021   |
-| [nvim-jdtls](https://github.com/mfussenegger/nvim-jdtls)                                        | Dec 11 2021  |
-| [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)                                      | Dec 10 2021  |
+| [nvim-dap](https://github.com/mfussenegger/nvim-dap)                                            | Dec 22 2021  |
+| [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)                                          | Dec 27 2021  |
+| [nvim-jdtls](https://github.com/mfussenegger/nvim-jdtls)                                        | Dec 12 2021  |
+| [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)                                      | Dec 31 2021  |
 | [nvim-mini-file-icons](https://github.com/Nguyen-Hoang-Nam/nvim-mini-file-icons)                |              |
-| [nvim-scrollview](https://github.com/dstein64/nvim-scrollview)                                  | Dec 6 2021   |
+| [nvim-scrollview](https://github.com/dstein64/nvim-scrollview)                                  | Dec 15 2021  |
 | [nvim-toggleterm.lua](https://github.com/akinsho/nvim-toggleterm.lua)                           | Nov 24 2021  |
-| [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)                           | Dec 6 2021   |
-| [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)                                    | Oct 9 2021   |
-| [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) | Nov 20 2021  |
+| [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)                           | Dec 29 2021  |
+| [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)                                    | Dec 15 2021  |
+| [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) | Dec 13 2021  |
 | [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)                                      | Nov 21 2021  |
-| [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)                                        | Dec 7 2021   |
-| [tabout.nvim](https://github.com/abecodes/tabout.nvim)                                          | Aug 27 2021  |
+| [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)                                        | Dec 15 2021  |
+| [tabout.nvim](https://github.com/abecodes/tabout.nvim)                                          | Dec 15 2021  |
 | [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim)        | Nov 24 2021  |
-| [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)                              | Dec 10 2021  |
+| [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)                              | Dec 29 2021  |
 | [yanil](https://github.com/Nguyen-Hoang-Nam/yanil/tree/customize-ui)                            |              |
 
 ### Treesitter
@@ -209,34 +209,34 @@ Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Code-f
 
 ## Mappings
 
-| Key             | Description                                 |
-| --------------- | ------------------------------------------- |
-| &lt;Leader&gt;a | Code action                                 |
-| &lt;Leader&gt;b | Toggle Explorer                             |
-| &lt;Leader&gt;c | Range format                                |
-| &lt;Leader&gt;d | Go to definition                            |
-| &lt;Leader&gt;e | Search gitmojis                             |
-| &lt;Leader&gt;f | Show text search                            |
-| &lt;Leader&gt;g | Git hover                                   |
-| &lt;Leader&gt;h | Go to left window                           |
-| &lt;Leader&gt;l | Go to right window                          |
-| &lt;leader&gt;m | Format code                                 |
-| &lt;Leader&gt;o | Search buffers                              |
-| &lt;Leader&gt;p | Search file                                 |
-| &lt;Leader&gt;q | Turn off search's highlight                 |
-| &lt;Leader&gt;r | Rename variable                             |
-| &lt;Leader&gt;s | Save file                                   |
-| &lt;Leader&gt;w | Delete current buffer                       |
-| &lt;Leader&gt;x | Show list registers                         |
-| &lt;Leader&gt;z | Preview definition                          |
-| &lt;Leader&gt;/ | Toggle comment                              |
-| &lt;Leader&gt;; | Jump to pairs (Bracket, Parentheses, Quote) |
-| &lt;M-t&gt;     | Toggle Terminal                             |
-| jk              | Insert mode to normal mode                  |
-| ]d              | Next diagnostic                             |
-| [d              | Previous diagnostic                         |
-| ]b              | Next buffer                                 |
-| [b              | Previous buffer                             |
+| Key             | Description                 |
+| --------------- | --------------------------- |
+| &lt;Leader&gt;a | Code action                 |
+| &lt;Leader&gt;b | Toggle Explorer             |
+| &lt;Leader&gt;c | Range format                |
+| &lt;Leader&gt;d | Go to definition            |
+| &lt;Leader&gt;e | Search Gitmojis             |
+| &lt;Leader&gt;f | Search text                 |
+| &lt;Leader&gt;g | Git hover                   |
+| &lt;Leader&gt;h | Go to left window           |
+| &lt;Leader&gt;j | Go to below window          |
+| &lt;Leader&gt;k | Go to above window          |
+| &lt;Leader&gt;l | Go to right window          |
+| &lt;leader&gt;m | Format code                 |
+| &lt;Leader&gt;o | Search buffers              |
+| &lt;Leader&gt;p | Search file                 |
+| &lt;Leader&gt;q | Turn off search's highlight |
+| &lt;Leader&gt;r | Rename variable             |
+| &lt;Leader&gt;s | Save file                   |
+| &lt;Leader&gt;w | Delete current buffer       |
+| &lt;Leader&gt;z | Preview definition          |
+| &lt;Leader&gt;/ | Toggle comment              |
+| &lt;M-t&gt;     | Toggle Terminal             |
+| jk              | Insert mode to normal mode  |
+| \]d             | Jump next diagnostic        |
+| \[d             | Jump previous diagnostic    |
+| \]b             | Go to next buffer           |
+| \[b             | Go to previous buffer       |
 
 ## TODO
 
