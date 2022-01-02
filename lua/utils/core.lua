@@ -2,7 +2,9 @@ local bo = vim.bo
 local cmd = vim.cmd
 local api = vim.api
 
-local M = {}
+local M = {
+    is_rest = false,
+}
 
 function M.bufdelete()
     if bo.modified then
@@ -94,6 +96,36 @@ function M.git_hover()
     api.nvim_buf_set_option(buf, 'buftype', 'nofile')
     api.nvim_buf_set_option(buf, 'bufhidden', 'delete')
     api.nvim_buf_set_option(buf, 'modifiable', false)
+end
+
+function M.rest()
+    if M.is_rest then
+        vim.cmd('tabclose')
+
+        M.is_rest = false
+    else
+        vim.cmd('tabedit new')
+        vim.bo.bufhidden = 'wipe'
+
+        local valid_win = M.win_rest and api.nvim_win_is_valid(M.win_rest)
+        local window = valid_win and M.win_rest or api.nvim_get_current_win()
+
+        local valid_buf = M.buf_rest and api.nvim_buf_is_valid(M.buf_rest)
+        local buf = valid_buf and M.buf_rest or api.nvim_create_buf(false, false)
+
+        api.nvim_buf_set_name(buf, 'test.http')
+
+        api.nvim_buf_set_option(buf, 'buftype', 'nofile')
+        api.nvim_buf_set_option(buf, 'bufhidden', 'delete')
+        api.nvim_buf_set_option(buf, 'filetype', 'http')
+
+        api.nvim_set_current_buf(buf)
+        api.nvim_win_set_buf(window, buf)
+
+        M.is_rest = true
+        M.win_rest = window
+        M.buf_rest = buf
+    end
 end
 
 return M

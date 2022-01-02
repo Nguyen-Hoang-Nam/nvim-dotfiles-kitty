@@ -18,6 +18,7 @@ require('luasnip/loaders/from_vscode').lazy_load()
 require('setup.lspconfig')
 require('setup.goto')
 require('setup.aerial')
+require('setup.rest')
 
 require('lspicon')
 

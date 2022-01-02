@@ -36,7 +36,6 @@ end
 
 -- Credit https://github.com/RRethy/nvim-base16/blob/master/lua/base16-colorscheme.lua
 highlight({
-    -- General
     -- Conceal = { guifg = base0D, guibg = base00 },
     Cursor = { guifg = base00 },
     CursorLine = { guibg = colors.cursorLine },
@@ -206,10 +205,6 @@ highlight({
     TSTypeBuiltin = { guifg = base0E },
     TSVariable = { guifg = base08 },
     TSVariableBuiltin = { guifg = base0E, 'italic' },
-
-    -- TSDefinition = { gui = 'underline', guisp = base04 },
-    -- TSDefinitionUsage = { gui = 'underline', guisp = base04 },
-    -- TSCurrentScope = { gui = 'bold' },
 
     -- Diff
     DiffAdd = { guifg = base0B, guibg = base00 },
