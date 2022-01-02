@@ -1,7 +1,7 @@
-local aerial = require('aerial')
+local sidebar = require('sidebar')
 
-aerial.register_attach_cb(function(bufnr)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>t', '<cmd>AerialToggle!<CR>', {})
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '[t', '<cmd>AerialPrev<CR>', {})
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', ']t', '<cmd>AerialNext<CR>', {})
-end)
+require('aerial').setup({
+    default_direction = sidebar.sidebar_position,
+    max_width = sidebar.sidebar_width,
+    min_width = sidebar.sidebar_width,
+})

@@ -1,4 +1,5 @@
-local colors = require('../theme')
+local colors = require('theme')
+local sidebar = require('sidebar')
 
 require('bufferline').setup({
     options = {
@@ -7,7 +8,7 @@ require('bufferline').setup({
         diagnostics_indicator = function(count, _)
             return '(' .. count .. ')'
         end,
-        offsets = { { filetype = 'Yanil', text = 'Explorer', text_align = 'left' } },
+        offsets = sidebar.sidebar_title,
         show_buffer_close_icons = false,
         show_close_icon = false,
         enforce_reqular_tabs = true,

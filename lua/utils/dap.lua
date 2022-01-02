@@ -25,6 +25,8 @@ function M.toggle_debug()
     else
         M.debug = false
         dap.disconnect()
+
+        require('nvim-dap-virtual-text').refresh()
     end
 end
 

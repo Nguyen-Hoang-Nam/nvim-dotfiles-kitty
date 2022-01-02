@@ -2,6 +2,7 @@ vim.g.tex_flavor = 'latex' -- Fix plaintex filetype in new tex file
 
 require('options')
 
+require('setup.autosession')
 require('setup.bufferline')
 require('setup.colorizer')
 require('setup.dashboard')

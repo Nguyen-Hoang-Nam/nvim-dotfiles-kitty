@@ -1,9 +1,7 @@
--- require('dap')
 local dap = require('dap')
+local sidebar = require('sidebar')
 
 dap.defaults.fallback.terminal_win_cmd = ':belowright new | resize 10 | setlocal bt=nofile bh=wipe nobl noswapfile nu'
-
-local M = {}
 
 vim.fn.sign_define('DapBreakpoint', { text = '', texthl = 'DapBreakpoint', linehl = '', numhl = '' })
 vim.fn.sign_define('DapStopped', { text = '', texthl = 'DapStopped', linehl = '', numhl = '' })
@@ -24,14 +22,14 @@ require('dapui').setup({
             { id = 'scopes', size = 0.5 },
             { id = 'stacks', size = 0.5 },
         },
-        size = 40,
-        position = 'left',
+        size = sidebar.sidebar_width,
+        position = sidebar.sidebar_position,
     },
 
     floating = {
-        max_height = nil, -- These can be integers or a float between 0 and 1.
-        max_width = nil, -- Floats will be treated as percentage of your screen.
-        border = 'single', -- Border style. Can be "single", "double" or "rounded"
+        max_height = nil,
+        max_width = nil,
+        border = 'single',
         mappings = {
             close = { 'q', '<Esc>' },
         },
@@ -40,4 +38,4 @@ require('dapui').setup({
     windows = { indent = 1 },
 })
 
-return M
+require('nvim-dap-virtual-text').setup()

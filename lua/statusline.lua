@@ -99,17 +99,16 @@ end))
 
 function M.load()
     local fileType = vim.bo.filetype
-    if fileType == 'dapui_watches' or fileType == 'dapui_stacks' or fileType == 'dapui_scopes' then
-        local windowType
-        if fileType == 'dapui_watches' then
-            windowType = 'Watches'
-        elseif fileType == 'dapui_stacks' then
-            windowType = 'Stacks'
-        elseif fileType == 'dapui_scopes' then
-            windowType = 'Scopes'
-        end
+    if fileType == 'dapui_stacks' or fileType == 'dapui_scopes' or fileType == 'aerial' then
+        -- local windowType
+        -- if fileType == 'dapui_stacks' then
+        --     windowType = 'Stacks'
+        -- elseif fileType == 'dapui_scopes' then
+        --     windowType = 'Scopes'
+        -- end
 
-        vim.wo.statusline = '%#StatuslineEmptyBackground#  ' .. windowType .. '%#StatuslineEmptyBackground#'
+        -- vim.wo.statusline = '%#StatuslineEmptyBackground#  ' .. windowType .. '%#StatuslineEmptyBackground#'
+        vim.wo.statusline = '%#StatuslineEmptyBackground#'
     else
         async_load:send()
     end

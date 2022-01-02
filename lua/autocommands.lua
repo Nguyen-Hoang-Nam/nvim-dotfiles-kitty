@@ -44,6 +44,18 @@ augroup StatusLine
 
     autocmd FileType dapui* lua require('statusline').load()
     autocmd FileType dap-repl lua require('statusline').load()
+    autocmd FileType aerial lua require('statusline').load()
+augroup END
+]],
+    true
+)
+
+augroup(
+    [[
+augroup Highlight
+    autocmd!
+    autocmd FileType dapui* setlocal winhighlight=Normal:DapUINormal
+    autocmd FileType aerial setlocal winhighlight=Normal:AerialNormal
 augroup END
 ]],
     true
