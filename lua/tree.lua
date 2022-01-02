@@ -125,7 +125,7 @@ local function delete_node(tree, node)
 end
 
 local function rename_node(tree, node)
-    local name = vim.fn.input([[New name: ]])
+    local name = vim.fn.input('Old name: ' .. node.name .. ' -> New name: ')
     local abs_path = node.abs_path
 
     local name_length = #abs_path - #node.name
