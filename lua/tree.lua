@@ -183,7 +183,6 @@ tree:setup({
                 '^__pycache__$',
                 '^%.idea$',
                 '^%.iml$',
-                '^%.DS_Store$',
                 '%.o$',
                 '%.d$',
                 '^%node_modules',

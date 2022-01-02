@@ -4,12 +4,11 @@ local M = {}
 M.efm = {
     {
         lintCommand = 'hadolint --no-color ${INPUT}',
-        -- lintCommand = 'hadolint',
         lintStdin = false,
         lintFormats = {
             '%f:%l %m',
         },
-    }
+    },
 }
 
 M.all_format = { dockerls = 'DockerLS' }
