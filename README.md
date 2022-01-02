@@ -135,7 +135,7 @@ M = {
 ### Requirements
 
 - Kitty
-- Neovim 0.7 (Last updated Jan 1 2021)
+- Neovim 0.7.0-dev (Last updated Jan 1 2021)
 
 ### Fonts
 

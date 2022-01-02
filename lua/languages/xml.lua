@@ -16,7 +16,7 @@ M.lsp = {
     capabilities = lsp.capabilities,
     on_attach = lsp.on_attach,
     cmd = {
-        '/usr/lib/jvm/java-11-openjdk-amd64/bin/java',
+        'java',
         '-jar',
         '/home/nguyenhoangnam/.local/share/lsp/lemminx/org.eclipse.lemminx/target/org.eclipse.lemminx-uber.jar',
     },

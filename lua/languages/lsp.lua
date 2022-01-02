@@ -21,6 +21,10 @@ function M.on_attach(client, bufnr)
     buf_set_keymap('n', '<Leader>r', '<cmd>lua vim.lsp.buf.rename()<CR>')
     buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
     buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
+
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>t', [[<Cmd>lua require('sidebar').toggle('symbol')<CR>]], {})
+    buf_set_keymap('n', '[t', '<cmd>AerialPrev<CR>')
+    buf_set_keymap('n', ']t', '<cmd>AerialNext<CR>')
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

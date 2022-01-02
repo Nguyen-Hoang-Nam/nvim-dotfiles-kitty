@@ -142,6 +142,14 @@ highlight({
     DiagnosticUnderlineInfo = { gui = 'undercurl', guisp = base0D },
     DiagnosticUnderlineHint = { gui = 'undercurl', guisp = base0B },
 
+    AerialNormal = { guibg = colors.dark_background },
+    DapUINormal = { guibg = colors.dark_background },
+
+    -- Dap-ui
+    -- DapUIVariable = { guibg = colors.dark_background },
+    -- DapUIValue = { guibg = colors.dark_background },
+    -- DapUIFrameName = { guibg = colors.dark_background },
+
     -- Treesitter
     TSAnnotation = { guifg = base0A },
     TSAttribute = { guifg = base0A },
