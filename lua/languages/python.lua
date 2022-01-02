@@ -5,6 +5,8 @@ M.efm = {
     {
         formatCommand = 'black --quiet -',
         formatStdin = true,
+    },
+    {
         lintCommand = 'flake8 --stdin-display-name ${INPUT} -',
         lintStdin = true,
         lintFormats = {

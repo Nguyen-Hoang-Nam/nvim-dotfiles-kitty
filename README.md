@@ -14,27 +14,21 @@ _Kitty with Fira, Cascadia, and Mini-File-Icons_
 
 ## What I have done so far
 
-- Use primitive colours. (Default is Vivid One Dark)
 - Use ligature font, italic font and icon font.
   (Thanks to [Kitty](https://github.com/kovidgoyal/kitty))
-- Bigger icons.
-  (Thanks to [nvim-mini-file-icons](https://github.com/Nguyen-Hoang-Nam/nvim-mini-file-icons))
 - Saving the last session.
   (Thanks to [auto-session](https://github.com/rmagatti/auto-session))
-- Highlight current indent's scope.
-  (Test with JS, Python, Go, Java, PHP, HTML, CSS, Svelte)
+- Support debug
+  (Thanks to [Nvim-Dap](https://github.com/mfussenegger/nvim-dap))
+- Support test
+  (Thanks to [Vim-Test](https://github.com/vim-test/vim-test))
 - Support several language's snippet.
   (I get snippets from [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets))
 - Support Emmet.
-  (Thanks to [emmet-ls](https://github.com/aca/emmet-ls))
+  (Thanks to [Emmet-Ls](https://github.com/aca/emmet-ls))
 - Support lint and formatter.
   (Thanks to [Efm-Langsever](https://github.com/mattn/efm-langserver))
-- Modern explorer sidebar.
-  (Thanks to [yanil](https://github.com/Nguyen-Hoang-Nam/yanil/tree/customize-ui))
-- Range format.
-  (Not stable)
-- Show scrollbar. (Useful when u get lost in a large file 😁)
-- Show the EOF icon. (Useful when detect trailing spaces)
+- All in one sidebar. (Explorer, Symbol, Debug)
 - Install all plugins manually.
 
 ## Something I want to do
@@ -53,22 +47,54 @@ _Kitty with Fira, Cascadia, and Mini-File-Icons_
 - Laravel
 - Spring Boot
 
+| Language   | LSP    | Treesitter | Formatter | Lint | Debug | Test |
+| ---------- | ------ | ---------- | --------- | ---- | ----- | ---- |
+| Bash       |        | 👍         |           |      |       |      |
+| C          |        | 👍         |           |      |       |      |
+| CSS        | 👍👍👍 | 👍         | 👍        |      |       |      |
+| Dart       |        | 👍         |           |      |       |      |
+| Dockerfile | 👍     | 👍         |           | 👍   |       |      |
+| Go         | 👍     | 👍         | 👍👍      |      |       |      |
+| Haskell    | 👍     | 👍         |           |      |       |      |
+| HTML       | 👍👍👍 | 👍         | 👍        |      |       |      |
+| HTTP       |        | 👍         |           |      |       |      |
+| Java       | 👍     | 👍         | 👍        |      | 👍    |      |
+| Javascript | 👍     | 👍👍       | 👍        |      |       |      |
+| JSON       | 👍     | 👍         | 👍        |      |       |      |
+| Lua        | 👍     | 👍         | 👍        |      |       |      |
+| Markdown   |        | 👍         | 👍        | 👍   |       |      |
+| PHP        | 👍     | 👍         | 👍        | 👍   |       |      |
+| Python     | 👍     | 👍         | 👍        | 👍   |       |      |
+| React      | 👍👍   | 👍         | 👍        |      |       |      |
+| Rust       | 👍     | 👍         | 👍        |      |       |      |
+| Scala      |        | 👍         |           |      |       |      |
+| Solidity   |        |            |           |      |       |      |
+| Svelte     | 👍👍   | 👍         | 👍        |      |       |      |
+| Latex      | 👍     | 👍         | 👍        |      |       |      |
+| TOML       |        | 👍         |           |      |       |      |
+| Typescript | 👍     | 👍         | 👍        | 👍   |       |      |
+| XML        | 👍     | 👍         | 👍        |      |       |      |
+| YAML       | 👍     | 👍         | 👍        |      |       |      |
+| Zig        | 👍     | 👍         |           |      |       |      |
+
 ## Startup
+
+Last updated Jan 2 2021
 
 ```text
 =====================================
 Top 10 plugins slowing nvim's startup
 =====================================
-1    1.820   nvim-scrollview
-2    1.573   auto-session
-3    0.995   indent-blankline.nvim
-4    0.678   nvim-ts-autotag
-5    0.671   nvim-treesitter
-6    0.374   nvim-treesitter-pairs
-7    0.373   cmp_luasnip
-8    0.338   cmp-path
-9    0.213   nvim-ts-rainbow
-10   0.169   dashboard-nvim
+1   3.097   vim-test
+2   1.636   nvim-scrollview
+3   1.290   nvim-treesitter
+4   0.467   nvim-cmp
+5   0.400   vim-ultest
+6   0.398   nvim-ts-autotag
+7   0.326   indent-blankline.nvim
+8   0.163   cmp_luasnip
+9   0.162   LuaSnip
+10  0.156   cmp-path
 =====================================
 ```
 
@@ -162,6 +188,7 @@ store in `~/.local/share/nvim/site/pack/*/start/`.
 
 | Plugin                                                                                          | Last updated |
 | ----------------------------------------------------------------------------------------------- | ------------ |
+| [aerial](https://github.com/stevearc/aerial.nvim)                                               | Jan 2 2021   |
 | [auto-session](https://github.com/rmagatti/auto-session)                                        | Dec 6 2021   |
 | [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)                                         | Nov 10 2021  |
 | [cmp-path](https://github.com/hrsh7th/cmp-path)                                                 | Dec 30 2021  |
@@ -180,6 +207,7 @@ store in `~/.local/share/nvim/site/pack/*/start/`.
 | [nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)                            | Apr 20 2020  |
 | [nvim-dap](https://github.com/mfussenegger/nvim-dap)                                            | Dec 22 2021  |
 | [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)                                          | Dec 27 2021  |
+| [nvim-dap-virtual-text](https://github.com/theHamsta/nvim-dap-virtual-text)                     | Dec 3 2021   |
 | [nvim-jdtls](https://github.com/mfussenegger/nvim-jdtls)                                        | Dec 12 2021  |
 | [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)                                      | Dec 31 2021  |
 | [nvim-mini-file-icons](https://github.com/Nguyen-Hoang-Nam/nvim-mini-file-icons)                |              |
@@ -190,9 +218,12 @@ store in `~/.local/share/nvim/site/pack/*/start/`.
 | [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) | Dec 13 2021  |
 | [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)                                      | Nov 21 2021  |
 | [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)                                        | Dec 15 2021  |
+| [rest.nvim](https://github.com/NTBBloodbath/rest.nvim)                                          | Dec 21 2021  |
 | [tabout.nvim](https://github.com/abecodes/tabout.nvim)                                          | Dec 15 2021  |
 | [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim)        | Nov 24 2021  |
 | [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)                              | Dec 29 2021  |
+| [vim-test](https://github.com/vim-test/vim-test)                                                | Dec 31 2021  |
+| [vim-ultest](https://github.com/rcarriga/vim-ultest)                                            | Dec 27 2021  |
 | [yanil](https://github.com/Nguyen-Hoang-Nam/yanil/tree/customize-ui)                            |              |
 
 ### Treesitter

@@ -5,6 +5,8 @@ M.efm = {
     {
         formatCommand = 'prettier --stdin-filepath ${INPUT}',
         formatStdin = true,
+    },
+    {
         lintCommand = 'markdownlint -s',
         lintStdin = true,
         lintFormats = {
