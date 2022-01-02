@@ -5,6 +5,7 @@ local utils_core = require('utils.core')
 local format = require('format')
 local dap = require('dap')
 local goto_preview = require('goto-preview')
+local utils_dap = require('utils.dap')
 
 local options = { noremap = true }
 local cmd_options = { noremap = true, silent = true }
@@ -46,15 +47,13 @@ map('n', '<Leader>e', [[<Cmd>lua require('telescope.builtin').symbols{ sources =
 
 map('n', '<Leader>g', '', cmd_option(utils_core.git_hover))
 
-map('n', '<Leader>1', '', cmd_option(require('jdtls.dap').setup_dap_main_class_configs))
-map('n', '<Leader>2', '', cmd_option(dap.continue))
-map('n', '<Leader>3', '', cmd_option(dap.disconnect))
-map('n', '<Leader>4', '', cmd_option(dap.step_over))
-map('n', '<Leader>5', '', cmd_option(dap.step_into))
-map('n', '<Leader>6', '', cmd_option(dap.step_out))
+map('n', '<Leader>0', '', cmd_option(utils_dap.toggle_breakpoint))
+map('n', '<Leader>1', '', cmd_option(utils_dap.toggle_debug))
+map('n', '<Leader>2', '', cmd_option(dap.step_over))
+map('n', '<Leader>3', '', cmd_option(dap.step_into))
+map('n', '<Leader>4', '', cmd_option(dap.step_out))
 map('n', '<Leader>8', [[<Cmd>lua require'dapui'.float_element("scopes")<CR>]], cmd_options)
 map('n', '<Leader>9', [[<Cmd>lua require'dapui'.toggle("sidebar")<CR>]], cmd_options)
-map('n', '<Leader>0', '', cmd_option(dap.toggle_breakpoint))
 
 map('n', '<Leader>/', [[<Cmd>CommentToggle<CR>]], cmd_options)
 map('v', '<Leader>/', [[:CommentToggle<CR>]], cmd_options)
