@@ -51,7 +51,7 @@ highlight({
     NonText = { guifg = colors.comment },
     Normal = { guibg = colors.background },
     NormalFloat = { guifg = base05, guibg = colors.dark_background },
-    NormalNC = { guifg = base05, guibg = colors.background },
+    NormalNC = { guibg = colors.background },
     FloatBorder = { guifg = base05, guibg = base00 },
     ColorColumn = { guibg = colors.cursorLine },
 

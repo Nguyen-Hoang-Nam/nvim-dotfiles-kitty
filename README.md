@@ -22,6 +22,8 @@ _Kitty with Fira, Cascadia, and Mini-File-Icons_
   (Thanks to [Nvim-Dap](https://github.com/mfussenegger/nvim-dap))
 - Support test
   (Thanks to [Vim-Test](https://github.com/vim-test/vim-test))
+- Support RESTFul api test.
+  (Thanks to [Rest.nvim](https://github.com/NTBBloodbath/rest.nvim))
 - Support several language's snippet.
   (I get snippets from [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets))
 - Support Emmet.
