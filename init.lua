@@ -19,12 +19,12 @@ require('setup.lspconfig')
 require('setup.goto')
 require('setup.aerial')
 require('setup.rest')
+require('setup.diffview')
 
 require('lspicon')
 
 require('lsp.emmet')
 require('lsp.efm')
--- require('lsp.markdown')
 require('lsp.tailwindcss')
 
 require('tree')

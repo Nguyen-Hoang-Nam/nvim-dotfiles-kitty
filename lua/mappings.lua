@@ -6,6 +6,7 @@ local format = require('format')
 local dap = require('dap')
 local goto_preview = require('goto-preview')
 local utils_dap = require('utils.dap')
+local sidebar = require('sidebar')
 
 local options = { noremap = true }
 local cmd_options = { noremap = true, silent = true }
@@ -37,13 +38,22 @@ map('n', '<Leader>c', '', cmd_option(format.range_format))
 map(
     'n',
     '<Leader>f',
-    [[<Cmd>lua require('telescope.builtin').current_buffer_fuzzy_find({skip_empty_lines = true})<CR>]],
-    cmd_options
+    '',
+    cmd_option(function()
+        telescope.current_buffer_fuzzy_find({ skip_empty_lines = true })
+    end)
 )
 map('n', '<Leader>o', '', cmd_option(telescope.buffers))
 map('n', '<Leader>p', '', cmd_option(telescope.find_files))
 map('n', '<Leader>a', '', cmd_option(telescope.lsp_code_actions))
-map('n', '<Leader>e', [[<Cmd>lua require('telescope.builtin').symbols{ sources = {'gitmoji'} }<CR>]], cmd_options)
+map(
+    'n',
+    '<Leader>e',
+    '',
+    cmd_option(function()
+        telescope.symbols({ sources = { 'gitmoji' } })
+    end)
+)
 
 map('n', '<Leader>g', '', cmd_option(utils_core.git_hover))
 
@@ -53,11 +63,32 @@ map('n', '<Leader>1', '', cmd_option(utils_dap.toggle_debug))
 map('n', '<Leader>2', '', cmd_option(dap.step_over))
 map('n', '<Leader>3', '', cmd_option(dap.step_into))
 map('n', '<Leader>4', '', cmd_option(dap.step_out))
-map('n', '<Leader>9', [[<Cmd>lua require'dapui'.float_element("scopes")<CR>]], cmd_options)
+map(
+    'n',
+    '<Leader>9',
+    '',
+    cmd_option(function()
+        require('dapui').float_element('scopes')
+    end)
+)
 
 -- Sidebar
-map('n', '<Leader>b', [[<Cmd>lua require'sidebar'.toggle('explorer')<CR>]], cmd_options)
-map('n', '<Leader>u', [[<Cmd>lua require'sidebar'.toggle('debug')<CR>]], cmd_options)
+map(
+    'n',
+    '<Leader>b',
+    '',
+    cmd_option(function()
+        sidebar.toggle('explorer')
+    end)
+)
+map(
+    'n',
+    '<Leader>u',
+    '',
+    cmd_option(function()
+        sidebar.toggle('debug')
+    end)
+)
 
 map('n', '<Leader>/', [[<Cmd>CommentToggle<CR>]], cmd_options)
 map('v', '<Leader>/', [[:CommentToggle<CR>]], cmd_options)

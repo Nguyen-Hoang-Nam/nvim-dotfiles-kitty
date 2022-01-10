@@ -56,6 +56,7 @@ augroup Highlight
     autocmd!
     autocmd FileType dapui* setlocal winhighlight=Normal:DapUINormal
     autocmd FileType aerial setlocal winhighlight=Normal:AerialNormal
+    autocmd FileType DiffviewFiles setlocal winhighlight=Normal:DiffviewFilesNormal
 augroup END
 ]],
     true

@@ -143,6 +143,7 @@ highlight({
 
     AerialNormal = { guibg = colors.dark_background },
     DapUINormal = { guibg = colors.dark_background },
+    DiffviewFilesNormal = { guibg = colors.dark_background },
 
     -- Dap-ui
     -- DapUIVariable = { guibg = colors.dark_background },
