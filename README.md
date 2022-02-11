@@ -132,7 +132,7 @@ Find more in [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki
 
 ### Theme
 
-All primitive colours are stored in `lua/theme.lua`
+All primitive colors are stored in `lua/theme.lua`
 
 ```lua
 M = {

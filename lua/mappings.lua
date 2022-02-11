@@ -29,7 +29,7 @@ map('v', '<Tab>', '>gV', options)
 map('v', '<S-Tab>', '<gV', options)
 
 map('n', '<Leader>q', [[<Cmd>let @/=""<CR>]], cmd_options)
-map('n', '<Leader>s', [[:w<CR>]], cmd_options)
+map('n', '<Leader>s', [[:silent write<CR>]], cmd_options)
 map('n', '<Leader>w', '', cmd_option(utils_core.bufdelete))
 
 map('n', '<Leader>m', '', cmd_option(format.format))
