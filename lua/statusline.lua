@@ -1,6 +1,8 @@
 local api = vim.api
 local fn = vim.fn
 
+local setting_statusline = require('settings').statusline
+
 local M = {}
 
 local function get_nvim_lsp_diagnostic(severity)
@@ -36,60 +38,98 @@ end
 local async_load = vim.loop.new_async(vim.schedule_wrap(function()
     local line
     if fn.winwidth(0) > 30 then
-        local fileType = vim.bo.filetype
-        local lineBreak = api.nvim_eval('&fileformat')
+        local file_type = vim.bo.filetype
         local is_update = false
-        local tab = api.nvim_eval('&tabstop')
-        local tab_type = api.nvim_eval('&et') == 1 and 'Spaces: ' or 'Tab Size: '
 
-        if fileType ~= '' and fileType ~= 'toggleterm' then
+        if file_type ~= '' and file_type ~= 'toggleterm' then
             is_update = true
-
-            fileType = fileType:gsub('^%l', string.upper)
-
-            if lineBreak == 'unix' then
-                lineBreak = 'LF'
-            elseif lineBreak == 'mac' then
-                lineBreak = 'CR'
-            else
-                lineBreak = 'CRLF'
-            end
         else
             is_update = false
         end
 
-        line = ''
+        line = '%#StatuslineBackground#  '
 
-        if fileType ~= 'Help' then
-            line = line
-                .. '%#StatuslineBackground#   '
-                .. require('git_utils').branch('')
-                .. '   %#StatuslineDiagnosticsError#'
-                .. [[ %{luaeval('require("statusline").diagnostics_error()')}]]
-                .. '%#StatuslineDiagnosticsWarning#'
-                .. [[ %{luaeval('require("statusline").diagnostics_warning()')}]]
-                .. '  %#StatuslineDiffAdded#'
-                .. [[ %{luaeval('require("statusline").get_hunks_data()[1]')}]]
-                .. ' %#StatuslineDiffModified#'
-                .. [[ %{luaeval('require("statusline").get_hunks_data()[2]')}]]
-                .. ' %#StatuslineDiffRemoved#'
-                .. [[ %{luaeval('require("statusline").get_hunks_data()[3]')}]]
+        -- Left of status line
+        if file_type ~= 'Help' then
+            -- Git branch
+            if setting_statusline.git_branch_enabled then
+                line = line .. ' ' .. require('git_utils').branch('') .. '   '
+            end
+
+            -- Diagnostic
+            if setting_statusline.diagnostic_enabled then
+                line = line
+                    .. '%#StatuslineDiagnosticsError#'
+                    .. [[ %{luaeval('require("statusline").diagnostics_error()')}]]
+                    .. '%#StatuslineDiagnosticsWarning#'
+                    .. [[ %{luaeval('require("statusline").diagnostics_warning()')}]]
+                    .. '  '
+            end
+
+            -- Git diff
+            if setting_statusline.git_diff_enabled then
+                line = line
+                    .. '%#StatuslineDiffAdded#'
+                    .. [[ %{luaeval('require("statusline").get_hunks_data()[1]')}]]
+                    .. ' %#StatuslineDiffModified#'
+                    .. [[ %{luaeval('require("statusline").get_hunks_data()[2]')}]]
+                    .. ' %#StatuslineDiffRemoved#'
+                    .. [[ %{luaeval('require("statusline").get_hunks_data()[3]')}]]
+            end
         end
 
-        line = line .. '%#StatuslineBackground#%=Ln %l, Col %c   '
+        -- Right of status line
+        line = line .. '%#StatuslineBackground#%='
+
+        -- Line and column
+        if setting_statusline.line_column_enabled then
+            line = line .. 'Ln %l, Col %c'
+        end
 
         if is_update and fn.winwidth(0) > 80 then
-            line = line
-                .. tab_type
-                .. tab
-                .. '   '
-                .. lineBreak
-                .. '   '
-                .. fileType
-                .. [[   %{luaeval('require("format").formatter_status()')}]]
+            -- Show indent type and number of spaces
+            if setting_statusline.tab_enabled then
+                local tab_type = api.nvim_eval('&et') == 1 and 'Spaces: ' or 'Tab Size: '
+                local tab = api.nvim_eval('&tabstop')
+
+                line = line .. '   ' .. tab_type .. tab
+            end
+
+            -- Show type of line break
+            if setting_statusline.line_break_enabled then
+                local line_break
+
+                local os = api.nvim_eval('&fileformat')
+                if os == 'unix' then
+                    line_break = 'LF'
+                elseif os == 'mac' then
+                    line_break = 'CR'
+                else
+                    line_break = 'CRLF'
+                end
+
+                line = line .. '   ' .. line_break
+            end
+
+            -- Show format of file
+            if setting_statusline.file_format_enabled then
+                file_type = file_type:gsub('^%l', string.upper)
+
+                line = line .. '   ' .. file_type
+            end
+
+            -- Show formatters and linters
+            if setting_statusline.efm_enabled then
+                line = line .. [[   %{luaeval('require("format").formatter_status()')}]]
+            end
         end
 
-        line = line .. '%#StatuslineSmiley#  '
+        -- Emoji at the end of status line
+        if setting_statusline.emoji_enabled then
+            line = line .. '   %#StatuslineSmiley#' .. setting_statusline.emoji_icon
+        end
+
+        line = line .. '  '
     else
         line = '%#StatuslineEmptyBackground#'
     end

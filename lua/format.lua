@@ -37,7 +37,7 @@ end
 M.formatter_status = function()
     local fileType = vim.bo.filetype
     if M.default_formatter[fileType] then
-        return formatters[fileType][M.default_formatter[fileType]] .. '   '
+        return formatters[fileType][M.default_formatter[fileType]]
     else
         return ''
     end
