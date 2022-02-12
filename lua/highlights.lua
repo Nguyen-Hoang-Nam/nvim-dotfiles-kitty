@@ -1,4 +1,4 @@
-local colors = require('theme')
+local colors = require('settings').colors
 
 local base00 = '#282c34'
 local base01 = '#353b45'

@@ -3,7 +3,7 @@ local windline = require('windline')
 local b_components = require('windline.components.basic')
 -- local utils = require('windline.utils')
 
-local colors_theme = require('theme')
+local colors_theme = require('settings').colors
 
 local lsp_comps = require('windline.components.lsp')
 local git_comps = require('windline.components.git')
@@ -101,7 +101,10 @@ basic.tabsize = {
     },
     text = function(_, _, _)
         return {
-            { (vim.api.nvim_eval('&et') == 1 and 'Spaces: ' or 'Tab sizes: ') .. vim.api.nvim_eval('&tabstop'), 'white' },
+            {
+                (vim.api.nvim_eval('&et') == 1 and 'Spaces: ' or 'Tab sizes: ') .. vim.api.nvim_eval('&tabstop'),
+                'white',
+            },
             { '   ', '' },
         }
     end,
