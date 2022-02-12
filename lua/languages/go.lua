@@ -16,6 +16,8 @@ M.all_format = { efm = 'Goimports   Gofumpt' }
 
 M.default_format = 'efm'
 
+M.lsp_server = 'gopls'
+
 M.lsp = {
     capabilities = lsp.capabilities,
     settings = {

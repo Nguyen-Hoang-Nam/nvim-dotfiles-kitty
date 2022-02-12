@@ -12,6 +12,8 @@ M.all_format = { efm = 'Pretter' }
 
 M.default_format = 'efm'
 
+M.lsp_server = 'svelte'
+
 M.lsp = {
     capabilities = lsp.capabilities,
     on_attach = lsp.on_attach,

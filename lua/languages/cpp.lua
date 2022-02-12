@@ -12,8 +12,11 @@ M.all_format = { efm = 'Clang' }
 
 M.default_format = 'efm'
 
+M.lsp_server = 'clangd'
+
+-- Fix difference offset encoding in clangd and efm
 local capabilities = lsp.capabilities
-capabilities.offsetEncoding = {"utf-16"}
+capabilities.offsetEncoding = { 'utf-16' }
 
 M.lsp = {
     capabilities = capabilities,

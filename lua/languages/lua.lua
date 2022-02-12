@@ -12,6 +12,8 @@ M.all_format = { efm = 'Stylua' }
 
 M.default_format = 'efm'
 
+M.lsp_server = 'sumneko_lua'
+
 local sumneko_root_path = '/home/nguyenhoangnam/.local/share/lsp/lua-language-server'
 local sumneko_binary = sumneko_root_path .. '/bin/Linux/lua-language-server'
 

@@ -15,6 +15,8 @@ M.all_format = { dockerls = 'DockerLS' }
 
 M.default_format = 'dockerls'
 
+M.lsp_server = 'dockerls'
+
 M.lsp = {
     capabilities = lsp.capabilities,
     on_attach = lsp.on_attach,

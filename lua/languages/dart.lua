@@ -16,6 +16,8 @@ M.all_format = { efm = 'Goimports   Gofumpt' }
 
 M.default_format = 'efm'
 
+M.lsp_server = 'dartls'
+
 M.lsp = {
     capabilities = lsp.capabilities,
     on_attach = lsp.on_attach,
