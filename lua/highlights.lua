@@ -141,6 +141,8 @@ highlight({
     DiagnosticUnderlineInfo = { gui = 'undercurl', guisp = base0D },
     DiagnosticUnderlineHint = { gui = 'undercurl', guisp = base0B },
 
+    CodeActionSign = { guifg = base0B },
+
     AerialNormal = { guibg = colors.dark_background },
     DapUINormal = { guibg = colors.dark_background },
     DiffviewFilesNormal = { guibg = colors.dark_background },

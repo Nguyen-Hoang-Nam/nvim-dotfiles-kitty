@@ -15,17 +15,13 @@ require('setup.telescope')
 require('setup.blankline')
 require('setup.signature')
 require('luasnip/loaders/from_vscode').lazy_load()
-require('setup.lspconfig')
 require('setup.goto')
 require('setup.aerial')
 require('setup.rest')
 require('setup.diffview')
 
-require('lspicon')
-
-require('lsp.emmet')
-require('lsp.efm')
-require('lsp.tailwindcss')
+require('lsp.lspconfig')
+require('lsp.icon')
 
 require('tree')
 

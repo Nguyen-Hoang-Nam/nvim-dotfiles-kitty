@@ -2,7 +2,7 @@ local utils = require('utils.core')
 local M = {}
 
 local settings = require('settings')
-local setting_languages = settings.languages
+local setting_languages = require('languages.languages')
 local filetypes = settings.autoformat.filetypes
 
 local formatters = {}
