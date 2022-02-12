@@ -3,7 +3,7 @@ local M = {}
 
 local settings = require('settings')
 local setting_languages = require('languages.languages')
-local filetypes = settings.autoformat.filetypes
+local filetypes = settings.efm.filetypes
 
 local formatters = {}
 local default_formatter = {}

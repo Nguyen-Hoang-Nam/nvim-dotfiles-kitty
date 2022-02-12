@@ -56,6 +56,7 @@ return {
 
     autoformat = {
         filetypes = {
+            'cmake',
             'css',
             'cpp',
             'dockerfile',

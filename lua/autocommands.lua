@@ -1,6 +1,28 @@
 local augroup = vim.api.nvim_exec
+local cmd = vim.api.nvim_command
 
-vim.api.nvim_command("command! -range CommentToggle lua require('utils.comment').comment_toggle(<line1>, <line2>)")
+-- Auto format
+local setting_formatter_filetypes = require('settings').efm.filetypes
+local map_filetype_filename = require('utils.core').map_filetype_filename
+
+local autoformat_cmd = 'autocmd BufWritePre '
+local i = 1
+for _, filetype in pairs(setting_formatter_filetypes) do
+    if i > 1 then
+        autoformat_cmd = autoformat_cmd .. ','
+    end
+
+    autoformat_cmd = autoformat_cmd .. map_filetype_filename[filetype]
+
+    i = i + 1
+end
+
+autoformat_cmd = autoformat_cmd .. [[ lua require('format').format()]]
+
+cmd(autoformat_cmd)
+
+-- Toggle comment
+cmd("command! -range CommentToggle lua require('utils.comment').comment_toggle(<line1>, <line2>)")
 
 augroup(
     [[
@@ -10,16 +32,6 @@ augroup Config
     autocmd InsertLeave * set cursorline
     autocmd! BufEnter * if &ft ==# 'help' | wincmd L | endif
     autocmd bufenter * if (winnr("$") == 2 && &filetype == "Yanil") | q | endif
-augroup END
-]],
-    true
-)
-
-augroup(
-    [[
-augroup FormatAutogroup
-    autocmd!
-    autocmd BufWritePre *.cpp,CMakeLists.txt,Dockerfile,*.md,*.php,*.py,*.js,*.jsx,*.ts,*.tsx,*.svelte,*.go,*.lua,*.rs,*.tex,*.css,*.html,*.yaml,*.yml,*.json lua require('format').format()
 augroup END
 ]],
     true
