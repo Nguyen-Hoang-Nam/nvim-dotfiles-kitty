@@ -19,7 +19,7 @@ augroup(
     [[
 augroup FormatAutogroup
     autocmd!
-    autocmd BufWritePre CMakeLists.txt,Dockerfile,*.md,*.php,*.py,*.js,*.jsx,*.ts,*.tsx,*.svelte,*.go,*.lua,*.rs,*.tex,*.css,*.html,*.yaml,*.yml,*.json lua require('format').format()
+    autocmd BufWritePre *.cpp,CMakeLists.txt,Dockerfile,*.md,*.php,*.py,*.js,*.jsx,*.ts,*.tsx,*.svelte,*.go,*.lua,*.rs,*.tex,*.css,*.html,*.yaml,*.yml,*.json lua require('format').format()
 augroup END
 ]],
     true

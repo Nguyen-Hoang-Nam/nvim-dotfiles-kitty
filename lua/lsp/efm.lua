@@ -22,6 +22,7 @@ require('lspconfig').efm.setup({
         'php',
         'xml',
         'dockerfile',
+        'cpp',
     },
 
     init_options = { documentFormatting = true, codeAction = true },
@@ -47,6 +48,7 @@ require('lspconfig').efm.setup({
             php = require('languages.php').efm,
             xml = require('languages.xml').efm,
             dockerfile = require('languages.docker').efm,
+            cpp = require('languages.cpp').efm,
         },
     },
 

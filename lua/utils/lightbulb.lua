@@ -22,7 +22,7 @@ end
 
 -- Credit https://github.com/kosayoda/nvim-lightbulb/blob/master/lua/nvim-lightbulb.lua
 function M.code_action()
-    if vim.bo.filetype ~= 'cmake' then
+    if vim.bo.filetype ~= 'cmake' and vim.bo.filetype ~= 'gitcommit' then
         local context = { diagnostics = lsp.diagnostic.get_line_diagnostics() }
         local params = lsp.util.make_range_params()
 

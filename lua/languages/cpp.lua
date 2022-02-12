@@ -1,14 +1,22 @@
 local lsp = require('languages.lsp')
 local M = {}
 
-M.efm = {}
+M.efm = {
+    {
+        formatCommand = [[clang-format -style='{BasedOnStyle: LLVM, IndentWidth: 4}']],
+        formatStdin = true,
+    },
+}
 
-M.all_format = { efm = '' }
+M.all_format = { efm = 'Clang' }
 
 M.default_format = 'efm'
 
+local capabilities = lsp.capabilities
+capabilities.offsetEncoding = {"utf-16"}
+
 M.lsp = {
-    capabilities = lsp.capabilities,
+    capabilities = capabilities,
     cmd = { 'clangd-12' },
     on_attach = lsp.on_attach,
 }

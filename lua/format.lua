@@ -17,6 +17,7 @@ local tex = require('languages.tex')
 local rust = require('languages.rust')
 local json = require('languages.json')
 local docker = require('languages.docker')
+local cpp = require('languages.cpp')
 
 local formatters = {
     javascript = javascript.all_format,
@@ -38,6 +39,7 @@ local formatters = {
     markdown = markdown.all_format,
     json = json.all_format,
     dockerfile = docker.all_format,
+    cpp = cpp.all_format,
 }
 
 M.default_formatter = {
@@ -60,6 +62,7 @@ M.default_formatter = {
     markdown = markdown.default_format,
     json = json.default_format,
     dockerfile = docker.default_format,
+    cpp = cpp.default_format,
 }
 
 M.choose_formatter = function()
