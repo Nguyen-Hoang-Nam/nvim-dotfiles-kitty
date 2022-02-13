@@ -3,6 +3,7 @@ return {
         filetypes = {
             'css',
             'cpp',
+            'dart',
             'dockerfile',
             'go',
             'html',
@@ -59,6 +60,7 @@ return {
             'cmake',
             'css',
             'cpp',
+            'dart',
             'dockerfile',
             'go',
             'html',
