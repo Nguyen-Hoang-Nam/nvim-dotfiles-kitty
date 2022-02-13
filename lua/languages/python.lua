@@ -19,6 +19,8 @@ M.all_format = { efm = 'Black' }
 
 M.default_format = 'efm'
 
+M.lsp_server = 'pyright'
+
 M.lsp = {
     capabilities = lsp.capabilities,
     on_attach = lsp.on_attach,

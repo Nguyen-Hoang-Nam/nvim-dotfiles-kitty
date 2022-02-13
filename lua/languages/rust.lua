@@ -15,6 +15,8 @@ M.all_format = {
 
 M.default_format = 'efm'
 
+M.lsp_server = 'rust_analyzer'
+
 M.lsp = {
     capabilities = lsp.capabilities,
     on_attach = lsp.on_attach,

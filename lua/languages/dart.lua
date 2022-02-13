@@ -3,16 +3,20 @@ local M = {}
 
 M.efm = {
     {
-        formatCommand = 'prettier --tab-width 4 --svelte-indent-script-and-style false --use-tabs=false --stdin-filepath ${INPUT} --plugin-search-dir .',
+        formatCommand = 'goimports',
+        formatStdin = true,
+    },
+    {
+        formatCommand = 'gofumpt',
         formatStdin = true,
     },
 }
 
-M.all_format = { efm = 'Pretter' }
+M.all_format = { efm = 'Goimports   Gofumpt' }
 
 M.default_format = 'efm'
 
-M.lsp_server = 'svelte'
+M.lsp_server = 'dartls'
 
 M.lsp = {
     capabilities = lsp.capabilities,

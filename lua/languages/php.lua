@@ -19,6 +19,8 @@ M.all_format = { efm = 'Prettier' }
 
 M.default_format = 'efm'
 
+M.lsp_server = 'phpactor'
+
 M.lsp = {
     capabilities = lsp.capabilities,
     on_attach = lsp.on_attach,

@@ -128,4 +128,28 @@ function M.rest()
     end
 end
 
+M.map_filetype_filename = {
+    cmake = 'CMakeLists.txt',
+    css = '*.css',
+    cpp = '*.cpp,*.hpp',
+    dockerfile = 'Dockerfile',
+    go = '*.go',
+    html = '*.html',
+    java = '*.java',
+    javascript = '*.js',
+    javascriptreact = '*.jsx',
+    json = '*.json',
+    lua = '*.lua',
+    markdown = '*.md',
+    php = '*.php',
+    python = '*.py',
+    rust = '*.rs',
+    svelte = '*.svelte',
+    tex = '*.tex',
+    typescript = '*.ts',
+    typescriptreact = '*.tsx',
+    xml = '*.xml',
+    yaml = '*.yaml,*.yml',
+}
+
 return M

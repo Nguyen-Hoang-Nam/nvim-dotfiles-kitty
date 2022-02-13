@@ -1,4 +1,4 @@
-local colors = require('theme')
+local colors = require('settings').colors
 
 local base00 = '#282c34'
 local base01 = '#353b45'
@@ -141,8 +141,11 @@ highlight({
     DiagnosticUnderlineInfo = { gui = 'undercurl', guisp = base0D },
     DiagnosticUnderlineHint = { gui = 'undercurl', guisp = base0B },
 
+    CodeActionSign = { guifg = base0B },
+
     AerialNormal = { guibg = colors.dark_background },
     DapUINormal = { guibg = colors.dark_background },
+    DiffviewFilesNormal = { guibg = colors.dark_background },
 
     -- Dap-ui
     -- DapUIVariable = { guibg = colors.dark_background },

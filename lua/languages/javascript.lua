@@ -23,6 +23,8 @@ M.all_format = {
 
 M.default_format = 'efm'
 
+M.lsp_server = 'tsserver'
+
 M.lsp = {
     capabilities = lsp.capabilities,
     on_attach = lsp.on_attach,

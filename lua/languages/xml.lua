@@ -12,6 +12,8 @@ M.all_format = { efm = 'Prettier', lemminx = 'Lemminx' }
 
 M.default_format = 'efm'
 
+M.lsp_server = 'lemminx'
+
 M.lsp = {
     capabilities = lsp.capabilities,
     on_attach = lsp.on_attach,

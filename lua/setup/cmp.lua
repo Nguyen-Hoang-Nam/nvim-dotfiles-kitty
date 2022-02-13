@@ -20,7 +20,7 @@ local check_back_space = function()
     end
 end
 
-local lspKindIcons = require('theme').lspKindIcons
+local lspKindIcons = require('settings').kinds
 
 cmp.setup({
     snippet = {

@@ -1,4 +1,4 @@
-local colors = require('theme')
+local colors = require('settings').colors
 local sidebar = require('sidebar')
 
 require('bufferline').setup({

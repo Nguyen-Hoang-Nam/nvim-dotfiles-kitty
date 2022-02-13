@@ -1,66 +1,18 @@
 local utils = require('utils.core')
 local M = {}
 
-local html = require('languages.html')
-local css = require('languages.css')
-local yaml = require('languages.yaml')
-local svelte = require('languages.svelte')
-local python = require('languages.python')
-local javascript = require('languages.javascript')
-local java = require('languages.java')
-local php = require('languages.php')
-local markdown = require('languages.markdown')
-local xml = require('languages.xml')
-local go = require('languages.go')
-local lua = require('languages.lua')
-local tex = require('languages.tex')
-local rust = require('languages.rust')
-local json = require('languages.json')
-local docker = require('languages.docker')
+local settings = require('settings')
+local setting_languages = require('languages.languages')
+local filetypes = settings.efm.filetypes
 
-local formatters = {
-    javascript = javascript.all_format,
-    javascriptreact = javascript.all_format,
-    typescript = javascript.all_format,
-    typescriptreact = javascript.all_format,
-    svelte = svelte.all_format,
-    go = go.all_format,
-    rust = rust.all_format,
-    lua = lua.all_format,
-    java = java.all_format,
-    php = php.all_format,
-    python = python.all_format,
-    tex = tex.all_format,
-    xml = xml.all_format,
-    html = html.all_format,
-    css = css.all_format,
-    yaml = css.all_format,
-    markdown = markdown.all_format,
-    json = json.all_format,
-    dockerfile = docker.all_format,
-}
+local formatters = {}
+local default_formatter = {}
+for _, filetype in pairs(filetypes) do
+    formatters[filetype] = setting_languages[filetype].all_format
+    default_formatter[filetype] = setting_languages[filetype].default_format
+end
 
-M.default_formatter = {
-    javascript = javascript.default_format,
-    javascriptreact = javascript.default_format,
-    typescript = javascript.default_format,
-    typescriptreact = javascript.default_format,
-    svelte = svelte.default_format,
-    go = go.default_format,
-    rust = rust.default_format,
-    lua = lua.default_format,
-    java = java.default_format,
-    php = php.default_format,
-    python = python.default_format,
-    tex = tex.default_format,
-    xml = xml.default_format,
-    html = html.default_format,
-    css = css.default_format,
-    yaml = yaml.default_format,
-    markdown = markdown.default_format,
-    json = json.default_format,
-    dockerfile = docker.default_format,
-}
+M.default_formatter = default_formatter
 
 M.choose_formatter = function()
     local fileType = vim.bo.filetype
@@ -85,7 +37,7 @@ end
 M.formatter_status = function()
     local fileType = vim.bo.filetype
     if M.default_formatter[fileType] then
-        return formatters[fileType][M.default_formatter[fileType]] .. '   '
+        return formatters[fileType][M.default_formatter[fileType]]
     else
         return ''
     end

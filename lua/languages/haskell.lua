@@ -15,6 +15,8 @@ M.all_format = {
 
 M.default_format = 'hls'
 
+M.lsp_server = 'hls'
+
 M.lsp = {
     capabilities = lsp.capabilities,
     on_attach = lsp.on_attach,
