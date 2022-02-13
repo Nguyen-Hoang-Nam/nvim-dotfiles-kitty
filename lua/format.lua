@@ -37,10 +37,13 @@ end
 M.formatter_status = function()
     local fileType = vim.bo.filetype
     if M.default_formatter[fileType] then
-        return formatters[fileType][M.default_formatter[fileType]]
-    else
-        return ''
+        local name = formatters[fileType][M.default_formatter[fileType]]
+        if name ~= '' then
+            return '   ' .. name
+        end
     end
+
+    return ''
 end
 
 -- Credit https://github.com/terrortylor/neovim-environment/blob/main/lua/config/lsp/funcs.lua#L11

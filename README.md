@@ -52,7 +52,7 @@ _Kitty with Fira, Cascadia, and Mini-File-Icons_
 | C          |        | 👍         |           |      |       |      |
 | CPP        | 👍     | 👍         | 👍        |      |       |      |
 | CSS        | 👍👍👍 | 👍         | 👍        |      |       |      |
-| Dart       |        | 👍         |           |      |       | 👍👍 |
+| Dart       | 👍     | 👍         | 👍        |      |       | 👍👍 |
 | Dockerfile | 👍     | 👍         |           | 👍   |       |      |
 | Go         | 👍     | 👍         | 👍👍      | 👍   | 👍    | 👍   |
 | Haskell    | 👍     | 👍         |           |      |       | 👍   |
@@ -136,6 +136,7 @@ return {
         filetypes = {
             'css',
             'cpp',
+            'dart',
             'dockerfile',
             'go',
             'html',
@@ -192,6 +193,7 @@ return {
             'cmake',
             'css',
             'cpp',
+            'dart',
             'dockerfile',
             'go',
             'html',
@@ -318,42 +320,42 @@ store in `~/.local/share/nvim/site/pack/*/start/`.
 
 | Plugin                                                                                          | Last updated |
 | ----------------------------------------------------------------------------------------------- | ------------ |
-| [aerial](https://github.com/stevearc/aerial.nvim)                                               | Jan 2 2021   |
-| [auto-session](https://github.com/rmagatti/auto-session)                                        | Dec 6 2021   |
-| [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)                                         | Nov 10 2021  |
-| [cmp-path](https://github.com/hrsh7th/cmp-path)                                                 | Dec 30 2021  |
-| [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)                                      | Dec 12 2021  |
+| [aerial](https://github.com/stevearc/aerial.nvim)                                               | Feb 12 2022  |
+| [auto-session](https://github.com/rmagatti/auto-session)                                        | Feb 11 2022  |
+| [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)                                         | Jan 15 2022  |
+| [cmp-path](https://github.com/hrsh7th/cmp-path)                                                 | Feb 3 2022   |
+| [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)                                      | Jan 2 2022   |
 | [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)                                     | Apr 17 2021  |
-| [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)                            | Dec 29 2021  |
+| [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)                            | Feb 2 2022   |
 | [git-utils.nvim](https://github.com/Nguyen-Hoang-Nam/git-utils.nvim)                            |              |
-| [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                                     | Dec 30 2021  |
+| [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                                     | Feb 8 2022   |
 | [goto-preview](https://github.com/rmagatti/goto-preview)                                        | Dec 25 2021  |
-| [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)                 | Dec 1 2021   |
-| [lsp_signature.nvim](https://github.com/ray-x/lsp_signature.nvim)                               | Dec 22 2021  |
-| [LuaSnip](https://github.com/L3MON4D3/LuaSnip)                                                  | Dec 29 2021  |
-| [nvim-autopair](https://github.com/windwp/nvim-autopairs)                                       | Dec 26 2021  |
-| [nvim-bufferline.lua](https://github.com/akinsho/nvim-bufferline.lua)                           | Dec 15 2021  |
-| [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)                                                 | Dec 30 2021  |
+| [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)                 | Jan 22 2022  |
+| [lsp_signature.nvim](https://github.com/ray-x/lsp_signature.nvim)                               | Feb 9 2022   |
+| [LuaSnip](https://github.com/L3MON4D3/LuaSnip)                                                  | Feb 11 2022  |
+| [nvim-autopair](https://github.com/windwp/nvim-autopairs)                                       | Feb 12 2022  |
+| [nvim-bufferline.lua](https://github.com/akinsho/nvim-bufferline.lua)                           | Feb 10 2022  |
+| [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)                                                 | Feb 13 2022  |
 | [nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)                            | Apr 20 2020  |
-| [nvim-dap](https://github.com/mfussenegger/nvim-dap)                                            | Dec 22 2021  |
-| [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)                                          | Dec 27 2021  |
-| [nvim-dap-virtual-text](https://github.com/theHamsta/nvim-dap-virtual-text)                     | Dec 3 2021   |
-| [nvim-jdtls](https://github.com/mfussenegger/nvim-jdtls)                                        | Dec 12 2021  |
-| [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)                                      | Dec 31 2021  |
+| [nvim-dap](https://github.com/mfussenegger/nvim-dap)                                            | Feb 11 2022  |
+| [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)                                          | Jan 11 2022  |
+| [nvim-dap-virtual-text](https://github.com/theHamsta/nvim-dap-virtual-text)                     | Dec 2 2021   |
+| [nvim-jdtls](https://github.com/mfussenegger/nvim-jdtls)                                        | Jan 27 2022  |
+| [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)                                      | Feb 12 2022  |
 | [nvim-mini-file-icons](https://github.com/Nguyen-Hoang-Nam/nvim-mini-file-icons)                |              |
-| [nvim-scrollview](https://github.com/dstein64/nvim-scrollview)                                  | Dec 15 2021  |
-| [nvim-toggleterm.lua](https://github.com/akinsho/nvim-toggleterm.lua)                           | Nov 24 2021  |
-| [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)                           | Dec 29 2021  |
-| [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)                                    | Dec 15 2021  |
+| [nvim-scrollview](https://github.com/dstein64/nvim-scrollview)                                  | Feb 11 2022  |
+| [nvim-toggleterm.lua](https://github.com/akinsho/nvim-toggleterm.lua)                           | Jan 26 2022  |
+| [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)                           | Feb 12 2022  |
+| [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)                                    | Feb 7 2022   |
 | [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) | Dec 13 2021  |
-| [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)                                      | Nov 21 2021  |
-| [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)                                        | Dec 15 2021  |
-| [rest.nvim](https://github.com/NTBBloodbath/rest.nvim)                                          | Dec 21 2021  |
+| [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)                                      | Feb 9 2022   |
+| [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)                                        | Feb 10 2022  |
+| [rest.nvim](https://github.com/NTBBloodbath/rest.nvim)                                          | Jan 26 2022  |
 | [tabout.nvim](https://github.com/abecodes/tabout.nvim)                                          | Dec 15 2021  |
 | [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim)        | Nov 24 2021  |
-| [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)                              | Dec 29 2021  |
-| [vim-test](https://github.com/vim-test/vim-test)                                                | Dec 31 2021  |
-| [vim-ultest](https://github.com/rcarriga/vim-ultest)                                            | Dec 27 2021  |
+| [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)                              | Feb 12 2022  |
+| [vim-test](https://github.com/vim-test/vim-test)                                                | Feb 12 2022  |
+| [vim-ultest](https://github.com/rcarriga/vim-ultest)                                            | Jan 31 2022  |
 | [yanil](https://github.com/Nguyen-Hoang-Nam/yanil/tree/customize-ui)                            |              |
 
 ### Treesitter (Optional)

@@ -132,6 +132,7 @@ M.map_filetype_filename = {
     cmake = 'CMakeLists.txt',
     css = '*.css',
     cpp = '*.cpp,*.hpp',
+    dart = '*.dart',
     dockerfile = 'Dockerfile',
     go = '*.go',
     html = '*.html',

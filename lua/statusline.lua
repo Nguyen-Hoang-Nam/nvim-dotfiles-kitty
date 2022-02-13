@@ -120,7 +120,7 @@ local async_load = vim.loop.new_async(vim.schedule_wrap(function()
 
             -- Show formatters and linters
             if setting_statusline.efm_enabled then
-                line = line .. [[   %{luaeval('require("format").formatter_status()')}]]
+                line = line .. [[%{luaeval('require("format").formatter_status()')}]]
             end
         end
 

@@ -3,16 +3,12 @@ local M = {}
 
 M.efm = {
     {
-        formatCommand = 'goimports',
-        formatStdin = true,
-    },
-    {
-        formatCommand = 'gofumpt',
+        formatCommand = [[dart format -o show . | sed '$d']],
         formatStdin = true,
     },
 }
 
-M.all_format = { efm = 'Goimports   Gofumpt' }
+M.all_format = { efm = '' }
 
 M.default_format = 'efm'
 
