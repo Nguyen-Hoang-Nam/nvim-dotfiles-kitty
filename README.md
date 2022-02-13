@@ -7,7 +7,7 @@ cooperation.
 This configuration works properly with
 JavaScript, Python, Go, Rust, Lua, PHP and Java.
 
-Up coming languages, Haskell, Zig, Solidity, Scala, Dart (Flutter)
+Up coming languages, Haskell, Zig, Solidity, Scala, Dart (Flutter).
 
 ![Main](https://raw.githubusercontent.com/Nguyen-Hoang-Nam/readme-image/main/nvim-dotfiles/main.png)
 _Kitty with Fira, Cascadia, and Mini-File-Icons_
@@ -36,9 +36,9 @@ _Kitty with Fira, Cascadia, and Mini-File-Icons_
 ## Something I want to do
 
 - Perfect center dashboard header and show dashboard if there is no buffer.
-- Use nix to manage package
+- Use nix to manage package.
 
-## Supported framework
+## Supported frameworks
 
 - React
 - Svelte
@@ -49,14 +49,17 @@ _Kitty with Fira, Cascadia, and Mini-File-Icons_
 - Laravel
 - Spring Boot
 
+## Supported languages
+
 | Language   | LSP    | Treesitter | Formatter | Lint | Debug | Test |
 | ---------- | ------ | ---------- | --------- | ---- | ----- | ---- |
 | Bash       |        | 👍         |           |      |       |      |
 | C          |        | 👍         |           |      |       |      |
+| CPP        | 👍     | 👍         | 👍        |      |       |      |
 | CSS        | 👍👍👍 | 👍         | 👍        |      |       |      |
 | Dart       |        | 👍         |           |      |       |      |
 | Dockerfile | 👍     | 👍         |           | 👍   |       |      |
-| Go         | 👍     | 👍         | 👍👍      |      |       |      |
+| Go         | 👍     | 👍         | 👍👍      | 👍   |       |      |
 | Haskell    | 👍     | 👍         |           |      |       |      |
 | HTML       | 👍👍👍 | 👍         | 👍        |      |       |      |
 | HTTP       |        | 👍         |           |      |       |      |
@@ -130,31 +133,161 @@ Find more in [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki
 
 ## Configuration
 
-### Theme
-
-All primitive colors are stored in `lua/theme.lua`
+All settings are store in `lua/settings.lua`
 
 ```lua
-M = {
-    red = '#F9867B',
-    orange = '#CD9731',
-    yellow = '#FDCE68',
-    green = '#A3EEA0',
-    cyan = '#6796E6',
-    blue = '#7BE2F9',
-    purple = '#E19EF5',
-    tomato = '#F44747',
-    white = '#FFFFFF',
+return {
+    efm = {
+        filetypes = {
+            'css',
+            'cpp',
+            'dockerfile',
+            'go',
+            'html',
+            'java',
+            'javascript',
+            'javascriptreact',
+            'json',
+            'lua',
+            'markdown',
+            'php',
+            'python',
+            'rust',
+            'svelte',
+            'tex',
+            'typescript',
+            'typescriptreact',
+            'xml',
+            'yaml',
+        },
+    },
 
-    background = '#212835',
-    dark_background = '#1B212C',
+    lspconfigs = {
+        filetypes = {
+            'cmake',
+            'css',
+            'cpp',
+            'dart',
+            'dockerfile',
+            'go',
+            'haskell',
+            'html',
+            'javascript',
+            'json',
+            'lua',
+            'php',
+            'python',
+            'rust',
+            'svelte',
+            'tex',
+            'xml',
+            -- 'yaml',
+            'zig',
+        },
 
-    border = '#3E4451',
-    comment = '#5C6370',
-    lineNumber = '#495162',
-    scrollbar = '#4E5666',
-    cursorLine = '#2C313A',
-    indent = '#383C44',
+        features = {
+            'efm',
+            'emmet',
+            'tailwindcss',
+        },
+    },
+
+    autoformat = {
+        filetypes = {
+            'cmake',
+            'css',
+            'cpp',
+            'dockerfile',
+            'go',
+            'html',
+            'java',
+            'javascript',
+            'javascriptreact',
+            'json',
+            'lua',
+            'markdown',
+            'php',
+            'python',
+            'rust',
+            'svelte',
+            'tex',
+            'typescript',
+            'typescriptreact',
+            'xml',
+            'yaml',
+        },
+    },
+
+    colors = {
+        red = '#F9867B',
+        orange = '#CD9731',
+        yellow = '#FDCE68',
+        green = '#A3EEA0',
+        cyan = '#6796E6',
+        blue = '#7BE2F9',
+        purple = '#E19EF5',
+        tomato = '#F44747',
+        white = '#FFFFFF',
+
+        background = '#212835',
+        dark_background = '#1B212C',
+
+        border = '#3E4451',
+        comment = '#5C6370',
+        lineNumber = '#495162',
+        scrollbar = '#4E5666',
+        cursorLine = '#2C313A',
+        indent = '#383C44',
+    },
+
+    signs = {
+        DiagnosticSignError = ' ',
+        DiagnosticSignWarning = ' ',
+        DiagnosticSignHint = ' ',
+        DiagnosticSignInfo = ' ',
+        CodeActionSign = ' ',
+    },
+
+    kinds = {
+        Class = ' (class)',
+        Color = ' (color)',
+        Constant = ' (constant)',
+        Constructor = ' (constructor)',
+        Enum = ' (enum)',
+        EnumMember = ' (enum member)',
+        Event = ' (event)',
+        Field = ' (field)',
+        File = ' (file)',
+        Folder = ' (folder)',
+        Function = ' (function)',
+        Interface = ' (interface)',
+        Keyword = ' (keyword)',
+        Method = ' (method)',
+        Module = '{} (module)',
+        Operator = ' (operator)',
+        Property = ' (property)',
+        Reference = ' (reference)',
+        Snippet = ' (snippet)',
+        Struct = ' (enum)',
+        Text = ' (text)',
+        TypeParameter = ' (type parameter)',
+        Unit = ' (unit)',
+        Value = ' (value)',
+        Variable = ' (variable)',
+    },
+
+    statusline = {
+        git_branch_enabled = true,
+        diagnostic_enabled = true,
+        git_diff_enabled = true,
+        line_column_enabled = true,
+        tab_enabled = true,
+        line_break_enabled = true,
+        file_format_enabled = true,
+        efm_enabled = true,
+        emoji_enabled = true,
+        emoji_icon = '',
+    },
 }
 ```
 
