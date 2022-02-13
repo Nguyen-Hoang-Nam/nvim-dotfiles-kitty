@@ -428,6 +428,95 @@ Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Test)
 | \]x             | Go to next function         |
 | \[x             | Go to previous function     |
 
+## Add new languages
+
+If you want some languages that I don't support yet, then you can follow these
+steps to add manually.
+
+The first thing I do is check [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+and install parser for this language. After this step, your editor will highlight
+your syntax.
+
+Then, you may want to find LSP in [here](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
+. After you've installed the LSP, you need to create a file in `/after/ftplugin`,
+`/lug/languages`.
+
+```lua
+-- /lua/langauges/your-language.lua
+local lsp = require('languages.lsp')
+local M = {}
+
+M.lsp_server = '<name of LSP>'
+
+M.lsp = {
+    capabilities = lsp.capabilities,
+    on_attach = lsp.on_attach,
+    -- Any extra configuration should put there
+}
+
+return M
+```
+
+```lua
+-- /after/ftplugin/your-language.lua
+vim.opt.indentexpr = 'nvim_treesitter#indent()' -- Optional, If you use indent of treesitter
+
+require('cmp').setup.buffer({
+    sources = {
+        { name = 'nvim_lsp' },
+        { name = 'luasnip' }, -- Optional, If you use snippet
+        { name = 'path' }, -- Optional, If your language need path
+        { name = 'nvim_lsp_signature_help' }, -- Optional, If your language has signature
+    },
+})
+```
+
+You also need to add your language to `/lua/settings.lua`
+
+```lua
+-- /lua/settings.lua
+return {
+    lspconfigs = {
+        filetypes = {
+            'cmake',
+            '<your lanugage>',
+            'zig',
+        },
+    },
+}
+```
+
+If you know that there are formatters and linters for this language. Then you
+need to install these tools first and go to `/lua/languages/<your language>.lua`
+
+```lua
+-- /lua/languages/<your language>.lua
+M.efm = {
+    {
+        formatCommand = 'formatter1',
+        formatStdin = true,
+    },
+    {
+        formatCommand = 'formatter2',
+        formatStdin = true,
+    },
+    {
+        lintCommand = 'linter1',
+        lintIgnoreExitCode = true,
+        lintStdin = true,
+        lintFormats = {
+            'Your linter format',
+        },
+    },
+}
+
+M.all_format = { efm = 'Formatter1   Formatter2   Linter1' }
+
+M.default_format = 'efm'
+```
+
+If you want debug when you need to check [this](https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation)
+
 ## TODO
 
 - [ ] Show theme in wiki
