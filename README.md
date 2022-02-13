@@ -33,18 +33,13 @@ _Kitty with Fira, Cascadia, and Mini-File-Icons_
 - All in one sidebar. (Explorer, Symbol, Debug)
 - Install all plugins manually.
 
-## Something I want to do
-
-- Perfect center dashboard header and show dashboard if there is no buffer.
-- Use nix to manage package.
-
 ## Supported frameworks
 
 - React
 - Svelte
-- TailwindCSS
+- Tailwind
 - Express
-- Gonic
+- Gin
 - FastAPI
 - Laravel
 - Spring Boot
@@ -57,13 +52,13 @@ _Kitty with Fira, Cascadia, and Mini-File-Icons_
 | C          |        | 👍         |           |      |       |      |
 | CPP        | 👍     | 👍         | 👍        |      |       |      |
 | CSS        | 👍👍👍 | 👍         | 👍        |      |       |      |
-| Dart       |        | 👍         |           |      |       |      |
+| Dart       |        | 👍         |           |      |       | 👍👍 |
 | Dockerfile | 👍     | 👍         |           | 👍   |       |      |
-| Go         | 👍     | 👍         | 👍👍      | 👍   | 👍    |      |
-| Haskell    | 👍     | 👍         |           |      |       |      |
+| Go         | 👍     | 👍         | 👍👍      | 👍   | 👍    | 👍   |
+| Haskell    | 👍     | 👍         |           |      |       | 👍   |
 | HTML       | 👍👍👍 | 👍         | 👍        |      |       |      |
 | HTTP       |        | 👍         |           |      |       |      |
-| Java       | 👍     | 👍         | 👍        |      | 👍    |      |
+| Java       | 👍     | 👍         | 👍        |      | 👍    | 👍   |
 | Javascript | 👍     | 👍👍       | 👍        |      |       |      |
 | JSON       | 👍     | 👍         | 👍        |      |       |      |
 | Lua        | 👍     | 👍         | 👍        |      |       |      |
@@ -71,7 +66,7 @@ _Kitty with Fira, Cascadia, and Mini-File-Icons_
 | PHP        | 👍     | 👍         | 👍        | 👍   |       |      |
 | Python     | 👍     | 👍         | 👍        | 👍   |       |      |
 | React      | 👍👍   | 👍         | 👍        |      |       |      |
-| Rust       | 👍     | 👍         | 👍        |      |       |      |
+| Rust       | 👍     | 👍         | 👍        |      |       | 👍   |
 | Scala      |        | 👍         |           |      |       |      |
 | Solidity   |        |            |           |      |       |      |
 | Svelte     | 👍👍   | 👍         | 👍        |      |       |      |
@@ -295,10 +290,10 @@ return {
 
 ### Requirements
 
-- Kitty
-- Neovim 0.7.0-dev (Last updated Jan 1 2021)
+- Kitty (Look better in Kitty)
+- Neovim 0.7.0-dev (Last updated Feb 1 2021)
 
-### Fonts
+### Fonts (Optional)
 
 - [mini-file-icons](https://github.com/Nguyen-Hoang-Nam/mini-file-icons)
 - Fira code (Or any ligature font)
@@ -361,7 +356,7 @@ store in `~/.local/share/nvim/site/pack/*/start/`.
 | [vim-ultest](https://github.com/rcarriga/vim-ultest)                                            | Dec 27 2021  |
 | [yanil](https://github.com/Nguyen-Hoang-Nam/yanil/tree/customize-ui)                            |              |
 
-### Treesitter
+### Treesitter (Optional)
 
 Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Treesitter)
 
@@ -369,14 +364,32 @@ Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Treesi
 
 Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Language-server)
 
-### Lint and Formatter
+### Formatter
 
 Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Code-formatter)
+
+### Linter
+
+Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Linter)
+
+### Debug
+
+Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Debug)
+
+### Test
+
+Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Test)
 
 ## Mappings
 
 | Key             | Description                 |
 | --------------- | --------------------------- |
+| &lt;Leader&gt;0 | Add break point             |
+| &lt;Leader&gt;1 | Toggle debug                |
+| &lt;Leader&gt;2 | Step over                   |
+| &lt;Leader&gt;3 | Step into                   |
+| &lt;Leader&gt;4 | Step out                    |
+| &lt;Leader&gt;9 | Scope information           |
 | &lt;Leader&gt;a | Code action                 |
 | &lt;Leader&gt;b | Toggle Explorer             |
 | &lt;Leader&gt;c | Range format                |
@@ -394,22 +407,34 @@ Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Code-f
 | &lt;Leader&gt;q | Turn off search's highlight |
 | &lt;Leader&gt;r | Rename variable             |
 | &lt;Leader&gt;s | Save file                   |
+| &lt;Leader&gt;t | Run test                    |
+| &lt;Leader&gt;u | Toggle debug sidebar        |
+| &lt;Leader&gt;v | Run restful API             |
 | &lt;Leader&gt;w | Delete current buffer       |
+| &lt;Leader&gt;x | Toggle symbol sidebar       |
 | &lt;Leader&gt;z | Preview definition          |
 | &lt;Leader&gt;/ | Toggle comment              |
-| &lt;M-t&gt;     | Toggle Terminal             |
+| &lt;M-t&gt;     | Toggle terminal             |
 | jk              | Insert mode to normal mode  |
 | \]d             | Jump next diagnostic        |
 | \[d             | Jump previous diagnostic    |
 | \]b             | Go to next buffer           |
 | \[b             | Go to previous buffer       |
+| \]t             | Go to next failed test      |
+| \[t             | Go to previous failed test  |
+| \]x             | Go to next function         |
+| \[x             | Go to previous function     |
 
 ## TODO
 
-- \[ ] Show theme in wiki
-- \[ ] Support Flutter
-- \[x] Add PHP to wiki
-- \[x] Show images of all supporting languages
+- [ ] Show theme in wiki
+- [ ] Support Flutter
+- [ ] Perfect center dashboard header and show dashboard if there is no buffer.
+- [ ] Use nix to manage package.
+- [ ] Support reload configuration [in this](https://www.reddit.com/r/neovim/comments/puuskh/how_to_reload_my_lua_config_while_using_neovim/)
+- [ ] Add test summary to sidebar
+- [ ] Change highlight of nvim-dap-ui
+- [ ] Change highlight of vim-ultest
 
 ## Contributing
 
