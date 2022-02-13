@@ -50,6 +50,7 @@ _Kitty with Fira, Cascadia, and Mini-File-Icons_
 | ---------- | ------ | ---------- | --------- | ---- | ----- | ---- |
 | Bash       |        | 👍         |           |      |       |      |
 | C          |        | 👍         |           |      |       |      |
+| CMake      | 👍     | 👍         | 👍        |      |       |      |
 | CPP        | 👍     | 👍         | 👍        |      |       |      |
 | CSS        | 👍👍👍 | 👍         | 👍        |      |       |      |
 | Dart       | 👍     | 👍         | 👍        |      |       | 👍👍 |
@@ -70,7 +71,7 @@ _Kitty with Fira, Cascadia, and Mini-File-Icons_
 | Scala      |        | 👍         |           |      |       |      |
 | Solidity   |        |            |           |      |       |      |
 | Svelte     | 👍👍   | 👍         | 👍        |      |       |      |
-| Latex      | 👍     | 👍         | 👍        |      |       |      |
+| Tex        | 👍     | 👍         | 👍        |      |       |      |
 | TOML       |        | 👍         |           |      |       |      |
 | Typescript | 👍     | 👍         | 👍        | 👍   |       |      |
 | XML        | 👍     | 👍         | 👍        |      |       |      |
@@ -292,10 +293,10 @@ return {
 
 ### Requirements
 
-- Kitty (Look better in Kitty)
+- Kitty
 - Neovim 0.7.0-dev (Last updated Feb 1 2021)
 
-### Fonts (Optional)
+### Fonts
 
 - [mini-file-icons](https://github.com/Nguyen-Hoang-Nam/mini-file-icons)
 - Fira code (Or any ligature font)
