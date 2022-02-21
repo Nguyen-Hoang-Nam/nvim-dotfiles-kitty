@@ -2,10 +2,10 @@ local api = vim.api
 local M = {}
 
 M.efm = {
-    {
-        formatCommand = 'prettier --tab-width=4 --stdin-filepath ${INPUT}',
-        formatStdin = true,
-    },
+    -- {
+    --     formatCommand = 'prettier --tab-width=4 --stdin-filepath ${INPUT}',
+    --     formatStdin = true,
+    -- },
 }
 
 M.all_format = { efm = 'Prettier' }

@@ -3,6 +3,7 @@ local sidebar = require('sidebar')
 
 dap.defaults.fallback.terminal_win_cmd = ':belowright new | resize 10 | setlocal bt=nofile bh=wipe nobl noswapfile nu'
 
+-- TODO: Find other icons
 vim.fn.sign_define('DapBreakpoint', { text = '', texthl = 'DapBreakpoint', linehl = '', numhl = '' })
 vim.fn.sign_define('DapStopped', { text = '', texthl = 'DapStopped', linehl = '', numhl = '' })
 
