@@ -16,6 +16,7 @@ return {
     php = require('languages.php'),
     python = require('languages.python'),
     rust = require('languages.rust'),
+    solidity = require('languages.solidity'),
     svelte = require('languages.svelte'),
     tex = require('languages.tex'),
     typescript = require('languages.javascript'),

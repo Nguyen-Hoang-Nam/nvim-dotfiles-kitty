@@ -20,9 +20,18 @@ local function _update_sign(new_line)
     end
 end
 
+local function has_code_action()
+    local filetype = vim.bo.filetype
+    if filetype ~= 'cmake' and filetype ~= 'gitcommit' and filetype ~= 'solidity' then
+        return true
+    end
+
+    return false
+end
+
 -- Credit https://github.com/kosayoda/nvim-lightbulb/blob/master/lua/nvim-lightbulb.lua
 function M.code_action()
-    if vim.bo.filetype ~= 'cmake' and vim.bo.filetype ~= 'gitcommit' then
+    if has_code_action() then
         local context = { diagnostics = lsp.diagnostic.get_line_diagnostics() }
         local params = lsp.util.make_range_params()
 
