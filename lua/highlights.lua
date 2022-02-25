@@ -239,6 +239,7 @@ highlight({
     GitSignsAdd = { guifg = base0B, guibg = colors.background },
     GitSignsChange = { guifg = base0D, guibg = colors.background },
     GitSignsDelete = { guifg = base08, guibg = colors.background },
+    GitSignsCurrentLineBlame = { guifg = colors.comment },
 
     TroubleNormal = { guibg = colors.dark_background },
 

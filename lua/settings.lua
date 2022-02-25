@@ -41,6 +41,7 @@ return {
             'php',
             'python',
             'rust',
+            'solidity',
             'svelte',
             'tex',
             'xml',

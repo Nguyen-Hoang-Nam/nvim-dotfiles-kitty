@@ -32,6 +32,7 @@ augroup Config
     autocmd InsertLeave * set cursorline
     autocmd! BufEnter * if &ft ==# 'help' | wincmd L | endif
     autocmd bufenter * if (winnr("$") == 2 && &filetype == "Yanil") | q | endif
+    autocmd BufNewFile,BufRead *.sol set filetype=solidity
 augroup END
 ]],
     true

@@ -69,7 +69,7 @@ _Kitty with Fira, Cascadia, and Mini-File-Icons_
 | React      | 👍👍   | 👍         | 👍        |      |       |      |
 | Rust       | 👍     | 👍         | 👍        |      |       | 👍   |
 | Scala      |        | 👍         |           |      |       |      |
-| Solidity   |        |            |           |      |       |      |
+| Solidity   | 👍     |            |           |      |       |      |
 | Svelte     | 👍👍   | 👍         | 👍        |      |       |      |
 | Tex        | 👍     | 👍         | 👍        |      |       |      |
 | TOML       |        | 👍         |           |      |       |      |
@@ -350,7 +350,7 @@ store in `~/.local/share/nvim/site/pack/*/start/`.
 | [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)                           | Feb 24 2022  |
 | [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)                                    | Feb 22 2022  |
 | [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) | Dec 13 2021  |
-| [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)                                      | Feb 24 2022  |
+| [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)                                      | Feb 23 2022  |
 | [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)                                        | Feb 19 2022  |
 | [rest.nvim](https://github.com/NTBBloodbath/rest.nvim)                                          | Jan 26 2022  |
 | [tabout.nvim](https://github.com/abecodes/tabout.nvim)                                          | Dec 15 2021  |
