@@ -22,7 +22,7 @@ end
 
 local function has_code_action()
     local filetype = vim.bo.filetype
-    if filetype ~= 'cmake' and filetype ~= 'gitcommit' and filetype ~= 'solidity' then
+    if filetype ~= 'cmake' and filetype ~= 'gitcommit' and filetype ~= 'solidity' and filetype ~= 'haskell' then
         return true
     end
 
