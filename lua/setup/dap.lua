@@ -39,6 +39,7 @@ require('dapui').setup({
     windows = { indent = 1 },
 })
 
+-- NOTE: Go dap
 dap.adapters.go = function(callback, _)
     local stdout = vim.loop.new_pipe(false)
     local handle
@@ -100,6 +101,7 @@ dap.configurations.go = {
     },
 }
 
+-- NOTE: Nodejs dap
 dap.adapters.node2 = {
     type = 'executable',
     command = 'node',
@@ -123,6 +125,31 @@ dap.configurations.javascript = {
         type = 'node2',
         request = 'attach',
         processId = require('dap.utils').pick_process,
+    },
+}
+
+-- NOTE: Haskell dap
+dap.adapters.haskell = {
+    type = 'executable',
+    command = 'haskell-debug-adapter',
+    args = { '--hackage-version=0.0.35.0' },
+}
+
+dap.configurations.haskell = {
+    {
+        type = 'haskell',
+        request = 'launch',
+        name = 'Debug',
+        workspace = '${workspaceFolder}',
+        startup = '${file}',
+        stopOnEntry = true,
+        logFile = vim.fn.stdpath('data') .. '/haskell-dap.log',
+        logLevel = 'WARNING',
+        ghciEnv = vim.empty_dict(),
+        ghciPrompt = 'λ: ',
+        -- Adjust the prompt to the prompt you see when you invoke the stack ghci command below
+        ghciInitialPrompt = 'λ: ',
+        ghciCmd = 'stack ghci --test --no-load --no-build --main-is TARGET --ghci-options -fprint-evld-with-show',
     },
 }
 

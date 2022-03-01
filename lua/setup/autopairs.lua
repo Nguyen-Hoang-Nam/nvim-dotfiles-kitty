@@ -9,7 +9,7 @@ local function callback()
     return function() end
 end
 
-cmp.event:on('confirm_done', callback)
+cmp.event:on('confirm_done', callback())
 
 require('nvim-autopairs').setup({
     check_ts = true,
