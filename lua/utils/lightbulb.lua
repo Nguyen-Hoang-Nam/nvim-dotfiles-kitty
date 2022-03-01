@@ -20,34 +20,23 @@ local function _update_sign(new_line)
     end
 end
 
-local function has_code_action()
-    local filetype = vim.bo.filetype
-    if filetype ~= 'cmake' and filetype ~= 'gitcommit' and filetype ~= 'solidity' and filetype ~= 'haskell' then
-        return true
-    end
-
-    return false
-end
-
 -- Credit https://github.com/kosayoda/nvim-lightbulb/blob/master/lua/nvim-lightbulb.lua
 function M.code_action()
-    if has_code_action() then
-        local context = { diagnostics = lsp.diagnostic.get_line_diagnostics() }
-        local params = lsp.util.make_range_params()
+    local context = { diagnostics = lsp.diagnostic.get_line_diagnostics() }
+    local params = lsp.util.make_range_params()
 
-        params.context = context
-        lsp.buf_request(0, 'textDocument/codeAction', params, function(err, actions)
-            if err then
-                return
-            end
+    params.context = context
+    lsp.buf_request(0, 'textDocument/codeAction', params, function(err, actions)
+        if err then
+            return
+        end
 
-            if actions == nil or vim.tbl_isempty(actions) then
-                _update_sign(nil)
-            else
-                _update_sign(params.range.start.line + 1)
-            end
-        end)
-    end
+        if actions == nil or vim.tbl_isempty(actions) then
+            _update_sign(nil)
+        else
+            _update_sign(params.range.start.line + 1)
+        end
+    end)
 end
 
 return M

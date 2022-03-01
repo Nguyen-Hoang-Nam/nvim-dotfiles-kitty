@@ -83,6 +83,32 @@ return {
         },
     },
 
+    codeaction = {
+        filetypes = {
+            'css',
+            'cpp',
+            'dart',
+            'dockerfile',
+            'go',
+            'html',
+            -- 'java',
+            'javascript',
+            'javascriptreact',
+            'json',
+            -- 'lua',
+            'markdown',
+            'php',
+            'python',
+            'rust',
+            'svelte',
+            'tex',
+            'typescript',
+            'typescriptreact',
+            'xml',
+            'yaml',
+        },
+    },
+
     colors = {
         red = '#F9867B',
         orange = '#CD9731',
