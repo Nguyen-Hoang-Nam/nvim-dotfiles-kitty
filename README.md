@@ -7,8 +7,6 @@ cooperation.
 This configuration works properly with
 JavaScript, Python, Go, Rust, Lua, PHP and Java.
 
-Up coming languages, Haskell, Zig, Solidity, Scala, Dart (Flutter).
-
 ![Main](https://raw.githubusercontent.com/Nguyen-Hoang-Nam/readme-image/main/nvim-dotfiles/main.png)
 _Kitty with Fira, Cascadia, and Mini-File-Icons_
 

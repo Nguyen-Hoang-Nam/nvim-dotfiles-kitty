@@ -171,4 +171,53 @@ function M.autocomment_by_filetypes(setting_filetypes, events, command)
     cmd(autocmd)
 end
 
+local function cmd_option(callback)
+    return { noremap = true, silent = true, callback = callback }
+end
+
+function M.rename_popup()
+    local texts = { '' }
+
+    local width = 50
+    local buf = api.nvim_create_buf(false, true)
+    local opts = {
+        relative = 'cursor',
+        width = width,
+        height = 1,
+        col = 0,
+        row = 1,
+        anchor = 'NW',
+        style = 'minimal',
+    }
+
+    local win_handle = api.nvim_open_win(buf, 1, opts)
+
+    api.nvim_buf_set_lines(buf, 0, 1, false, texts)
+
+    api.nvim_buf_set_keymap(buf, 'n', 'q', ':close<CR>', { silent = true, nowait = true, noremap = true })
+    api.nvim_buf_set_keymap(
+        buf,
+        'i',
+        '<CR>',
+        '',
+        cmd_option(function()
+            local name = api.nvim_buf_get_lines(buf, 0, 1, false)[1]
+            api.nvim_win_close(win_handle, true)
+
+            if name ~= '' then
+                vim.lsp.buf.rename(name)
+            end
+
+            local keys = vim.api.nvim_replace_termcodes('<ESC>l', true, false, true)
+            api.nvim_feedkeys(keys, 'i', true)
+        end)
+    )
+
+    api.nvim_buf_set_option(buf, 'buftype', 'nofile')
+    api.nvim_buf_set_option(buf, 'bufhidden', 'delete')
+
+    -- Normal to insert
+    api.nvim_command('startinsert')
+end
+
 return M
