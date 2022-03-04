@@ -176,7 +176,7 @@ local function cmd_option(callback)
 end
 
 function M.rename_popup()
-    local texts = { '' }
+    local current_name = api.nvim_eval('expand("<cword>")')
 
     local width = 50
     local buf = api.nvim_create_buf(false, true)
@@ -192,6 +192,7 @@ function M.rename_popup()
 
     local win_handle = api.nvim_open_win(buf, 1, opts)
 
+    local texts = { current_name }
     api.nvim_buf_set_lines(buf, 0, 1, false, texts)
 
     api.nvim_buf_set_keymap(buf, 'n', 'q', ':close<CR>', { silent = true, nowait = true, noremap = true })
@@ -217,7 +218,8 @@ function M.rename_popup()
     api.nvim_buf_set_option(buf, 'bufhidden', 'delete')
 
     -- Normal to insert
-    api.nvim_command('startinsert')
+    api.nvim_feedkeys('A', 'n', true)
+    -- api.nvim_command('startinsert')
 end
 
 return M
