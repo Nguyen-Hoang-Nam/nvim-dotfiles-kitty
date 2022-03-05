@@ -84,6 +84,7 @@ function M.git_hover()
         col = 0,
         row = 1,
         anchor = 'NW',
+        border = 'single',
         style = 'minimal',
     }
 
@@ -187,6 +188,7 @@ function M.rename_popup()
         col = 0,
         row = 1,
         anchor = 'NW',
+        border = 'single',
         style = 'minimal',
     }
 
