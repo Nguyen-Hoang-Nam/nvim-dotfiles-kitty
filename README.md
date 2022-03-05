@@ -405,7 +405,7 @@ Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Test)
 | &lt;Leader&gt;q | Turn off search's highlight |
 | &lt;Leader&gt;r | Rename variable             |
 | &lt;Leader&gt;s | Save file                   |
-| &lt;Leader&gt;t | Run test                    |
+| &lt;Leader&gt;t | Toggle test                 |
 | &lt;Leader&gt;u | Toggle debug sidebar        |
 | &lt;Leader&gt;v | Run Restful API             |
 | &lt;Leader&gt;w | Delete current buffer       |

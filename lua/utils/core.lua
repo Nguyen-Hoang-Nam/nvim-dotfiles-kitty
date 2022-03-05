@@ -219,7 +219,16 @@ function M.rename_popup()
 
     -- Normal to insert
     api.nvim_feedkeys('A', 'n', true)
-    -- api.nvim_command('startinsert')
 end
 
+function M.toggle_test()
+    local current_test = api.nvim_eval('ultest#status()')
+    if current_test['tests'] > 0 then
+        if current_test['passed'] > 0 or current_test['failed'] > 0 or current_test['running'] > 0 then
+            vim.api.nvim_command('UltestClear')
+        else
+            vim.api.nvim_command('UltestNearest')
+        end
+    end
+end
 return M

@@ -72,7 +72,7 @@ map(
     end)
 )
 
-map('n', '<Leader>t', [[<Cmd>Ultest<CR>]], cmd_options)
+map('n', '<Leader>t', [[<Cmd>Ultest<CR>]], cmd_option(utils_core.toggle_test))
 map('n', ']t', '<Plug>(ultest-next-fail)', { noremap = false, silent = true })
 map('n', '[t', '<Plug>(ultest-prev-fail)', { noremap = false, silent = true })
 
