@@ -319,7 +319,7 @@ store in `~/.local/share/nvim/site/pack/*/start/`.
 
 | Plugin                                                                                          | Last updated |
 | ----------------------------------------------------------------------------------------------- | ------------ |
-| [aerial](https://github.com/stevearc/aerial.nvim)                                               | Feb 22 2022  |
+| [aerial](https://github.com/stevearc/aerial.nvim)                                               | Mar 4 2022   |
 | [auto-session](https://github.com/rmagatti/auto-session)                                        | Feb 20 2022  |
 | [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)                                         | Feb 15 2022  |
 | [cmp-nvim-lsp-signature-help](https://github.com/hrsh7th/cmp-nvim-lsp-signature-help)           | Feb 15 2022  |
@@ -327,35 +327,35 @@ store in `~/.local/share/nvim/site/pack/*/start/`.
 | [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)                                      | Jan 2 2022   |
 | [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)                                     | Apr 17 2021  |
 | [diffview.nvim](https://github.com/sindrets/diffview.nvim)                                      | Feb 21 2022  |
-| [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)                            | Feb 2 2022   |
+| [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)                            | Feb 26 2022  |
 | [git-utils.nvim](https://github.com/Nguyen-Hoang-Nam/git-utils.nvim)                            |              |
-| [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                                     | Feb 13 2022  |
+| [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                                     | Mar 4 2022   |
 | [goto-preview](https://github.com/rmagatti/goto-preview)                                        | Dec 25 2021  |
 | [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)                 | Jan 22 2022  |
-| [LuaSnip](https://github.com/L3MON4D3/LuaSnip)                                                  | Feb 24 2022  |
-| [nvim-autopair](https://github.com/windwp/nvim-autopairs)                                       | Feb 14 2022  |
+| [LuaSnip](https://github.com/L3MON4D3/LuaSnip)                                                  | Mar 4 2022   |
+| [nvim-autopair](https://github.com/windwp/nvim-autopairs)                                       | Mar 2 2022   |
 | [nvim-bufferline.lua](https://github.com/akinsho/nvim-bufferline.lua)                           | Feb 24 2022  |
-| [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)                                                 | Feb 15 2022  |
+| [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)                                                 | Mar 2 2022   |
 | [nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)                            | Apr 20 2020  |
-| [nvim-dap](https://github.com/mfussenegger/nvim-dap)                                            | Feb 16 2022  |
-| [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)                                          | Feb 24 2022  |
+| [nvim-dap](https://github.com/mfussenegger/nvim-dap)                                            | Mar 5 2022   |
+| [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)                                          | Mar 5 2022   |
 | [nvim-dap-virtual-text](https://github.com/theHamsta/nvim-dap-virtual-text)                     | Feb 19 2021  |
 | [nvim-jdtls](https://github.com/mfussenegger/nvim-jdtls)                                        | Jan 27 2022  |
-| [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)                                      | Feb 24 2022  |
+| [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)                                      | Mar 5 2022   |
 | [nvim-mini-file-icons](https://github.com/Nguyen-Hoang-Nam/nvim-mini-file-icons)                |              |
-| [nvim-scrollview](https://github.com/dstein64/nvim-scrollview)                                  | Feb 11 2022  |
-| [nvim-toggleterm.lua](https://github.com/akinsho/nvim-toggleterm.lua)                           | Feb 21 2022  |
-| [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)                           | Feb 24 2022  |
-| [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)                                    | Feb 22 2022  |
+| [nvim-scrollview](https://github.com/dstein64/nvim-scrollview)                                  | Feb 27 2022  |
+| [nvim-toggleterm.lua](https://github.com/akinsho/nvim-toggleterm.lua)                           | Feb 27 2022  |
+| [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)                           | Mar 5 2022   |
+| [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)                                    | Mar 1 2022   |
 | [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) | Dec 13 2021  |
 | [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)                                      | Feb 23 2022  |
-| [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)                                        | Feb 19 2022  |
+| [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)                                        | Mar 4 2022   |
 | [rest.nvim](https://github.com/NTBBloodbath/rest.nvim)                                          | Jan 26 2022  |
 | [tabout.nvim](https://github.com/abecodes/tabout.nvim)                                          | Dec 15 2021  |
 | [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim)        | Nov 24 2021  |
-| [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)                              | Feb 23 2022  |
-| [vim-test](https://github.com/vim-test/vim-test)                                                | Feb 12 2022  |
-| [vim-ultest](https://github.com/rcarriga/vim-ultest)                                            | Feb 19 2022  |
+| [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)                              | Mar 4 2022   |
+| [vim-test](https://github.com/vim-test/vim-test)                                                | Mar 1 2022   |
+| [vim-ultest](https://github.com/rcarriga/vim-ultest)                                            | Mar 2 2022   |
 | [yanil](https://github.com/Nguyen-Hoang-Nam/yanil/tree/customize-ui)                            |              |
 
 ### Treesitter (Optional)
@@ -399,11 +399,7 @@ Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Test)
 | &lt;Leader&gt;e | Search Gitmojis             |
 | &lt;Leader&gt;f | Search text                 |
 | &lt;Leader&gt;g | Git hover                   |
-| &lt;Leader&gt;h | Go to left window           |
-| &lt;Leader&gt;j | Go to below window          |
-| &lt;Leader&gt;k | Go to above window          |
-| &lt;Leader&gt;l | Go to right window          |
-| &lt;leader&gt;m | Format code                 |
+| &lt;Leader&gt;m | Format code                 |
 | &lt;Leader&gt;o | Search buffers              |
 | &lt;Leader&gt;p | Search file                 |
 | &lt;Leader&gt;q | Turn off search's highlight |
@@ -411,15 +407,20 @@ Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Test)
 | &lt;Leader&gt;s | Save file                   |
 | &lt;Leader&gt;t | Run test                    |
 | &lt;Leader&gt;u | Toggle debug sidebar        |
-| &lt;Leader&gt;v | Run restful API             |
+| &lt;Leader&gt;v | Run Restful API             |
 | &lt;Leader&gt;w | Delete current buffer       |
 | &lt;Leader&gt;x | Toggle symbol sidebar       |
 | &lt;Leader&gt;z | Preview definition          |
 | &lt;Leader&gt;/ | Toggle comment              |
 | &lt;M-t&gt;     | Toggle terminal             |
-| jk              | Insert mode to normal mode  |
-| \]d             | Jump next diagnostic        |
-| \[d             | Jump previous diagnostic    |
+| &lt;M-r&gt;     | Toggle rest                 |
+| jk              | Insert to normal            |
+| gh              | Go to left window           |
+| gj              | Go to below window          |
+| gk              | Go to above window          |
+| gl              | Go to right window          |
+| \]d             | Go to next diagnostic       |
+| \[d             | Go to previous diagnostic   |
 | \]b             | Go to next buffer           |
 | \[b             | Go to previous buffer       |
 | \]t             | Go to next failed test      |

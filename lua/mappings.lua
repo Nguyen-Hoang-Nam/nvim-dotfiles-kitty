@@ -18,10 +18,10 @@ end
 vim.g.mapleader = ' '
 
 map('n', '<Enter>', 'o<Esc>', options)
-map('n', '<Leader>h', '<C-w>h', options)
-map('n', '<Leader>l', '<C-w>l', options)
-map('n', '<Leader>j', '<C-w>j', options)
-map('n', '<Leader>k', '<C-w>k', options)
+map('n', 'gh', '<C-w>h', options)
+map('n', 'gl', '<C-w>l', options)
+map('n', 'gj', '<C-w>j', options)
+map('n', 'gk', '<C-w>k', options)
 map('n', 'p', 'p=`]', options)
 map('i', 'jk', '<Esc>', options)
 map('t', '<Esc>', '<C-\\><C-n>', options)
