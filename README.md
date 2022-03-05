@@ -398,7 +398,7 @@ Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Test)
 | &lt;Leader&gt;d | Go to definition            |
 | &lt;Leader&gt;e | Search Gitmojis             |
 | &lt;Leader&gt;f | Search text                 |
-| &lt;Leader&gt;g | Git hover                   |
+| &lt;Leader&gt;g | Toggle git hover            |
 | &lt;Leader&gt;m | Format code                 |
 | &lt;Leader&gt;o | Search buffers              |
 | &lt;Leader&gt;p | Search file                 |

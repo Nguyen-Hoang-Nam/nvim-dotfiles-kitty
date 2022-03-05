@@ -53,7 +53,16 @@ function M.file_extension(filename)
 end
 
 function M.git_hover()
+    local path = vim.fn.expand('%:h')
+
+    if path == '' or path == '.git' then
+        return
+    end
+
     local blame = require('git_utils').blame(vim.fn.expand('%:p'), vim.api.nvim_win_get_cursor(0)[1])
+    if M.tablelength(blame) == 0 then
+        return
+    end
 
     local texts = { 'Author: ' .. blame.author, '' }
 
@@ -92,7 +101,7 @@ function M.git_hover()
 
     api.nvim_buf_set_lines(buf, 0, #texts, false, texts)
 
-    api.nvim_buf_set_keymap(buf, 'n', 'q', ':close<CR>', { silent = true, nowait = true, noremap = true })
+    api.nvim_buf_set_keymap(buf, 'n', '<Leader>g', ':close<CR>', { silent = true, nowait = true, noremap = true })
 
     api.nvim_buf_set_option(buf, 'buftype', 'nofile')
     api.nvim_buf_set_option(buf, 'bufhidden', 'delete')
