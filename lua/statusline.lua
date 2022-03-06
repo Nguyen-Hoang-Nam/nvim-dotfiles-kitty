@@ -21,6 +21,36 @@ function M.diagnostics_warning()
     return get_nvim_lsp_diagnostic(vim.diagnostic.severity.WARN)
 end
 
+local function is_test_file()
+    local current_test = api.nvim_eval('ultest#status()')
+    if current_test['tests'] > 0 then
+        return true
+    else
+        return false
+    end
+end
+
+local function get_test(field)
+    local current_test = api.nvim_eval('ultest#status()')
+    return current_test[field] .. ' '
+end
+
+function M.tests()
+    return get_test('tests')
+end
+
+function M.failed()
+    return get_test('failed')
+end
+
+function M.passed()
+    return get_test('passed')
+end
+
+function M.running()
+    return get_test('running')
+end
+
 -- Credit https://github.com/glepnir/galaxyline.nvim/blob/main/lua/galaxyline/provider_vcs.lua
 function M.get_hunks_data()
     -- diff data 1:add 2:modified 3:remove
@@ -75,7 +105,21 @@ local async_load = vim.loop.new_async(vim.schedule_wrap(function()
                     .. [[ %{luaeval('require("statusline").get_hunks_data()[2]')}]]
                     .. ' %#StatuslineDiffRemoved#'
                     .. [[ %{luaeval('require("statusline").get_hunks_data()[3]')}]]
+                    .. '  '
             end
+
+            -- Test result
+            -- if setting_statusline.test_enabled and is_test_file() then
+            --     line = line
+            --         .. '%#StatuslineTest#'
+            --         .. [[ %{luaeval('require("statusline").tests()')}]]
+            --         .. '%#StatuslinePassed#'
+            --         .. [[ %{luaeval('require("statusline").passed()')}]]
+            --         .. '%#StatuslineFailed#'
+            --         .. [[ %{luaeval('require("statusline").failed()')}]]
+            --         .. '%#StatuslineRunning#'
+            --         .. [[ %{luaeval('require("statusline").running()')}]]
+            -- end
         end
 
         -- Right of status line

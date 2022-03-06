@@ -171,6 +171,7 @@ return {
         git_branch_enabled = true,
         diagnostic_enabled = true,
         git_diff_enabled = true,
+        -- test_enabled = true,
         line_column_enabled = true,
         tab_enabled = true,
         line_break_enabled = true,
