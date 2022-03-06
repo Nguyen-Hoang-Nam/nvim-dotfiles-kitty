@@ -20,6 +20,7 @@ require('setup.todo')
 require('setup.toggleterm')
 require('setup.treesitter')
 require('luasnip/loaders/from_vscode').lazy_load()
+require('setup.fidget')
 
 require('lsp.lspconfig')
 require('lsp.icon')

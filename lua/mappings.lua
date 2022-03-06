@@ -100,6 +100,9 @@ map('v', '<Leader>/', [[:CommentToggle<CR>]], cmd_options)
 map('n', ']b', '<Cmd>BufferLineCycleNext<CR>', cmd_options)
 map('n', '[b', '<Cmd>BufferLineCyclePrev<CR>', cmd_options)
 
+map('n', ']q', '<Cmd>tabn<CR>', cmd_options)
+map('n', '[q', '<Cmd>tabp<CR>', cmd_options)
+
 map('n', '<Leader>z', '', cmd_option(goto_preview.goto_preview_definition))
 
 map('n', '<Leader>v', '', cmd_option(require('rest-nvim').run))

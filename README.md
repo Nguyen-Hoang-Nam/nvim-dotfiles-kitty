@@ -423,6 +423,8 @@ Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Test)
 | \[d             | Go to previous diagnostic   |
 | \]b             | Go to next buffer           |
 | \[b             | Go to previous buffer       |
+| \]q             | Go to next tab              |
+| \[q             | Go to previous tab          |
 | \]t             | Go to next failed test      |
 | \[t             | Go to previous failed test  |
 | \]x             | Go to next function         |
