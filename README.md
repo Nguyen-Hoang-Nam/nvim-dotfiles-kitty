@@ -67,7 +67,7 @@ _Kitty with Fira, Cascadia, and Mini-File-Icons_
 | React      | 👍👍   | 👍         | 👍        |      |       |      |
 | Rust       | 👍     | 👍         | 👍        |      |       | 👍   |
 | Scala      |        | 👍         |           |      |       |      |
-| Solidity   | 👍     |            |           |      |       |      |
+| Solidity   | 👍     | 👍         | 👍        |      |       |      |
 | Svelte     | 👍👍   | 👍         | 👍        |      |       |      |
 | Tex        | 👍     | 👍         | 👍        |      |       |      |
 | TOML       |        | 👍         |           |      |       |      |

@@ -155,6 +155,7 @@ M.map_filetype_filename = {
     php = '*.php',
     python = '*.py',
     rust = '*.rs',
+    solidity = '*.sol',
     svelte = '*.svelte',
     tex = '*.tex',
     typescript = '*.ts',
