@@ -109,17 +109,17 @@ local async_load = vim.loop.new_async(vim.schedule_wrap(function()
             end
 
             -- Test result
-            -- if setting_statusline.test_enabled and is_test_file() then
-            --     line = line
-            --         .. '%#StatuslineTest#'
-            --         .. [[ %{luaeval('require("statusline").tests()')}]]
-            --         .. '%#StatuslinePassed#'
-            --         .. [[ %{luaeval('require("statusline").passed()')}]]
-            --         .. '%#StatuslineFailed#'
-            --         .. [[ %{luaeval('require("statusline").failed()')}]]
-            --         .. '%#StatuslineRunning#'
-            --         .. [[ %{luaeval('require("statusline").running()')}]]
-            -- end
+            if setting_statusline.test_enabled and is_test_file() then
+                line = line
+                    .. '%#StatuslineTest#'
+                    .. [[ %{luaeval('require("statusline").tests()')}]]
+                    .. '%#StatuslinePassed#'
+                    .. [[ %{luaeval('require("statusline").passed()')}]]
+                    .. '%#StatuslineFailed#'
+                    .. [[ %{luaeval('require("statusline").failed()')}]]
+                -- .. '%#StatuslineRunning#'
+                -- .. [[ %{luaeval('require("statusline").running()')}]]
+            end
         end
 
         -- Right of status line
