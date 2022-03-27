@@ -7,14 +7,15 @@ M.efm = {
         formatStdin = true,
     },
     {
-        -- lintCommand = 'eslint_d --stdin --stdin-filename ${INPUT}',
-        lintCommand = 'eslint -f visualstudio --stdin --stdin-filename ${INPUT}',
+        -- lintCommand = 'eslint -f visualstudio --stdin --stdin-filename ${INPUT}',
+        lintCommand = 'eslint_d -f unix --stdin --stdin-filename ${INPUT}',
         lintIgnoreExitCode = true,
         lintStdin = true,
-        lintFormats = {
-            '%f(%l,%c): %tarning %m',
-            '%f(%l,%c): %rror %m',
-        },
+        -- lintFormats = {
+        --     '%f(%l,%c): %tarning %m',
+        --     '%f(%l,%c): %rror %m',
+        -- },
+        lintFormats = { '%f:%l:%c: %m' },
     },
 }
 
