@@ -12,7 +12,8 @@ M.all_format = { efm = 'Prettier' }
 
 M.default_format = 'efm'
 
-M.lsp_server = 'solidity_ls'
+-- M.lsp_server = 'solidity_ls'
+M.lsp_server = 'solc'
 
 M.lsp = {
     capabilities = lsp.capabilities,

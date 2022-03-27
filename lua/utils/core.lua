@@ -226,6 +226,24 @@ function M.rename_popup()
         end)
     )
 
+    api.nvim_buf_set_keymap(
+        buf,
+        'n',
+        '<CR>',
+        '',
+        cmd_option(function()
+            local name = api.nvim_buf_get_lines(buf, 0, 1, false)[1]
+            api.nvim_win_close(win_handle, true)
+
+            if name ~= '' then
+                vim.lsp.buf.rename(name)
+            end
+
+            local keys = vim.api.nvim_replace_termcodes('l', true, false, true)
+            api.nvim_feedkeys(keys, 'i', true)
+        end)
+    )
+
     api.nvim_buf_set_option(buf, 'buftype', 'nofile')
     api.nvim_buf_set_option(buf, 'bufhidden', 'delete')
 
@@ -243,4 +261,11 @@ function M.toggle_test()
         end
     end
 end
+
+function M.cover_score()
+    local score_raw = vim.api.nvim_exec('!go test -cover | sed -n 2p | cut -d " " -f 2 | tr -d "\\n"', true)
+    local newline_position = string.find(score_raw, '\n')
+    print(string.sub(score_raw, newline_position))
+end
+
 return M

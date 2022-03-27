@@ -3,7 +3,7 @@ local M = {}
 
 M.efm = {
     {
-        formatCommand = 'black --quiet -',
+        formatCommand = 'black --line-length 79 --quiet -',
         formatStdin = true,
     },
     {

@@ -1,5 +1,5 @@
 -- https://github.com/go-delve/delve/blob/master/Documentation/usage/dlv_dap.md
---
+
 local M = {}
 
 function M.adapters(callback, _)
