@@ -268,4 +268,11 @@ function M.cover_score()
     print(string.sub(score_raw, newline_position))
 end
 
+function M.project_files()
+    local ok = pcall(require('telescope.builtin').git_files)
+    if not ok then
+        require('telescope.builtin').find_files()
+    end
+end
+
 return M

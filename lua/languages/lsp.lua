@@ -2,10 +2,7 @@ local api = vim.api
 
 local M = {}
 
--- Credit https://github.com/neovim/nvim-lspconfig#keybindings-and-completion
 function M.on_attach(client, bufnr)
-    api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-
     local opts = { noremap = true, silent = true }
 
     local function buf_set_keymap(mode, mapping, command)
@@ -22,7 +19,7 @@ function M.on_attach(client, bufnr)
     buf_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
     buf_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>')
 
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>x', [[<Cmd>lua require('sidebar').toggle('symbol')<CR>]], {})
+    buf_set_keymap('n', '<M-x>', [[<Cmd>lua require('sidebar').toggle('symbol')<CR>]])
     buf_set_keymap('n', '[x', '<cmd>AerialPrev<CR>')
     buf_set_keymap('n', ']x', '<cmd>AerialNext<CR>')
 end

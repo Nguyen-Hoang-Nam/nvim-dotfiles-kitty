@@ -44,8 +44,9 @@ map(
     end)
 )
 map('n', '<Leader>o', '', cmd_option(telescope.buffers))
-map('n', '<Leader>p', '', cmd_option(telescope.find_files))
+map('n', '<Leader>p', '', cmd_option(utils_core.project_files))
 map('n', '<Leader>a', '', cmd_option(telescope.lsp_code_actions))
+map('n', '<Leader>u', '', cmd_option(telescope.live_grep))
 map(
     'n',
     '<Leader>e',
@@ -79,7 +80,7 @@ map('n', '[t', '<Plug>(ultest-prev-fail)', { noremap = false, silent = true })
 -- Sidebar
 map(
     'n',
-    '<Leader>b',
+    '<M-b>',
     '',
     cmd_option(function()
         sidebar.toggle('explorer')
@@ -87,7 +88,7 @@ map(
 )
 map(
     'n',
-    '<Leader>u',
+    '<M-d>',
     '',
     cmd_option(function()
         sidebar.toggle('debug')
