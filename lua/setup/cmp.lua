@@ -74,7 +74,9 @@ cmp.setup({
         end,
     },
 
-    documentation = {
-        maxwidth = 30,
+    window = {
+        documentation = {
+            maxwidth = 30,
+        },
     },
 })

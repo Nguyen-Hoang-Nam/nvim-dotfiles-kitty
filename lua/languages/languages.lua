@@ -1,9 +1,11 @@
 return {
+    sh = require('languages.bash'),
     cmake = require('languages.cmake'),
     css = require('languages.css'),
     cpp = require('languages.cpp'),
     dart = require('languages.dart'),
     dockerfile = require('languages.docker'),
+    elixir = require('languages.elixir'),
     go = require('languages.go'),
     haskell = require('languages.haskell'),
     html = require('languages.html'),

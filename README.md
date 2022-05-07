@@ -46,13 +46,14 @@ _Kitty with Fira, Cascadia, and Mini-File-Icons_
 
 | Language   | LSP    | Treesitter | Formatter | Lint | Debug | Test |
 | ---------- | ------ | ---------- | --------- | ---- | ----- | ---- |
-| Bash       |        | 👍         |           |      |       |      |
+| Bash       | 👍     | 👍         | 👍        |      |       | 👍   |
 | C          |        | 👍         |           |      |       |      |
 | CMake      | 👍     | 👍         | 👍        |      |       |      |
 | CPP        | 👍     | 👍         | 👍        |      |       |      |
 | CSS        | 👍👍👍 | 👍         | 👍        | 👍   |       |      |
 | Dart       | 👍     | 👍         | 👍        |      |       | 👍👍 |
 | Dockerfile | 👍     | 👍         |           | 👍   |       |      |
+| Elixir     | 👍     | 👍         | 👍        |      |       | 👍   |
 | Go         | 👍     | 👍         | 👍👍      | 👍   | 👍    | 👍   |
 | Haskell    | 👍     | 👍         |           |      |       | 👍   |
 | HTML       | 👍👍👍 | 👍         | 👍        |      |       |      |
@@ -133,11 +134,14 @@ All settings are store in `lua/settings.lua`
 return {
     efm = {
         filetypes = {
+            'sh',
             'css',
             'cpp',
             'dart',
             'dockerfile',
+            'elixir',
             'go',
+            'haskell',
             'html',
             'java',
             'javascript',
@@ -148,6 +152,7 @@ return {
             'php',
             'python',
             'rust',
+            'solidity',
             'svelte',
             'tex',
             'typescript',
@@ -159,11 +164,13 @@ return {
 
     lspconfigs = {
         filetypes = {
+            'sh',
             'cmake',
             'css',
             'cpp',
             'dart',
             'dockerfile',
+            'elixir',
             'go',
             'haskell',
             'html',
@@ -173,6 +180,7 @@ return {
             'php',
             'python',
             'rust',
+            'solidity',
             'svelte',
             'tex',
             'xml',
@@ -189,18 +197,48 @@ return {
 
     autoformat = {
         filetypes = {
+            'sh',
             'cmake',
             'css',
             'cpp',
             'dart',
             'dockerfile',
+            'elixir',
             'go',
+            'haskell',
             'html',
             'java',
             'javascript',
             'javascriptreact',
             'json',
             'lua',
+            'markdown',
+            'php',
+            'python',
+            'rust',
+            'solidity',
+            'svelte',
+            'tex',
+            'typescript',
+            'typescriptreact',
+            'xml',
+            'yaml',
+        },
+    },
+
+    codeaction = {
+        filetypes = {
+            'css',
+            'cpp',
+            'dart',
+            'dockerfile',
+            'go',
+            'html',
+            -- 'java',
+            'javascript',
+            'javascriptreact',
+            'json',
+            -- 'lua',
             'markdown',
             'php',
             'python',
@@ -276,6 +314,7 @@ return {
         git_branch_enabled = true,
         diagnostic_enabled = true,
         git_diff_enabled = true,
+        test_enabled = true,
         line_column_enabled = true,
         tab_enabled = true,
         line_break_enabled = true,
@@ -319,41 +358,41 @@ store in `~/.local/share/nvim/site/pack/*/start/`.
 
 | Plugin                                                                                          | Last updated |
 | ----------------------------------------------------------------------------------------------- | ------------ |
-| [aerial](https://github.com/stevearc/aerial.nvim)                                               | Apr 5 2022   |
-| [auto-session](https://github.com/rmagatti/auto-session)                                        | Mar 14 2022  |
-| [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)                                         | Feb 15 2022  |
+| [aerial](https://github.com/stevearc/aerial.nvim)                                               | May 4 2022   |
+| [auto-session](https://github.com/rmagatti/auto-session)                                        | May 6 2022   |
+| [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)                                         | May 1 2022   |
 | [cmp-nvim-lsp-signature-help](https://github.com/hrsh7th/cmp-nvim-lsp-signature-help)           | Mar 29 2022  |
 | [cmp-path](https://github.com/hrsh7th/cmp-path)                                                 | Feb 3 2022   |
-| [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)                                      | Apr 1 2022   |
+| [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)                                      | Mar 27 2022  |
 | [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)                                     | Apr 17 2021  |
-| [diffview.nvim](https://github.com/sindrets/diffview.nvim)                                      | Apr 5 2022   |
+| [diffview.nvim](https://github.com/sindrets/diffview.nvim)                                      | Apr 14 2022  |
 | [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)                            | Mar 27 2022  |
 | [git-utils.nvim](https://github.com/Nguyen-Hoang-Nam/git-utils.nvim)                            |              |
-| [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                                     | Apr 1 2022   |
+| [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                                     | Apr 16 2022  |
 | [goto-preview](https://github.com/rmagatti/goto-preview)                                        | Dec 25 2021  |
-| [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)                 | Apr 7 2022   |
-| [LuaSnip](https://github.com/L3MON4D3/LuaSnip)                                                  | Apr 5 2022   |
-| [nvim-autopair](https://github.com/windwp/nvim-autopairs)                                       | Apr 2 2022   |
+| [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)                 | Apr 15 2022  |
+| [LuaSnip](https://github.com/L3MON4D3/LuaSnip)                                                  | Apr 15 2022  |
+| [nvim-autopair](https://github.com/windwp/nvim-autopairs)                                       | Apr 13 2022  |
 | [nvim-bufferline.lua](https://github.com/akinsho/nvim-bufferline.lua)                           | Apr 1 2022   |
-| [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)                                                 | Apr 8 2022   |
+| [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)                                                 | Apr 14 2022  |
 | [nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)                            | Apr 20 2020  |
-| [nvim-dap](https://github.com/mfussenegger/nvim-dap)                                            | Apr 8 2022   |
-| [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)                                          | Apr 8 2022   |
+| [nvim-dap](https://github.com/mfussenegger/nvim-dap)                                            | Apr 15 2022  |
+| [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)                                          | Apr 17 2022  |
 | [nvim-dap-virtual-text](https://github.com/theHamsta/nvim-dap-virtual-text)                     | Feb 19 2021  |
-| [nvim-jdtls](https://github.com/mfussenegger/nvim-jdtls)                                        | Feb 24 2022  |
-| [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)                                      | Apr 5 2022   |
+| [nvim-jdtls](https://github.com/mfussenegger/nvim-jdtls)                                        | Apr 14 2022  |
+| [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)                                      | Apr 17 2022  |
 | [nvim-mini-file-icons](https://github.com/Nguyen-Hoang-Nam/nvim-mini-file-icons)                |              |
-| [nvim-scrollview](https://github.com/dstein64/nvim-scrollview)                                  | Apr 4 2022   |
+| [nvim-scrollview](https://github.com/dstein64/nvim-scrollview)                                  | Apr 12 2022  |
 | [nvim-toggleterm.lua](https://github.com/akinsho/nvim-toggleterm.lua)                           | Mar 24 2022  |
-| [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)                           | Apr 8 2022   |
+| [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)                           | Apr 16 2022  |
 | [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)                                    | Mar 1 2022   |
-| [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) | Mar 18 2022  |
+| [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) | Apr 7 2022   |
 | [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)                                      | Feb 23 2022  |
-| [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)                                        | Apr 9 2022   |
+| [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)                                        | Apr 13 2022  |
 | [rest.nvim](https://github.com/NTBBloodbath/rest.nvim)                                          | Jan 26 2022  |
 | [tabout.nvim](https://github.com/abecodes/tabout.nvim)                                          | Apr 3 2021   |
 | [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim)        | Feb 19 2022  |
-| [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)                              | Apr 9 2022   |
+| [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)                              | Apr 10 2022  |
 | [vim-test](https://github.com/vim-test/vim-test)                                                | Apr 6 2022   |
 | [vim-ultest](https://github.com/rcarriga/vim-ultest)                                            | Apr 9 2022   |
 | [yanil](https://github.com/Nguyen-Hoang-Nam/yanil/tree/customize-ui)                            |              |

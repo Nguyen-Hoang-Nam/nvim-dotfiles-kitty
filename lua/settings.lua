@@ -1,11 +1,14 @@
 return {
     efm = {
         filetypes = {
+            'sh',
             'css',
             'cpp',
             'dart',
             'dockerfile',
+            'elixir',
             'go',
+            'haskell',
             'html',
             'java',
             'javascript',
@@ -28,11 +31,13 @@ return {
 
     lspconfigs = {
         filetypes = {
+            'sh',
             'cmake',
             'css',
             'cpp',
             'dart',
             'dockerfile',
+            'elixir',
             'go',
             'haskell',
             'html',
@@ -59,12 +64,15 @@ return {
 
     autoformat = {
         filetypes = {
+            'sh',
             'cmake',
             'css',
             'cpp',
             'dart',
             'dockerfile',
+            'elixir',
             'go',
+            'haskell',
             'html',
             'java',
             'javascript',

@@ -281,6 +281,15 @@ highlight({
     DashboardShortcut = { guifg = colors.comment },
 
     ScrollView = { guibg = colors.scrollbar },
+
+    ScrollbarErrorHandle = { guifg = base08 },
+    ScrollbarWarnHandle = { guifg = base0A },
+    ScrollbarInfoHandle = { guifg = base0D },
+    ScrollbarHintHandle = { guifg = base0B },
+    ScrollbarError = { guifg = base08 },
+    ScrollbarWarn = { guifg = base0A },
+    ScrollbarInfo = { guifg = base0D },
+    ScrollbarHint = { guifg = base0B },
 })
 
 vim.g.terminal_color_0 = base00
