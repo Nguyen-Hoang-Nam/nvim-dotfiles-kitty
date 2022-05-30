@@ -1,17 +1,21 @@
-require('diffview').setup({
+require("diffview").setup({
     -- enhanced_diff_hl = true,
     icons = {
-        folder_closed = '',
-        folder_open = '',
+        folder_closed = "",
+        folder_open = "",
     },
     file_panel = {
-        position = 'right',
-        width = 30,
-        listing_style = 'list',
+        win_config = {
+            position = "right",
+            width = 30,
+        },
+        listing_style = "list",
     },
     file_history_panel = {
-        position = 'bottom',
-        height = 10,
+        win_config = {
+            position = "bottom",
+            height = 10,
+        },
         log_options = {
             max_count = 256,
             follow = false,
