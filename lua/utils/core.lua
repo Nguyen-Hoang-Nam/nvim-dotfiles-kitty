@@ -167,7 +167,7 @@ M.map_filetype_filename = {
     yaml = '*.yaml,*.yml',
 }
 
-function M.autocomment_by_filetypes(setting_filetypes, events, command)
+function M.autocommand_by_filetypes(setting_filetypes, events, command)
     local autocmd = 'autocmd ' .. events .. ' '
     local i = 1
     for _, filetype in pairs(setting_filetypes) do

@@ -1,25 +1,25 @@
-local lsp = require('languages.lsp')
+local lsp = require("languages.lsp")
 local M = {}
 
 M.efm = {
     {
-        formatCommand = 'mix format -',
+        formatCommand = "mix format -",
         formatStdin = true,
     },
 }
 
 M.all_format = {
-    efm = 'Mix',
+    efm = "Mix",
 }
 
-M.default_format = 'efm'
+M.default_format = "efm"
 
-M.lsp_server = 'elixirls'
+M.lsp_server = "elixirls"
 
 M.lsp = {
     capabilities = lsp.capabilities,
     on_attach = lsp.on_attach,
-    cmd = { '/home/nguyenhoangnam/.local/share/lsp/elixir-ls/language_server.sh' },
+    cmd = { "/home/nguyenhoangnam/.local/share/tool/elixir-ls/language_server.sh" },
 }
 
 return M

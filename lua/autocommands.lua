@@ -3,14 +3,14 @@ local cmd = vim.api.nvim_command
 local utils = require('utils.core')
 
 -- Auto format
-utils.autocomment_by_filetypes(
+utils.autocommand_by_filetypes(
     require('settings').autoformat.filetypes,
     'BufWritePre',
     [[lua require('format').format()]]
 )
 
 -- Code action
-utils.autocomment_by_filetypes(
+utils.autocommand_by_filetypes(
     require('settings').codeaction.filetypes,
     'CursorHold,CursorHoldI',
     [[lua require('utils.lightbulb').code_action()]]
