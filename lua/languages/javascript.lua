@@ -6,6 +6,7 @@ M.efm = {
         formatCommand = "prettier --tab-width=4 --use-tabs=false --stdin-filepath ${INPUT}",
         formatStdin = true,
     },
+
     {
         lintCommand = "eslint_d -f unix --stdin --stdin-filename ${INPUT}",
         lintIgnoreExitCode = true,
@@ -15,7 +16,7 @@ M.efm = {
 }
 
 M.all_format = {
-    efm = "Prettier",
+    efm = "Prettier Eslint",
     tsserver = "Tssever",
 }
 

@@ -1,36 +1,36 @@
-# Nvim-Dotfiles-Kitty
+# Nvim Dotfiles Kitty
 
-Neovim is great, but time-consuming to configure it works properly.
-I deal with it from 2021, and still change it weekly to fit my job at
-cooperation.
-
-This configuration works properly with multiple programming language.
+Neovim + Kitty = ❤️
 
 ![Main](https://raw.githubusercontent.com/Nguyen-Hoang-Nam/readme-image/main/nvim-dotfiles/main.png)
 _Kitty with Fira, Cascadia, and Mini-File-Icons_
 
 ## What I have done so far
 
-- Use ligature font, italic font and icon font.
+- Ligature font, Italic font and Icon font.
   (Thanks to [Kitty](https://github.com/kovidgoyal/kitty))
 - Saving the last session.
-  (Thanks to [auto-session](https://github.com/rmagatti/auto-session))
-- Support debug
+  (Thanks to [Auto-Session](https://github.com/rmagatti/auto-session))
+- Debugging
   (Thanks to [Nvim-Dap](https://github.com/mfussenegger/nvim-dap))
-- Support test
+- Unit Testing
   (Thanks to [Vim-Test](https://github.com/vim-test/vim-test))
-- Support RESTFul api test.
+- REST API test.
   (Thanks to [Rest.nvim](https://github.com/NTBBloodbath/rest.nvim))
-- Support several language's snippet.
+- Snippet
   (I get snippets from [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets))
-- Support Emmet.
-  (Thanks to [Emmet-Ls](https://github.com/aca/emmet-ls))
-- Support lint and formatter.
+- Linting and Formatting
   (Thanks to [Efm-Langsever](https://github.com/mattn/efm-langserver))
-- All in one sidebar. (Explorer, Symbol, Debug)
-- Install all plugins manually.
+- Previewing PNG image ([#4341](https://github.com/kovidgoyal/kitty/issues/4341))
+  (Thanks to [Hologram](https://github.com/edluffy/hologram.nvim))
+- Managing plugins manually.
 
-## Supported frameworks
+## Why I choose Kitty Terminal
+
+- Support combine multiple fonts
+- Support display image protocol
+
+## Which framework I use this with
 
 - React
 - Svelte
@@ -40,13 +40,14 @@ _Kitty with Fira, Cascadia, and Mini-File-Icons_
 - FastAPI
 - Laravel
 - Spring Boot
+- Phoenix
 
-## Supported languages
+## Supported languages feature
 
 | Language   | LSP    | Treesitter | Formatter | Lint | Debug | Test |
 | ---------- | ------ | ---------- | --------- | ---- | ----- | ---- |
 | Bash       | 👍     | 👍         | 👍        |      |       | 👍   |
-| C          |        | 👍         |           |      |       |      |
+| C          | 👍     | 👍         |           |      |       |      |
 | CMake      | 👍     | 👍         | 👍        |      |       |      |
 | CPP        | 👍     | 👍         | 👍        |      |       |      |
 | CSS        | 👍👍👍 | 👍         | 👍        | 👍   |       |      |
@@ -330,7 +331,7 @@ return {
 ### Requirements
 
 - Kitty
-- Neovim 0.8.0-dev (Last updated May 30 2022)
+- Neovim 0.8.0-dev (Last updated Jul 02 2022)
 
 ### Fonts
 
@@ -352,61 +353,127 @@ cursor #6796E6
 
 ### Plugin list
 
-If you plan to install plugins manually, you can clone below plugins and
-store in `~/.local/share/nvim/site/pack/*/start/`.
+I highly suggest managing plugins manually. This is a tedious job, but you has
+more power to manage your plugins.
+
+Please store below plugins in `~/.local/share/nvim/site/pack/*/start/`.
 
 | Plugin                                                                                          | Last updated |
 | ----------------------------------------------------------------------------------------------- | ------------ |
-| [aerial](https://github.com/stevearc/aerial.nvim)                                               | May 30 2022  |
-| [auto-session](https://github.com/rmagatti/auto-session)                                        | May 6 2022   |
-| [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)                                   | May 29 2022  |
-| [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)                                         | May 1 2022   |
-| [cmp-nvim-lsp-signature-help](https://github.com/hrsh7th/cmp-nvim-lsp-signature-help)           | Mar 29 2022  |
-| [cmp-path](https://github.com/hrsh7th/cmp-path)                                                 | Feb 3 2022   |
-| [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)                                      | Mar 27 2022  |
-| [dashboard-nvim](https://github.com/glepnir/dashboard-nvim)                                     | Apr 17 2021  |
-| [diffview.nvim](https://github.com/sindrets/diffview.nvim)                                      | May 28 2022  |
-| [fidget.nvim](https://github.com/j-hui/fidget.nvim)                                             | May 20 2022  |
-| [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)                            | May 27 2022  |
+| [aerial](https://github.com/stevearc/aerial.nvim)                                               | Jun 26 2022  |
+| [auto-session](https://github.com/rmagatti/auto-session)                                        | Jun 13 2022  |
+| [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)                                   | Jun 23 2022  |
+| [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)                                         | May 16 2022  |
+| [cmp-nvim-lsp-signature-help](https://github.com/hrsh7th/cmp-nvim-lsp-signature-help)           | Jun 20 2022  |
+| [cmp-path](https://github.com/hrsh7th/cmp-path)                                                 | Jun 29 2022  |
+| [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)                                      | May 02 2022  |
+| [diffview.nvim](https://github.com/sindrets/diffview.nvim)                                      | Jun 25 2022  |
+| [fidget.nvim](https://github.com/j-hui/fidget.nvim)                                             | Jun 12 2022  |
+| [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)                            | Jul 03 2022  |
 | [git-utils.nvim](https://github.com/Nguyen-Hoang-Nam/git-utils.nvim)                            |              |
-| [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                                     | May 26 2022  |
-| [goto-preview](https://github.com/rmagatti/goto-preview)                                        | Dec 25 2021  |
-| [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)                 | May 24 2022  |
-| [LuaSnip](https://github.com/L3MON4D3/LuaSnip)                                                  | May 28 2022  |
-| [nvim-autopair](https://github.com/windwp/nvim-autopairs)                                       | May 25 2022  |
-| [nvim-biscuits](https://github.com/code-biscuits/nvim-biscuits)                                 | Nov 11 2021  |
-| [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)                                                 | May 25 2022  |
+| [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                                     | Jun 20 2022  |
+| [goto-preview](https://github.com/rmagatti/goto-preview)                                        | Jun 30 2022  |
+| [hologram.nvim](https://github.com/Nguyen-Hoang-Nam/hologram.nvim)                              | Jul 03 2022  |
+| [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)                 | Jun 29 2022  |
+| [LuaSnip](https://github.com/L3MON4D3/LuaSnip)                                                  | Jul 02 2022  |
+| [nvim-autopair](https://github.com/windwp/nvim-autopairs)                                       | Jun 18 2022  |
+| [nvim-biscuits](https://github.com/code-biscuits/nvim-biscuits)                                 | Jun 26 2022  |
+| [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)                                                 | Jun 29 2022  |
 | [nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)                            | Apr 20 2020  |
-| [nvim-dap](https://github.com/mfussenegger/nvim-dap)                                            | May 25 2022  |
-| [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)                                          | May 11 2022  |
-| [nvim-dap-virtual-text](https://github.com/theHamsta/nvim-dap-virtual-text)                     | Apr 30 2021  |
-| [nvim-jdtls](https://github.com/mfussenegger/nvim-jdtls)                                        | May 6 2022   |
-| [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)                                      | May 22 2022  |
+| [nvim-dap](https://github.com/mfussenegger/nvim-dap)                                            | Jun 29 2022  |
+| [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)                                          | Jul 02 2022  |
+| [nvim-dap-virtual-text](https://github.com/theHamsta/nvim-dap-virtual-text)                     | Jun 26 2021  |
+| [nvim-jdtls](https://github.com/mfussenegger/nvim-jdtls)                                        | Jun 30 2022  |
+| [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)                                      | Jul 02 2022  |
 | [nvim-mini-file-icons](https://github.com/Nguyen-Hoang-Nam/nvim-mini-file-icons)                |              |
-| [nvim-scrollbar](https://github.com/petertriho/nvim-scrollbar)                                  | May 14 2022  |
-| [nvim-scrollview](https://github.com/dstein64/nvim-scrollview)                                  | May 23 2022  |
-| [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)                           | May 30 2022  |
+| [nvim-minimal-dashboard](https://github.com/Nguyen-Hoang-Nam/nvim-minimal-dashboard)            | Jul 03 2022  |
+| [nvim-scrollbar](https://github.com/petertriho/nvim-scrollbar)                                  | Jun 14 2022  |
+| [nvim-scrollview](https://github.com/dstein64/nvim-scrollview)                                  | Jun 07 2022  |
+| [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)                           | Jul 02 2022  |
 | [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)                                    | Apr 22 2022  |
-| [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) | Apr 7 2022   |
-| [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)                                      | May 28 2022  |
-| [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)                                        | May 21 2022  |
+| [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) | Apr 07 2022  |
+| [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)                                      | Jun 21 2022  |
+| [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)                                        | Jun 12 2022  |
 | [rest.nvim](https://github.com/NTBBloodbath/rest.nvim)                                          | May 13 2022  |
-| [tabout.nvim](https://github.com/abecodes/tabout.nvim)                                          | May 7 2022   |
-| [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim)        | May 15 2022  |
-| [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)                              | May 29 2022  |
+| [tabout.nvim](https://github.com/abecodes/tabout.nvim)                                          | May 07 2022  |
+| [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim)        | Jun 09 2022  |
+| [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)                              | Jul 01 2022  |
+| [telescope-ui-select.nvim](https://github.com/nvim-telescope/telescope-ui-select.nvim)          | Apr 30 2022  |
 | [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)                               | Jan 19 2022  |
-| [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)                                   | May 22 2022  |
-| [vim-test](https://github.com/vim-test/vim-test)                                                | May 24 2022  |
-| [vim-ultest](https://github.com/rcarriga/vim-ultest)                                            | May 5 2022   |
+| [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)                                   | Jun 29 2022  |
+| [vim-test](https://github.com/vim-test/vim-test)                                                | Jun 27 2022  |
+| [vim-ultest](https://github.com/rcarriga/vim-ultest)                                            | Jun 18 2022  |
 | [yanil](https://github.com/Nguyen-Hoang-Nam/yanil/tree/customize-ui)                            |              |
 
-### Treesitter (Optional)
+### Treesitter
 
-Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Treesitter)
+| Language   | Treesitter |
+| ---------- | ---------- |
+| Bash       | 👍         |
+| C          | 👍         |
+| CMake      | 👍         |
+| CPP        | 👍         |
+| CSS        | 👍         |
+| Dart       | 👍         |
+| Dockerfile | 👍         |
+| Elixir     | 👍         |
+| Go         | 👍         |
+| Haskell    | 👍         |
+| HTML       | 👍         |
+| HTTP       | 👍         |
+| Java       | 👍         |
+| Javascript | 👍👍       |
+| JSON       | 👍         |
+| Lua        | 👍         |
+| Markdown   | 👍         |
+| PHP        | 👍         |
+| Python     | 👍         |
+| React      | 👍         |
+| Rust       | 👍         |
+| Scala      | 👍         |
+| Solidity   | 👍         |
+| Svelte     | 👍         |
+| Tex        | 👍         |
+| TOML       | 👍         |
+| Typescript | 👍         |
+| XML        | 👍         |
+| YAML       | 👍         |
+| Zig        | 👍         |
 
 ### Language Server
 
-Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Language-server)
+| Language   | LSP                                                                                                                                                                                                                        |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Bash       | [bash-language-server](https://github.com/bash-lsp/bash-language-server)                                                                                                                                                   |
+| C          | [clangd](https://clangd.llvm.org/installation.html)                                                                                                                                                                        |
+| CMake      | [cmake-language-server](https://github.com/regen100/cmake-language-server)                                                                                                                                                 |
+| CPP        | [clangd](https://clangd.llvm.org/installation.html)                                                                                                                                                                        |
+| CSS        | [vscode-langservers-extracted](https://github.com/hrsh7th/vscode-langservers-extracted), [emmet-ls](https://github.com/aca/emmet-ls), [tailwindcss-intellisense](https://github.com/tailwindlabs/tailwindcss-intellisense) |
+| Dart       | [dart-lang/sdk](https://github.com/dart-lang/sdk/tree/master/pkg/analysis_server/tool/lsp_spec)                                                                                                                            |
+| Dockerfile | [dockerfile-language-server-nodejs](https://github.com/rcjsuen/dockerfile-language-server-nodejs)                                                                                                                          |
+| Elixir     | [elixir-ls](https://github.com/elixir-lsp/elixir-ls)                                                                                                                                                                       |
+| Go         | [gopls](https://github.com/golang/tools/tree/master/gopls)                                                                                                                                                                 |
+| Haskell    | [haskell-language-server](https://github.com/haskell/haskell-language-server)                                                                                                                                              |
+| HTML       | [vscode-langservers-extracted](https://github.com/hrsh7th/vscode-langservers-extracted), [emmet-ls](https://github.com/aca/emmet-ls), [tailwindcss-intellisense](https://github.com/tailwindlabs/tailwindcss-intellisense) |
+| HTTP       |                                                                                                                                                                                                                            |
+| Java       | [jdtls](https://projects.eclipse.org/projects/eclipse.jdt.ls)                                                                                                                                                              |
+| Javascript | [typescript-language-server](https://github.com/typescript-language-server/typescript-language-server)                                                                                                                     |
+| JSON       | [vscode-langservers-extracted](https://github.com/hrsh7th/vscode-langservers-extracted)                                                                                                                                    |
+| Lua        | [lua-language-server](https://github.com/sumneko/lua-language-server)                                                                                                                                                      |
+| Markdown   |                                                                                                                                                                                                                            |
+| PHP        | [phpactor](https://github.com/phpactor/phpactor)                                                                                                                                                                           |
+| Python     | [pyright](https://github.com/microsoft/pyright)                                                                                                                                                                            |
+| React      | [typescript-language-server](https://github.com/typescript-language-server/typescript-language-server), [tailwindcss-intellisense](https://github.com/tailwindlabs/tailwindcss-intellisense)                               |
+| Rust       | [rust-analyzer](https://github.com/rust-lang/rust-analyzer)                                                                                                                                                                |
+| Scala      |                                                                                                                                                                                                                            |
+| Solidity   | [vscode-solidity](https://github.com/juanfranblanco/vscode-solidity)                                                                                                                                                       |
+| Svelte     | [sveltejs/language-tools](https://github.com/sveltejs/language-tools/tree/master/packages/language-server), [tailwindcss-intellisense](https://github.com/tailwindlabs/tailwindcss-intellisense)                           |
+| Tex        | [texlab](https://github.com/latex-lsp/texlab)                                                                                                                                                                              |
+| TOML       |                                                                                                                                                                                                                            |
+| Typescript | [typescript-language-server](https://github.com/typescript-language-server/typescript-language-server)                                                                                                                     |
+| XML        | [lemminx](https://github.com/eclipse/lemminx)                                                                                                                                                                              |
+| YAML       | [yaml-language-server](https://github.com/redhat-developer/yaml-language-server)                                                                                                                                           |
+| Zig        | [zls](https://github.com/zigtools/zls)                                                                                                                                                                                     |
 
 ### Formatter
 
@@ -473,18 +540,25 @@ Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Test)
 | \]x             | Go to next function         |
 | \[x             | Go to previous function     |
 
-## Add new languages
+## Add unsupported languages
 
-If you want some languages that I don't support yet, then you can follow these
-steps to add manually.
+You can add unsupported languages by follow these steps.
 
-The first thing I do is check [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
-and install parser for this language. After this step, your editor will highlight
-your syntax.
+### Syntax highlight
 
-Then, you may want to find LSP in [here](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
-. After you've installed the LSP, you need to create a file in `/after/ftplugin`,
-`/lug/languages`.
+If [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter#supported-languages) supports your language,
+then you can run this command to install syntax highlight.
+
+```
+:TSInstall <language>
+```
+
+### Language Server Protocol
+
+You can find server for your language [Here](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md).
+
+After you've installed the LSP, you need to create a file in `/after/ftplugin`,
+`/lua/languages`.
 
 ```lua
 -- /lua/langauges/your-language.lua
@@ -523,16 +597,17 @@ You also need to add your language to `/lua/settings.lua`
 return {
     lspconfigs = {
         filetypes = {
-            'cmake',
+            ...,
             '<your lanugage>',
-            'zig',
+            ...,
         },
     },
 }
 ```
 
-If you know that there are formatters and linters for this language. Then you
-need to install these tools first and go to `/lua/languages/<your language>.lua`
+### Formatter and Linter
+
+You need to install these tools first and go to `/lua/languages/<your language>.lua`
 
 ```lua
 -- /lua/languages/<your language>.lua
@@ -560,13 +635,19 @@ M.all_format = { efm = 'Formatter1   Formatter2   Linter1' }
 M.default_format = 'efm'
 ```
 
-If you want debug when you need to check [this](https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation)
+### Debug
+
+You can check debug server [here](https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation)
+
+### Test
+
+You can check test tools [here](https://github.com/vim-test/vim-test)
 
 ## TODO
 
 - [ ] Show theme in wiki
 - [ ] Support Flutter
-- [ ] Perfect center dashboard header and show dashboard if there is no buffer.
+- [x] Perfect center dashboard header and show dashboard if there is no buffer.
 - [ ] Use nix to manage package.
 - [ ] Support reload configuration [in this](https://www.reddit.com/r/neovim/comments/puuskh/how_to_reload_my_lua_config_while_using_neovim/)
 - [ ] Add test summary to sidebar
