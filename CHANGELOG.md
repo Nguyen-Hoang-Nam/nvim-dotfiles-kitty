@@ -7,10 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased] - 2022-07-09
 
+### Added
+
+- Add cmp-cmdline
+
 ### Changed
 
 - Refactor Telescope buffer previewer
 - Refactor Telescope hologram
+- Disable Cmp in comment
+- Set cmdheight to 0
 
 ### Fixed
 

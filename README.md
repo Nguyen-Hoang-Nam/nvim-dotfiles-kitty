@@ -363,6 +363,7 @@ Please store below plugins in `~/.local/share/nvim/site/pack/*/start/`.
 | [aerial](https://github.com/stevearc/aerial.nvim)                                               | Jul 06 2022  |
 | [auto-session](https://github.com/rmagatti/auto-session)                                        | Jul 07 2022  |
 | [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)                                   | Jul 05 2022  |
+| [cmp-cmdline](https://github.com/hrsh7th/cmp-cmdline)                                           | May 02 2022  |
 | [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)                                         | May 16 2022  |
 | [cmp-nvim-lsp-signature-help](https://github.com/hrsh7th/cmp-nvim-lsp-signature-help)           | Jun 20 2022  |
 | [cmp-path](https://github.com/hrsh7th/cmp-path)                                                 | Jun 29 2022  |
