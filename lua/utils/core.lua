@@ -1,36 +1,9 @@
-local bo = vim.bo
 local cmd = vim.cmd
 local api = vim.api
 
 local M = {
     is_rest = false,
 }
-
-function M.bufdelete()
-    if bo.modified then
-        cmd("write")
-    end
-
-    local bufnr = api.nvim_get_current_buf()
-
-    local buffers = vim.tbl_filter(function(buf)
-        return bo[buf].buflisted and api.nvim_buf_is_valid(buf)
-    end, api.nvim_list_bufs())
-
-    if #buffers == 1 then
-        cmd("silent! ScrollViewDisable | bd " .. bufnr .. " | silent! ScrollViewEnable")
-
-        require("dashboard").instance(true)
-    else
-        if bufnr ~= buffers[#buffers] then
-            cmd("bnext")
-        else
-            cmd("bprevious")
-        end
-
-        cmd("silent! ScrollViewDisable | bd " .. bufnr .. " | silent! ScrollViewEnable")
-    end
-end
 
 -- Count number of properties in table
 -- Because of lua only count consecutive properties
