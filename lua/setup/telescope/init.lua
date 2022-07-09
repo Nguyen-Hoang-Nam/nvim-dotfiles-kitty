@@ -1,29 +1,26 @@
 local telescope = require("telescope")
 local previewers = require("telescope.previewers")
 local actions = require("telescope.actions")
+local utils = require("utils.core")
+local buffer_previewer = require("setup.telescope.buffer_previewer")
 
 local is_hologram_preview = false
--- local support_filetype = { "png", "jpg", "jpeg", "webp", "avif" }
-local support_filetype = { "png" }
+local support_filetype = { "png" } -- TODO: Support jpg, jpeg, webp, avif
 local hologram_image
-
-local get_extension = function(path)
-    return path:match("[^.]+$")
-end
 
 local is_support_filetype = function(filetype)
     return vim.tbl_contains(support_filetype, filetype)
 end
 
--- Use Hologram to show image
+-- NOTE: Use Hologram to show image
 local buffer_previewer_maker = function(filepath, bufnr, opts)
-    -- Clear image when preview other file
+    -- NOTE: Clear image when preview other file
     if is_hologram_preview then
         hologram_image:delete({ free = true })
         is_hologram_preview = false
     end
 
-    local filetype = get_extension(filepath)
+    local filetype = utils.file_extension(filepath)
     if is_support_filetype(filetype) then
         local preview_win_position = vim.api.nvim_win_get_position(opts.winid)
         local current_win_position = vim.api.nvim_win_get_position(0)
@@ -58,69 +55,12 @@ local buffer_previewer_maker = function(filepath, bufnr, opts)
     end
 end
 
-local conf = require("telescope.config").values
-local function defaulter(f, default_opts)
-    default_opts = default_opts or {}
-    return {
-        new = function(opts)
-            if conf.preview == false and not opts.preview then
-                return false
-            end
-            opts.preview = type(opts.preview) ~= "table" and {} or opts.preview
-            if type(conf.preview) == "table" then
-                for k, v in pairs(conf.preview) do
-                    opts.preview[k] = vim.F.if_nil(opts.preview[k], v)
-                end
-            end
-            return f(opts)
-        end,
-        __call = function()
-            local ok, err = pcall(f(default_opts))
-            if not ok then
-                error(debug.traceback(err))
-            end
-        end,
-    }
+buffer_previewer.teardown = function(_)
+    if is_hologram_preview then
+        hologram_image:delete({ free = true })
+        is_hologram_preview = false
+    end
 end
-
-local from_entry = require("telescope.from_entry")
-local Path = require("plenary.path")
-
--- Add teardown to cat previewer to clear image when close Telescope
-local cat = defaulter(function(opts)
-    opts = opts or {}
-    local cwd = opts.cwd or vim.loop.cwd()
-    return previewers.new_buffer_previewer({
-        title = "File Preview",
-        dyn_title = function(_, entry)
-            return Path:new(from_entry.path(entry, true)):normalize(cwd)
-        end,
-
-        get_buffer_by_name = function(_, entry)
-            return from_entry.path(entry, true)
-        end,
-
-        define_preview = function(self, entry, _)
-            local p = from_entry.path(entry, true)
-            if p == nil or p == "" then
-                return
-            end
-
-            conf.buffer_previewer_maker(p, self.state.bufnr, {
-                bufname = self.state.bufname,
-                winid = self.state.winid,
-                preview = opts.preview,
-            })
-        end,
-
-        teardown = function(_)
-            if is_hologram_preview then
-                hologram_image:delete({ free = true })
-                is_hologram_preview = false
-            end
-        end,
-    })
-end, {})
 
 telescope.setup({
     defaults = {
@@ -140,7 +80,7 @@ telescope.setup({
             },
         },
 
-        file_previewer = cat.new,
+        file_previewer = buffer_previewer.cat.new,
     },
 
     pickers = {
