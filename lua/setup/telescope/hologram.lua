@@ -1,5 +1,6 @@
 local previewers = require("telescope.previewers")
 local utils = require("utils.core")
+local api = vim.api
 
 local M = {}
 
@@ -27,15 +28,15 @@ end
 
 local set_hologram_row_col = function(opts)
     if not cache_win_position then
-        preview_win_position = vim.api.nvim_win_get_position(opts.winid)
-        current_win_position = vim.api.nvim_win_get_position(0)
-        -- preview_win_height = vim.api.nvim_win_get_height(opts.winid)
-        -- preview_win_width = vim.api.nvim_win_get_width(opts.winid)
+        preview_win_position = api.nvim_win_get_position(opts.winid)
+        current_win_position = api.nvim_win_get_position(0)
+        -- preview_win_height = api.nvim_win_get_height(opts.winid)
+        -- preview_win_width = api.nvim_win_get_width(opts.winid)
 
         cache_win_position = true
     end
 
-    local cursor_win_position = vim.api.nvim_win_get_cursor(0)
+    local cursor_win_position = api.nvim_win_get_cursor(0)
     hologram_row = preview_win_position[1] - current_win_position[1] - cursor_win_position[1] + 1
     hologram_col = preview_win_position[2] - current_win_position[2] - cursor_win_position[2] + 2
 end
@@ -52,7 +53,6 @@ local create_hologram = function(filepath)
     is_hologram_preview = true
 end
 
--- NOTE: Use Hologram to show image
 M.buffer_previewer_maker = function(filepath, bufnr, opts)
     -- NOTE: Clear image when preview other file
     if is_hologram_preview and last_file_path ~= filepath then
