@@ -1,26 +1,21 @@
-local cmp = require('cmp')
-local luasnip = require('luasnip')
+local cmp = require("cmp")
+local luasnip = require("luasnip")
 local fn = vim.fn
-
-require('tabout').setup({
-    tabkey = '',
-    backwards_tabkey = '',
-})
 
 local feedkey = function(key, mode)
     vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
 end
 
 local check_back_space = function()
-    local col = fn.col('.') - 1
-    if col == 0 or fn.getline('.'):sub(col, col):match('%s') then
+    local col = fn.col(".") - 1
+    if col == 0 or fn.getline("."):sub(col, col):match("%s") then
         return true
     else
         return false
     end
 end
 
-local lspKindIcons = require('settings').kinds
+local lspKindIcons = require("settings").kinds
 
 cmp.setup({
     snippet = {
@@ -30,34 +25,34 @@ cmp.setup({
     },
 
     mapping = {
-        ['<M-e>'] = cmp.mapping.complete(),
+        ["<M-e>"] = cmp.mapping.complete(),
 
-        ['<CR>'] = cmp.mapping.confirm({
+        ["<CR>"] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Replace,
             select = true,
         }),
 
-        ['<Tab>'] = function(_)
+        ["<Tab>"] = function(_)
             if cmp.visible() then
                 cmp.select_next_item()
             elseif luasnip.expand_or_jumpable() then
                 luasnip.expand_or_jump()
             elseif check_back_space() then
-                feedkey('<Tab>', 'n')
+                feedkey("<Tab>", "n")
             else
-                feedkey('<Plug>(Tabout)', '')
+                feedkey("<Plug>(Tabout)", "")
             end
         end,
 
-        ['<S-Tab>'] = function(_)
+        ["<S-Tab>"] = function(_)
             if cmp.visible() then
                 cmp.select_prev_item()
             elseif luasnip.jumpable(-1) then
                 luasnip.jump(-1)
             elseif check_back_space() then
-                feedkey('<C-d>', 'i')
+                feedkey("<C-d>", "i")
             else
-                feedkey('<Plug>(TaboutBack)', '')
+                feedkey("<Plug>(TaboutBack)", "")
             end
         end,
     },
@@ -78,5 +73,20 @@ cmp.setup({
         documentation = {
             maxwidth = 30,
         },
+    },
+
+    enabled = function()
+        local context = require("cmp.config.context")
+        if vim.api.nvim_get_mode().mode == "c" then
+            return true
+        else
+            return not context.in_treesitter_capture("comment") and not context.in_syntax_group("Comment")
+        end
+    end,
+})
+
+require("cmp").setup.cmdline(":", {
+    sources = {
+        { name = "cmdline" },
     },
 })
