@@ -23,6 +23,8 @@ _Kitty with Fira, Cascadia, and Mini-File-Icons_
   (Thanks to [Efm-Langsever](https://github.com/mattn/efm-langserver))
 - Previewing PNG image ([#4341](https://github.com/kovidgoyal/kitty/issues/4341))
   (Thanks to [Hologram](https://github.com/edluffy/hologram.nvim))
+- Executing SQL
+  (Thanks to [SQLS.nvim](https://github.com/nanotee/sqls.nvim))
 - Managing plugins manually.
 
 ## Why I choose Kitty Terminal
@@ -386,7 +388,7 @@ Please store below plugins in `~/.local/share/nvim/site/pack/*/start/`.
 | [nvim-dap-virtual-text](https://github.com/theHamsta/nvim-dap-virtual-text)                     | Jun 26 2021  |
 | [nvim-jdtls](https://github.com/mfussenegger/nvim-jdtls)                                        | Jun 30 2022  |
 | [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)                                      | Jul 07 2022  |
-| [nvim-mini-file-icons](https://github.com/Nguyen-Hoang-Nam/nvim-mini-file-icons)                |              |
+| [nvim-mini-file-icons](https://github.com/Nguyen-Hoang-Nam/nvim-mini-file-icons)                | Jul 09 2022  |
 | [nvim-minimal-dashboard](https://github.com/Nguyen-Hoang-Nam/nvim-minimal-dashboard)            | Jul 03 2022  |
 | [nvim-scrollbar](https://github.com/petertriho/nvim-scrollbar)                                  | Jun 14 2022  |
 | [nvim-scrollview](https://github.com/dstein64/nvim-scrollview)                                  | Jun 07 2022  |
@@ -395,6 +397,7 @@ Please store below plugins in `~/.local/share/nvim/site/pack/*/start/`.
 | [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) | Apr 07 2022  |
 | [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)                                      | Jul 08 2022  |
 | [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)                                        | Jul 04 2022  |
+| [sqls.nvim](https://github.com/nanotee/sqls.nvim)                                               | Jul 08 2022  |
 | [rest.nvim](https://github.com/NTBBloodbath/rest.nvim)                                          | May 13 2022  |
 | [tabout.nvim](https://github.com/abecodes/tabout.nvim)                                          | May 07 2022  |
 | [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim)        | Jun 09 2022  |

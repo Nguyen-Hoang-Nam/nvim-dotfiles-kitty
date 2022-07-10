@@ -3,6 +3,7 @@ local api = vim.api
 
 local M = {
     is_rest = false,
+    is_sql = false,
 }
 
 -- Count number of properties in table
@@ -108,12 +109,66 @@ function M.rest()
         api.nvim_buf_set_option(buf, "bufhidden", "delete")
         api.nvim_buf_set_option(buf, "filetype", "http")
 
+        api.nvim_buf_set_keymap(
+            buf,
+            "n",
+            "<Leader>r",
+            [[<Cmd>lua require("rest-nvim").run()<CR>]],
+            { noremap = true, silent = true }
+        )
+
         api.nvim_set_current_buf(buf)
         api.nvim_win_set_buf(window, buf)
 
         M.is_rest = true
         M.win_rest = window
         M.buf_rest = buf
+    end
+end
+
+function M.sql()
+    if M.is_sql then
+        vim.cmd("tabclose!")
+
+        M.is_sql = false
+    else
+        vim.cmd("tabedit new")
+        vim.bo.bufhidden = "wipe"
+
+        local valid_win = M.win_sql and api.nvim_win_is_valid(M.win_sql)
+        local window = valid_win and M.win_sql or api.nvim_get_current_win()
+
+        local valid_buf = M.buf_sql and api.nvim_buf_is_valid(M.buf_sql)
+        local buf = valid_buf and M.buf_sql or api.nvim_create_buf(false, false)
+
+        api.nvim_buf_set_name(buf, "run.sql")
+
+        api.nvim_buf_set_option(buf, "buftype", "nowrite")
+        api.nvim_buf_set_option(buf, "bufhidden", "delete")
+        api.nvim_buf_set_option(buf, "filetype", "sql")
+
+        api.nvim_buf_set_keymap(buf, "n", "<Leader>r", [[<Cmd>SqlsExecuteQuery<CR>]], { noremap = true, silent = true })
+        api.nvim_buf_set_keymap(
+            buf,
+            "n",
+            "<Leader>p",
+            [[<Cmd>SqlsSwitchConnection<CR>]],
+            { noremap = true, silent = true }
+        )
+        api.nvim_buf_set_keymap(
+            buf,
+            "n",
+            "<Leader>o",
+            [[<Cmd>SqlsSwitchDatabase<CR>]],
+            { noremap = true, silent = true }
+        )
+
+        api.nvim_set_current_buf(buf)
+        api.nvim_win_set_buf(window, buf)
+
+        M.is_sql = true
+        M.win_sql = window
+        M.buf_sql = buf
     end
 end
 

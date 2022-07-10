@@ -105,5 +105,6 @@ map("n", "[q", "<Cmd>tabp<CR>", cmd_options)
 
 map("n", "<Leader>z", "", cmd_option(goto_preview.goto_preview_definition))
 
-map("n", "<Leader>v", "", cmd_option(require("rest-nvim").run))
 map("n", "<M-r>", "", cmd_option(utils_core.rest))
+
+map("n", "<M-s>", "", cmd_option(utils_core.sql))

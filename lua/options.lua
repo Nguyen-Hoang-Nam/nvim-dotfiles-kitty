@@ -11,10 +11,10 @@ option.scrolloff = 18
 option.termguicolors = true
 option.shortmess = "atOIc"
 -- option.completeopt = 'menuone,noselect'
--- option.shortmess:append({ c = true, F = true, T = true })
 option.clipboard:append({ "unnamedplus" })
 option.fillchars = "eob: "
 option.cmdheight = 0
+option.splitbelow = true
 
 -- NOTE: Local to window
 option.number = true
@@ -25,8 +25,6 @@ option.list = true
 option.listchars = "tab:\\ ,trail:-,eol:↵"
 option.foldmethod = "expr"
 option.foldexpr = "nvim_treesitter#foldexpr()"
--- HACK: indent-blankline https://github.com/lukas-reineke/indent-blankline.nvim/issues/59#issuecomment-806398054
-option.colorcolumn = "99999"
 
 -- NOTE: Local to buffer
 option.shiftwidth = 4

@@ -43,6 +43,7 @@ augroup StatusLine
     autocmd FileType dapui* lua require('statusline').load()
     autocmd FileType dap-repl lua require('statusline').load()
     autocmd FileType aerial lua require('statusline').load()
+    autocmd FileType sqls_output lua require('statusline').load()
 augroup END
 ]],
     true

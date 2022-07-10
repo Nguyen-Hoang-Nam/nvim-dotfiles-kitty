@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Add cmp-cmdline
+- Add sqls.nvim
 
 ### Changed
 
@@ -17,6 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Refactor Telescope hologram
 - Disable Cmp in comment
 - Set cmdheight to 0
+- Set rest keymap to buffer
 
 ### Fixed
 
