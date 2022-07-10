@@ -108,3 +108,5 @@ map("n", "<Leader>z", "", cmd_option(goto_preview.goto_preview_definition))
 map("n", "<M-r>", "", cmd_option(utils_core.rest))
 
 map("n", "<M-s>", "", cmd_option(utils_core.sql))
+
+map("n", "<Leader>n", "<Cmd>FineCmdline<CR>", cmd_options)

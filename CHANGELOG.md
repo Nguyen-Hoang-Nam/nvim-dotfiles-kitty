@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add cmp-cmdline
 - Add sqls.nvim
 - Add winbar
+- Add find-cmdline
 
 ### Changed
 

@@ -5,6 +5,45 @@ Neovim + Kitty = ❤️
 ![Main](https://raw.githubusercontent.com/Nguyen-Hoang-Nam/readme-image/main/nvim-dotfiles/main.png)
 _Kitty with Fira, Cascadia, and Mini-File-Icons_
 
+## Documentation
+
+- [What I have done so far](#what-i-have-done-so-far)
+- [Why I choose Kitty Terminal](#why-i-choose-kitty-terminal)
+- [Which framework I use this with](#which-framework-i-use-this-with)
+- [Supported languages feature](#supported-languages-feature)
+- [Startup](#startup)
+- [Screenshot](#screenshot)
+
+* [Dashboard](#dashboard)
+
+- - [Telescope](#telescope)
+- - [Terminal](#terminal)
+- - [Help](#help)
+- - [Javascript](#javascript)
+- - [Go](#go)
+- [Configuration](#configuration)
+- [Installation](#installation)
+- - [Requirements](#requirements)
+- - [Fonts](#fonts)
+- - [Kitty](#kitty)
+- - [Plugin list](#plugin-list)
+- - [Treesitter](#treesitter)
+- - [Language Server](#language-server)
+- - [Formatter](#formatter)
+- - [Linter](#linter)
+- - [Debug](#debug)
+- - [Test](#test)
+- [Mappings](#mappings)
+- [Add unsupported languages](#add-unsupported-languages)
+- - [Syntax highlight](#syntax-highlight)
+- - [Language Server Protocol](#language-server-protocol)
+- - [Formatter and Linter](#formatter-and-linter)
+- - [Debug](#debug-1)
+- - [Test](#test-1)
+- [TODO](#todo)
+- [Contributing](#contributing)
+- [License](#license)
+
 ## What I have done so far
 
 - Ligature font, Italic font and Icon font.
@@ -372,6 +411,7 @@ Please store below plugins in `~/.local/share/nvim/site/pack/*/start/`.
 | [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)                                      | May 02 2022  |
 | [diffview.nvim](https://github.com/sindrets/diffview.nvim)                                      | Jul 04 2022  |
 | [fidget.nvim](https://github.com/j-hui/fidget.nvim)                                             | Jun 12 2022  |
+| [find-cmdline.nvim](https://github.com/VonHeikemen/fine-cmdline.nvim)                           | Jul 01 2022  |
 | [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)                            | Jul 05 2022  |
 | [git-utils.nvim](https://github.com/Nguyen-Hoang-Nam/git-utils.nvim)                            |              |
 | [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                                     | Jul 08 2022  |
@@ -379,6 +419,7 @@ Please store below plugins in `~/.local/share/nvim/site/pack/*/start/`.
 | [hologram.nvim](https://github.com/Nguyen-Hoang-Nam/hologram.nvim)                              | Jul 03 2022  |
 | [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)                 | Jun 29 2022  |
 | [LuaSnip](https://github.com/L3MON4D3/LuaSnip)                                                  | Jul 02 2022  |
+| [nui](https://github.com/MunifTanjim/nui.nvim)                                                  | Jul 08 2022  |
 | [nvim-autopair](https://github.com/windwp/nvim-autopairs)                                       | Jul 05 2022  |
 | [nvim-biscuits](https://github.com/code-biscuits/nvim-biscuits)                                 | Jun 26 2022  |
 | [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)                                                 | Jun 29 2022  |
@@ -390,6 +431,7 @@ Please store below plugins in `~/.local/share/nvim/site/pack/*/start/`.
 | [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)                                      | Jul 07 2022  |
 | [nvim-mini-file-icons](https://github.com/Nguyen-Hoang-Nam/nvim-mini-file-icons)                | Jul 09 2022  |
 | [nvim-minimal-dashboard](https://github.com/Nguyen-Hoang-Nam/nvim-minimal-dashboard)            | Jul 03 2022  |
+| [nvim-navic](https://github.com/SmiteshP/nvim-navic)                                            | Jul 06 2022  |
 | [nvim-scrollbar](https://github.com/petertriho/nvim-scrollbar)                                  | Jun 14 2022  |
 | [nvim-scrollview](https://github.com/dstein64/nvim-scrollview)                                  | Jun 07 2022  |
 | [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)                           | Jul 08 2022  |
@@ -506,12 +548,14 @@ Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Test)
 | &lt;Leader&gt;4 | Step out                    |
 | &lt;Leader&gt;9 | Scope information           |
 | &lt;Leader&gt;a | Code action                 |
+| &lt;Leader&gt;b | Toggle biscuit              |
 | &lt;Leader&gt;c | Range format                |
 | &lt;Leader&gt;d | Go to definition            |
 | &lt;Leader&gt;e | Search Gitmojis             |
 | &lt;Leader&gt;f | Search text                 |
 | &lt;Leader&gt;g | Toggle git hover            |
 | &lt;Leader&gt;m | Format code                 |
+| &lt;Leader&gt;n | Show floating Cmdline       |
 | &lt;Leader&gt;o | Search buffers              |
 | &lt;Leader&gt;p | Search file                 |
 | &lt;Leader&gt;q | Turn off search's highlight |
@@ -658,6 +702,12 @@ You can check test tools [here](https://github.com/vim-test/vim-test)
 - [ ] Change highlight of nvim-dap-ui
 - [ ] Change highlight of vim-ultest
 - [ ] Handle lsp_extension
+- [ ] Support [nvim-covarage](https://github.com/andythigpen/nvim-coverage)
+- [ ] Support [nvim-ufo](https://github.com/kevinhwang91/nvim-ufo)
+- [ ] Support [template.nvim](https://github.com/glepnir/template.nvim)
+- [ ] Support [nvim-notify](https://github.com/rcarriga/nvim-notify)
+- [ ] Support [Graphql](https://github.com/graphql/graphiql/tree/main/packages/graphql-language-service-cli)
+- [ ] Support [vscode-codicons](https://github.com/microsoft/vscode-codicons)
 
 ## Contributing
 
