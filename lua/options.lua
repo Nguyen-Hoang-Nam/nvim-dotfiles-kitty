@@ -10,7 +10,6 @@ option.showtabline = 2
 option.scrolloff = 18
 option.termguicolors = true
 option.shortmess = "atOIc"
--- option.completeopt = 'menuone,noselect'
 option.clipboard:append({ "unnamedplus" })
 option.fillchars = "eob: "
 option.cmdheight = 0

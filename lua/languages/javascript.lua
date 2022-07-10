@@ -26,7 +26,10 @@ M.lsp_server = "tsserver"
 
 M.lsp = {
     capabilities = lsp.capabilities,
-    on_attach = lsp.on_attach,
+    on_attach = function(client, bufnr)
+        lsp.on_attach(client, bufnr)
+        require("nvim-navic").attach(client, bufnr)
+    end,
 }
 
 return M

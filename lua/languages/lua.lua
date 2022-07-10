@@ -24,7 +24,10 @@ table.insert(runtime_path, "lua/?/init.lua")
 M.lsp = {
     capabilities = lsp.capabilities,
 
-    on_attach = lsp.on_attach,
+    on_attach = function(client, bufnr)
+        lsp.on_attach(client, bufnr)
+        require("nvim-navic").attach(client, bufnr)
+    end,
 
     cmd = { sumneko_binary, "-E", sumneko_root_path .. "/main.lua" },
 

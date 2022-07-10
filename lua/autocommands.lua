@@ -40,6 +40,9 @@ augroup StatusLine
     autocmd BufEnter * lua require('statusline').load()
     autocmd BufWritePost * lua require('statusline').load()
 
+    autocmd BufEnter * lua require('winbar').load()
+    autocmd BufWritePost * lua require('winbar').load()
+
     autocmd FileType dapui* lua require('statusline').load()
     autocmd FileType dap-repl lua require('statusline').load()
     autocmd FileType aerial lua require('statusline').load()

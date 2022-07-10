@@ -519,15 +519,15 @@ Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Test)
 | &lt;Leader&gt;s | Save file                   |
 | &lt;Leader&gt;t | Toggle test                 |
 | &lt;Leader&gt;u | Search text in project      |
-| &lt;Leader&gt;v | Run Restful API             |
 | &lt;Leader&gt;w | Delete current buffer       |
 | &lt;Leader&gt;z | Preview definition          |
 | &lt;Leader&gt;/ | Toggle comment              |
 | &lt;M-b&gt;     | Toggle Explorer             |
-| &lt;M-d&gt;     | Toggle debug sidebar        |
-| &lt;M-t&gt;     | Toggle terminal             |
-| &lt;M-r&gt;     | Toggle rest                 |
-| &lt;M-x&gt;     | Toggle symbol sidebar       |
+| &lt;M-d&gt;     | Toggle Debug sidebar        |
+| &lt;M-t&gt;     | Toggle Terminal             |
+| &lt;M-r&gt;     | Toggle Rest Tab             |
+| &lt;M-s&gt;     | Toggle SQL Tab              |
+| &lt;M-x&gt;     | Toggle Symbol sidebar       |
 | jk              | Insert to normal            |
 | gh              | Go to left window           |
 | gj              | Go to below window          |
@@ -535,10 +535,10 @@ Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Test)
 | gl              | Go to right window          |
 | \]d             | Go to next diagnostic       |
 | \[d             | Go to previous diagnostic   |
-| \]b             | Go to next buffer           |
-| \[b             | Go to previous buffer       |
-| \]q             | Go to next tab              |
-| \[q             | Go to previous tab          |
+| \]b             | Go to next Buffer           |
+| \[b             | Go to previous Buffer       |
+| \]q             | Go to next Tab              |
+| \[q             | Go to previous Tab          |
 | \]t             | Go to next failed test      |
 | \[t             | Go to previous failed test  |
 | \]x             | Go to next function         |
@@ -561,11 +561,11 @@ then you can run this command to install syntax highlight.
 
 You can find server for your language [Here](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md).
 
-After you've installed the LSP, you need to create a file in `/after/ftplugin`,
-`/lua/languages`.
+After you've installed the LSP, you need to create a file in `after/ftplugin`,
+`lua/languages`.
 
 ```lua
--- /lua/langauges/your-language.lua
+-- lua/langauges/your-language.lua
 local lsp = require('languages.lsp')
 local M = {}
 
@@ -581,7 +581,7 @@ return M
 ```
 
 ```lua
--- /after/ftplugin/your-language.lua
+-- after/ftplugin/your-language.lua
 vim.opt.indentexpr = 'nvim_treesitter#indent()' -- Optional, If you use indent of treesitter
 
 require('cmp').setup.buffer({
@@ -611,7 +611,7 @@ return {
 
 ### Formatter and Linter
 
-You need to install these tools first and go to `/lua/languages/<your language>.lua`
+You need to install these tools first then go to `/lua/languages/<your language>.lua`
 
 ```lua
 -- /lua/languages/<your language>.lua
