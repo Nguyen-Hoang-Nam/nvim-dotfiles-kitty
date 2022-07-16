@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fix search untracked file Telescope
 - Fix Telescope icon (nvim-mini-file-icon)
+- Fix Auto-session create empty file when git change branch
 
 ## [7.0.0] - 2022-07-01
 
