@@ -141,7 +141,7 @@ function M.sql()
         local valid_buf = M.buf_sql and api.nvim_buf_is_valid(M.buf_sql)
         local buf = valid_buf and M.buf_sql or api.nvim_create_buf(false, false)
 
-        api.nvim_buf_set_name(buf, "run.sql")
+        api.nvim_buf_set_name(buf, "[no name].sql")
 
         api.nvim_buf_set_option(buf, "buftype", "nowrite")
         api.nvim_buf_set_option(buf, "bufhidden", "delete")

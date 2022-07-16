@@ -1,17 +1,22 @@
-local colors = require('settings').colors
-local sidebar = require('sidebar')
+local colors = require("settings").colors
+local sidebar = require("sidebar")
 
-require('bufferline').setup({
+require("bufferline").setup({
     options = {
-        indicator_icon = '▌',
-        diagnostics = 'nvim_lsp',
+        indicator_icon = "▌",
+        diagnostics = "nvim_lsp",
         diagnostics_indicator = function(count, _)
-            return '(' .. count .. ')'
+            return "(" .. count .. ")"
         end,
         offsets = sidebar.sidebar_title,
         show_buffer_close_icons = false,
         show_close_icon = false,
         enforce_reqular_tabs = true,
+        custom_filter = function(buf_number, _)
+            if vim.fn.bufname(buf_number) ~= "[no name].sql" then
+                return true
+            end
+        end,
     },
 
     highlights = {
@@ -29,7 +34,7 @@ require('bufferline').setup({
         tab_selected = {
             guifg = colors.white,
             guibg = colors.background,
-            gui = 'bold',
+            gui = "bold",
         },
 
         buffer_visible = {
@@ -39,7 +44,7 @@ require('bufferline').setup({
         buffer_selected = {
             guifg = colors.white,
             guibg = colors.background,
-            gui = 'bold',
+            gui = "bold",
         },
 
         modified = {
