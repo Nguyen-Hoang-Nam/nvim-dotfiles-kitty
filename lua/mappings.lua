@@ -110,3 +110,10 @@ map("n", "<M-r>", "", cmd_option(utils_core.rest))
 map("n", "<M-s>", "", cmd_option(utils_core.sql))
 
 map("n", "<Leader>n", "<Cmd>FineCmdline<CR>", cmd_options)
+
+map("n", "ck", "<Plug>(git-conflict-ours)", cmd_options)
+map("n", "cj", "<Plug>(git-conflict-theirs)", cmd_options)
+map("n", "cb", "<Plug>(git-conflict-both)", cmd_options)
+map("n", "c0", "<Plug>(git-conflict-none)", cmd_options)
+map("n", "]g", "<Plug>(git-conflict-prev-conflict)", cmd_options)
+map("n", "[g", "<Plug>(git-conflict-next-conflict)", cmd_options)

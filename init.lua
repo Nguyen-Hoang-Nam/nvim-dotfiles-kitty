@@ -25,6 +25,7 @@ require("setup.toggleterm")
 require("setup.treesitter")
 require("setup.scrollbar")
 require("setup.hologram")
+require("setup.gitconflict")
 
 require("lsp.lspconfig")
 require("lsp.icon")
