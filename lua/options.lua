@@ -14,6 +14,7 @@ option.clipboard:append({ "unnamedplus" })
 option.fillchars = "eob: "
 option.cmdheight = 0
 option.splitbelow = true
+option.laststatus = 3
 
 -- NOTE: Local to window
 option.number = true
