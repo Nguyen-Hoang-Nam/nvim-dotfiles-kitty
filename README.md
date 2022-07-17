@@ -428,7 +428,6 @@ Please store below plugins in `~/.local/share/nvim/site/pack/*/start/`.
 | [nvim-jdtls](https://github.com/mfussenegger/nvim-jdtls)                                        | Jun 30 2022  |
 | [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)                                      | Jul 14 2022  |
 | [nvim-mini-file-icons](https://github.com/Nguyen-Hoang-Nam/nvim-mini-file-icons)                | Jul 09 2022  |
-| [nvim-minimal-dashboard](https://github.com/Nguyen-Hoang-Nam/nvim-minimal-dashboard)            | Jul 03 2022  |
 | [nvim-navic](https://github.com/SmiteshP/nvim-navic)                                            | Jul 13 2022  |
 | [nvim-scrollbar](https://github.com/petertriho/nvim-scrollbar)                                  | Jul 11 2022  |
 | [nvim-scrollview](https://github.com/dstein64/nvim-scrollview)                                  | Jun 07 2022  |

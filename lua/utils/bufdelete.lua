@@ -21,7 +21,7 @@ function M.bufdelete()
         cmd("silent! ScrollViewDisable | bd " .. bufnr .. " | silent! ScrollViewEnable")
 
         -- NOTE: Show Dashboard when closing the last buffer
-        require("dashboard").instance(true)
+        require("dashboard").instance()
     else
         if bufnr ~= buffers[#buffers] then
             cmd("bnext")
