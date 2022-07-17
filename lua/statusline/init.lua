@@ -1,16 +1,19 @@
 local api = vim.api
-local fn = vim.fn
 
 local setting_statusline = require("settings").statusline
 
 local M = {}
 
-local hide_left = { "help", "http", "sql" }
+local hide_left_by_filetype = { "help", "http", "sql" }
+local hide_left_by_filename = { "[no name].sql" }
 
 local left = function()
     local line = ""
 
-    if not vim.tbl_contains(hide_left, vim.bo.filetype) then
+    if
+        not vim.tbl_contains(hide_left_by_filetype, vim.bo.filetype)
+        or not vim.tbl_contains(hide_left_by_filename, require("utils.core").get_file_name(api.nvim_buf_get_name(0)))
+    then
         if setting_statusline.git_branch_enabled then
             line = line .. " " .. require("git_utils").branch("") .. "   "
         end
@@ -42,29 +45,27 @@ local right = function()
         line = line .. "Ln %l, Col %c"
     end
 
-    if fn.winwidth(0) > 80 then
-        -- Show indent type and number of spaces
-        if setting_statusline.tab_enabled then
-            local tab_type = api.nvim_eval("&et") == 1 and "Spaces: " or "Tab Size: "
-            local tab = api.nvim_eval("&tabstop")
+    -- Show indent type and number of spaces
+    if setting_statusline.tab_enabled then
+        local tab_type = api.nvim_eval("&et") == 1 and "Spaces: " or "Tab Size: "
+        local tab = api.nvim_eval("&tabstop")
 
-            line = line .. "   " .. tab_type .. tab
-        end
+        line = line .. "   " .. tab_type .. tab
+    end
 
-        -- Show type of line break
-        if setting_statusline.line_break_enabled then
-            line = line .. "   " .. require("statusline.linebreak").line()
-        end
+    -- Show type of line break
+    if setting_statusline.line_break_enabled then
+        line = line .. "   " .. require("statusline.linebreak").line()
+    end
 
-        -- Show format of file
-        if setting_statusline.file_format_enabled then
-            line = line .. "   " .. vim.bo.filetype:gsub("^%l", string.upper)
-        end
+    -- Show format of file
+    if setting_statusline.file_format_enabled then
+        line = line .. "   " .. vim.bo.filetype:gsub("^%l", string.upper)
+    end
 
-        -- Show formatters and linters
-        if setting_statusline.efm_enabled then
-            line = line .. [[%{luaeval('require("format").formatter_status()')}]]
-        end
+    -- Show formatters and linters
+    if setting_statusline.efm_enabled then
+        line = line .. [[%{luaeval('require("format").formatter_status()')}]]
     end
 
     -- Emoji at the end of status line
@@ -79,15 +80,11 @@ end
 
 local async_load = vim.loop.new_async(vim.schedule_wrap(function()
     local line
-    if fn.winwidth(0) > 30 then
-        line = "%#StatuslineBackground#  "
-        line = line .. left()
+    line = "%#StatuslineBackground#  "
+    line = line .. left()
 
-        line = line .. "%#StatuslineBackground#%="
-        line = line .. right()
-    else
-        line = "%#StatuslineEmptyBackground#"
-    end
+    line = line .. "%#StatuslineBackground#%="
+    line = line .. right()
 
     vim.wo.statusline = line
 end))

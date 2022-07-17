@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Disable Cmp in comment
 - Set cmdheight to 0
 - Set rest keymap to buffer
+- Set laststatus to 3
 
 ### Fixed
 

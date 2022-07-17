@@ -19,6 +19,11 @@ function M.tablelength(T)
     return count
 end
 
+-- Credit https://stackoverflow.com/questions/48402876/getting-current-file-name-in-lua
+function M.get_file_name(path)
+    return path:match("^.+/(.+)$")
+end
+
 function M.file_extension(filename)
     local t = {}
     for str in string.gmatch(filename, "([^%.]+)") do
