@@ -1,13 +1,13 @@
-local colors = require('settings').colors
+local colors = require("settings").colors
 
-local base00 = '#282c34'
-local base01 = '#353b45'
-local base02 = '#3e4451'
-local base03 = '#545862'
-local base04 = '#565c64'
-local base05 = '#abb2bf'
+local base00 = "#282c34"
+local base01 = "#353b45"
+local base02 = "#3e4451"
+local base03 = "#545862"
+local base04 = "#565c64"
+local base05 = "#abb2bf"
 -- local base06 = '#b6bdca'
-local base07 = '#c8ccd4'
+local base07 = "#c8ccd4"
 local base08 = colors.red
 local base09 = colors.orange
 local base0A = colors.yellow
@@ -21,15 +21,15 @@ local cmd = vim.cmd
 
 local function highlight(all_highlights)
     for group, ui in pairs(all_highlights) do
-        local guifg = ui.guifg or 'NONE'
-        local guibg = ui.guibg or 'NONE'
-        local gui = ui.gui or 'NONE'
-        if gui == 'underline' or gui == 'undercurl' then
-            local guisp = ui.guisp or 'NONE'
+        local guifg = ui.guifg or "NONE"
+        local guibg = ui.guibg or "NONE"
+        local gui = ui.gui or "NONE"
+        if gui == "underline" or gui == "undercurl" then
+            local guisp = ui.guisp or "NONE"
 
-            cmd(string.format('hi %s guifg=%s guibg=%s gui=%s guisp=%s', group, guifg, guibg, gui, guisp))
+            cmd(string.format("hi %s guifg=%s guibg=%s gui=%s guisp=%s", group, guifg, guibg, gui, guisp))
         else
-            cmd(string.format('hi %s guifg=%s guibg=%s gui=%s', group, guifg, guibg, gui))
+            cmd(string.format("hi %s guifg=%s guibg=%s gui=%s", group, guifg, guibg, gui))
         end
     end
 end
@@ -67,7 +67,7 @@ highlight({
     CmpItemAbbrMatchFuzzy = { guifg = base0B },
     CmpItemAbbrMatch = { guifg = base0B },
     CmpItemAbbr = { guifg = base05 },
-    CmpItemAbbrDeprecated = { guifg = '#ffffff' },
+    CmpItemAbbrDeprecated = { guifg = "#ffffff" },
 
     Question = { guifg = base0D },
     -- QuickFixLine = { guibg = base01 },
@@ -75,7 +75,7 @@ highlight({
     SignColumn = { guifg = base04, guibg = colors.background },
     SpecialKey = { guifg = base03 },
     StatusLine = { guifg = colors.dark_background, guibg = colors.dark_background },
-    StatucLineNC = { guifg = colors.dark_background, guibg = colors.dark_background, gui = 'underline' },
+    StatucLineNC = { guifg = colors.dark_background, guibg = colors.dark_background, gui = "underline" },
     Substitute = { guifg = base01, guibg = base0A },
     TermCursor = { guifg = colors.background, guibg = base0C },
     TermCursorNC = { guifg = colors.background, guibg = base05 },
@@ -87,27 +87,27 @@ highlight({
     -- WildMenu = { guifg = base00, guibg = base05 },
 
     -- Spell
-    SpellBad = { gui = 'undercurl', guisp = base08 },
-    SpellLocal = { gui = 'undercurl', guisp = base0C },
-    SpellCap = { gui = 'undercurl', guisp = base0D },
-    SpellRare = { gui = 'undercurl', guisp = base0E },
+    SpellBad = { gui = "undercurl", guisp = base08 },
+    SpellLocal = { gui = "undercurl", guisp = base0C },
+    SpellCap = { gui = "undercurl", guisp = base0D },
+    SpellRare = { gui = "undercurl", guisp = base0E },
 
     -- Syntax
-    Comment = { guifg = base03, gui = 'italic' },
-    Constant = { guifg = base09, gui = 'italic' },
+    Comment = { guifg = base03, gui = "italic" },
+    Constant = { guifg = base09, gui = "italic" },
     String = { guifg = base0B },
     Character = { guifg = base0C },
-    Number = { guifg = base09, gui = 'italic' },
-    Boolean = { guifg = base09, gui = 'italic' },
-    Float = { guifg = base09, gui = 'italic' },
+    Number = { guifg = base09, gui = "italic" },
+    Boolean = { guifg = base09, gui = "italic" },
+    Float = { guifg = base09, gui = "italic" },
     Identifier = { guifg = base08 },
     Fuction = { guifg = base0D },
     Statement = { guifg = base0E },
-    Conditional = { guifg = base0E, gui = 'italic' },
-    Repeat = { guifg = base0E, gui = 'italic' },
+    Conditional = { guifg = base0E, gui = "italic" },
+    Repeat = { guifg = base0E, gui = "italic" },
     Label = { guifg = base0E },
     Operator = { guifg = base05 },
-    Keyword = { guifg = base0E, gui = 'italic' },
+    Keyword = { guifg = base0E, gui = "italic" },
     Exception = { guifg = base0E },
     PreProc = { guifg = base0A },
     Include = { guifg = base0D },
@@ -120,26 +120,26 @@ highlight({
     Structure = { guifg = base0E },
     Special = { guifg = base0C },
     SpecialChar = { guifg = base0C },
-    Tag = { guifg = base0A, gui = 'underline' },
+    Tag = { guifg = base0A, gui = "underline" },
     Delimiter = { guifg = base0F },
     SpecialComment = { guifg = base0C },
     Debug = { guifg = base08 },
-    Underlined = { guifg = base05, gui = 'bold,underline' },
+    Underlined = { guifg = base05, gui = "bold,underline" },
     Error = { guifg = base00, guibg = base08 },
     Todo = { guifg = base0A, guibg = base01 },
 
     -- LSP
-    LspReferenceText = { gui = 'underline', guisp = base04 },
-    LspReferenceRead = { gui = 'underline', guisp = base04 },
-    LspReferenceWrite = { gui = 'underline', guisp = base04 },
+    LspReferenceText = { gui = "underline", guisp = base04 },
+    LspReferenceRead = { gui = "underline", guisp = base04 },
+    LspReferenceWrite = { gui = "underline", guisp = base04 },
     DiagnosticError = { guifg = base08 },
     DiagnosticWarn = { guifg = base0A },
     DiagnosticInfo = { guifg = base0D },
     DiagnosticHint = { guifg = base0B },
-    DiagnosticUnderlineError = { gui = 'undercurl', guisp = base08 },
-    DiagnosticUnderlineWarn = { gui = 'undercurl', guisp = base0A },
-    DiagnosticUnderlineInfo = { gui = 'undercurl', guisp = base0D },
-    DiagnosticUnderlineHint = { gui = 'undercurl', guisp = base0B },
+    DiagnosticUnderlineError = { gui = "undercurl", guisp = base08 },
+    DiagnosticUnderlineWarn = { gui = "undercurl", guisp = base0A },
+    DiagnosticUnderlineInfo = { gui = "undercurl", guisp = base0D },
+    DiagnosticUnderlineHint = { gui = "undercurl", guisp = base0B },
 
     CodeActionSign = { guifg = base0A },
 
@@ -155,30 +155,30 @@ highlight({
     -- Treesitter
     TSAnnotation = { guifg = base0A },
     TSAttribute = { guifg = base0A },
-    TSBoolean = { guifg = base09, gui = 'italic' },
+    TSBoolean = { guifg = base09, gui = "italic" },
     TSCharacter = { guifg = base0C },
-    TSComment = { guifg = base03, gui = 'italic' },
+    TSComment = { guifg = base03, gui = "italic" },
     TSConstructor = { guifg = base0C },
-    TSConditional = { guifg = base0E, gui = 'italic' },
-    TSConstant = { guifg = base09, gui = 'italic' },
+    TSConditional = { guifg = base0E, gui = "italic" },
+    TSConstant = { guifg = base09, gui = "italic" },
     TSConstBuiltin = { guifg = base0E },
     TSConstMacro = { guifg = base0E },
     TSError = { guifg = base08 },
     TSException = { guifg = base0E },
     TSField = { guifg = base08 },
-    TSFloat = { guifg = base09, gui = 'italic' },
+    TSFloat = { guifg = base09, gui = "italic" },
     TSFunction = { guifg = base0D },
-    TSFuncBuiltin = { guifg = base0E, gui = 'italic' },
+    TSFuncBuiltin = { guifg = base0E, gui = "italic" },
     TSFuncMarcro = { guifg = base0D },
     TSInclude = { guifg = base0D },
-    TSKeyword = { guifg = base0E, gui = 'italic' },
-    TSKeywordFunction = { guifg = base0E, gui = 'italic' },
-    TSKeywordOperator = { guifg = base0E, gui = 'italic' },
+    TSKeyword = { guifg = base0E, gui = "italic" },
+    TSKeywordFunction = { guifg = base0E, gui = "italic" },
+    TSKeywordOperator = { guifg = base0E, gui = "italic" },
     TSLabel = { guifg = base0E },
     TSMethod = { guifg = base0D },
     TSNamespace = { guifg = base0E },
     TSNone = { guifg = base0E },
-    TSNumber = { guifg = base09, gui = 'italic' },
+    TSNumber = { guifg = base09, gui = "italic" },
     TSOperator = { guifg = base0E },
     TSParameter = { guifg = base08 },
     TSParameterReference = { guifg = base08 },
@@ -186,7 +186,7 @@ highlight({
     TSPunctDelimiter = { guifg = base0F },
     TSPunctBracket = { guifg = base0C },
     TSPunctSpecial = { guifg = base0F },
-    TSRepeat = { guifg = base0E, gui = 'italic' },
+    TSRepeat = { guifg = base0E, gui = "italic" },
     TSString = { guifg = base0B },
     TSStringRegex = { guifg = base0B },
     TSStringEscape = { guifg = base0C },
@@ -196,18 +196,18 @@ highlight({
     TSTagAttribute = { guifg = base0A },
     TSTagDelimiter = { guifg = base0F },
     TSText = { guifg = base08 },
-    TSStrong = { gui = 'bold' },
-    TSEmphasis = { guifg = base09, gui = 'italic' },
-    TSUnderline = { guifg = base00, gui = 'underline' },
-    TSStrike = { guifg = base00, gui = 'strikethrough' },
+    TSStrong = { gui = "bold" },
+    TSEmphasis = { guifg = base09, gui = "italic" },
+    TSUnderline = { guifg = base00, gui = "underline" },
+    TSStrike = { guifg = base00, gui = "strikethrough" },
     TSTitle = { guifg = base0D },
     TSLiteral = { guifg = base09 },
-    TSURI = { guifg = base09, gui = 'underline' },
+    TSURI = { guifg = base09, gui = "underline" },
     TSMath = { guifg = base0E },
-    TSType = { guifg = base0A, gui = 'italic' },
+    TSType = { guifg = base0A, gui = "italic" },
     TSTypeBuiltin = { guifg = base0E },
     TSVariable = { guifg = base08 },
-    TSVariableBuiltin = { guifg = base0E, 'italic' },
+    TSVariableBuiltin = { guifg = base0E, "italic" },
 
     -- Diff
     DiffAdd = { guifg = base0B, guibg = base00 },
@@ -248,8 +248,8 @@ highlight({
     TroubleNormal = { guibg = colors.dark_background },
 
     YanilNormal = { guibg = colors.dark_background },
-    YanilDeviconDirectory = { guifg = '#cccccc' },
-    YanilDeviconFile = { guifg = '#cccccc' },
+    YanilDeviconDirectory = { guifg = "#cccccc" },
+    YanilDeviconFile = { guifg = "#cccccc" },
     YanilTreeRoot = { guifg = colors.white },
     YanilGitModified = { guifg = base0A },
     YanilGitDirty = { guifg = base0A },
@@ -277,8 +277,6 @@ highlight({
     DapUIFloatBorder = { guifg = colors.border },
 
     DashboardHeader = { guifg = colors.comment },
-    DashboardCenter = { guifg = colors.comment },
-    DashboardShortcut = { guifg = colors.comment },
 
     ScrollView = { guibg = colors.scrollbar },
 
