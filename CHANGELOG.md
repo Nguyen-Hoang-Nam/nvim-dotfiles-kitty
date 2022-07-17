@@ -13,11 +13,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add sqls.nvim
 - Add winbar
 - Add find-cmdline
+- Add dashboard native
 
 ### Changed
 
 - Refactor Telescope buffer previewer
 - Refactor Telescope hologram
+- Refactor Statusline
 - Disable Cmp in comment
 - Set cmdheight to 0
 - Set rest keymap to buffer
@@ -27,6 +29,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fix search untracked file Telescope
 - Fix Telescope icon (nvim-mini-file-icon)
 - Fix Auto-session create empty file when git change branch
+
+### Removed
+
+- Remove dashboard.nvim
 
 ## [7.0.0] - 2022-07-01
 
