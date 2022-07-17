@@ -1,22 +1,19 @@
-local lsp = require('languages.lsp')
-local M = {}
+local lsp = require("languages.lsp")
 
-M.efm = {
-    {
-        formatCommand = 'prettier --tab-width 4 --svelte-indent-script-and-style false --use-tabs=false --stdin-filepath ${INPUT} --plugin-search-dir .',
-        formatStdin = true,
+return {
+    efm = {
+        {
+            formatCommand = "prettier --tab-width 4 --svelte-indent-script-and-style false --use-tabs=false --stdin-filepath ${INPUT} --plugin-search-dir .",
+            formatStdin = true,
+        },
+    },
+
+    all_format = { efm = "Pretter" },
+    default_format = "efm",
+    lsp_server = "svelte",
+
+    lsp = {
+        capabilities = lsp.capabilities,
+        on_attach = lsp.on_attach,
     },
 }
-
-M.all_format = { efm = 'Pretter' }
-
-M.default_format = 'efm'
-
-M.lsp_server = 'svelte'
-
-M.lsp = {
-    capabilities = lsp.capabilities,
-    on_attach = lsp.on_attach,
-}
-
-return M

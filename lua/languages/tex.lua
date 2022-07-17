@@ -1,22 +1,22 @@
-local lsp = require('languages.lsp')
-local M = {}
+local lsp = require("languages.lsp")
 
-M.efm = {
-    {
-        formatCommand = 'latexindent.pl -y="defaultIndent:\'  \'"',
-        formatStdin = true,
+return {
+    efm = {
+        {
+            formatCommand = "latexindent.pl -y=\"defaultIndent:'  '\"",
+            formatStdin = true,
+        },
+    },
+
+    all_format = { efm = "LatexIndent", texlab = "TexLab" },
+    default_format = "efm",
+    lsp_server = "texlab",
+
+    lsp = {
+        capabilities = lsp.capabilities,
+        on_attach = function(client, bufnr)
+            lsp.on_attach(client, bufnr)
+            require("nvim-navic").attach(client, bufnr)
+        end,
     },
 }
-
-M.all_format = { efm = 'LatexIndent', texlab = 'TexLab' }
-
-M.default_format = 'efm'
-
-M.lsp_server = 'texlab'
-
-M.lsp = {
-    capabilities = lsp.capabilities,
-    on_attach = lsp.on_attach,
-}
-
-return M

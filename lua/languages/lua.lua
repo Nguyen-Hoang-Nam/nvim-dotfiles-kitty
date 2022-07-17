@@ -1,18 +1,4 @@
 local lsp = require("languages.lsp")
-local M = {}
-
-M.efm = {
-    {
-        formatCommand = "stylua - --config-path ~/.config/stylua/stylua.toml",
-        formatStdin = true,
-    },
-}
-
-M.all_format = { efm = "Stylua" }
-
-M.default_format = "efm"
-
-M.lsp_server = "sumneko_lua"
 
 local sumneko_root_path = "/home/nguyenhoangnam/.local/share/tool/lua-language-server"
 local sumneko_binary = sumneko_root_path .. "/bin/lua-language-server"
@@ -21,38 +7,49 @@ local runtime_path = vim.split(package.path, ";")
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
-M.lsp = {
-    capabilities = lsp.capabilities,
+return {
+    efm = {
+        {
+            formatCommand = "stylua - --config-path ~/.config/stylua/stylua.toml",
+            formatStdin = true,
+        },
+    },
 
-    on_attach = function(client, bufnr)
-        lsp.on_attach(client, bufnr)
-        require("nvim-navic").attach(client, bufnr)
-    end,
+    all_format = { efm = "Stylua" },
+    default_format = "efm",
+    lsp_server = "sumneko_lua",
 
-    cmd = { sumneko_binary, "-E", sumneko_root_path .. "/main.lua" },
+    lsp = {
+        capabilities = lsp.capabilities,
 
-    settings = {
-        Lua = {
-            runtime = {
-                version = "LuaJIT",
-                path = runtime_path,
-            },
+        on_attach = function(client, bufnr)
+            lsp.on_attach(client, bufnr)
+            require("nvim-navic").attach(client, bufnr)
+        end,
 
-            diagnostics = {
-                globals = { "vim" },
-            },
+        cmd = { sumneko_binary, "-E", sumneko_root_path .. "/main.lua" },
 
-            workspace = {
-                maxPreload = 2000,
-                preloadFileSize = 150,
-                library = vim.api.nvim_get_runtime_file("", true),
-            },
+        settings = {
+            Lua = {
+                runtime = {
+                    version = "LuaJIT",
+                    path = runtime_path,
+                },
 
-            telemetry = {
-                enable = false,
+                diagnostics = {
+                    globals = { "vim" },
+                },
+
+                workspace = {
+                    maxPreload = 2000,
+                    preloadFileSize = 150,
+                    library = vim.api.nvim_get_runtime_file("", true),
+                },
+
+                telemetry = {
+                    enable = false,
+                },
             },
         },
     },
 }
-
-return M

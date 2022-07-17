@@ -1,22 +1,13 @@
-local lsp = require('languages.lsp')
-local M = {}
+local lsp = require("languages.lsp")
 
--- M.efm = {
---     {
---         formatCommand = 'prettier --tab-width=2 --use-tabs=false --stdin-filepath ${INPUT}',
---         formatStdin = true,
---     },
--- }
+return {
+    lsp_server = "zls",
 
--- M.all_format = { efm = 'Prettier' }
-
--- M.default_format = 'efm'
-
-M.lsp_server = 'zls'
-
-M.lsp = {
-    capabilities = lsp.capabilities,
-    on_attach = lsp.on_attach,
+    lsp = {
+        capabilities = lsp.capabilities,
+        on_attach = function(client, bufnr)
+            lsp.on_attach(client, bufnr)
+            require("nvim-navic").attach(client, bufnr)
+        end,
+    },
 }
-
-return M

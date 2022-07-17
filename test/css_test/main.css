@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+.flex {
+    display: flex;
+}
+
+#avatar {
+    border-radius: 50%;
+}
