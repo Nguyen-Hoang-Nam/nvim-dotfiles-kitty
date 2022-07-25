@@ -1,8 +1,9 @@
 #!/bin/bash
 
-
 installation_dir=${XDG_DATA_HOME:-$HOME/.local/share}/nvim/site/pack
 
+# deps specifies dependencies in the following format
+# NAME:GITHUB_REPO
 deps=( "aerial:stevearc/aerial.nvim"
        "nvim-autopairs:windwp/nvim-autopairs"
        "dashboard:glepnir/dashboard-nvim"
@@ -68,7 +69,7 @@ for dep in ${deps[@]}; do
 
             # Add extra config flags if is MacOS
             # @see https://blog.kdheepak.com/loading-a-rust-library-as-a-lua-module-in-neovim.html
-            if [ $OSTYPE = "darwin"* ]; then
+            if [[ $OSTYPE = "darwin"* ]]; then
                 # Add flags to `.cargo/config`
                 echo '[target.x86_64-apple-darwin]
                 rustflags = ["-C", "link-arg=-undefined", "-C", "link-arg=dynamic_lookup"]
@@ -91,5 +92,25 @@ for dep in ${deps[@]}; do
     else
         echo "⚠️  $name has already been installed"
     fi
+done
+
+lsps=( "efm-langserver" 
+       "lua-language-server" )
+
+# Install language servers
+for lsp in ${lsps[@]}; do
+    if [[ $OSTYPE = "darwin"* ]]; then
+        # Check if homebrew is installed
+        if [ ! command -v brew &> /dev/null ]; then
+            echo "⛔️ brew is not installed, skipping to install $lsp"
+            continue
+        fi
+
+        echo "📦 Installing $lsp..."
+        brew install $lsp &> /dev/null
+        echo "✅ $lsp has been successfully installed"
+    fi
+
+    # TODO: Add support for installing language servers in other OSes.
 done
 
