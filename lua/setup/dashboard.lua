@@ -1,1 +1,1 @@
-require("dashboard").setup()
+local db = require("dashboard")
