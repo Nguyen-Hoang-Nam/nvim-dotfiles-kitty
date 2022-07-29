@@ -6,6 +6,7 @@ installation_dir=${XDG_DATA_HOME:-$HOME/.local/share}/nvim/site/pack
 # NAME:GITHUB_REPO
 deps=( "aerial:stevearc/aerial.nvim"
        "nvim-autopairs:windwp/nvim-autopairs"
+       "nvim-ts-autotag:windwp/nvim-ts-autotag"
        "dashboard:glepnir/dashboard-nvim"
        "auto-session:rmagatti/auto-session"
        "nvim-biscuits:code-biscuits/nvim-biscuits"
@@ -26,6 +27,7 @@ deps=( "aerial:stevearc/aerial.nvim"
        "windline:windwp/windline.nvim"
        "twilight:folke/twilight.nvim"
        "nvim-treesitter:nvim-treesitter/nvim-treesitter"
+       "tree-sitter/tree-sitter-typescript"
        "toggleterm:akinsho/toggleterm.nvim"
        "todo-comments:folke/todo-comments.nvim"
        "telescope:nvim-telescope/telescope.nvim"
@@ -37,6 +39,7 @@ deps=( "aerial:stevearc/aerial.nvim"
        "colorizer:norcalli/nvim-colorizer.lua"
        "vim-test:vim-test/vim-test"
        "vim-ultest:rcarriga/vim-ultest"
+       "markdown-preview.nvim:iamcco/markdown-preview.nvim"
        "git_utils:Nguyen-Hoang-Nam/git-utils.nvim" )
 
 for dep in ${deps[@]}; do
@@ -90,16 +93,23 @@ for dep in ${deps[@]}; do
 
         fi
     else
-        echo "⚠️  $name has already been installed"
+        echo "⚠️ $name has already been installed"
     fi
 done
 
 lsps=( "efm-langserver" 
-       "lua-language-server" )
+       "lua-language-server"
+       "brew-language-server" )
 
 # Install language servers
 for lsp in ${lsps[@]}; do
     if [[ $OSTYPE = "darwin"* ]]; then
+        # Check if language server is installed
+        if [ command -v $lsp &> /dev/null ]; then
+          echo "⚠️ $lsp has already been installed"
+          continue
+        fi
+
         # Check if homebrew is installed
         if [ ! command -v brew &> /dev/null ]; then
             echo "⛔️ brew is not installed, skipping to install $lsp"
