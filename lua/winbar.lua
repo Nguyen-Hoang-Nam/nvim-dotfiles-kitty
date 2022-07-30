@@ -41,7 +41,7 @@ local async_load = vim.loop.new_async(vim.schedule_wrap(function()
     vim.wo.winbar = line
 end))
 
-local supported_filetype = { "lua", "typescript", "javascript" }
+local supported_filetype = { "lua", "typescript", "javascript", "markdown" }
 
 function M.load()
     local filetype = vim.bo.filetype

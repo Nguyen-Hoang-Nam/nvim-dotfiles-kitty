@@ -288,6 +288,11 @@ highlight({
     ScrollbarWarn = { guifg = base0A },
     ScrollbarInfo = { guifg = base0D },
     ScrollbarHint = { guifg = base0B },
+
+    -- UFO
+    UfoPreviewThumb = { guibg = colors.background, guifg = colors.background },
+    UfoPreviewSbar = { guibg = colors.background, guifg = colors.background },
+    UfoFoldedEllipsis = { guibg = colors.background, guifg = colors.background },
 })
 
 vim.g.terminal_color_0 = base00

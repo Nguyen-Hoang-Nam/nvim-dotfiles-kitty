@@ -401,38 +401,39 @@ Please store below plugins in `~/.local/share/nvim/site/pack/*/start/`.
 | ----------------------------------------------------------------------------------------------- | ------------ |
 | [aerial](https://github.com/stevearc/aerial.nvim)                                               | Jul 10 2022  |
 | [auto-session](https://github.com/rmagatti/auto-session)                                        | Jul 14 2022  |
-| [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)                                   | Jul 13 2022  |
+| [bufferline.nvim](https://github.com/akinsho/bufferline.nvim)                                   | Jul 22 2022  |
 | [cmp-cmdline](https://github.com/hrsh7th/cmp-cmdline)                                           | May 02 2022  |
 | [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)                                         | May 16 2022  |
-| [cmp-nvim-lsp-signature-help](https://github.com/hrsh7th/cmp-nvim-lsp-signature-help)           | Jun 20 2022  |
+| [cmp-nvim-lsp-signature-help](https://github.com/hrsh7th/cmp-nvim-lsp-signature-help)           | Jul 20 2022  |
 | [cmp-path](https://github.com/hrsh7th/cmp-path)                                                 | Jun 29 2022  |
 | [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip)                                      | May 02 2022  |
-| [diffview.nvim](https://github.com/sindrets/diffview.nvim)                                      | Jul 04 2022  |
+| [diffview.nvim](https://github.com/sindrets/diffview.nvim)                                      | Jul 20 2022  |
 | [fidget.nvim](https://github.com/j-hui/fidget.nvim)                                             | Jun 12 2022  |
 | [find-cmdline.nvim](https://github.com/VonHeikemen/fine-cmdline.nvim)                           | Jul 01 2022  |
-| [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)                            | Jul 10 2022  |
+| [friendly-snippets](https://github.com/rafamadriz/friendly-snippets)                            | Jul 19 2022  |
+| [git-conflict](https://github.com/akinsho/git-conflict.nvim)                                    | Jul 03 2022  |
 | [git-utils.nvim](https://github.com/Nguyen-Hoang-Nam/git-utils.nvim)                            |              |
 | [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)                                     | Jul 08 2022  |
-| [goto-preview](https://github.com/rmagatti/goto-preview)                                        | Jul 14 2022  |
+| [goto-preview](https://github.com/rmagatti/goto-preview)                                        | Jul 19 2022  |
 | [hologram.nvim](https://github.com/Nguyen-Hoang-Nam/hologram.nvim)                              | Jul 03 2022  |
 | [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)                 | Jun 29 2022  |
-| [LuaSnip](https://github.com/L3MON4D3/LuaSnip)                                                  | Jul 16 2022  |
-| [nui](https://github.com/MunifTanjim/nui.nvim)                                                  | Jul 16 2022  |
+| [LuaSnip](https://github.com/L3MON4D3/LuaSnip)                                                  | Jul 19 2022  |
+| [nui](https://github.com/MunifTanjim/nui.nvim)                                                  | Jul 22 2022  |
 | [nvim-autopair](https://github.com/windwp/nvim-autopairs)                                       | Jul 05 2022  |
 | [nvim-biscuits](https://github.com/code-biscuits/nvim-biscuits)                                 | Jun 26 2022  |
-| [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)                                                 | Jun 29 2022  |
+| [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)                                                 | Jul 21 2022  |
 | [nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)                            | Apr 20 2020  |
-| [nvim-dap](https://github.com/mfussenegger/nvim-dap)                                            | Jul 16 2022  |
+| [nvim-dap](https://github.com/mfussenegger/nvim-dap)                                            | Jul 21 2022  |
 | [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)                                          | Jul 02 2022  |
 | [nvim-dap-virtual-text](https://github.com/theHamsta/nvim-dap-virtual-text)                     | Jun 26 2021  |
-| [nvim-jdtls](https://github.com/mfussenegger/nvim-jdtls)                                        | Jun 30 2022  |
-| [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)                                      | Jul 16 2022  |
+| [nvim-jdtls](https://github.com/mfussenegger/nvim-jdtls)                                        | Jul 20 2022  |
+| [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)                                      | Jul 22 2022  |
 | [nvim-mini-file-icons](https://github.com/Nguyen-Hoang-Nam/nvim-mini-file-icons)                | Jul 09 2022  |
-| [nvim-navic](https://github.com/SmiteshP/nvim-navic)                                            | Jul 13 2022  |
+| [nvim-navic](https://github.com/SmiteshP/nvim-navic)                                            | Jul 17 2022  |
 | [nvim-scrollbar](https://github.com/petertriho/nvim-scrollbar)                                  | Jul 11 2022  |
 | [nvim-scrollview](https://github.com/dstein64/nvim-scrollview)                                  | Jun 07 2022  |
 | [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)                           | Jul 17 2022  |
-| [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)                                    | Apr 22 2022  |
+| [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag)                                    | Jul 22 2022  |
 | [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) | Apr 07 2022  |
 | [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)                                      | Jul 15 2022  |
 | [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)                                        | Jul 10 2022  |
@@ -440,11 +441,11 @@ Please store below plugins in `~/.local/share/nvim/site/pack/*/start/`.
 | [rest.nvim](https://github.com/NTBBloodbath/rest.nvim)                                          | May 13 2022  |
 | [tabout.nvim](https://github.com/abecodes/tabout.nvim)                                          | May 07 2022  |
 | [telescope-fzf-native.nvim](https://github.com/nvim-telescope/telescope-fzf-native.nvim)        | Jun 09 2022  |
-| [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)                              | Jul 16 2022  |
+| [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)                              | Jul 23 2022  |
 | [telescope-ui-select.nvim](https://github.com/nvim-telescope/telescope-ui-select.nvim)          | Apr 30 2022  |
 | [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)                               | Jan 19 2022  |
-| [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)                                   | Jul 16 2022  |
-| [vim-test](https://github.com/vim-test/vim-test)                                                | Jul 14 2022  |
+| [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)                                   | Jul 19 2022  |
+| [vim-test](https://github.com/vim-test/vim-test)                                                | Jul 21 2022  |
 | [vim-ultest](https://github.com/rcarriga/vim-ultest)                                            | Jun 18 2022  |
 | [yanil](https://github.com/Nguyen-Hoang-Nam/yanil/tree/customize-ui)                            |              |
 
@@ -571,13 +572,19 @@ Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Test)
 | &lt;M-x&gt;     | Toggle Symbol sidebar       |
 | jk              | Insert to normal            |
 | gh              | Go to left window           |
-| gj              | Go to below window          |
-| gk              | Go to above window          |
+| gj              | Go to above window          |
+| gk              | Go to below window          |
 | gl              | Go to right window          |
+| cj              | Go to above change          |
+| ck              | Go to below change          |
+| cb              | Go to both change           |
+| c0              | Go to none change           |
 | \]d             | Go to next diagnostic       |
 | \[d             | Go to previous diagnostic   |
 | \]b             | Go to next Buffer           |
 | \[b             | Go to previous Buffer       |
+| \]g             | Go to next Git conflict     |
+| \[g             | Go to previous Git conflict |
 | \]q             | Go to next Tab              |
 | \[q             | Go to previous Tab          |
 | \]t             | Go to next failed test      |
@@ -694,7 +701,6 @@ You can check test tools [here](https://github.com/vim-test/vim-test)
 - [ ] Support Flutter
 - [x] Perfect center dashboard header and show dashboard if there is no buffer.
 - [ ] Use nix to manage package.
-- [ ] Support reload configuration [in this](https://www.reddit.com/r/neovim/comments/puuskh/how_to_reload_my_lua_config_while_using_neovim/)
 - [ ] Add test summary to sidebar
 - [ ] Change highlight of nvim-dap-ui
 - [ ] Change highlight of vim-ultest
@@ -702,9 +708,10 @@ You can check test tools [here](https://github.com/vim-test/vim-test)
 - [ ] Support [nvim-covarage](https://github.com/andythigpen/nvim-coverage)
 - [ ] Support [nvim-ufo](https://github.com/kevinhwang91/nvim-ufo)
 - [ ] Support [template.nvim](https://github.com/glepnir/template.nvim)
-- [ ] Support [nvim-notify](https://github.com/rcarriga/nvim-notify)
+- [x] Support [nvim-notify](https://github.com/rcarriga/nvim-notify)
 - [ ] Support [Graphql](https://github.com/graphql/graphiql/tree/main/packages/graphql-language-service-cli)
 - [ ] Support [vscode-codicons](https://github.com/microsoft/vscode-codicons)
+- [ ] Implement [modify_font](https://www.reddit.com/r/neovim/comments/w500vi/kitty_nightly_now_has_a_modify_font_option/)
 
 ## Contributing
 

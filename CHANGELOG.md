@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased] - 2022-07-17
+## [Unreleased] - 2022-07-30
 
 ### Added
 
@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add winbar
 - Add find-cmdline
 - Add dashboard native
+- Add git conflict
 
 ### Changed
 
@@ -24,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Set cmdheight to 0
 - Set rest keymap to buffer
 - Set laststatus to 3
+- Show diagnostic in floating window
 
 ### Fixed
 

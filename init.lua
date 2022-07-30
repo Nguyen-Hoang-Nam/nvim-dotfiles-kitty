@@ -1,5 +1,6 @@
 vim.g.tex_flavor = "latex" -- Fix plaintex filetype in new tex file
 vim.g.ultest_deprecation_notice = 0
+vim.notify = require("notify")
 
 require("options")
 

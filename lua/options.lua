@@ -16,6 +16,11 @@ option.cmdheight = 0
 option.splitbelow = true
 option.laststatus = 3
 
+option.foldcolumn = "1"
+option.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+option.foldlevelstart = -1
+option.foldenable = true
+
 -- NOTE: Local to window
 option.number = true
 option.relativenumber = true
