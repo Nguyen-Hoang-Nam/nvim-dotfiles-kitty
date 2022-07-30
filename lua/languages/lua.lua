@@ -14,8 +14,18 @@ M.default_format = "efm"
 
 M.lsp_server = "sumneko_lua"
 
-local sumneko_root_path = "/home/nguyenhoangnam/.local/share/tool/lua-language-server"
-local sumneko_binary = sumneko_root_path .. "/bin/lua-language-server"
+function os.capture(cmd, raw)
+  local f = assert(io.popen(cmd, 'r'))
+  local s = assert(f:read('*a'))
+  f:close()
+  if raw then return s end
+  s = string.gsub(s, '^%s+', '')
+  s = string.gsub(s, '%s+$', '')
+  s = string.gsub(s, '[\n\r]+', ' ')
+  return s
+end
+
+local sumneko_binary = os.capture("which lua-language-server")
 
 local runtime_path = vim.split(package.path, ";")
 table.insert(runtime_path, "lua/?.lua")
@@ -26,7 +36,7 @@ M.lsp = {
 
     on_attach = lsp.on_attach,
 
-    cmd = { sumneko_binary, "-E", sumneko_root_path .. "/main.lua" },
+    cmd = { sumneko_binary, "-E" },
 
     settings = {
         Lua = {

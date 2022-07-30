@@ -28,9 +28,9 @@ option.foldexpr = 'nvim_treesitter#foldexpr()'
 option.colorcolumn = '99999'
 
 -- NOTE: Local to buffer
-option.shiftwidth = 4
-option.tabstop = 4
-option.softtabstop = 4
+option.shiftwidth = 2
+option.tabstop = 2
+option.softtabstop = 2
 option.expandtab = true
 option.smartindent = true
 option.swapfile = false

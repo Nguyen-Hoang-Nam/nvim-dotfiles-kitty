@@ -22,6 +22,7 @@ require("setup.telescope")
 require("setup.todo")
 require("setup.toggleterm")
 require("setup.treesitter")
+require("setup.autotag")
 require("setup.scrollbar")
 require("setup.hologram")
 
