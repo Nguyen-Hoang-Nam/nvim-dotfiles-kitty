@@ -41,8 +41,10 @@ highlight({
     CursorLine = { guibg = colors.cursorLine },
     CursorLineNr = { guifg = base0A, guibg = colors.cursorLine },
     Directory = { guifg = base0D },
+    EndOfBuffer = { guifg = colors.comment },
     ErrorMsg = { guifg = base08, guibg = colors.background },
     Folded = { guifg = colors.comment, guibg = colors.cursorLine },
+    FoldColumn = { guifg = colors.comment, guibg = colors.background },
     IncSearch = { guifg = base01, guibg = base09 },
     LineNr = { guifg = colors.lineNumber, guibg = colors.background },
     -- Macro = { guifg = base08 },
@@ -290,9 +292,9 @@ highlight({
     ScrollbarHint = { guifg = base0B },
 
     -- UFO
-    UfoPreviewThumb = { guibg = colors.background, guifg = colors.background },
-    UfoPreviewSbar = { guibg = colors.background, guifg = colors.background },
-    UfoFoldedEllipsis = { guibg = colors.background, guifg = colors.background },
+    UfoPreviewThumb = { guibg = colors.background, guifg = base08 },
+    UfoPreviewSbar = { guibg = colors.background, guifg = base08 },
+    UfoFoldedEllipsis = { guibg = colors.background, guifg = base08 },
 })
 
 vim.g.terminal_color_0 = base00

@@ -11,7 +11,7 @@ option.scrolloff = 18
 option.termguicolors = true
 option.shortmess = "atOIc"
 option.clipboard:append({ "unnamedplus" })
-option.fillchars = "eob: "
+option.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 option.cmdheight = 0
 option.splitbelow = true
 option.laststatus = 3
@@ -27,7 +27,7 @@ option.relativenumber = true
 option.cursorline = true
 option.signcolumn = "yes"
 option.list = true
-option.listchars = "tab:\\ ,trail:-,eol:↵"
+option.listchars = [[tab:\\ ,trail:-,eol:↵]]
 option.foldmethod = "expr"
 option.foldexpr = "nvim_treesitter#foldexpr()"
 
