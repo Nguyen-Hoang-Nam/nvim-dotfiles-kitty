@@ -46,7 +46,9 @@ local supported_filetype = { "lua", "typescript", "javascript", "markdown" }
 function M.load()
     local filetype = vim.bo.filetype
     if vim.tbl_contains(supported_filetype, filetype) then
-        async_load:send()
+        -- async_load:send()
+
+        vim.wo.winbar = ""
     else
         vim.wo.winbar = ""
     end
