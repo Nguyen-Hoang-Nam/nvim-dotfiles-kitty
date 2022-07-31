@@ -11,7 +11,7 @@ option.scrolloff = 18
 option.termguicolors = true
 option.shortmess = "atOIc"
 option.clipboard:append({ "unnamedplus" })
-option.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+option.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 option.cmdheight = 0
 option.splitbelow = true
 option.laststatus = 3

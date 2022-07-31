@@ -1,11 +1,8 @@
 require("indent_blankline").setup({
     char = "▏",
     filetype_exclude = { "dashboard", "markdown", "gomod", "Yanil", "haskell" },
-
     use_treesitter = true,
-
     show_current_context = true,
-
     context_patterns = {
         "declaration",
         "expression",

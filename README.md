@@ -64,6 +64,8 @@ _Kitty with Fira, Cascadia, and Mini-File-Icons_
   (Thanks to [SQLS.nvim](https://github.com/nanotee/sqls.nvim))
 - Support Winbar [#19458](https://github.com/neovim/neovim/issues/19458),
   cmdheight = 0, laststatus = 3
+- Support fold. [#4](https://github.com/kevinhwang91/nvim-ufo/issues/4)
+  (Thank to [Nvim-Ufo](https://github.com/kevinhwang91/nvim-ufo))
 - Managing plugins manually.
 
 ## Why I choose Kitty Terminal
