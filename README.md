@@ -62,6 +62,8 @@ _Kitty with Fira, Cascadia, and Mini-File-Icons_
   (Thanks to [Hologram](https://github.com/edluffy/hologram.nvim))
 - Executing SQL
   (Thanks to [SQLS.nvim](https://github.com/nanotee/sqls.nvim))
+- Support Winbar [#19458](https://github.com/neovim/neovim/issues/19458),
+  cmdheight = 0, laststatus = 3
 - Managing plugins manually.
 
 ## Why I choose Kitty Terminal
@@ -700,7 +702,6 @@ You can check test tools [here](https://github.com/vim-test/vim-test)
 
 - [ ] Show theme in wiki
 - [ ] Support Flutter
-- [x] Perfect center dashboard header and show dashboard if there is no buffer.
 - [ ] Use nix to manage package.
 - [ ] Add test summary to sidebar
 - [ ] Change highlight of nvim-dap-ui
@@ -712,7 +713,6 @@ You can check test tools [here](https://github.com/vim-test/vim-test)
 - [x] Support [nvim-notify](https://github.com/rcarriga/nvim-notify)
 - [ ] Support [Graphql](https://github.com/graphql/graphiql/tree/main/packages/graphql-language-service-cli)
 - [ ] Support [vscode-codicons](https://github.com/microsoft/vscode-codicons)
-- [ ] Implement [modify_font](https://www.reddit.com/r/neovim/comments/w500vi/kitty_nightly_now_has_a_modify_font_option/)
 
 ## Contributing
 
