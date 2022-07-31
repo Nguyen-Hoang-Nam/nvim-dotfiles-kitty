@@ -38,8 +38,8 @@ function M.line()
         .. [[ %{luaeval('require("statusline.test").passed()')}]]
         .. "%#StatuslineFailed#"
         .. [[ %{luaeval('require("statusline.test").failed()')}]]
-    -- .. '%#StatuslineRunning#'
-    -- .. [[ %{luaeval('require("statusline").running()')}]]
+        .. "%#StatuslineRunning#"
+        .. [[ %{luaeval('require("statusline.test").running()')}]]
 end
 
 return M

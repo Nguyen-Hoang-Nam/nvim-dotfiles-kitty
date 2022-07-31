@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add cmp-cmdline
 - Add sqls.nvim
-- Add winbar
+- Add winbar but turn off due [#19458](https://github.com/neovim/neovim/issues/19458)
 - Add find-cmdline
 - Add dashboard native
 - Add git conflict
