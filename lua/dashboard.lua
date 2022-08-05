@@ -77,8 +77,7 @@ function M.instance()
         bufnr = api.nvim_get_current_buf()
     end
 
-    local window = api.nvim_get_current_win()
-    api.nvim_win_set_buf(window, bufnr)
+    api.nvim_win_set_buf(api.nvim_get_current_win(), bufnr)
 
     opt_local.wrap = false
     opt_local.signcolumn = "no"

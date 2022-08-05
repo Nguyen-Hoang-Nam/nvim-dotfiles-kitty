@@ -714,7 +714,6 @@ You can check test tools [here](https://github.com/vim-test/vim-test)
 - [ ] Support [template.nvim](https://github.com/glepnir/template.nvim)
 - [x] Support [nvim-notify](https://github.com/rcarriga/nvim-notify)
 - [ ] Support [Graphql](https://github.com/graphql/graphiql/tree/main/packages/graphql-language-service-cli)
-- [x] Support [vscode-codicons](https://github.com/microsoft/vscode-codicons)
 
 ## Contributing
 
