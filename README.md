@@ -711,7 +711,6 @@ You can check test tools [here](https://github.com/vim-test/vim-test)
 - [ ] Handle lsp_extension
 - [ ] Support [nvim-covarage](https://github.com/andythigpen/nvim-coverage)
 - [x] Support [nvim-ufo](https://github.com/kevinhwang91/nvim-ufo)
-- [ ] Support [template.nvim](https://github.com/glepnir/template.nvim)
 - [x] Support [nvim-notify](https://github.com/rcarriga/nvim-notify)
 - [ ] Support [Graphql](https://github.com/graphql/graphiql/tree/main/packages/graphql-language-service-cli)
 

@@ -50,4 +50,4 @@ telescope.setup({
 telescope.load_extension("fzf") -- Better fuzzy search result
 telescope.load_extension("ui-select") -- Use for lsp action
 telescope.load_extension("aerial")
-telescope.load_extension("template")
+telescope.load_extension("find_template")
