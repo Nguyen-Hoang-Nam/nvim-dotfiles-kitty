@@ -17,9 +17,10 @@ option.splitbelow = true
 option.laststatus = 3
 
 option.foldcolumn = "1"
-option.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+option.foldlevel = 10 -- Using ufo provider need a large value, feel free to decrease the value
 option.foldlevelstart = -1
 option.foldenable = true
+option.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal"
 
 -- NOTE: Local to window
 option.number = true
