@@ -27,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Set rest keymap to buffer
 - Set laststatus to 3
 - Show diagnostic in floating window
+- Use nvim_set_hl for highlight
 
 ### Fixed
 
