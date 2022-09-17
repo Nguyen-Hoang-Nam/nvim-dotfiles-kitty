@@ -23,7 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Refactor Telescope hologram
 - Refactor Statusline
 - Disable Cmp in comment
-- Set cmdheight to 0
+- Set cmdheight to 0 (core dump)
 - Set rest keymap to buffer
 - Set laststatus to 3
 - Show diagnostic in floating window
@@ -38,6 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 
 - Remove dashboard.nvim
+- Remove <leader>q due to <Ctrl-l>
 
 ## [7.0.0] - 2022-07-01
 

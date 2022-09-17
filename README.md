@@ -62,7 +62,7 @@ _Kitty with Fira, Cascadia, and Mini-File-Icons_
   (Thanks to [Hologram](https://github.com/edluffy/hologram.nvim))
 - Executing SQL
   (Thanks to [SQLS.nvim](https://github.com/nanotee/sqls.nvim))
-- Support Winbar, cmdheight = 0, laststatus = 3
+- Support Winbar, cmdheight = 0 (Turn off due to core dump), laststatus = 3
 - Support fold. [#4](https://github.com/kevinhwang91/nvim-ufo/issues/4)
   (Thank to [Nvim-Ufo](https://github.com/kevinhwang91/nvim-ufo))
 - Managing plugins manually.
@@ -561,7 +561,6 @@ Check [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki/Test)
 | &lt;Leader&gt;n | Show floating Cmdline       |
 | &lt;Leader&gt;o | Search buffers              |
 | &lt;Leader&gt;p | Search file                 |
-| &lt;Leader&gt;q | Turn off search's highlight |
 | &lt;Leader&gt;r | Rename variable             |
 | &lt;Leader&gt;s | Save file                   |
 | &lt;Leader&gt;t | Toggle test                 |
