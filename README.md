@@ -23,12 +23,6 @@ _Kitty with Fira, Cascadia, and Mini-File-Icons_
   - [Requirements](#requirements)
   - [Fonts](#fonts)
   - [Kitty](#kitty)
-- [Add unsupported languages](#add-unsupported-languages)
-  - [Syntax highlight](#syntax-highlight)
-  - [Language Server Protocol](#language-server-protocol)
-  - [Formatter and Linter](#formatter-and-linter)
-  - [Debug](#debug-1)
-  - [Test](#test-1)
 - [TODO](#todo)
 - [Contributing](#contributing)
 - [License](#license)
@@ -163,29 +157,6 @@ Find more in [wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki
 
 Read [Wiki](https://github.com/Nguyen-Hoang-Nam/nvim-dotfiles-kitty/wiki) for
 full installation.
-
-### Requirements
-
-- Kitty
-- Neovim 0.8.0-dev (Last updated Jul 02 2022)
-
-### Fonts
-
-- [mini-file-icons](https://github.com/Nguyen-Hoang-Nam/mini-file-icons)
-- Fira code (Or any ligature font)
-- Cascadia (Or any italic font)
-
-### Kitty
-
-```text
-font_family FiraCode Nerd Font Mono
-bold_font Cascadia Code
-italic_font Cascadia Mono
-bold_italic_font Cascadia Code
-symbol_map U+e900-U+e954 mini-file-icons
-font_size 16
-cursor #6796E6
-```
 
 ## TODO
 
