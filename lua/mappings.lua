@@ -23,6 +23,8 @@ map("i", "jk", "<Esc>", options)
 map("t", "<Esc>", "<C-\\><C-n>", options)
 map("v", "<Tab>", ">gV", options)
 map("v", "<S-Tab>", "<gV", options)
+map("n", "[[", "<C-o>", options)
+map("n", "]]", "<C-i>", options)
 
 map("n", "<Leader>s", [[:silent write<CR>]], cmd_options)
 map("n", "<Leader>w", require("utils.bufdelete").bufdelete, cmd_options)
