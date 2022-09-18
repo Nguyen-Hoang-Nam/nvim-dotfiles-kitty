@@ -1,32 +1,34 @@
-local lsp = require('languages.lsp')
-local M = {}
+local lsp = require("languages.lsp")
 
-M.efm = {
-    {
-        formatCommand = 'rustfmt --edition 2018',
-        formatStdin = true,
+return {
+    efm = {
+        {
+            formatCommand = "rustfmt --edition 2018",
+            formatStdin = true,
+        },
     },
-}
 
-M.all_format = {
-    efm = 'Rustfmt',
-    rust_analyzer = 'Rust-Analyzer',
-}
+    all_format = {
+        efm = "Rustfmt",
+        rust_analyzer = "Rust-Analyzer",
+    },
 
-M.default_format = 'efm'
+    default_format = "efm",
+    lsp_server = "rust_analyzer",
 
-M.lsp_server = 'rust_analyzer'
+    lsp = {
+        capabilities = lsp.capabilities,
+        on_attach = function(client, bufnr)
+            lsp.on_attach(client, bufnr)
+            require("nvim-navic").attach(client, bufnr)
+        end,
 
-M.lsp = {
-    capabilities = lsp.capabilities,
-    on_attach = lsp.on_attach,
-    settings = {
-        ['rust_analyzer'] = {
-            cargo = {
-                loadOutDirsFromCheck = true,
+        settings = {
+            ["rust_analyzer"] = {
+                cargo = {
+                    loadOutDirsFromCheck = true,
+                },
             },
         },
     },
 }
-
-return M

@@ -1,24 +1,22 @@
-local lsp = require('languages.lsp')
-local M = {}
+local lsp = require("languages.lsp")
 
-M.efm = {
-    {
-        formatCommand = 'ormolu',
-        formatStdin = true,
+return {
+    efm = {
+        {
+            formatCommand = "ormolu",
+            formatStdin = true,
+        },
+    },
+
+    all_format = { efm = "Ormolu" },
+    default_format = "efm",
+    lsp_server = "hls",
+
+    lsp = {
+        capabilities = lsp.capabilities,
+        on_attach = function(client, bufnr)
+            lsp.on_attach(client, bufnr)
+            require("nvim-navic").attach(client, bufnr)
+        end,
     },
 }
-
-M.all_format = {
-    efm = 'Ormolu',
-}
-
-M.default_format = 'efm'
-
-M.lsp_server = 'hls'
-
-M.lsp = {
-    capabilities = lsp.capabilities,
-    on_attach = lsp.on_attach,
-}
-
-return M

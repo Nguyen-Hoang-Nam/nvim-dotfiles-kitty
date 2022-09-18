@@ -9,23 +9,28 @@ option.showmode = false
 option.showtabline = 2
 option.scrolloff = 18
 option.termguicolors = true
-option.shortmess = 'atOIc'
--- option.completeopt = 'menuone,noselect'
--- option.shortmess:append({ c = true, F = true, T = true })
-option.clipboard:append({ 'unnamedplus' })
-option.fillchars = 'eob: '
+option.shortmess = "atOIc"
+option.clipboard:append({ "unnamedplus" })
+option.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+-- option.cmdheight = 0
+option.splitbelow = true
+option.laststatus = 3
+
+option.foldcolumn = "1"
+option.foldlevel = 10 -- Using ufo provider need a large value, feel free to decrease the value
+option.foldlevelstart = -1
+option.foldenable = true
+option.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal"
 
 -- NOTE: Local to window
 option.number = true
 option.relativenumber = true
 option.cursorline = true
-option.signcolumn = 'yes'
+option.signcolumn = "yes"
 option.list = true
-option.listchars = 'tab:\\ ,trail:-,eol:↵'
-option.foldmethod = 'expr'
-option.foldexpr = 'nvim_treesitter#foldexpr()'
--- HACK: indent-blankline https://github.com/lukas-reineke/indent-blankline.nvim/issues/59#issuecomment-806398054
-option.colorcolumn = '99999'
+option.listchars = [[tab:\ ,trail:-,eol:↵]]
+option.foldmethod = "expr"
+option.foldexpr = "nvim_treesitter#foldexpr()"
 
 -- NOTE: Local to buffer
 option.shiftwidth = 2

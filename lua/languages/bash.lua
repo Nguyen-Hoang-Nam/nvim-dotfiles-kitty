@@ -1,33 +1,28 @@
-local lsp = require('languages.lsp')
-local M = {}
+local lsp = require("languages.lsp")
 
-M.efm = {
-    {
-        formatCommand = 'shfmt',
-        formatStdin = true,
-    },
-    {
-        lintCommand = 'shellcheck -f gcc -x',
-        lintSource = 'shellcheck',
-        lintFormats = {
-            '%f:%l:%c: %trror: %m',
-            '%f:%l:%c: %tarning: %m',
-            '%f:%l:%c: %tote: %m',
+return {
+    efm = {
+        {
+            formatCommand = "shfmt",
+            formatStdin = true,
+        },
+        {
+            lintCommand = "shellcheck -f gcc -x",
+            lintSource = "shellcheck",
+            lintFormats = {
+                "%f:%l:%c: %trror: %m",
+                "%f:%l:%c: %tarning: %m",
+                "%f:%l:%c: %tote: %m",
+            },
         },
     },
+
+    all_format = { efm = "Shfmt   shellcheck" },
+    default_format = "efm",
+    lsp_server = "bashls",
+
+    lsp = {
+        capabilities = lsp.capabilities,
+        on_attach = lsp.on_attach,
+    },
 }
-
-M.all_format = {
-    efm = 'Shfmt   shellcheck',
-}
-
-M.default_format = 'efm'
-
-M.lsp_server = 'bashls'
-
-M.lsp = {
-    capabilities = lsp.capabilities,
-    on_attach = lsp.on_attach,
-}
-
-return M

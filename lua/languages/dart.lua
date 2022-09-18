@@ -1,22 +1,22 @@
-local lsp = require('languages.lsp')
-local M = {}
+local lsp = require("languages.lsp")
 
-M.efm = {
-    {
-        formatCommand = [[dart format -o show . | sed '$d']],
-        formatStdin = true,
+return {
+    efm = {
+        {
+            formatCommand = [[dart format -o show . | sed '$d']],
+            formatStdin = true,
+        },
+    },
+
+    all_format = { efm = "" },
+    default_format = "efm",
+    lsp_server = "dartls",
+
+    lsp = {
+        capabilities = lsp.capabilities,
+        on_attach = function(client, bufnr)
+            lsp.on_attach(client, bufnr)
+            require("nvim-navic").attach(client, bufnr)
+        end,
     },
 }
-
-M.all_format = { efm = '' }
-
-M.default_format = 'efm'
-
-M.lsp_server = 'dartls'
-
-M.lsp = {
-    capabilities = lsp.capabilities,
-    on_attach = lsp.on_attach,
-}
-
-return M

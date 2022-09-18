@@ -1,36 +1,10 @@
-local bo = vim.bo
 local cmd = vim.cmd
 local api = vim.api
 
 local M = {
     is_rest = false,
+    is_sql = false,
 }
-
-function M.bufdelete()
-    if bo.modified then
-        cmd("write")
-    end
-
-    local bufnr = api.nvim_get_current_buf()
-
-    local buffers = vim.tbl_filter(function(buf)
-        return bo[buf].buflisted and api.nvim_buf_is_valid(buf)
-    end, api.nvim_list_bufs())
-
-    if #buffers == 1 then
-        cmd("silent! ScrollViewDisable | bd " .. bufnr .. " | silent! ScrollViewEnable")
-
-        require("dashboard").instance(true)
-    else
-        if bufnr ~= buffers[#buffers] then
-            cmd("bnext")
-        else
-            cmd("bprevious")
-        end
-
-        cmd("silent! ScrollViewDisable | bd " .. bufnr .. " | silent! ScrollViewEnable")
-    end
-end
 
 -- Count number of properties in table
 -- Because of lua only count consecutive properties
@@ -43,6 +17,11 @@ function M.tablelength(T)
     end
 
     return count
+end
+
+-- Credit https://stackoverflow.com/questions/48402876/getting-current-file-name-in-lua
+function M.get_file_name(path)
+    return path:match("^.+/(.+)$")
 end
 
 function M.file_extension(filename)
@@ -135,12 +114,66 @@ function M.rest()
         api.nvim_buf_set_option(buf, "bufhidden", "delete")
         api.nvim_buf_set_option(buf, "filetype", "http")
 
+        api.nvim_buf_set_keymap(
+            buf,
+            "n",
+            "<Leader>r",
+            [[<Cmd>lua require("rest-nvim").run()<CR>]],
+            { noremap = true, silent = true }
+        )
+
         api.nvim_set_current_buf(buf)
         api.nvim_win_set_buf(window, buf)
 
         M.is_rest = true
         M.win_rest = window
         M.buf_rest = buf
+    end
+end
+
+function M.sql()
+    if M.is_sql then
+        vim.cmd("tabclose!")
+
+        M.is_sql = false
+    else
+        vim.cmd("tabedit new")
+        vim.bo.bufhidden = "wipe"
+
+        local valid_win = M.win_sql and api.nvim_win_is_valid(M.win_sql)
+        local window = valid_win and M.win_sql or api.nvim_get_current_win()
+
+        local valid_buf = M.buf_sql and api.nvim_buf_is_valid(M.buf_sql)
+        local buf = valid_buf and M.buf_sql or api.nvim_create_buf(false, false)
+
+        api.nvim_buf_set_name(buf, "[no name].sql")
+
+        api.nvim_buf_set_option(buf, "buftype", "nowrite")
+        api.nvim_buf_set_option(buf, "bufhidden", "delete")
+        api.nvim_buf_set_option(buf, "filetype", "sql")
+
+        api.nvim_buf_set_keymap(buf, "n", "<Leader>r", [[<Cmd>SqlsExecuteQuery<CR>]], { noremap = true, silent = true })
+        api.nvim_buf_set_keymap(
+            buf,
+            "n",
+            "<Leader>p",
+            [[<Cmd>SqlsSwitchConnection<CR>]],
+            { noremap = true, silent = true }
+        )
+        api.nvim_buf_set_keymap(
+            buf,
+            "n",
+            "<Leader>o",
+            [[<Cmd>SqlsSwitchDatabase<CR>]],
+            { noremap = true, silent = true }
+        )
+
+        api.nvim_set_current_buf(buf)
+        api.nvim_win_set_buf(window, buf)
+
+        M.is_sql = true
+        M.win_sql = window
+        M.buf_sql = buf
     end
 end
 
@@ -151,7 +184,7 @@ M.map_filetype_filename = {
     cpp = "*.cpp,*.hpp",
     dart = "*.dart",
     dockerfile = "Dockerfile",
-    elixir = "*.ex",
+    elixir = "*.ex,*.exs",
     go = "*.go",
     haskell = "*.hs",
     html = "*.html",
@@ -278,7 +311,7 @@ function M.cover_score()
 end
 
 function M.project_files()
-    local ok = pcall(require("telescope.builtin").git_files)
+    local ok = pcall(require("telescope.builtin").git_files, { show_untracked = true })
     if not ok then
         require("telescope.builtin").find_files()
     end
